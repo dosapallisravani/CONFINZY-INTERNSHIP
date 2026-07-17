@@ -1253,4 +1253,48 @@ justify-content:center;
 }
 
     }  }
+.hero-left,
+.hero-right,
+.section,
+.product-card,
+.benefit-card,
+.review-card{
+
+opacity:0;
+
+transform:translateY(60px);
+
+transition:all .8s ease;
+
+}
+
+.show{
+
+opacity:1 !important;
+
+transform:translateY(0) !important;
+
+}
+
+.nav-links.show{
+
+display:flex;
+
+flex-direction:column;
+
+position:absolute;
+
+top:90px;
+
+right:20px;
+
+background:rgba(20,30,25,.95);
+
+padding:25px;
+
+border-radius:20px;
+
+gap:20px;
+
+    }
 
