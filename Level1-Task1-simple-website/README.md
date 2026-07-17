@@ -72,7 +72,6 @@ evel1-Task1-simple-website
 
 🔗 **Website Link:**  
 https://yourusername.github.io/CONFINZY-INTERNSHIP/Level1-Task1-simple-website/
-
 ## 🎨 Design Concept
 
 **Brand Name:** Aurevia  
