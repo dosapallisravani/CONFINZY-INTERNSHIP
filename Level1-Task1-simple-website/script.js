@@ -1,145 +1,162 @@
-// Mobile Menu Toggle
+/*=====================================
+MOBILE MENU
+=====================================*/
 
-const menu = document.querySelector(".menu");
+const menuBtn = document.getElementById("menu-btn");
 const navLinks = document.querySelector(".nav-links");
 
+menuBtn.addEventListener("click", () => {
 
-menu.addEventListener("click", () => {
-
-    navLinks.classList.toggle("active");
+    navLinks.classList.toggle("show");
 
 });
 
-
-
-// Close menu after clicking link
+/*=====================================
+CLOSE MENU
+=====================================*/
 
 document.querySelectorAll(".nav-links a").forEach(link => {
 
     link.addEventListener("click", () => {
 
-        navLinks.classList.remove("active");
+        navLinks.classList.remove("show");
 
     });
 
 });
 
+/*=====================================
+HEADER SCROLL
+=====================================*/
 
+const header = document.getElementById("header");
 
+window.addEventListener("scroll", () => {
 
+    if (window.scrollY > 80) {
 
-// Scroll Reveal Animation
+        header.style.background = "rgba(20,30,25,.92)";
+        header.style.backdropFilter = "blur(20px)";
+
+    } else {
+
+        header.style.background = "transparent";
+
+    }
+
+});
+
+/*=====================================
+ACTIVE NAV LINK
+=====================================*/
 
 const sections = document.querySelectorAll("section");
+const navItems = document.querySelectorAll(".nav-links a");
 
+window.addEventListener("scroll", () => {
 
-function reveal(){
+    let current = "";
 
     sections.forEach(section => {
 
-        const top = section.getBoundingClientRect().top;
+        const sectionTop = section.offsetTop - 120;
 
-        const height = window.innerHeight;
+        if (scrollY >= sectionTop) {
 
-
-        if(top < height - 120){
-
-            section.classList.add("show");
+            current = section.getAttribute("id");
 
         }
 
     });
 
-}
+    navItems.forEach(link => {
 
+        link.classList.remove("active");
 
-window.addEventListener("scroll", reveal);
+        if (link.getAttribute("href") === "#" + current) {
 
-reveal();
+            link.classList.add("active");
 
-
-
-
-
-
-// Navbar Effect on Scroll
-
-const header = document.querySelector("header");
-
-
-window.addEventListener("scroll",()=>{
-
-
-    if(window.scrollY > 50){
-
-        header.style.background =
-        "rgba(250,248,242,0.95)";
-
-    }
-
-    else{
-
-        header.style.background =
-        "transparent";
-
-    }
-
-
-});
-
-
-
-
-
-
-
-// Smooth Scroll
-
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-
-
-    anchor.addEventListener("click",function(e){
-
-
-        e.preventDefault();
-
-
-        document.querySelector(
-        this.getAttribute("href")
-        ).scrollIntoView({
-
-            behavior:"smooth"
-
-        });
-
+        }
 
     });
 
+});
+
+/*=====================================
+SCROLL REVEAL
+=====================================*/
+
+const observer = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+            entry.target.classList.add("show");
+
+        }
+
+    });
+
+}, {
+
+    threshold: 0.2
 
 });
 
+document.querySelectorAll(".section,.product-card,.benefit-card,.review-card").forEach(el => {
 
+    observer.observe(el);
 
+});
 
+/*=====================================
+SMOOTH SCROLL
+=====================================*/
 
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
-// Contact Form
+    anchor.addEventListener("click", function(e) {
 
-const form = document.querySelector("form");
+        e.preventDefault();
 
+        document.querySelector(this.getAttribute("href")).scrollIntoView({
 
-form.addEventListener("submit",(e)=>{
+            behavior: "smooth"
 
+        });
+
+    });
+
+});
+
+/*=====================================
+CONTACT FORM
+=====================================*/
+
+const form = document.querySelector(".contact-form");
+
+form.addEventListener("submit", function(e) {
 
     e.preventDefault();
 
-
-    alert(
-    "Thank you for contacting Aurex! We will get back to you soon."
-    );
-
+    alert("✅ Thank you for contacting Aurex! We'll reach you soon.");
 
     form.reset();
 
+});
+
+/*=====================================
+HERO FADE
+=====================================*/
+
+window.addEventListener("load", () => {
+
+    document.querySelector(".hero-left").style.opacity = "1";
+    document.querySelector(".hero-left").style.transform = "translateY(0)";
+
+    document.querySelector(".hero-right").style.opacity = "1";
+    document.querySelector(".hero-right").style.transform = "translateY(0)";
 
 });
