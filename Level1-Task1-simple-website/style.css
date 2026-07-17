@@ -46,49 +46,6 @@ header{
     margin-bottom:8px;
 }
 
-.logo-icon .left{
-    position:absolute;
-    width:3px;
-    height:35px;
-    background:#526b58;
-    transform:rotate(25deg);
-    left:12px;
-    top:3px;
-}
-
-.logo-icon .right{
-    position:absolute;
-    width:3px;
-    height:35px;
-    background:#526b58;
-    transform:rotate(-25deg);
-    right:12px;
-    top:3px;
-}
-
-.logo-icon .cross{
-    position:absolute;
-    width:18px;
-    height:3px;
-    background:#526b58;
-    left:12px;
-    top:20px;
-}
-
-.logo h2{
-    font-family:'Playfair Display',serif;
-    font-size:28px;
-    letter-spacing:6px;
-    color:#3B3B3B;
-    margin:0;
-}
-
-.logo p{
-    font-size:10px;
-    letter-spacing:2px;
-    color:#7B947F;
-    margin-top:4px;
-}
 
 
 .nav-links{
@@ -480,4 +437,43 @@ footer{
 
 }
 
+}
+.hero-logo{
+    display:flex;
+    justify-content:center;
+    margin-bottom:25px;
+}
+
+.logo-icon{
+    position:relative;
+    width:60px;
+    height:60px;
+}
+
+.logo-icon .left,
+.logo-icon .right{
+    position:absolute;
+    width:4px;
+    height:50px;
+    background:#526b58;
+    top:0;
+}
+
+.logo-icon .left{
+    left:18px;
+    transform:rotate(25deg);
+}
+
+.logo-icon .right{
+    right:18px;
+    transform:rotate(-25deg);
+}
+
+.logo-icon .cross{
+    position:absolute;
+    width:22px;
+    height:4px;
+    background:#526b58;
+    left:19px;
+    top:27px;
 }
