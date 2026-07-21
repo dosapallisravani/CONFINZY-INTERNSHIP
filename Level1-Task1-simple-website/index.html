@@ -4,171 +4,661 @@
 <head>
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>AUREX | Men's Grooming</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <title>AUREX | Premium Men's Grooming</title>
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <!-- Icons -->
     <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+          href="style.css">
+
+    <!-- Google Font -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
 </head>
 
 <body>
 
-<!--================ NAVBAR ================-->
+<!--==========================
+HEADER
+===========================-->
 
 <header class="header">
 
-<nav class="navbar container">
+    <div class="container">
 
-<div class="logo">
+        <nav class="navbar">
 
-<img src="images/logo.png" alt="Aurex Logo">
+            <!-- Logo -->
 
-</div>
+            <a href="#home"
+               class="logo">
 
-<ul class="nav-links">
+                <img src="images/logo.png"
+                     alt="AUREX Logo">
 
-<li><a href="#" class="active">Home</a></li>
+            </a>
 
-<li><a href="#about">About</a></li>
+            <!-- Navigation -->
 
-<li><a href="#products">Products</a></li>
+            <ul class="nav-links">
 
-<li><a href="#reviews">Reviews</a></li>
+                <li>
+                    <a href="#home"
+                       class="active">
+                       Home
+                    </a>
+                </li>
 
-<li><a href="#contact">Contact</a></li>
+                <li>
+                    <a href="#about">
+                        About
+                    </a>
+                </li>
 
-</ul>
+                <li>
+                    <a href="#products">
+                        Products
+                    </a>
+                </li>
 
-<div class="menu-btn">
+                <li>
+                    <a href="#reviews">
+                        Reviews
+                    </a>
+                </li>
 
-<i class="fa-solid fa-bars"></i>
+                <li>
+                    <a href="#contact">
+                        Contact
+                    </a>
+                </li>
 
-</div>
+            </ul>
 
-</nav>
+            <!-- Shop Button -->
+
+            <a href="#products"
+               class="shop-btn">
+
+               Shop Now
+
+            </a>
+
+            <!-- Mobile -->
+
+            <div class="menu-btn">
+
+                <i class="fa-solid fa-bars"></i>
+
+            </div>
+
+        </nav>
+
+    </div>
 
 </header>
 
-<!--================ HERO SECTION ================-->
+<!--==========================
+HERO
+===========================-->
 
-<section class="hero">
+<section class="hero"
+         id="home">
 
-<div class="hero-overlay"></div>
+    <div class="container hero-container">
 
-<div class="hero-container container">
+        <!-- LEFT -->
 
-<!-- LEFT SIDE -->
+        <div class="hero-left">
 
-<div class="hero-left">
+            <span class="hero-tag">
 
-<img src="images/logo-dark.png" class="hero-logo" alt="">
+                PREMIUM MEN'S GROOMING
 
-<h1>
+            </span>
 
-ELEVATE <br>
+            <h1>
 
-<span>EVERY DAY</span>
+                ELEVATE
 
-</h1>
+                <br>
 
-<div class="line"></div>
+                <span>EVERY DAY</span>
+
+            </h1>
+
+            <div class="line"></div>
+
+            <p>
+
+                Experience luxury skincare,
+                beard care and hair styling
+                products designed for modern
+                gentlemen.
+
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#products"
+                   class="btn-primary">
+
+                    Shop Collection
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+                <a href="#about"
+                   class="btn-secondary">
+
+                    Learn More
+
+                </a>
+
+            </div>
+
+            <!-- Features -->
+
+            <div class="hero-features">
+
+                <div class="feature-box">
+
+                    <i class="fa-solid fa-leaf"></i>
+
+                    <h4>Natural</h4>
+
+                    <p>Ingredients</p>
+
+                </div>
+
+                <div class="feature-box">
+
+                    <i class="fa-solid fa-shield-heart"></i>
+
+                    <h4>Skin Safe</h4>
+
+                    <p>Dermatologist Tested</p>
+
+                </div>
+
+                <div class="feature-box">
+
+                    <i class="fa-solid fa-award"></i>
+
+                    <h4>Premium</h4>
+
+                    <p>Luxury Quality</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- RIGHT -->
+
+        <div class="hero-right">
+
+            <!-- Main Model -->
+
+            <img src="images/hero-model.png"
+                 alt="Model"
+                 class="hero-model">
+
+            <!-- Floating Products -->
+
+            <div class="floating-products">
+
+                <img src="images/facewash.png"
+                     class="product product-1"
+                     alt="">
+
+                <img src="images/beard-oil.png"
+                     class="product product-2"
+                     alt="">
+
+                <img src="images/moisturizer.png"
+                     class="product product-3"
+                     alt="">
+
+                <img src="images/clay.png"
+                     class="product product-4"
+                     alt="">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!--==========================
+ABOUT STARTS HERE
+===========================-->
+
+<section class="about" id="about">
+
+<div class="container about-container">
+
+<div class="about-image">
+
+<img src="images/about.jpg"
+alt="About Aurex">
+
+<div class="experience-card">
+
+<h2>5+</h2>
+
+<p>Years of Excellence</p>
+
+</div>
+
+</div>
+
+<div class="about-content">
+
+<span class="section-tag">
+
+ABOUT AUREX
+
+</span>
+
+<h2>
+
+Premium Grooming
+Designed For Modern Men
+
+</h2>
 
 <p>
 
-Premium grooming essentials<br>
+AUREX creates premium skincare,
+hair styling and beard care products
+that combine luxury, innovation and
+performance.
 
-crafted for the modern gentleman.
+Every product is carefully formulated
+using high-quality ingredients to
+deliver outstanding results.
 
 </p>
 
-<a href="#products" class="hero-btn">
+<div class="about-list">
 
-SHOP NOW
+<div class="list-item">
 
-<i class="fa-solid fa-arrow-right"></i>
+<i class="fa-solid fa-circle-check"></i>
+
+<p>Natural Ingredients</p>
+
+</div>
+
+<div class="list-item">
+
+<i class="fa-solid fa-circle-check"></i>
+
+<p>Dermatologist Approved</p>
+
+</div>
+
+<div class="list-item">
+
+<i class="fa-solid fa-circle-check"></i>
+
+<p>Cruelty Free</p>
+
+</div>
+
+<div class="list-item">
+
+<i class="fa-solid fa-circle-check"></i>
+
+<p>Luxury Packaging</p>
+
+</div>
+
+</div>
+
+<a href="#products"
+
+class="btn-primary">
+
+Discover More
 
 </a>
 
-<div class="hero-features">
+</div>
 
-<div class="feature">
+</div>
+
+</section>
+
+<!--==========================
+PRODUCTS
+===========================-->
+
+<section class="products"
+
+id="products">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span>
+
+OUR PRODUCTS
+
+</span>
+
+<h2>
+
+Premium Collection
+
+</h2>
+
+<p>
+
+Luxury grooming essentials
+crafted for confidence.
+
+</p>
+
+</div>
+
+<div class="product-grid">
+
+<!-- Product -->
+
+<div class="product-card">
+
+<div class="product-image">
+
+<img src="images/facewash.png">
+
+</div>
+
+<div class="product-info">
+
+<h3>
+
+Charcoal Face Wash
+
+</h3>
+
+<p>
+
+Deep Cleansing Formula
+
+</p>
+
+<div class="price">
+
+₹499
+
+</div>
+
+<a href="#"
+
+class="product-btn">
+
+Buy Now
+
+</a>
+
+</div>
+
+</div>
+
+<!-- Product -->
+
+<div class="product-card">
+
+<div class="product-image">
+
+<img src="images/beard-oil.png">
+
+</div>
+
+<div class="product-info">
+
+<h3>
+
+Premium Beard Oil
+
+</h3>
+
+<p>
+
+Natural Shine & Growth
+
+</p>
+
+<div class="price">
+
+₹699
+
+</div>
+
+<a href="#"
+
+class="product-btn">
+
+Buy Now
+
+</a>
+
+</div>
+
+</div>
+
+<!-- Product -->
+
+<div class="product-card">
+
+<div class="product-image">
+
+<img src="images/moisturizer.png">
+
+</div>
+
+<div class="product-info">
+
+<h3>
+
+Daily Moisturizer
+
+</h3>
+
+<p>
+
+Hydrating Skin Care
+
+</p>
+
+<div class="price">
+
+₹599
+
+</div>
+
+<a href="#"
+
+class="product-btn">
+
+Buy Now
+
+</a>
+
+</div>
+
+</div>
+
+<!-- Product -->
+
+<div class="product-card">
+
+<div class="product-image">
+
+<img src="images/clay.png">
+
+</div>
+
+<div class="product-info">
+
+<h3>
+
+Hair Styling Clay
+
+</h3>
+
+<p>
+
+Matte Finish Hold
+
+</p>
+
+<div class="price">
+
+₹799
+
+</div>
+
+<a href="#"
+
+class="product-btn">
+
+Buy Now
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!--==========================
+WHY CHOOSE US
+===========================-->
+
+<section class="why-section">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span>
+
+WHY AUREX
+
+</span>
+
+<h2>
+
+Why Choose Us
+
+</h2>
+
+</div>
+
+<div class="why-grid">
+
+<div class="why-card">
 
 <i class="fa-solid fa-leaf"></i>
 
-<h4>Natural</h4>
+<h3>
 
-<p>Ingredients</p>
+Natural Ingredients
+
+</h3>
+
+<p>
+
+Premium botanical extracts
+for healthier skin.
+
+</p>
 
 </div>
 
-<div class="feature">
+<div class="why-card">
 
 <i class="fa-solid fa-shield-heart"></i>
 
-<h4>Skin</h4>
+<h3>
 
-<p>Safe</p>
+Dermatologist Tested
 
-</div>
+</h3>
 
-<div class="feature">
+<p>
 
-<i class="fa-solid fa-droplet"></i>
+Safe and gentle
+for daily use.
 
-<h4>Made For</h4>
-
-<p>Men</p>
-
-</div>
+</p>
 
 </div>
 
+<div class="why-card">
+
+<i class="fa-solid fa-truck-fast"></i>
+
+<h3>
+
+Fast Delivery
+
+</h3>
+
+<p>
+
+Quick delivery
+across India.
+
+</p>
+
 </div>
 
-<!-- RIGHT SIDE -->
+<div class="why-card">
 
-<div class="hero-right">
+<i class="fa-solid fa-award"></i>
 
-<img src="images/hero-model.png"
+<h3>
 
-class="hero-model"
+Luxury Quality
 
-alt="">
+</h3>
 
-<div class="products">
+<p>
 
-<img src="images/facewash.png"
+Premium products
+for premium lifestyle.
 
-class="product facewash"
-
-alt="">
-
-<img src="images/moisturizer.png"
-
-class="product moisturizer"
-
-alt="">
-
-<img src="images/clay.png"
-
-class="product clay"
-
-alt="">
-
-<img src="images/beard-oil.png"
-
-class="product beard"
-
-alt="">
+</p>
 
 </div>
 
@@ -178,16 +668,384 @@ alt="">
 
 </section>
 
-<!--================ ABOUT SECTION ================-->
+<!--==========================
+STATISTICS
+===========================-->
+<section class="stats">
 
-<section id="about">
+    <div class="container">
 
-<!-- Continue in Part 2 -->
+        <div class="stats-grid">
+
+            <div class="stat-box">
+                <h2>50K+</h2>
+                <p>Happy Customers</p>
+            </div>
+
+            <div class="stat-box">
+                <h2>120+</h2>
+                <p>Stores Nationwide</p>
+            </div>
+
+            <div class="stat-box">
+                <h2>4.9★</h2>
+                <p>Customer Rating</p>
+            </div>
+
+            <div class="stat-box">
+                <h2>98%</h2>
+                <p>Repeat Customers</p>
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
 
-<script src="js/script.js"></script>
+<!--==========================
+REVIEWS
+===========================-->
+
+<section class="reviews" id="reviews">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span>TESTIMONIALS</span>
+
+<h2>What Our Customers Say</h2>
+
+</div>
+
+<div class="review-grid">
+
+<div class="review-card">
+
+<img src="images/review1.jpg" alt="">
+
+<h3>Rahul Sharma</h3>
+
+<h5>Hyderabad</h5>
+
+<div class="stars">
+
+★★★★★
+
+</div>
+
+<p>
+
+Excellent quality products.
+My beard feels softer and healthier.
+
+</p>
+
+</div>
+
+<div class="review-card">
+
+<img src="images/review2.jpg" alt="">
+
+<h3>Arjun Reddy</h3>
+
+<h5>Vijayawada</h5>
+
+<div class="stars">
+
+★★★★★
+
+</div>
+
+<p>
+
+Premium packaging and amazing
+face wash. Worth every rupee.
+
+</p>
+
+</div>
+
+<div class="review-card">
+
+<img src="images/review3.jpg" alt="">
+
+<h3>Rohan Verma</h3>
+
+<h5>Bengaluru</h5>
+
+<div class="stars">
+
+★★★★★
+
+</div>
+
+<p>
+
+Best styling clay I've used.
+Highly recommended.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!--==========================
+NEWSLETTER
+===========================-->
+
+<section class="newsletter">
+
+<div class="container">
+
+<h2>
+
+Join The AUREX Club
+
+</h2>
+
+<p>
+
+Get exclusive offers,
+new launches and grooming tips.
+
+</p>
+
+<form class="newsletter-form">
+
+<input
+type="email"
+placeholder="Enter your email"
+required>
+
+<button type="submit">
+
+Subscribe
+
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+<!--==========================
+CONTACT
+===========================-->
+
+<section class="contact"
+
+id="contact">
+
+<div class="container contact-container">
+
+<div class="contact-info">
+
+<span>
+
+CONTACT
+
+</span>
+
+<h2>
+
+Let's Talk
+
+</h2>
+
+<p>
+
+Need help choosing the perfect
+grooming products?
+Our team is ready to assist you.
+
+</p>
+
+<div class="contact-details">
+
+<p>
+
+<i class="fa-solid fa-phone"></i>
+
++91 81216 69762
+
+</p>
+
+<p>
+
+<i class="fa-solid fa-envelope"></i>
+
+dosapallisravani87@gmail.com
+
+</p>
+
+<p>
+
+<i class="fa-solid fa-location-dot"></i>
+
+Eluru, Andhra Pradesh
+
+</p>
+
+</div>
+
+</div>
+
+<div class="contact-form">
+
+<form>
+
+<input
+type="text"
+placeholder="Full Name"
+required>
+
+<input
+type="email"
+placeholder="Email Address"
+required>
+
+<textarea
+placeholder="Your Message"
+required></textarea>
+
+<button
+type="submit"
+class="btn-primary">
+
+Send Message
+
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+<!--==========================
+FOOTER
+===========================-->
+
+<footer>
+
+<div class="container footer-container">
+
+<div class="footer-logo">
+
+<img src="images/logo.png"
+
+alt="">
+
+<p>
+
+Luxury Men's Grooming
+for Everyday Confidence.
+
+</p>
+
+</div>
+
+<div class="footer-links">
+
+<h3>
+
+Quick Links
+
+</h3>
+
+<a href="#home">Home</a>
+
+<a href="#about">About</a>
+
+<a href="#products">Products</a>
+
+<a href="#reviews">Reviews</a>
+
+<a href="#contact">Contact</a>
+
+</div>
+
+<div class="footer-social">
+
+<h3>
+
+Follow Us
+
+</h3>
+
+<div class="social-icons">
+
+<a href="#">
+
+<i class="fab fa-facebook-f"></i>
+
+</a>
+
+<a href="#">
+
+<i class="fab fa-instagram"></i>
+
+</a>
+
+<a href="#">
+
+<i class="fab fa-x-twitter"></i>
+
+</a>
+
+<a href="#">
+
+<i class="fab fa-linkedin-in"></i>
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+
+<p>
+
+© 2026 AUREX.
+
+Designed & Developed by
+
+<strong>Sravani Dosapalli</strong>
+
+</p>
+
+</div>
+
+</footer>
+
+<!--==========================
+BACK TO TOP
+===========================-->
+
+<button class="top-btn">
+
+<i class="fa-solid fa-arrow-up"></i>
+
+</button>
+
+<!--==========================
+JAVASCRIPT
+===========================-->
+
+<script src="script.js"></script>
 
 </body>
-
 </html>
