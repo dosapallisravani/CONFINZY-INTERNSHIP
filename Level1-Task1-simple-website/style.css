@@ -170,7 +170,6 @@ transition:.3s;
 color:var(--primary);
 
 }
-
 .nav-links li a.active{
 
 color:var(--primary);
