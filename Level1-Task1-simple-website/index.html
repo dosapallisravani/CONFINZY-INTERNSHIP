@@ -1,158 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>AUREX | Men's Grooming</title>
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
     <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
 </head>
 
 <body>
 
-    <!-- ================= HEADER ================= -->
+<!--================ NAVBAR ================-->
 
-    <header>
+<header class="header">
 
-        <div class="logo">
-            <h2>AUREX</h2>
-        </div>
+<nav class="navbar container">
 
-        <nav>
+<div class="logo">
 
-            <ul>
+<img src="images/logo.png" alt="Aurex Logo">
 
-                <li><a href="#home">Home</a></li>
+</div>
 
-                <li><a href="#products">Products</a></li>
+<ul class="nav-links">
 
-                <li><a href="#about">About</a></li>
+<li><a href="#" class="active">Home</a></li>
 
-                <li><a href="#contact">Contact</a></li>
+<li><a href="#about">About</a></li>
 
-            </ul>
+<li><a href="#products">Products</a></li>
 
-        </nav>
+<li><a href="#reviews">Reviews</a></li>
 
-        <a href="#" class="btn">Shop Now</a>
+<li><a href="#contact">Contact</a></li>
 
-    </header>
+</ul>
 
+<div class="menu-btn">
 
-    <!-- ================= HERO ================= -->
+<i class="fa-solid fa-bars"></i>
 
-    <section class="hero" id="home">
+</div>
 
-        <div class="hero-content">
+</nav>
 
-            <h1>Premium Grooming For Modern Men</h1>
+</header>
 
-            <p>
-                Discover luxury skincare, beard care and hair styling
-                products designed for confidence and style.
-            </p>
+<!--================ HERO SECTION ================-->
 
-            <a href="#" class="btn">Explore Collection</a>
+<section class="hero">
 
-        </div>
+<div class="hero-overlay"></div>
 
-    </section>
+<div class="hero-container container">
 
+<!-- LEFT SIDE -->
 
-    <!-- ================= PRODUCTS ================= -->
+<div class="hero-left">
 
-    <section class="products" id="products">
+<img src="images/logo-dark.png" class="hero-logo" alt="">
 
-        <h2>Featured Products</h2>
+<h1>
 
-        <div class="product-container">
+ELEVATE <br>
 
-            <div class="card">
+<span>EVERY DAY</span>
 
-                <img src="images/beard-oil.jpg" alt="Beard Oil">
+</h1>
 
-                <h3>Premium Beard Oil</h3>
+<div class="line"></div>
 
-                <p>Healthy beard with natural shine.</p>
+<p>
 
-            </div>
+Premium grooming essentials<br>
 
-            <div class="card">
+crafted for the modern gentleman.
 
-                <img src="images/facewash.jpg" alt="Face Wash">
+</p>
 
-                <h3>Charcoal Face Wash</h3>
+<a href="#products" class="hero-btn">
 
-                <p>Deep cleansing for fresh skin.</p>
+SHOP NOW
 
-            </div>
+<i class="fa-solid fa-arrow-right"></i>
 
-            <div class="card">
+</a>
 
-                <img src="images/hairwax.jpg" alt="Hair Wax">
+<div class="hero-features">
 
-                <h3>Hair Styling Wax</h3>
+<div class="feature">
 
-                <p>Long-lasting premium hold.</p>
+<i class="fa-solid fa-leaf"></i>
 
-            </div>
+<h4>Natural</h4>
 
-        </div>
+<p>Ingredients</p>
 
-    </section>
+</div>
 
+<div class="feature">
 
-    <!-- ================= ABOUT ================= -->
+<i class="fa-solid fa-shield-heart"></i>
 
-    <section class="about" id="about">
+<h4>Skin</h4>
 
-        <h2>About Aurex</h2>
+<p>Safe</p>
 
-        <p>
+</div>
 
-            Aurex is a premium men's grooming brand dedicated to
-            providing high-quality skincare, beard care and styling
-            essentials that help every man look confident every day.
+<div class="feature">
 
-        </p>
+<i class="fa-solid fa-droplet"></i>
 
-    </section>
+<h4>Made For</h4>
 
+<p>Men</p>
 
-    <!-- ================= CONTACT ================= -->
+</div>
 
-    <section class="contact" id="contact">
+</div>
 
-        <h2>Contact Us</h2>
+</div>
 
-        <form>
+<!-- RIGHT SIDE -->
 
-            <input type="text" placeholder="Your Name" required>
+<div class="hero-right">
 
-            <input type="email" placeholder="Email Address" required>
+<img src="images/hero-model.png"
 
-            <textarea placeholder="Your Message"></textarea>
+class="hero-model"
 
-            <button class="btn">Send Message</button>
+alt="">
 
-        </form>
+<div class="products">
 
-    </section>
+<img src="images/facewash.png"
 
+class="product facewash"
 
-    <!-- ================= FOOTER ================= -->
+alt="">
 
-    <footer>
+<img src="images/moisturizer.png"
 
-        <p>
-            © 2026 Aurex Men's Grooming. All Rights Reserved.
-        </p>
+class="product moisturizer"
 
-    </footer>
+alt="">
+
+<img src="images/clay.png"
+
+class="product clay"
+
+alt="">
+
+<img src="images/beard-oil.png"
+
+class="product beard"
+
+alt="">
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!--================ ABOUT SECTION ================-->
+
+<section id="about">
+
+<!-- Continue in Part 2 -->
+
+</section>
+
+<script src="js/script.js"></script>
 
 </body>
+
 </html>
