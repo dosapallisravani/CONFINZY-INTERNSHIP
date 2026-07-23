@@ -1,159 +1,268 @@
-//=====================================
-// BUTTON COLOR CHANGER
-//=====================================
+// ==============================
+// ASTROCALC JAVASCRIPT
+// ==============================
 
-const colorBtn = document.getElementById("colorBtn");
 
-const colors = [
+// Calculator Elements
 
-"#6C63FF",
-"#00D4FF",
-"#10B981",
-"#F59E0B",
-"#EF4444",
-"#8B5CF6",
-"#14B8A6",
-"#E11D48"
+const display = document.getElementById("display");
+
+const numbers = document.querySelectorAll(".number");
+const operators = document.querySelectorAll(".operator");
+
+const clearBtn = document.querySelector(".clear");
+const deleteBtn = document.querySelector(".delete");
+const equalBtn = document.querySelector(".equal");
+
+
+
+let currentInput = "";
+let operator = "";
+let firstNumber = "";
+
+
+
+
+// Number Buttons
+
+numbers.forEach(button => {
+
+    button.addEventListener("click",()=>{
+
+        currentInput += button.innerText;
+
+        display.value = currentInput;
+
+    });
+
+});
+
+
+
+
+
+// Operator Buttons
+
+operators.forEach(button => {
+
+    button.addEventListener("click",()=>{
+
+        firstNumber = currentInput;
+
+        operator = button.innerText;
+
+        currentInput = "";
+
+    });
+
+});
+
+
+
+
+
+// Equal Button
+
+equalBtn.addEventListener("click",()=>{
+
+
+    let secondNumber = currentInput;
+
+    let result;
+
+
+    switch(operator){
+
+
+        case "+":
+            result = Number(firstNumber)+Number(secondNumber);
+            break;
+
+
+        case "-":
+            result = Number(firstNumber)-Number(secondNumber);
+            break;
+
+
+        case "*":
+            result = Number(firstNumber)*Number(secondNumber);
+            break;
+
+
+        case "/":
+            result = Number(firstNumber)/Number(secondNumber);
+            break;
+
+
+        default:
+            result="Error";
+
+    }
+
+
+    display.value=result;
+
+    currentInput=result;
+
+
+});
+
+
+
+
+
+
+
+// Clear Button
+
+clearBtn.addEventListener("click",()=>{
+
+    display.value="";
+
+    currentInput="";
+
+    firstNumber="";
+
+    operator="";
+
+});
+
+
+
+
+
+
+// Delete Button
+
+deleteBtn.addEventListener("click",()=>{
+
+
+    currentInput=currentInput.slice(0,-1);
+
+    display.value=currentInput;
+
+
+});
+
+
+
+
+
+
+
+
+// Planet Color Change Feature
+
+
+const planet = document.querySelector(".earth");
+
+
+let colors=[
+
+"🌍",
+"🔴",
+"🟣",
+"🟢",
+"🪐"
 
 ];
 
-let currentColor = 0;
 
-colorBtn.addEventListener("click", () => {
+let index=0;
 
-currentColor++;
 
-if(currentColor >= colors.length){
 
-currentColor = 0;
+function changePlanet(){
 
-}
 
-colorBtn.style.background = colors[currentColor];
+    index++;
 
-colorBtn.style.color = "#ffffff";
+    if(index>=colors.length){
 
-});
+        index=0;
 
-//=====================================
-// GREETING ALERT
-//=====================================
+    }
 
-const greetBtn = document.getElementById("greetBtn");
 
-greetBtn.addEventListener("click", () => {
+    planet.innerHTML=colors[index];
 
-const hour = new Date().getHours();
 
-let message = "";
+    planet.style.transform="scale(1.3)";
 
-if(hour >= 5 && hour < 12){
 
-message = "🌞 Good Morning! Have a wonderful day.";
+    setTimeout(()=>{
+
+        planet.style.transform="scale(1)";
+
+    },300);
+
 
 }
 
-else if(hour >= 12 && hour < 17){
 
-message = "🌤 Good Afternoon! Keep Learning.";
 
-}
 
-else if(hour >= 17 && hour < 21){
 
-message = "🌇 Good Evening! Hope you're doing great.";
 
-}
 
-else{
+// Launch Button Scroll
 
-message = "🌙 Good Night! Take some rest.";
 
-}
+function scrollToCalculator(){
 
-alert(message);
 
-});
-//=====================================
-// BASIC CALCULATOR
-//=====================================
+    document
+    .getElementById("calculator")
+    .scrollIntoView({
 
-const addBtn = document.getElementById("addBtn");
+        behavior:"smooth"
 
-addBtn.addEventListener("click", () => {
+    });
 
-const number1 = parseFloat(document.getElementById("num1").value);
-
-const number2 = parseFloat(document.getElementById("num2").value);
-
-const result = document.getElementById("result");
-
-if(isNaN(number1) || isNaN(number2)){
-
-result.innerHTML = "Enter Valid Numbers";
-
-return;
 
 }
 
-result.innerHTML = number1 + number2;
 
-});
 
-//=====================================
-// BACK TO TOP BUTTON
-//=====================================
 
-const topBtn = document.getElementById("topBtn");
 
-window.addEventListener("scroll", () => {
 
-if(window.scrollY > 300){
 
-topBtn.style.display = "flex";
+// Astronaut Greeting Animation
 
-}
 
-else{
+const astronautText=document.querySelector(".astronaut p");
 
-topBtn.style.display = "none";
 
-}
+let messages=[
 
-});
+"Ready to calculate your cosmic numbers? 🚀",
 
-topBtn.addEventListener("click", () => {
+"Welcome Space Explorer 🌌",
 
-window.scrollTo({
+"Your universe of calculations begins now ✨"
 
-top:0,
+];
 
-behavior:"smooth"
 
-});
+let msgIndex=0;
 
-});
 
-//=====================================
-// SMOOTH NAVIGATION
-//=====================================
 
-document.querySelectorAll('nav a').forEach(link => {
+setInterval(()=>{
 
-link.addEventListener("click", function(e){
 
-e.preventDefault();
+    astronautText.innerHTML=messages[msgIndex];
 
-const target = document.querySelector(this.getAttribute("href"));
 
-target.scrollIntoView({
+    msgIndex++;
 
-behavior:"smooth"
 
-});
+    if(msgIndex>=messages.length){
 
-});
+        msgIndex=0;
 
-});
+    }
 
-console.log("JavaScript Interactive Playground Loaded Successfully 🚀");
+
+},3000);
