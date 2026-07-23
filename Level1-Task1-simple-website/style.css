@@ -1435,7 +1435,39 @@ background:var(--primary);
 border-radius:20px;
 
 }
+.footer-social .social-icons{
+    display:flex;
+    gap:15px;
+}
 
+.footer-social .social-icons a{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#222;
+    color:#fff;
+    font-size:20px;
+    transition:.4s;
+}
+
+.footer-social .social-icons a:hover{
+    background:#D4AF37;
+    color:#111;
+    transform:translateY(-5px);
+}
+
+.contact-details a{
+    color:#777;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.contact-details a:hover{
+    color:#D4AF37;
+}
 /*==========================
 RESPONSIVE
 ==========================*/
