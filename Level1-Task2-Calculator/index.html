@@ -1,68 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AstroCalc | Space Calculator</title>
 
-    <link rel="stylesheet" href="style.css">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AstroCalc 🚀</title>
+
+<link rel="stylesheet" href="style.css">
+
 </head>
+
 
 <body>
 
-<!-- Stars Background -->
+
+<!-- Background Stars -->
 <div class="stars"></div>
 
 
-<!-- Navigation -->
-<header>
-    <div class="logo">
-        🚀 AstroCalc
-    </div>
 
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#features">Features</a>
-        <a href="#calculator">Calculator</a>
-        <a href="#about">About</a>
-    </nav>
+<!-- Navbar -->
+
+<header>
+
+<div class="logo">
+🚀 AstroCalc
+</div>
+
+
+<nav>
+<a href="#home">Home</a>
+<a href="#features">Features</a>
+<a href="#calculator">Calculator</a>
+<a href="#about">About</a>
+</nav>
+
 </header>
 
 
 
+
+
 <!-- Hero Section -->
+
 <section id="home" class="hero">
 
-    <div class="hero-content">
 
-        <h1>
-            Calculate Beyond The Universe 🌌
-        </h1>
+<div>
 
-        <p>
-            A futuristic space calculator with planets,
-            astronaut assistant and cosmic experience.
-        </p>
-
-        <button onclick="scrollToCalculator()">
-            Launch Calculator 🚀
-        </button>
-
-    </div>
+<h1>
+Calculate Beyond The Universe 🌌
+</h1>
 
 
-    <!-- Floating Planets -->
-    <div class="planet earth" onclick="changePlanet()">
-        🌍
-    </div>
+<p>
+A futuristic space calculator powered by cosmic technology.
+</p>
 
-    <div class="planet mars">
-        🔴
-    </div>
 
-    <div class="planet jupiter">
-        🪐
-    </div>
+<button onclick="scrollToCalculator()">
+Launch Calculator 🚀
+</button>
+
+
+</div>
+
+
+
+<div class="planet earth">
+🌍
+</div>
+
+
+<div class="planet mars">
+🔴
+</div>
+
+
+<div class="planet jupiter">
+🪐
+</div>
 
 
 </section>
@@ -70,57 +88,81 @@
 
 
 
-<!-- Astronaut Section -->
+
+
+<!-- Astronaut -->
+
 <section class="astronaut">
 
-    <div class="astronaut-img">
-        👨‍🚀
-    </div>
 
-    <div>
-        <h2>Hello Explorer 👋</h2>
+<div class="astronaut-img">
+👨‍🚀
+</div>
 
-        <p>
-            Ready to calculate your cosmic numbers?
-        </p>
-    </div>
+
+<div>
+
+<h2 id="greeting">
+Hello Explorer 👋
+</h2>
+
+
+<p>
+Your cosmic calculation journey begins here.
+</p>
+
+
+</div>
+
 
 </section>
+
+
 
 
 
 
 
 <!-- Features -->
+
+
 <section id="features">
 
-<h2>Space Features 🚀</h2>
+
+<h2>
+Space Features ✨
+</h2>
+
 
 <div class="feature-box">
 
-    <div>
-        🌎
-        <h3>Interactive Planet</h3>
-        <p>Click planet and change its cosmic color.</p>
-    </div>
+
+<div>
+🎨
+<h3>Color Changer</h3>
+<p>Change calculator button colors.</p>
+</div>
 
 
-    <div>
-        👨‍🚀
-        <h3>Astronaut Guide</h3>
-        <p>Your space assistant welcomes you.</p>
-    </div>
+<div>
+➕
+<h3>Addition Calculator</h3>
+<p>Perform cosmic calculations.</p>
+</div>
 
 
-    <div>
-        🧮
-        <h3>Futuristic Calculator</h3>
-        <p>Modern holographic calculation panel.</p>
-    </div>
+<div>
+📱
+<h3>Responsive</h3>
+<p>Works on all devices.</p>
+</div>
+
 
 </div>
 
+
 </section>
+
 
 
 
@@ -128,49 +170,59 @@
 
 
 <!-- Calculator -->
+
+
 <section id="calculator">
 
 
-<h2>Cosmic Calculator 🪐</h2>
+<h2>
+Cosmic Calculator 🪐
+</h2>
+
 
 
 <div class="calculator">
 
-<input type="text" id="display" readonly>
+
+<input id="display" readonly>
+
 
 
 <div class="buttons">
 
+
 <button class="clear">C</button>
 <button class="delete">⌫</button>
-<button>%</button>
-<button class="operator">/</button>
+<button class="color">🎨</button>
+<button class="operator">+</button>
+
 
 
 <button class="number">7</button>
 <button class="number">8</button>
 <button class="number">9</button>
-<button class="operator">*</button>
 
 
 <button class="number">4</button>
 <button class="number">5</button>
 <button class="number">6</button>
-<button class="operator">-</button>
 
 
 <button class="number">1</button>
 <button class="number">2</button>
 <button class="number">3</button>
-<button class="operator">+</button>
 
 
 <button class="number zero">0</button>
-<button>.</button>
-<button class="equal">=</button>
+
+<button class="equal">
+=
+</button>
+
 
 
 </div>
+
 
 </div>
 
@@ -184,32 +236,49 @@
 
 
 <!-- About -->
+
+
 <section id="about">
 
-<h2>About AstroCalc 🌌</h2>
+
+<h2>
+About AstroCalc 🌌
+</h2>
+
 
 <p>
-AstroCalc is a futuristic space-themed calculator
-designed with modern UI, animations and interactive
-planet experience.
+AstroCalc is a modern space-themed calculator
+designed with HTML, CSS and JavaScript.
 </p>
+
 
 </section>
 
 
 
+
+
+<!-- Back To Top -->
+
+<button id="topBtn">
+⬆️
+</button>
+
+
+
+
+
 <footer>
 
-<p>
 © 2026 AstroCalc | Explore The Universe 🚀
-</p>
 
 </footer>
 
 
 
-
 <script src="script.js"></script>
 
+
 </body>
-</html>
+
+    </html>
