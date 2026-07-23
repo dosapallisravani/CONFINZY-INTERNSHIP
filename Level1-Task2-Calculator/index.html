@@ -1,344 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AstroCalc | Space Calculator</title>
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <title>JavaScript Interactive Playground</title>
-
-    <!-- CSS -->
-
-    <link rel="stylesheet"
-          href="style.css">
-
-    <!-- Google Font -->
-
-    <link rel="preconnect"
-          href="https://fonts.googleapis.com">
-
-    <link rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-          rel="stylesheet">
-
-    <!-- Font Awesome -->
-
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!--==========================
-HEADER
-===========================-->
+<!-- Stars Background -->
+<div class="stars"></div>
 
-<header class="header">
 
-    <div class="container">
-
-        <div class="logo">
-
-            <i class="fa-solid fa-code"></i>
-
-            <h2>JavaScript Playground</h2>
-
-        </div>
-
-        <nav>
-
-            <ul>
-
-                <li><a href="#home">Home</a></li>
-
-                <li><a href="#features">Features</a></li>
-
-                <li><a href="#calculator">Calculator</a></li>
-
-            </ul>
-
-        </nav>
-
+<!-- Navigation -->
+<header>
+    <div class="logo">
+        🚀 AstroCalc
     </div>
 
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#features">Features</a>
+        <a href="#calculator">Calculator</a>
+        <a href="#about">About</a>
+    </nav>
 </header>
 
-<!--==========================
-HERO SECTION
-===========================-->
 
-<section class="hero" id="home">
 
-    <div class="container hero-content">
+<!-- Hero Section -->
+<section id="home" class="hero">
 
-        <span class="tag">
-            COGNIFYZ TECHNOLOGIES
-        </span>
+    <div class="hero-content">
 
         <h1>
-
-            JavaScript
-
-            <span>Interactive Playground</span>
-
+            Calculate Beyond The Universe 🌌
         </h1>
 
         <p>
-
-            A modern JavaScript mini project
-            demonstrating DOM Manipulation,
-            Button Interaction, Greeting Alert,
-            and Calculator functionality.
-
+            A futuristic space calculator with planets,
+            astronaut assistant and cosmic experience.
         </p>
 
-        <a href="#features"
-           class="hero-btn">
-
-            Explore Project
-
-            <i class="fa-solid fa-arrow-down"></i>
-
-        </a>
-
-    </div>
-
-</section>
-
-<!--==========================
-FEATURES SECTION
-===========================-->
-
-<section class="features"
-         id="features">
-
-<div class="container">
-
-<div class="section-title">
-
-<h2>Interactive Features</h2>
-
-<p>
-
-Three JavaScript mini tasks combined
-into one beautiful responsive website.
-
-</p>
-
-</div>
-
-<div class="feature-grid">
-
-<!-- Button Color Change -->
-
-<div class="card">
-
-<i class="fa-solid fa-palette"></i>
-
-<h3>Color Changer</h3>
-
-<p>
-
-Click the button below to
-change its color dynamically.
-
-</p>
-
-<button id="colorBtn"
-class="action-btn">
-
-Change My Color
-
-</button>
-
-</div>
-<!--==========================
-GREETING CARD
-===========================-->
-
-<div class="card">
-
-    <i class="fa-solid fa-sun"></i>
-
-    <h3>Greeting Alert</h3>
-
-    <p>
-
-        Click the button to receive
-        a greeting based on your
-        current time.
-
-    </p>
-
-    <button id="greetBtn"
-            class="action-btn">
-
-        Show Greeting
-
-    </button>
-
-</div>
-
-<!-- Calculator -->
-
-<div class="card"
-     id="calculator">
-
-    <i class="fa-solid fa-calculator"></i>
-
-    <h3>Basic Calculator</h3>
-
-    <p>
-
-        Enter two numbers
-        and calculate their sum.
-
-    </p>
-
-    <div class="calculator">
-
-        <input type="number"
-               id="num1"
-               placeholder="First Number">
-
-        <input type="number"
-               id="num2"
-               placeholder="Second Number">
-
-        <button id="addBtn"
-                class="action-btn">
-
-            Add Numbers
-
+        <button onclick="scrollToCalculator()">
+            Launch Calculator 🚀
         </button>
 
-        <h4>
-
-            Result :
-
-            <span id="result">
-
-                0
-
-            </span>
-
-        </h4>
-
     </div>
 
-</div>
 
-</div>
+    <!-- Floating Planets -->
+    <div class="planet earth" onclick="changePlanet()">
+        🌍
+    </div>
+
+    <div class="planet mars">
+        🔴
+    </div>
+
+    <div class="planet jupiter">
+        🪐
+    </div>
+
+
+</section>
+
+
+
+
+<!-- Astronaut Section -->
+<section class="astronaut">
+
+    <div class="astronaut-img">
+        👨‍🚀
+    </div>
+
+    <div>
+        <h2>Hello Explorer 👋</h2>
+
+        <p>
+            Ready to calculate your cosmic numbers?
+        </p>
+    </div>
+
+</section>
+
+
+
+
+
+<!-- Features -->
+<section id="features">
+
+<h2>Space Features 🚀</h2>
+
+<div class="feature-box">
+
+    <div>
+        🌎
+        <h3>Interactive Planet</h3>
+        <p>Click planet and change its cosmic color.</p>
+    </div>
+
+
+    <div>
+        👨‍🚀
+        <h3>Astronaut Guide</h3>
+        <p>Your space assistant welcomes you.</p>
+    </div>
+
+
+    <div>
+        🧮
+        <h3>Futuristic Calculator</h3>
+        <p>Modern holographic calculation panel.</p>
+    </div>
 
 </div>
 
 </section>
 
-<!--==========================
-ABOUT JAVASCRIPT
-===========================-->
 
-<section class="about">
 
-    <div class="container">
 
-        <div class="about-content">
 
-            <h2>
 
-                Learn JavaScript
-                Through Practice
+<!-- Calculator -->
+<section id="calculator">
 
-            </h2>
 
-            <p>
+<h2>Cosmic Calculator 🪐</h2>
 
-                This project demonstrates
-                the fundamentals of JavaScript
-                including DOM Manipulation,
-                Event Handling, Dynamic Styling,
-                Conditional Statements and Basic
-                Arithmetic Operations.
 
-            </p>
+<div class="calculator">
 
-        </div>
+<input type="text" id="display" readonly>
 
-    </div>
 
-    </section>
-    <!--==========================
-FOOTER
-===========================-->
+<div class="buttons">
+
+<button class="clear">C</button>
+<button class="delete">⌫</button>
+<button>%</button>
+<button class="operator">/</button>
+
+
+<button class="number">7</button>
+<button class="number">8</button>
+<button class="number">9</button>
+<button class="operator">*</button>
+
+
+<button class="number">4</button>
+<button class="number">5</button>
+<button class="number">6</button>
+<button class="operator">-</button>
+
+
+<button class="number">1</button>
+<button class="number">2</button>
+<button class="number">3</button>
+<button class="operator">+</button>
+
+
+<button class="number zero">0</button>
+<button>.</button>
+<button class="equal">=</button>
+
+
+</div>
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<!-- About -->
+<section id="about">
+
+<h2>About AstroCalc 🌌</h2>
+
+<p>
+AstroCalc is a futuristic space-themed calculator
+designed with modern UI, animations and interactive
+planet experience.
+</p>
+
+</section>
+
+
 
 <footer>
 
-    <div class="container footer-content">
-
-        <h3>JavaScript Interactive Playground</h3>
-
-        <p>
-
-            Developed as part of the
-            <strong>Cognifyz Technologies Web Development Internship</strong>
-
-        </p>
-
-        <div class="footer-icons">
-
-            <a href="#">
-                <i class="fa-brands fa-html5"></i>
-            </a>
-
-            <a href="#">
-                <i class="fa-brands fa-css3-alt"></i>
-            </a>
-
-            <a href="#">
-                <i class="fa-brands fa-js"></i>
-            </a>
-
-        </div>
-
-        <p class="copyright">
-
-            © 2026 All Rights Reserved
-
-            <br>
-
-            Designed & Developed by
-
-            <strong>Sravani Dosapalli</strong>
-
-        </p>
-
-    </div>
+<p>
+© 2026 AstroCalc | Explore The Universe 🚀
+</p>
 
 </footer>
 
-<!--==========================
-BACK TO TOP
-===========================-->
 
-<button id="topBtn">
 
-    <i class="fa-solid fa-arrow-up"></i>
-
-</button>
-
-<!--==========================
-JAVASCRIPT
-===========================-->
 
 <script src="script.js"></script>
 
 </body>
-
 </html>
