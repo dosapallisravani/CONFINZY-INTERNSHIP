@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>JavaScript Interactive Playground</title>
+
+    <!-- CSS -->
+
+    <link rel="stylesheet"
+          href="style.css">
+
+    <!-- Google Font -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<!--==========================
+HEADER
+===========================-->
+
+<header class="header">
+
+    <div class="container">
+
+        <div class="logo">
+
+            <i class="fa-solid fa-code"></i>
+
+            <h2>JavaScript Playground</h2>
+
+        </div>
+
+        <nav>
+
+            <ul>
+
+                <li><a href="#home">Home</a></li>
+
+                <li><a href="#features">Features</a></li>
+
+                <li><a href="#calculator">Calculator</a></li>
+
+            </ul>
+
+        </nav>
+
+    </div>
+
+</header>
+
+<!--==========================
+HERO SECTION
+===========================-->
+
+<section class="hero" id="home">
+
+    <div class="container hero-content">
+
+        <span class="tag">
+            COGNIFYZ TECHNOLOGIES
+        </span>
+
+        <h1>
+
+            JavaScript
+
+            <span>Interactive Playground</span>
+
+        </h1>
+
+        <p>
+
+            A modern JavaScript mini project
+            demonstrating DOM Manipulation,
+            Button Interaction, Greeting Alert,
+            and Calculator functionality.
+
+        </p>
+
+        <a href="#features"
+           class="hero-btn">
+
+            Explore Project
+
+            <i class="fa-solid fa-arrow-down"></i>
+
+        </a>
+
+    </div>
+
+</section>
+
+<!--==========================
+FEATURES SECTION
+===========================-->
+
+<section class="features"
+         id="features">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>Interactive Features</h2>
+
+<p>
+
+Three JavaScript mini tasks combined
+into one beautiful responsive website.
+
+</p>
+
+</div>
+
+<div class="feature-grid">
+
+<!-- Button Color Change -->
+
+<div class="card">
+
+<i class="fa-solid fa-palette"></i>
+
+<h3>Color Changer</h3>
+
+<p>
+
+Click the button below to
+change its color dynamically.
+
+</p>
+
+<button id="colorBtn"
+class="action-btn">
+
+Change My Color
+
+</button>
+
+</div>
+<!--==========================
+GREETING CARD
+===========================-->
+
+<div class="card">
+
+    <i class="fa-solid fa-sun"></i>
+
+    <h3>Greeting Alert</h3>
+
+    <p>
+
+        Click the button to receive
+        a greeting based on your
+        current time.
+
+    </p>
+
+    <button id="greetBtn"
+            class="action-btn">
+
+        Show Greeting
+
+    </button>
+
+</div>
+
+<!-- Calculator -->
+
+<div class="card"
+     id="calculator">
+
+    <i class="fa-solid fa-calculator"></i>
+
+    <h3>Basic Calculator</h3>
+
+    <p>
+
+        Enter two numbers
+        and calculate their sum.
+
+    </p>
+
+    <div class="calculator">
+
+        <input type="number"
+               id="num1"
+               placeholder="First Number">
+
+        <input type="number"
+               id="num2"
+               placeholder="Second Number">
+
+        <button id="addBtn"
+                class="action-btn">
+
+            Add Numbers
+
+        </button>
+
+        <h4>
+
+            Result :
+
+            <span id="result">
+
+                0
+
+            </span>
+
+        </h4>
+
+    </div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!--==========================
+ABOUT JAVASCRIPT
+===========================-->
+
+<section class="about">
+
+    <div class="container">
+
+        <div class="about-content">
+
+            <h2>
+
+                Learn JavaScript
+                Through Practice
+
+            </h2>
+
+            <p>
+
+                This project demonstrates
+                the fundamentals of JavaScript
+                including DOM Manipulation,
+                Event Handling, Dynamic Styling,
+                Conditional Statements and Basic
+                Arithmetic Operations.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+<!--==========================
+FOOTER
+===========================-->
+
+<footer>
+
+    <div class="container footer-content">
+
+        <h3>JavaScript Interactive Playground</h3>
+
+        <p>
+
+            Developed as part of the
+            <strong>Cognifyz Technologies Web Development Internship</strong>
+
+        </p>
+
+        <div class="footer-icons">
+
+            <a href="#">
+                <i class="fa-brands fa-html5"></i>
+            </a>
+
+            <a href="#">
+                <i class="fa-brands fa-css3-alt"></i>
+            </a>
+
+            <a href="#">
+                <i class="fa-brands fa-js"></i>
+            </a>
+
+        </div>
+
+        <p class="copyright">
+
+            © 2026 All Rights Reserved
+
+            <br>
+
+            Designed & Developed by
+
+            <strong>Sravani Dosapalli</strong>
+
+        </p>
+
+    </div>
+
+</footer>
+
+<!--==========================
+BACK TO TOP
+===========================-->
+
+<button id="topBtn">
+
+    <i class="fa-solid fa-arrow-up"></i>
+
+</button>
+
+<!--==========================
+JAVASCRIPT
+===========================-->
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
