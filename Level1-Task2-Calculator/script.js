@@ -8,18 +8,21 @@
 const display = document.getElementById("display");
 
 const numbers = document.querySelectorAll(".number");
-const operators = document.querySelectorAll(".operator");
 
-const clearBtn = document.querySelector(".clear");
-const deleteBtn = document.querySelector(".delete");
-const equalBtn = document.querySelector(".equal");
+const operator = document.querySelector(".operator");
+
+const equal = document.querySelector(".equal");
+
+const clear = document.querySelector(".clear");
+
+const del = document.querySelector(".delete");
+
+const colorBtn = document.querySelector(".color");
 
 
 
-let currentInput = "";
-let operator = "";
 let firstNumber = "";
-
+let isAdding = false;
 
 
 
@@ -29,9 +32,7 @@ numbers.forEach(button => {
 
     button.addEventListener("click",()=>{
 
-        currentInput += button.innerText;
-
-        display.value = currentInput;
+        display.value += button.innerText;
 
     });
 
@@ -40,106 +41,60 @@ numbers.forEach(button => {
 
 
 
+// Addition Operator
 
-// Operator Buttons
+operator.addEventListener("click",()=>{
 
-operators.forEach(button => {
 
-    button.addEventListener("click",()=>{
+    firstNumber = Number(display.value);
 
-        firstNumber = currentInput;
+    display.value = "";
 
-        operator = button.innerText;
+    isAdding = true;
 
-        currentInput = "";
-
-    });
 
 });
-
 
 
 
 
 // Equal Button
 
-equalBtn.addEventListener("click",()=>{
+equal.addEventListener("click",()=>{
 
 
-    let secondNumber = currentInput;
+    if(isAdding){
 
-    let result;
-
-
-    switch(operator){
+        let secondNumber = Number(display.value);
 
 
-        case "+":
-            result = Number(firstNumber)+Number(secondNumber);
-            break;
+        let result = firstNumber + secondNumber;
 
 
-        case "-":
-            result = Number(firstNumber)-Number(secondNumber);
-            break;
+        display.value = result;
 
 
-        case "*":
-            result = Number(firstNumber)*Number(secondNumber);
-            break;
-
-
-        case "/":
-            result = Number(firstNumber)/Number(secondNumber);
-            break;
-
-
-        default:
-            result="Error";
+        isAdding = false;
 
     }
 
 
-    display.value=result;
-
-    currentInput=result;
-
-
 });
 
 
 
 
 
+// Clear
 
+clear.addEventListener("click",()=>{
 
-// Clear Button
-
-clearBtn.addEventListener("click",()=>{
 
     display.value="";
 
-    currentInput="";
-
     firstNumber="";
 
-    operator="";
-
-});
-
-
-
-
-
-
-// Delete Button
-
-deleteBtn.addEventListener("click",()=>{
-
-
-    currentInput=currentInput.slice(0,-1);
-
-    display.value=currentInput;
+    isAdding=false;
 
 
 });
@@ -148,64 +103,134 @@ deleteBtn.addEventListener("click",()=>{
 
 
 
+// Delete
+
+del.addEventListener("click",()=>{
+
+
+    display.value =
+    display.value.slice(0,-1);
+
+
+});
 
 
 
-// Planet Color Change Feature
 
 
-const planet = document.querySelector(".earth");
 
 
-let colors=[
+// 🎨 Button Color Changer
 
-"🌍",
-"🔴",
-"🟣",
-"🟢",
-"🪐"
+
+let colors = [
+
+"#00f7ff",
+"#ff0055",
+"#8a2be2",
+"#00ff88",
+"#ff9900"
 
 ];
 
 
-let index=0;
+let colorIndex = 0;
 
 
 
-function changePlanet(){
+colorBtn.addEventListener("click",()=>{
 
 
-    index++;
+    colorIndex++;
 
-    if(index>=colors.length){
 
-        index=0;
+    if(colorIndex >= colors.length){
+
+        colorIndex = 0;
 
     }
 
 
-    planet.innerHTML=colors[index];
+
+    document.querySelectorAll(".buttons button")
+    .forEach(btn=>{
 
 
-    planet.style.transform="scale(1.3)";
+        btn.style.background = colors[colorIndex];
 
 
-    setTimeout(()=>{
+        btn.style.color="black";
 
-        planet.style.transform="scale(1)";
 
-    },300);
+    });
 
+
+
+});
+
+
+
+
+
+
+
+
+// 👨‍🚀 Time Based Greeting Alert
+
+
+let hour = new Date().getHours();
+
+
+let message;
+
+
+
+if(hour < 12){
+
+    message="Good Morning Explorer 🌞🚀";
+
+}
+
+else if(hour < 17){
+
+    message="Good Afternoon Astronaut ☀️🪐";
+
+}
+
+else if(hour < 21){
+
+    message="Good Evening Space Traveler 🌆🚀";
+
+}
+
+else{
+
+    message="Good Night Galaxy Explorer 🌙✨";
 
 }
 
 
 
+window.onload = ()=>{
+
+
+    alert(message);
+
+
+    document.getElementById("greeting")
+    .innerHTML = message;
+
+
+};
 
 
 
 
-// Launch Button Scroll
+
+
+
+
+// 🚀 Launch Button Smooth Scroll
 
 
 function scrollToCalculator(){
@@ -228,41 +253,44 @@ function scrollToCalculator(){
 
 
 
-// Astronaut Greeting Animation
+
+// ⬆️ Back To Top Button
 
 
-const astronautText=document.querySelector(".astronaut p");
-
-
-let messages=[
-
-"Ready to calculate your cosmic numbers? 🚀",
-
-"Welcome Space Explorer 🌌",
-
-"Your universe of calculations begins now ✨"
-
-];
-
-
-let msgIndex=0;
+const topBtn = document.getElementById("topBtn");
 
 
 
-setInterval(()=>{
+window.addEventListener("scroll",()=>{
 
 
-    astronautText.innerHTML=messages[msgIndex];
+    if(window.scrollY > 300){
 
+        topBtn.style.display="block";
 
-    msgIndex++;
+    }
 
+    else{
 
-    if(msgIndex>=messages.length){
-
-        msgIndex=0;
+        topBtn.style.display="none";
 
     }
 
 
-},3000);
+});
+
+
+
+topBtn.addEventListener("click",()=>{
+
+
+    window.scrollTo({
+
+        top:0,
+
+        behavior:"smooth"
+
+    });
+
+
+});
