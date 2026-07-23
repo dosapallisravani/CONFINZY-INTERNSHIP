@@ -1,89 +1,92 @@
-# Aurevia - Luxury Interior Design Studio
+AUREX – Premium Men's Grooming Landing Page
 
-A modern and elegant luxury interior design landing page created as part of the **Confynz Web Development Internship**.
+🌟 Overview
 
-## 📌 Project Overview
+AUREX is a modern, responsive premium men's grooming landing page designed to showcase luxury skincare and grooming products with an elegant user interface. The project focuses on creating a visually appealing, mobile-friendly, and interactive website using front-end web technologies.
 
-Aurevia is a premium interior design studio website that showcases luxury spaces, creative designs, and modern architectural solutions through a clean and responsive user interface.
+---
 
-## ✨ Features
+🚀 Live Demo
 
-- Responsive luxury landing page
-- Modern navigation bar
-- Hero section with elegant design
-- About Aurevia section
-- Interior design services
-- Featured projects gallery
-- Design process section
-- Client testimonials
-- Contact form
-- Smooth scrolling animations
-
-## 🛠️ Technologies Used
-
-- HTML5
-- CSS3
-- JavaScript
-
-## 📂 Project Structure
-# Aurevia - Luxury Interior Design Studio
-
-A modern and elegant luxury interior design landing page created as part of the **Confynz Web Development Internship**.
-
-## 📌 Project Overview
-
-Aurevia is a premium interior design studio website that showcases luxury spaces, creative designs, and modern architectural solutions through a clean and responsive user interface.
-
-## ✨ Features
-
-- Responsive luxury landing page
-- Modern navigation bar
-- Hero section with elegant design
-- About Aurevia section
-- Interior design services
-- Featured projects gallery
-- Design process section
-- Client testimonials
-- Contact form
-- Smooth scrolling animations
-
-## 🛠️ Technologies Used
-
-- HTML5
-- CSS3
-- JavaScript
-
-## 📂 Project Structure
-evel1-Task1-simple-website
-│
-├── index.html
-├── style.css
-├── script.js
-│
-└── images
-├── hero.jpg
-├── villa.jpg
-├── apartment.jpg
-├── office.jpg
-└── aurevia-logo.svg
-
-
-## 🌐 Live Website
-
-🔗 **Website Link:**  
+Website:
 https://dosapallisravani.github.io/CONFINZY-INTERNSHIP/Level1-Task1-simple-website/
-## 🎨 Design Concept
 
-**Brand Name:** Aurevia  
-**Category:** Luxury Interior Design Studio  
+---
 
-Aurevia focuses on creating timeless interior spaces by combining luxury, creativity, and modern design principles.
+✨ Features
 
-## 👩‍💻 Developed By
+- Premium luxury UI design
+- Fully responsive layout
+- Modern Hero Section
+- About Section
+- Product Showcase
+- Why Choose Us
+- Statistics Section
+- Customer Reviews
+- Newsletter Subscription
+- Contact Form
+- Smooth Scrolling Navigation
+- Back to Top Button
+- Professional Footer
+- Hover Effects & Animations
 
-**Sravani Dosapalli**
+---
 
-## 📅 Internship
+🛠 Technologies Used
 
-**Confynz Web Development Internship**  
-**Task:** Level 1 - Task 1 (Simple Website)
+- HTML5
+- CSS3
+- JavaScript
+- Google Fonts
+- Font Awesome Icons
+
+---
+
+📂 Project Structure
+
+AUREX/
+│── index.html
+│── style.css
+│── script.js
+│── images/
+│── README.md
+
+---
+
+🎯 Learning Outcomes
+
+- Responsive Web Design
+- Modern CSS Layouts
+- Flexbox & Grid
+- JavaScript DOM Manipulation
+- Interactive UI Design
+- Landing Page Development
+
+---
+
+📸 Screenshots
+
+Add screenshots of your homepage here.
+
+---
+
+👩‍💻 Developed By
+
+Sravani Dosapalli
+
+---
+
+🔗 Connect With Me
+
+LinkedIn:
+https://www.linkedin.com/in/sravani-dosapalli-619969385
+
+GitHub:
+https://github.com/dosapallisravani
+
+Email:
+dosapallisravani87@gmail.com
+
+---
+
+⭐ If you like this project, consider giving it a star on GitHub.
