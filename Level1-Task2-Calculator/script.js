@@ -1,7 +1,33 @@
-/*====================================
+/*=========================================
 COSMOVERSE
 SCRIPT.JS
-====================================*/
+PART 1
+=========================================*/
+
+/*==========================
+LOADER
+==========================*/
+
+window.addEventListener("load", () => {
+
+const loader = document.getElementById("loader");
+
+if(loader){
+
+loader.style.transition = "0.8s ease";
+loader.style.opacity = "0";
+loader.style.visibility = "hidden";
+
+setTimeout(()=>{
+
+loader.style.display = "none";
+
+},800);
+
+}
+
+});
+
 
 /*==========================
 CUSTOM CURSOR
@@ -9,6 +35,8 @@ CUSTOM CURSOR
 
 const dot = document.querySelector(".cursor-dot");
 const outline = document.querySelector(".cursor-outline");
+
+if(dot && outline){
 
 window.addEventListener("mousemove",(e)=>{
 
@@ -21,11 +49,13 @@ left:e.clientX+"px",
 top:e.clientY+"px"
 
 },{
-duration:300,
+duration:200,
 fill:"forwards"
 });
 
 });
+
+}
 
 
 /*==========================
@@ -35,23 +65,25 @@ PLANET COLOR CHANGER
 const planet = document.getElementById("planet");
 const colorBtn = document.getElementById("colorBtn");
 
-const colors = [
+const colors=[
 
 "hue-rotate(0deg)",
 
-"hue-rotate(70deg)",
+"hue-rotate(60deg)",
 
-"hue-rotate(140deg)",
+"hue-rotate(120deg)",
 
-"hue-rotate(210deg)",
+"hue-rotate(180deg)",
 
-"hue-rotate(280deg)",
+"hue-rotate(240deg)",
 
-"hue-rotate(340deg)"
+"hue-rotate(300deg)"
 
 ];
 
-let currentColor = 0;
+let currentColor=0;
+
+if(colorBtn && planet){
 
 colorBtn.addEventListener("click",()=>{
 
@@ -65,58 +97,63 @@ currentColor=0;
 
 planet.style.filter=
 
-colors[currentColor]+" drop-shadow(0 0 30px cyan)";
+`${colors[currentColor]} drop-shadow(0 0 25px cyan)`;
 
 });
 
+}
+
 
 /*==========================
-GREETING
+ASTRONAUT GREETING
 ==========================*/
 
-const greetBtn = document.getElementById("greetBtn");
+const greetBtn=document.getElementById("greetBtn");
+
+if(greetBtn){
 
 greetBtn.addEventListener("click",()=>{
 
 const hour=new Date().getHours();
 
-let message="";
+let greeting="";
 
 if(hour<12){
 
-message="🌞 Good Morning Commander!";
+greeting="🌞 Good Morning Commander!";
 
 }
 
 else if(hour<17){
 
-message="🚀 Good Afternoon Space Explorer!";
+greeting="🚀 Good Afternoon Space Explorer!";
 
 }
 
 else if(hour<21){
 
-message="🌇 Good Evening Astronaut!";
+greeting="🌇 Good Evening Astronaut!";
 
 }
 
 else{
 
-message="🌙 Good Night Galaxy Traveller!";
+greeting="🌙 Good Night Galaxy Traveller!";
 
 }
 
-alert(message);
+alert(greeting);
 
 });
 
+}
+
 
 /*==========================
-IMAGE FLOAT EFFECT
+FLOATING EFFECT
 ==========================*/
 
 const astronaut=document.querySelector(".astronaut");
-
 const rocket=document.querySelector(".rocket");
 
 setInterval(()=>{
@@ -139,13 +176,7 @@ rocket.classList.toggle("active");
 
 },2500);
 
-
-/*==========================
-CONSOLE
-==========================*/
-
-console.log("🚀 Welcome to CosmoVerse");
-console.log("Designed by Sravani Dosapalli");
+console.log("🚀 CosmoVerse Loaded Successfully");
 /*=========================================
 COSMOVERSE
 SCRIPT.JS
@@ -158,110 +189,108 @@ SPACE CALCULATOR
 
 const addBtn = document.getElementById("addBtn");
 
-addBtn.addEventListener("click", () => {
+if(addBtn){
 
-const num1 = parseFloat(document.getElementById("num1").value);
+addBtn.addEventListener("click",()=>{
 
-const num2 = parseFloat(document.getElementById("num2").value);
+const num1=parseFloat(document.getElementById("num1").value);
 
-const result = document.getElementById("result");
+const num2=parseFloat(document.getElementById("num2").value);
 
-if (isNaN(num1) || isNaN(num2)) {
+const result=document.getElementById("result");
 
-result.innerHTML = "⚠ Invalid";
+if(isNaN(num1)||isNaN(num2)){
 
-result.style.color = "#ff4d4d";
-
+result.innerHTML="Invalid";
+result.style.color="#ff4d4d";
 return;
 
 }
 
-result.innerHTML = num1 + num2;
-
-result.style.color = "#00E5FF";
+result.innerHTML=num1+num2;
+result.style.color="#00E5FF";
 
 });
 
+}
+
 
 /*==========================
-BACK TO TOP BUTTON
+BACK TO TOP
 ==========================*/
 
-const topBtn = document.getElementById("topBtn");
+const topBtn=document.getElementById("topBtn");
 
-window.addEventListener("scroll", () => {
+if(topBtn){
 
-if (window.scrollY > 500) {
+window.addEventListener("scroll",()=>{
 
-topBtn.style.display = "flex";
+if(window.scrollY>400){
 
-} else {
+topBtn.style.display="flex";
 
-topBtn.style.display = "none";
+}else{
+
+topBtn.style.display="none";
 
 }
 
 });
 
-topBtn.addEventListener("click", () => {
+topBtn.addEventListener("click",()=>{
 
 window.scrollTo({
 
-top: 0,
+top:0,
 
-behavior: "smooth"
+behavior:"smooth"
+
+});
 
 });
 
-});
+}
 
 
 /*==========================
-HEADER SCROLL EFFECT
+HEADER SCROLL
 ==========================*/
 
-const header = document.querySelector(".header");
+const header=document.querySelector(".header");
 
-window.addEventListener("scroll", () => {
+if(header){
 
-if (window.scrollY > 80) {
+window.addEventListener("scroll",()=>{
 
-header.style.background = "rgba(2,8,23,.95)";
+if(window.scrollY>80){
 
-header.style.backdropFilter = "blur(25px)";
+header.style.background="rgba(2,8,23,.92)";
+header.style.backdropFilter="blur(20px)";
+header.style.boxShadow="0 8px 30px rgba(0,0,0,.35)";
 
-header.style.boxShadow =
+}else{
 
-"0 10px 35px rgba(0,0,0,.35)";
-
-}
-
-else{
-
-header.style.background =
-
-"rgba(255,255,255,.08)";
-
-header.style.boxShadow = "none";
+header.style.background="rgba(255,255,255,.08)";
+header.style.boxShadow="none";
 
 }
 
 });
+
+}
 
 
 /*==========================
 SMOOTH SCROLL
 ==========================*/
 
-document.querySelectorAll('a[href^="#"]').forEach(link => {
+document.querySelectorAll('a[href^="#"]').forEach(link=>{
 
-link.addEventListener("click", function(e){
+link.addEventListener("click",(e)=>{
 
 e.preventDefault();
 
-const target =
-
-document.querySelector(this.getAttribute("href"));
+const target=document.querySelector(link.getAttribute("href"));
 
 if(target){
 
@@ -279,70 +308,61 @@ behavior:"smooth"
 
 
 /*==========================
-MISSION CARD HOVER
+SCROLL PROGRESS BAR
 ==========================*/
 
-const cards = document.querySelectorAll(".mission-card");
+const progress=document.createElement("div");
 
-cards.forEach(card=>{
+progress.style.position="fixed";
 
-card.addEventListener("mouseenter",()=>{
+progress.style.left="0";
 
-card.style.transform =
+progress.style.top="0";
 
-"translateY(-18px) scale(1.03)";
+progress.style.height="4px";
 
-});
+progress.style.width="0%";
 
-card.addEventListener("mouseleave",()=>{
+progress.style.zIndex="99999";
 
-card.style.transform =
+progress.style.background="linear-gradient(90deg,#00E5FF,#7C5CFF)";
 
-"translateY(0) scale(1)";
+document.body.appendChild(progress);
 
-});
+window.addEventListener("scroll",()=>{
+
+const totalHeight=document.documentElement.scrollHeight-window.innerHeight;
+
+const progressWidth=(window.scrollY/totalHeight)*100;
+
+progress.style.width=progressWidth+"%";
 
 });
 
 
 /*==========================
-SCROLL PROGRESS BAR
+MISSION CARD HOVER
 ==========================*/
 
-const progressBar = document.createElement("div");
+const cards=document.querySelectorAll(".mission-card");
 
-progressBar.style.position = "fixed";
+cards.forEach(card=>{
 
-progressBar.style.top = "0";
+card.addEventListener("mouseenter",()=>{
 
-progressBar.style.left = "0";
-
-progressBar.style.height = "4px";
-
-progressBar.style.background =
-
-"linear-gradient(90deg,#00E5FF,#7C5CFF)";
-
-progressBar.style.width = "0%";
-
-progressBar.style.zIndex = "99999";
-
-document.body.appendChild(progressBar);
-
-window.addEventListener("scroll",()=>{
-
-const totalHeight =
-
-document.documentElement.scrollHeight -
-window.innerHeight;
-
-const progress =
-
-(window.scrollY / totalHeight) * 100;
-
-progressBar.style.width = progress + "%";
+card.style.transform="translateY(-15px) scale(1.03)";
 
 });
+
+card.addEventListener("mouseleave",()=>{
+
+card.style.transform="translateY(0) scale(1)";
+
+});
+
+});
+
+console.log("✅ Part 2 Loaded Successfully");
 /*=========================================
 COSMOVERSE
 SCRIPT.JS
@@ -350,25 +370,25 @@ PART 3
 =========================================*/
 
 /*==========================
-SCROLL REVEAL ANIMATION
+SCROLL REVEAL
 ==========================*/
 
-const revealElements = document.querySelectorAll(
+const revealItems = document.querySelectorAll(
 ".mission-card, .stat-card, .about, .contact, .footer"
 );
 
-function reveal(){
+function revealElements() {
 
 const windowHeight = window.innerHeight;
 
-revealElements.forEach((element)=>{
+revealItems.forEach((item) => {
 
-const revealTop = element.getBoundingClientRect().top;
+const elementTop = item.getBoundingClientRect().top;
 
-if(revealTop < windowHeight - 120){
+if (elementTop < windowHeight - 120) {
 
-element.style.opacity="1";
-element.style.transform="translateY(0)";
+item.style.opacity = "1";
+item.style.transform = "translateY(0)";
 
 }
 
@@ -376,32 +396,32 @@ element.style.transform="translateY(0)";
 
 }
 
-revealElements.forEach((element)=>{
+revealItems.forEach((item) => {
 
-element.style.opacity="0";
-element.style.transform="translateY(60px)";
-element.style.transition="all .8s ease";
+item.style.opacity = "0";
+item.style.transform = "translateY(60px)";
+item.style.transition = "all .8s ease";
 
 });
 
-window.addEventListener("scroll",reveal);
+window.addEventListener("scroll", revealElements);
 
-reveal();
+revealElements();
 
 
 /*==========================
 CONTACT FORM
 ==========================*/
 
-const contactForm=document.querySelector("form");
+const contactForm = document.querySelector("form");
 
-if(contactForm){
+if (contactForm) {
 
-contactForm.addEventListener("submit",(e)=>{
+contactForm.addEventListener("submit", function (e) {
 
 e.preventDefault();
 
-alert("🚀 Message Sent Successfully!\n\nThank you for contacting CosmoVerse.");
+alert("🚀 Message Sent Successfully!");
 
 contactForm.reset();
 
@@ -411,24 +431,26 @@ contactForm.reset();
 
 
 /*==========================
-ROCKET CLICK EFFECT
+ROCKET ANIMATION
 ==========================*/
 
-const rocket=document.querySelector(".rocket");
+const rocket = document.querySelector(".rocket");
 
-if(rocket){
+if (rocket) {
 
-rocket.addEventListener("click",()=>{
+rocket.addEventListener("click", () => {
 
-rocket.style.transition=".8s";
+rocket.style.transition = ".8s";
 
-rocket.style.transform="translateY(-400px) rotate(-20deg)";
+rocket.style.transform =
+"translateY(-350px) rotate(-20deg)";
 
-setTimeout(()=>{
+setTimeout(() => {
 
-rocket.style.transform="translateY(0)";
+rocket.style.transform =
+"translateY(0) rotate(0deg)";
 
-},1000);
+}, 1000);
 
 });
 
@@ -439,71 +461,82 @@ rocket.style.transform="translateY(0)";
 PLANET PARALLAX
 ==========================*/
 
-const earth=document.querySelector(".earth-small");
+const earth = document.querySelector(".earth-small");
 
-window.addEventListener("mousemove",(e)=>{
+if (earth) {
 
-const x=(window.innerWidth/2-e.clientX)/50;
+window.addEventListener("mousemove", (e) => {
 
-const y=(window.innerHeight/2-e.clientY)/50;
+const x =
+(window.innerWidth / 2 - e.clientX) / 45;
 
-if(earth){
+const y =
+(window.innerHeight / 2 - e.clientY) / 45;
 
-earth.style.transform=`translate(${x}px,${y}px)`;
+earth.style.transform =
+`translate(${x}px, ${y}px)`;
+
+});
 
 }
 
-});
-
 
 /*==========================
-TWINKLING EFFECT
+TWINKLING STARS
 ==========================*/
 
-const stars=document.querySelectorAll(".stars,.stars2,.stars3");
+const stars = document.querySelectorAll(
+".stars,.stars2,.stars3"
+);
 
-setInterval(()=>{
+setInterval(() => {
 
-stars.forEach((star)=>{
+stars.forEach((star) => {
 
-star.style.opacity=Math.random()*0.5+0.2;
+star.style.opacity =
+Math.random() * 0.5 + 0.2;
 
 });
 
-},1000);
+}, 1000);
 
 
 /*==========================
 COUNTER ANIMATION
 ==========================*/
 
-const counters=document.querySelectorAll(".stat-card h2");
+const counters =
+document.querySelectorAll(".stat-card h2");
 
-counters.forEach(counter=>{
+counters.forEach((counter) => {
 
-const target=parseInt(counter.innerText);
+const target =
+parseInt(counter.innerText);
 
-let count=0;
+if (isNaN(target)) return;
 
-const updateCounter=()=>{
+let count = 0;
 
-const increment=target/80;
+function updateCounter() {
 
-if(count<target){
+const increment =
+Math.ceil(target / 60);
 
-count+=increment;
+if (count < target) {
 
-counter.innerText=Math.ceil(count)+"+";
+count += increment;
+
+counter.innerText = count;
 
 requestAnimationFrame(updateCounter);
 
-}else{
+} else {
 
-counter.innerText=target+"+";
+counter.innerText = target;
 
 }
 
-};
+}
 
 updateCounter();
 
@@ -514,13 +547,6 @@ updateCounter();
 WELCOME MESSAGE
 ==========================*/
 
-setTimeout(()=>{
-
-console.log("🌌 Welcome to CosmoVerse");
-
-console.log("🚀 Premium Space Theme Loaded Successfully");
-
-console.log("Designed & Developed by Sravani Dosapalli");
-
-},1000);
-
+console.log("🚀 CosmoVerse Loaded Successfully");
+console.log("🌌 Premium Space Experience Activated");
+console.log("Designed by Sravani Dosapalli");
