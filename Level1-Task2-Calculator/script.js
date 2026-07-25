@@ -1,296 +1,545 @@
-// =============================
-// ASTROCALC JAVASCRIPT
-// ==============================
+/*====================================
+COSMOVERSE
+SCRIPT.JS
+PART 1
+====================================*/
 
+/*==========================
+LOADER
+==========================*/
 
-// Calculator Elements
+window.addEventListener("load", () => {
 
-const display = document.getElementById("display");
+const loader = document.getElementById("loader");
 
-const numbers = document.querySelectorAll(".number");
+setTimeout(() => {
 
-const operator = document.querySelector(".operator");
+loader.style.opacity = "0";
+loader.style.visibility = "hidden";
 
-const equal = document.querySelector(".equal");
-
-const clear = document.querySelector(".clear");
-
-const del = document.querySelector(".delete");
-
-const colorBtn = document.querySelector(".color");
-
-
-
-let firstNumber = "";
-let isAdding = false;
-
-
-
-// Number Buttons
-
-numbers.forEach(button => {
-
-    button.addEventListener("click",()=>{
-
-        display.value += button.innerText;
-
-    });
+},1800);
 
 });
 
 
+/*==========================
+CUSTOM CURSOR
+==========================*/
 
+const dot = document.querySelector(".cursor-dot");
+const outline = document.querySelector(".cursor-outline");
 
-// Addition Operator
+window.addEventListener("mousemove",(e)=>{
 
-operator.addEventListener("click",()=>{
+dot.style.left = e.clientX + "px";
+dot.style.top = e.clientY + "px";
 
+outline.animate({
 
-    firstNumber = Number(display.value);
+left:e.clientX+"px",
+top:e.clientY+"px"
 
-    display.value = "";
-
-    isAdding = true;
-
+},{
+duration:300,
+fill:"forwards"
+});
 
 });
 
 
+/*==========================
+PLANET COLOR CHANGER
+==========================*/
 
+const planet = document.getElementById("planet");
+const colorBtn = document.getElementById("colorBtn");
 
-// Equal Button
+const colors = [
 
-equal.addEventListener("click",()=>{
+"hue-rotate(0deg)",
 
+"hue-rotate(70deg)",
 
-    if(isAdding){
+"hue-rotate(140deg)",
 
-        let secondNumber = Number(display.value);
+"hue-rotate(210deg)",
 
+"hue-rotate(280deg)",
 
-        let result = firstNumber + secondNumber;
-
-
-        display.value = result;
-
-
-        isAdding = false;
-
-    }
-
-
-});
-
-
-
-
-
-// Clear
-
-clear.addEventListener("click",()=>{
-
-
-    display.value="";
-
-    firstNumber="";
-
-    isAdding=false;
-
-
-});
-
-
-
-
-
-// Delete
-
-del.addEventListener("click",()=>{
-
-
-    display.value =
-    display.value.slice(0,-1);
-
-
-});
-
-
-
-
-
-
-
-// 🎨 Button Color Changer
-
-
-let colors = [
-
-"#00f7ff",
-"#ff0055",
-"#8a2be2",
-"#00ff88",
-"#ff9900"
+"hue-rotate(340deg)"
 
 ];
 
-
-let colorIndex = 0;
-
-
+let currentColor = 0;
 
 colorBtn.addEventListener("click",()=>{
 
+currentColor++;
 
-    colorIndex++;
+if(currentColor>=colors.length){
 
+currentColor=0;
 
-    if(colorIndex >= colors.length){
+}
 
-        colorIndex = 0;
+planet.style.filter=
 
-    }
-
-
-
-    document.querySelectorAll(".buttons button")
-    .forEach(btn=>{
-
-
-        btn.style.background = colors[colorIndex];
-
-
-        btn.style.color="black";
-
-
-    });
-
-
+colors[currentColor]+" drop-shadow(0 0 30px cyan)";
 
 });
 
 
+/*==========================
+GREETING
+==========================*/
 
+const greetBtn = document.getElementById("greetBtn");
 
+greetBtn.addEventListener("click",()=>{
 
+const hour=new Date().getHours();
 
+let message="";
 
+if(hour<12){
 
-// 👨‍🚀 Time Based Greeting Alert
-
-
-let hour = new Date().getHours();
-
-
-let message;
-
-
-
-if(hour < 12){
-
-    message="Good Morning Explorer 🌞🚀";
+message="🌞 Good Morning Commander!";
 
 }
 
-else if(hour < 17){
+else if(hour<17){
 
-    message="Good Afternoon Astronaut ☀️🪐";
+message="🚀 Good Afternoon Space Explorer!";
 
 }
 
-else if(hour < 21){
+else if(hour<21){
 
-    message="Good Evening Space Traveler 🌆🚀";
+message="🌇 Good Evening Astronaut!";
 
 }
 
 else{
 
-    message="Good Night Galaxy Explorer 🌙✨";
+message="🌙 Good Night Galaxy Traveller!";
 
 }
 
+alert(message);
+
+});
 
 
-window.onload = ()=>{
+/*==========================
+IMAGE FLOAT EFFECT
+==========================*/
 
+const astronaut=document.querySelector(".astronaut");
 
-    alert(message);
+const rocket=document.querySelector(".rocket");
 
+setInterval(()=>{
 
-    document.getElementById("greeting")
-    .innerHTML = message;
+if(astronaut){
 
-
-};
-
-
-
-
-
-
-
-
-// 🚀 Launch Button Smooth Scroll
-
-
-function scrollToCalculator(){
-
-
-    document
-    .getElementById("calculator")
-    .scrollIntoView({
-
-        behavior:"smooth"
-
-    });
-
+astronaut.classList.toggle("active");
 
 }
 
+},3000);
+
+setInterval(()=>{
+
+if(rocket){
+
+rocket.classList.toggle("active");
+
+}
+
+},2500);
 
 
+/*==========================
+CONSOLE
+==========================*/
+
+console.log("🚀 Welcome to CosmoVerse");
+console.log("Designed by Sravani Dosapalli");
+/*=========================================
+COSMOVERSE
+SCRIPT.JS
+PART 2
+=========================================*/
+
+/*==========================
+SPACE CALCULATOR
+==========================*/
+
+const addBtn = document.getElementById("addBtn");
+
+addBtn.addEventListener("click", () => {
+
+const num1 = parseFloat(document.getElementById("num1").value);
+
+const num2 = parseFloat(document.getElementById("num2").value);
+
+const result = document.getElementById("result");
+
+if (isNaN(num1) || isNaN(num2)) {
+
+result.innerHTML = "⚠ Invalid";
+
+result.style.color = "#ff4d4d";
+
+return;
+
+}
+
+result.innerHTML = num1 + num2;
+
+result.style.color = "#00E5FF";
+
+});
 
 
-
-
-
-// ⬆️ Back To Top Button
-
+/*==========================
+BACK TO TOP BUTTON
+==========================*/
 
 const topBtn = document.getElementById("topBtn");
 
+window.addEventListener("scroll", () => {
 
+if (window.scrollY > 500) {
+
+topBtn.style.display = "flex";
+
+} else {
+
+topBtn.style.display = "none";
+
+}
+
+});
+
+topBtn.addEventListener("click", () => {
+
+window.scrollTo({
+
+top: 0,
+
+behavior: "smooth"
+
+});
+
+});
+
+
+/*==========================
+HEADER SCROLL EFFECT
+==========================*/
+
+const header = document.querySelector(".header");
+
+window.addEventListener("scroll", () => {
+
+if (window.scrollY > 80) {
+
+header.style.background = "rgba(2,8,23,.95)";
+
+header.style.backdropFilter = "blur(25px)";
+
+header.style.boxShadow =
+
+"0 10px 35px rgba(0,0,0,.35)";
+
+}
+
+else{
+
+header.style.background =
+
+"rgba(255,255,255,.08)";
+
+header.style.boxShadow = "none";
+
+}
+
+});
+
+
+/*==========================
+SMOOTH SCROLL
+==========================*/
+
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+
+link.addEventListener("click", function(e){
+
+e.preventDefault();
+
+const target =
+
+document.querySelector(this.getAttribute("href"));
+
+if(target){
+
+target.scrollIntoView({
+
+behavior:"smooth"
+
+});
+
+}
+
+});
+
+});
+
+
+/*==========================
+MISSION CARD HOVER
+==========================*/
+
+const cards = document.querySelectorAll(".mission-card");
+
+cards.forEach(card=>{
+
+card.addEventListener("mouseenter",()=>{
+
+card.style.transform =
+
+"translateY(-18px) scale(1.03)";
+
+});
+
+card.addEventListener("mouseleave",()=>{
+
+card.style.transform =
+
+"translateY(0) scale(1)";
+
+});
+
+});
+
+
+/*==========================
+SCROLL PROGRESS BAR
+==========================*/
+
+const progressBar = document.createElement("div");
+
+progressBar.style.position = "fixed";
+
+progressBar.style.top = "0";
+
+progressBar.style.left = "0";
+
+progressBar.style.height = "4px";
+
+progressBar.style.background =
+
+"linear-gradient(90deg,#00E5FF,#7C5CFF)";
+
+progressBar.style.width = "0%";
+
+progressBar.style.zIndex = "99999";
+
+document.body.appendChild(progressBar);
 
 window.addEventListener("scroll",()=>{
 
+const totalHeight =
 
-    if(window.scrollY > 300){
+document.documentElement.scrollHeight -
+window.innerHeight;
 
-        topBtn.style.display="block";
+const progress =
 
-    }
+(window.scrollY / totalHeight) * 100;
 
-    else{
+progressBar.style.width = progress + "%";
 
-        topBtn.style.display="none";
+});
+/*=========================================
+COSMOVERSE
+SCRIPT.JS
+PART 3
+=========================================*/
 
-    }
+/*==========================
+SCROLL REVEAL ANIMATION
+==========================*/
 
+const revealElements = document.querySelectorAll(
+".mission-card, .stat-card, .about, .contact, .footer"
+);
+
+function reveal(){
+
+const windowHeight = window.innerHeight;
+
+revealElements.forEach((element)=>{
+
+const revealTop = element.getBoundingClientRect().top;
+
+if(revealTop < windowHeight - 120){
+
+element.style.opacity="1";
+element.style.transform="translateY(0)";
+
+}
+
+});
+
+}
+
+revealElements.forEach((element)=>{
+
+element.style.opacity="0";
+element.style.transform="translateY(60px)";
+element.style.transition="all .8s ease";
+
+});
+
+window.addEventListener("scroll",reveal);
+
+reveal();
+
+
+/*==========================
+CONTACT FORM
+==========================*/
+
+const contactForm=document.querySelector("form");
+
+if(contactForm){
+
+contactForm.addEventListener("submit",(e)=>{
+
+e.preventDefault();
+
+alert("🚀 Message Sent Successfully!\n\nThank you for contacting CosmoVerse.");
+
+contactForm.reset();
+
+});
+
+}
+
+
+/*==========================
+ROCKET CLICK EFFECT
+==========================*/
+
+const rocket=document.querySelector(".rocket");
+
+if(rocket){
+
+rocket.addEventListener("click",()=>{
+
+rocket.style.transition=".8s";
+
+rocket.style.transform="translateY(-400px) rotate(-20deg)";
+
+setTimeout(()=>{
+
+rocket.style.transform="translateY(0)";
+
+},1000);
+
+});
+
+}
+
+
+/*==========================
+PLANET PARALLAX
+==========================*/
+
+const earth=document.querySelector(".earth-small");
+
+window.addEventListener("mousemove",(e)=>{
+
+const x=(window.innerWidth/2-e.clientX)/50;
+
+const y=(window.innerHeight/2-e.clientY)/50;
+
+if(earth){
+
+earth.style.transform=`translate(${x}px,${y}px)`;
+
+}
 
 });
 
 
+/*==========================
+TWINKLING EFFECT
+==========================*/
 
-topBtn.addEventListener("click",()=>{
+const stars=document.querySelectorAll(".stars,.stars2,.stars3");
 
+setInterval(()=>{
 
-    window.scrollTo({
+stars.forEach((star)=>{
 
-        top:0,
-
-        behavior:"smooth"
-
-    });
-
+star.style.opacity=Math.random()*0.5+0.2;
 
 });
+
+},1000);
+
+
+/*==========================
+COUNTER ANIMATION
+==========================*/
+
+const counters=document.querySelectorAll(".stat-card h2");
+
+counters.forEach(counter=>{
+
+const target=parseInt(counter.innerText);
+
+let count=0;
+
+const updateCounter=()=>{
+
+const increment=target/80;
+
+if(count<target){
+
+count+=increment;
+
+counter.innerText=Math.ceil(count)+"+";
+
+requestAnimationFrame(updateCounter);
+
+}else{
+
+counter.innerText=target+"+";
+
+}
+
+};
+
+updateCounter();
+
+});
+
+
+/*==========================
+WELCOME MESSAGE
+==========================*/
+
+setTimeout(()=>{
+
+console.log("🌌 Welcome to CosmoVerse");
+
+console.log("🚀 Premium Space Theme Loaded Successfully");
+
+console.log("Designed & Developed by Sravani Dosapalli");
+
+},1000);
+
