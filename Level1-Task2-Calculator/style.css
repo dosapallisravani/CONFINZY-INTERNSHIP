@@ -1,634 +1,1537 @@
-/* ==========================
-   ASTROCALC SPACE UI
-========================== */
+/*==================================================
+COSMOVERSE
+PREMIUM SPACE WEBSITE
+STYLE.CSS
+==================================================*/
 
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&display=swap');
+/*==========================
+GOOGLE FONTS
+==========================*/
 
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/*==========================
+ROOT VARIABLES
+==========================*/
+
+:root{
+
+--primary:#7C5CFF;
+--secondary:#00E5FF;
+--dark:#020817;
+--card:rgba(255,255,255,.08);
+--white:#ffffff;
+--text:#CBD5E1;
+--shadow:0 15px 45px rgba(0,0,0,.45);
+
+}
+
+/*==========================
+RESET
+==========================*/
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Orbitron',sans-serif;
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+
 }
-
-
-html{
-    scroll-behavior:smooth;
-}
-
 
 body{
 
-    color:white;
-
-    background:
-    radial-gradient(circle at top,#30106b,#030014 65%);
-
-    overflow-x:hidden;
+font-family:'Poppins',sans-serif;
+background:#020817;
+color:#fff;
+overflow-x:hidden;
 
 }
 
+.container{
 
+width:90%;
+max-width:1300px;
+margin:auto;
 
-/* STAR BACKGROUND */
+}
+
+img{
+
+max-width:100%;
+display:block;
+
+}
+
+a{
+
+text-decoration:none;
+
+}
+
+ul{
+
+list-style:none;
+
+}
+
+/*==========================
+BACKGROUND
+==========================*/
+
+body{
+
+background:
+radial-gradient(circle at top,
+#14213d 0%,
+#081120 35%,
+#020817 100%);
+
+}
+
+/*==========================
+TWINKLING STARS
+==========================*/
+
+.stars,
+.stars2,
+.stars3{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+pointer-events:none;
+
+}
 
 .stars{
 
-    position:fixed;
+background:url(images/stars.png);
 
-    width:100%;
-    height:100%;
+animation:moveStars 120s linear infinite;
 
-    background-image:
-    radial-gradient(white 1px,transparent 1px);
-
-    background-size:45px 45px;
-
-    opacity:.4;
-
-    animation:starsMove 25s linear infinite;
-
-    z-index:-1;
+opacity:.5;
 
 }
 
+.stars2{
 
-@keyframes starsMove{
+background:url(images/stars2.png);
 
-    from{
-        background-position:0 0;
-    }
+animation:moveStars 180s linear infinite;
 
-    to{
-        background-position:500px 500px;
-    }
+opacity:.35;
 
 }
 
+.stars3{
 
+background:url(images/stars3.png);
 
+animation:moveStars 260s linear infinite;
 
-
-/* NAVBAR */
-
-
-header{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    padding:25px 8%;
-
-    position:sticky;
-
-    top:0;
-
-    backdrop-filter:blur(15px);
-
-    z-index:10;
+opacity:.25;
 
 }
 
+@keyframes moveStars{
 
+from{
+
+transform:translateY(0);
+
+}
+
+to{
+
+transform:translateY(-2000px);
+
+}
+
+}
+
+/*==========================
+LOADER
+==========================*/
+
+#loader{
+
+position:fixed;
+
+width:100%;
+height:100vh;
+
+background:#020817;
+
+display:flex;
+
+justify-content:center;
+align-items:center;
+
+flex-direction:column;
+
+z-index:99999;
+
+}
+
+.rocket-loader{
+
+font-size:70px;
+
+animation:rocket 1.5s infinite ease-in-out;
+
+}
+
+#loader h2{
+
+margin-top:20px;
+
+font-family:'Orbitron',sans-serif;
+
+letter-spacing:3px;
+
+}
+
+@keyframes rocket{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-20px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+
+/*==========================
+HEADER
+==========================*/
+
+.header{
+
+position:fixed;
+
+top:20px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+width:92%;
+
+z-index:999;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,.15);
+
+border-radius:60px;
+
+padding:16px 35px;
+
+}
+
+.header .container{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+}
 
 .logo{
 
-    font-size:28px;
+display:flex;
 
-    font-weight:800;
+align-items:center;
 
-    color:#00f7ff;
+gap:12px;
 
-    text-shadow:0 0 15px #00f7ff;
+font-family:'Orbitron',sans-serif;
 
-}
+font-size:28px;
 
-
-
-nav a{
-
-    color:white;
-
-    text-decoration:none;
-
-    margin-left:25px;
-
-    transition:.3s;
+color:#fff;
 
 }
 
+.logo i{
 
-nav a:hover{
+color:var(--secondary);
 
-    color:#00f7ff;
+font-size:30px;
 
 }
 
+.nav-links{
 
+display:flex;
 
+gap:35px;
 
+}
 
+.nav-links a{
 
+color:#fff;
 
-/* HERO */
+font-size:16px;
 
+font-weight:500;
+
+transition:.4s;
+
+}
+
+.nav-links a:hover{
+
+color:var(--secondary);
+
+}
+
+.nav-btn{
+
+padding:14px 30px;
+
+border-radius:50px;
+
+background:linear-gradient(135deg,
+var(--primary),
+var(--secondary));
+
+color:#fff;
+
+font-weight:600;
+
+transition:.4s;
+
+}
+
+.nav-btn:hover{
+
+transform:translateY(-5px);
+
+box-shadow:0 10px 30px rgba(0,229,255,.35);
+
+}
+
+.menu-btn{
+
+display:none;
+
+font-size:28px;
+
+cursor:pointer;
+
+}
+
+/*==========================
+HERO SECTION
+==========================*/
 
 .hero{
 
-    height:90vh;
+min-height:100vh;
 
-    display:flex;
+display:flex;
 
-    align-items:center;
+align-items:center;
 
-    justify-content:center;
-
-    text-align:center;
-
-    position:relative;
+padding-top:120px;
 
 }
 
+.hero-container{
 
+display:grid;
 
-.hero h1{
+grid-template-columns:1fr 1fr;
 
-    font-size:48px;
+align-items:center;
 
-    color:#00f7ff;
-
-    text-shadow:0 0 20px #00f7ff;
-
-}
-
-
-
-.hero p{
-
-    margin:20px;
-
-    color:#ddd;
+gap:80px;
 
 }
 
+.hero-tag{
 
+display:inline-block;
 
-.hero button{
+padding:10px 22px;
 
-    padding:15px 35px;
+background:rgba(0,229,255,.15);
 
-    border:none;
+border:1px solid rgba(0,229,255,.35);
 
-    border-radius:30px;
+border-radius:40px;
 
-    background:#00f7ff;
+color:var(--secondary);
 
-    cursor:pointer;
+margin-bottom:25px;
 
-    font-weight:bold;
-
-    box-shadow:0 0 25px #00f7ff;
+font-weight:600;
 
 }
 
+.hero-left h1{
 
+font-family:'Orbitron',sans-serif;
 
+font-size:72px;
 
+line-height:1.1;
 
+margin-bottom:25px;
 
+}
 
-/* PLANETS */
+.hero-left h1 span{
 
+display:block;
+
+color:var(--secondary);
+
+}
+
+.hero-left p{
+
+font-size:18px;
+
+line-height:1.9;
+
+color:var(--text);
+
+margin-bottom:40px;
+
+max-width:620px;
+
+}
+
+.hero-buttons{
+
+display:flex;
+
+gap:20px;
+
+}
+
+.primary-btn{
+
+padding:18px 40px;
+
+background:linear-gradient(135deg,
+var(--primary),
+var(--secondary));
+
+border-radius:50px;
+
+color:#fff;
+
+font-weight:600;
+
+display:flex;
+
+align-items:center;
+
+gap:10px;
+
+transition:.4s;
+
+}
+
+.primary-btn:hover{
+
+transform:translateY(-8px);
+
+box-shadow:0 15px 35px rgba(124,92,255,.35);
+
+}
+
+.secondary-btn{
+
+padding:18px 40px;
+
+border:2px solid rgba(255,255,255,.25);
+
+border-radius:50px;
+
+color:#fff;
+
+transition:.4s;
+
+}
+
+.secondary-btn:hover{
+
+background:#fff;
+
+color:#020817;
+
+}
+
+/*==========================
+HERO IMAGES
+==========================*/
+
+.hero-right{
+
+position:relative;
+
+height:650px;
+
+}
+
+.astronaut{
+
+position:absolute;
+
+width:360px;
+
+right:60px;
+
+top:80px;
+
+animation:float 5s ease-in-out infinite;
+
+}
+
+.rocket{
+
+position:absolute;
+
+width:170px;
+
+left:20px;
+
+bottom:80px;
+
+animation:rocketMove 6s infinite ease-in-out;
+
+}
 
 .planet{
 
-    position:absolute;
+position:absolute;
 
-    font-size:90px;
+width:240px;
 
-    cursor:pointer;
+right:0;
 
-    animation:float 5s infinite ease-in-out;
+bottom:0;
 
-}
-
-
-.earth{
-
-    right:15%;
-
-    top:20%;
+animation:rotatePlanet 30s linear infinite;
 
 }
-
-
-
-.mars{
-
-    left:15%;
-
-    bottom:20%;
-
-}
-
-
-
-.jupiter{
-
-    right:20%;
-
-    bottom:10%;
-
-}
-
-
-
 
 @keyframes float{
 
-    50%{
+50%{
 
-        transform:translateY(-30px);
-
-    }
+transform:translateY(-20px);
 
 }
 
+}
 
+@keyframes rocketMove{
 
+50%{
 
-
-
-
-
-/* ASTRONAUT */
-
-
-.astronaut{
-
-    padding:70px 10%;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    gap:40px;
-
-    text-align:center;
+transform:translateY(-35px);
 
 }
 
+}
 
+@keyframes rotatePlanet{
 
-.astronaut-img{
+100%{
 
-    font-size:120px;
-
-    animation:float 4s infinite;
+transform:rotate(360deg);
 
 }
 
+}
+/*==========================
+MISSION SECTION
+==========================*/
 
+.mission{
 
+padding:120px 0;
 
-
-
-
-/* COMMON SECTIONS */
-
-
-section{
-
-    padding:80px 10%;
-
-    text-align:center;
+position:relative;
 
 }
 
+.section-title{
 
+text-align:center;
 
-h2{
-
-    color:#00f7ff;
-
-    margin-bottom:35px;
-
-    font-size:35px;
+margin-bottom:70px;
 
 }
 
+.section-title span{
 
+display:inline-block;
 
+color:var(--secondary);
 
+font-weight:600;
 
+letter-spacing:3px;
 
-
-
-/* FEATURES */
-
-
-.feature-box{
-
-    display:flex;
-
-    justify-content:center;
-
-    gap:25px;
-
-    flex-wrap:wrap;
+margin-bottom:15px;
 
 }
 
+.section-title h2{
 
+font-family:'Orbitron',sans-serif;
 
-.feature-box div{
+font-size:48px;
 
-    width:260px;
-
-    padding:30px;
-
-    background:
-
-    rgba(255,255,255,.08);
-
-
-    border-radius:20px;
-
-    backdrop-filter:blur(15px);
-
-
-    box-shadow:
-
-    0 0 20px #00f7ff;
+margin-bottom:20px;
 
 }
 
+.section-title p{
 
+max-width:700px;
 
+margin:auto;
 
+font-size:18px;
 
+color:var(--text);
 
+line-height:1.8;
 
+}
 
-/* CALCULATOR */
+/*==========================
+MISSION GRID
+==========================*/
 
+.mission-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+
+gap:35px;
+
+}
+
+/*==========================
+MISSION CARD
+==========================*/
+
+.mission-card{
+
+background:var(--card);
+
+backdrop-filter:blur(20px);
+
+border:1px solid rgba(255,255,255,.12);
+
+border-radius:30px;
+
+padding:40px;
+
+text-align:center;
+
+transition:.45s;
+
+box-shadow:var(--shadow);
+
+overflow:hidden;
+
+position:relative;
+
+}
+
+.mission-card::before{
+
+content:"";
+
+position:absolute;
+
+top:-50%;
+
+left:-50%;
+
+width:200%;
+
+height:200%;
+
+background:linear-gradient(
+
+transparent,
+
+rgba(0,229,255,.15),
+
+transparent
+
+);
+
+transform:rotate(45deg);
+
+transition:.8s;
+
+opacity:0;
+
+}
+
+.mission-card:hover::before{
+
+opacity:1;
+
+animation:shine 1.5s linear;
+
+}
+
+@keyframes shine{
+
+0%{
+
+transform:translateX(-100%) rotate(45deg);
+
+}
+
+100%{
+
+transform:translateX(100%) rotate(45deg);
+
+}
+
+}
+
+.mission-card:hover{
+
+transform:translateY(-15px);
+
+border-color:var(--secondary);
+
+}
+
+/*==========================
+MISSION ICON
+==========================*/
+
+.mission-icon{
+
+font-size:70px;
+
+margin-bottom:20px;
+
+animation:float 5s infinite;
+
+}
+
+.mission-card h3{
+
+font-size:28px;
+
+margin-bottom:18px;
+
+font-family:'Orbitron',sans-serif;
+
+}
+
+.mission-card p{
+
+font-size:16px;
+
+color:var(--text);
+
+line-height:1.8;
+
+margin-bottom:30px;
+
+}
+
+/*==========================
+PLANET
+==========================*/
+
+.planet-box{
+
+display:flex;
+
+justify-content:center;
+
+margin-bottom:25px;
+
+}
+
+#planet{
+
+width:180px;
+
+transition:.6s;
+
+cursor:pointer;
+
+}
+
+#planet:hover{
+
+transform:rotate(20deg) scale(1.1);
+
+}
+
+/*==========================
+ASTRONAUT
+==========================*/
+
+.astronaut-box{
+
+display:flex;
+
+justify-content:center;
+
+margin-bottom:25px;
+
+}
+
+.astronaut-box img{
+
+width:180px;
+
+animation:float 6s infinite ease-in-out;
+
+}
+
+/*==========================
+BUTTON
+==========================*/
+
+.mission-btn{
+
+padding:16px 34px;
+
+border:none;
+
+border-radius:50px;
+
+background:linear-gradient(135deg,
+
+var(--primary),
+
+var(--secondary));
+
+color:#fff;
+
+font-size:16px;
+
+font-weight:600;
+
+cursor:pointer;
+
+transition:.4s;
+
+}
+
+.mission-btn:hover{
+
+transform:translateY(-6px);
+
+box-shadow:0 12px 35px rgba(0,229,255,.35);
+
+}
+
+/*==========================
+CALCULATOR
+==========================*/
 
 .calculator{
 
-
-    width:350px;
-
-    margin:auto;
-
-    padding:25px;
-
-
-    background:
-
-    rgba(255,255,255,.1);
-
-
-    border-radius:25px;
-
-
-    backdrop-filter:blur(20px);
-
-
-    box-shadow:
-
-    0 0 30px #00f7ff;
+margin-top:20px;
 
 }
 
+.calculator input{
 
+width:100%;
 
-#display{
+padding:16px;
 
+margin-bottom:18px;
 
-    width:100%;
+background:rgba(255,255,255,.08);
 
-    height:70px;
+border:1px solid rgba(255,255,255,.15);
 
+border-radius:15px;
 
-    background:#02000c;
+color:#fff;
 
+font-size:16px;
 
-    color:#00f7ff;
-
-
-    border:none;
-
-
-    border-radius:15px;
-
-
-    margin-bottom:20px;
-
-
-    font-size:30px;
-
-
-    padding:15px;
-
-
-    text-align:right;
+outline:none;
 
 }
 
+.calculator input::placeholder{
 
-
-
-
-.buttons{
-
-
-    display:grid;
-
-    grid-template-columns:repeat(4,1fr);
-
-    gap:15px;
+color:#b8c2d4;
 
 }
 
+.calculator h4{
 
+margin-top:25px;
 
+font-size:24px;
 
-.buttons button{
-
-
-    height:55px;
-
-
-    border:none;
-
-
-    border-radius:15px;
-
-
-    background:#111;
-
-
-    color:white;
-
-
-    font-size:20px;
-
-
-    cursor:pointer;
-
-
-    transition:.3s;
-
+font-family:'Orbitron',sans-serif;
 
 }
 
+#result{
 
-
-.buttons button:hover{
-
-
-    background:#00f7ff;
-
-    color:black;
-
-    transform:scale(1.1);
+color:var(--secondary);
 
 }
 
+/*==========================
+SPACE STATS
+==========================*/
 
+.stats{
 
-.zero{
-
-    grid-column:span 2;
+padding:100px 0;
 
 }
 
+.stats-grid{
 
+display:grid;
 
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 
+gap:30px;
 
+}
 
+.stat-card{
 
-/* BACK TO TOP */
+background:var(--card);
 
+backdrop-filter:blur(18px);
+
+border-radius:25px;
+
+padding:35px;
+
+text-align:center;
+
+border:1px solid rgba(255,255,255,.1);
+
+transition:.4s;
+
+}
+
+.stat-card:hover{
+
+transform:translateY(-10px);
+
+border-color:var(--secondary);
+
+}
+
+.stat-card h2{
+
+font-size:42px;
+
+font-family:'Orbitron',sans-serif;
+
+color:var(--secondary);
+
+margin-bottom:12px;
+
+}
+
+.stat-card p{
+
+color:var(--text);
+
+font-size:17px;
+
+}
+/*==========================
+ABOUT SECTION
+==========================*/
+
+.about{
+
+padding:120px 0;
+
+position:relative;
+
+}
+
+.about-container{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+align-items:center;
+
+gap:80px;
+
+}
+
+.about-left{
+
+display:flex;
+
+justify-content:center;
+
+}
+
+.earth{
+
+width:380px;
+
+animation:rotatePlanet 45s linear infinite;
+
+filter:drop-shadow(0 0 35px rgba(0,229,255,.35));
+
+}
+
+.about-right span{
+
+display:inline-block;
+
+color:var(--secondary);
+
+font-weight:600;
+
+letter-spacing:3px;
+
+margin-bottom:18px;
+
+}
+
+.about-right h2{
+
+font-family:'Orbitron',sans-serif;
+
+font-size:48px;
+
+margin-bottom:25px;
+
+line-height:1.3;
+
+}
+
+.about-right p{
+
+font-size:17px;
+
+line-height:1.9;
+
+color:var(--text);
+
+margin-bottom:30px;
+
+}
+
+.about-features{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:18px;
+
+}
+
+.about-features div{
+
+background:rgba(255,255,255,.06);
+
+padding:18px;
+
+border-radius:15px;
+
+border:1px solid rgba(255,255,255,.08);
+
+transition:.4s;
+
+}
+
+.about-features div:hover{
+
+transform:translateY(-8px);
+
+border-color:var(--secondary);
+
+}
+
+.about-features i{
+
+color:var(--secondary);
+
+margin-right:8px;
+
+}
+
+/*==========================
+CONTACT
+==========================*/
+
+.contact{
+
+padding:120px 0;
+
+}
+
+.contact-container{
+
+display:grid;
+
+grid-template-columns:1.2fr .8fr;
+
+gap:50px;
+
+}
+
+.contact-card{
+
+background:var(--card);
+
+backdrop-filter:blur(20px);
+
+padding:40px;
+
+border-radius:25px;
+
+border:1px solid rgba(255,255,255,.1);
+
+box-shadow:var(--shadow);
+
+}
+
+.contact-card input,
+
+.contact-card textarea{
+
+width:100%;
+
+padding:18px;
+
+margin-bottom:20px;
+
+border:none;
+
+outline:none;
+
+border-radius:15px;
+
+background:rgba(255,255,255,.08);
+
+color:#fff;
+
+font-size:16px;
+
+}
+
+.contact-card textarea{
+
+height:170px;
+
+resize:none;
+
+}
+
+.contact-card input::placeholder,
+
+.contact-card textarea::placeholder{
+
+color:#cbd5e1;
+
+}
+
+.contact-info{
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+gap:25px;
+
+}
+
+.contact-info div{
+
+display:flex;
+
+align-items:center;
+
+gap:18px;
+
+background:rgba(255,255,255,.06);
+
+padding:20px;
+
+border-radius:18px;
+
+border:1px solid rgba(255,255,255,.08);
+
+}
+
+.contact-info i{
+
+font-size:26px;
+
+color:var(--secondary);
+
+}
+
+/*==========================
+FOOTER
+==========================*/
+
+.footer{
+
+padding:80px 0 30px;
+
+background:#01050d;
+
+margin-top:80px;
+
+border-top:1px solid rgba(255,255,255,.08);
+
+}
+
+.footer-container{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+
+gap:40px;
+
+}
+
+.footer-logo h2{
+
+font-family:'Orbitron',sans-serif;
+
+margin-bottom:15px;
+
+}
+
+.footer-logo p{
+
+color:var(--text);
+
+line-height:1.8;
+
+}
+
+.footer-links h3,
+
+.footer-social h3{
+
+margin-bottom:18px;
+
+}
+
+.footer-links ul li{
+
+margin-bottom:12px;
+
+}
+
+.footer-links a{
+
+color:#fff;
+
+transition:.3s;
+
+}
+
+.footer-links a:hover{
+
+color:var(--secondary);
+
+}
+
+.social-icons{
+
+display:flex;
+
+gap:18px;
+
+margin-top:15px;
+
+}
+
+.social-icons a{
+
+width:50px;
+
+height:50px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+border-radius:50%;
+
+background:rgba(255,255,255,.08);
+
+color:#fff;
+
+font-size:20px;
+
+transition:.4s;
+
+}
+
+.social-icons a:hover{
+
+background:linear-gradient(135deg,var(--primary),var(--secondary));
+
+transform:translateY(-6px);
+
+}
+
+.copyright{
+
+margin-top:40px;
+
+text-align:center;
+
+color:#94a3b8;
+
+}
+
+/*==========================
+BACK TO TOP
+==========================*/
 
 #topBtn{
 
+position:fixed;
 
-    position:fixed;
+right:30px;
 
+bottom:30px;
 
-    right:25px;
+width:60px;
 
-    bottom:25px;
+height:60px;
 
+border:none;
 
-    width:50px;
+border-radius:50%;
 
-    height:50px;
+background:linear-gradient(135deg,var(--primary),var(--secondary));
 
+color:#fff;
 
-    border-radius:50%;
+font-size:22px;
 
+cursor:pointer;
 
-    border:none;
+display:none;
 
+z-index:999;
 
-    background:#00f7ff;
+box-shadow:var(--shadow);
 
-
-    cursor:pointer;
-
-
-    display:none;
-
-
-    font-size:20px;
-
+transition:.4s;
 
 }
 
+#topBtn:hover{
 
-
-
-
-
-footer{
-
-
-    text-align:center;
-
-    padding:25px;
-
-    background:#02000b;
+transform:translateY(-8px);
 
 }
 
+/*==========================
+CUSTOM CURSOR
+==========================*/
 
+.cursor-dot,
 
+.cursor-outline{
 
+position:fixed;
 
+pointer-events:none;
 
+border-radius:50%;
 
-/* RESPONSIVE */
+z-index:99999;
 
+transform:translate(-50%,-50%);
+
+}
+
+.cursor-dot{
+
+width:8px;
+
+height:8px;
+
+background:#00E5FF;
+
+}
+
+.cursor-outline{
+
+width:35px;
+
+height:35px;
+
+border:2px solid rgba(0,229,255,.5);
+
+transition:.08s;
+
+}
+
+/*==========================
+RESPONSIVE
+==========================*/
+
+@media(max-width:992px){
+
+.hero-container,
+
+.about-container,
+
+.contact-container{
+
+grid-template-columns:1fr;
+
+text-align:center;
+
+}
+
+.hero-right{
+
+height:500px;
+
+}
+
+.about-features{
+
+grid-template-columns:1fr;
+
+}
+
+}
 
 @media(max-width:768px){
 
+.nav-links,
 
-header{
+.nav-btn{
 
-    flex-direction:column;
-
-    gap:20px;
-
-}
-
-
-
-nav a{
-
-    margin:10px;
+display:none;
 
 }
 
+.menu-btn{
 
+display:block;
+
+}
 
 .hero h1{
 
-    font-size:32px;
+font-size:48px;
 
 }
 
+.section-title h2,
 
+.about-right h2{
 
-.planet{
-
-    font-size:55px;
+font-size:36px;
 
 }
 
+.hero-buttons{
 
+flex-direction:column;
+
+align-items:center;
+
+}
+
+.mission-grid,
+
+.stats-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.hero h1{
+
+font-size:36px;
+
+}
+
+.earth{
+
+width:260px;
+
+}
 
 .astronaut{
 
-    flex-direction:column;
+width:240px;
 
 }
 
+.planet{
 
-
-.calculator{
-
-    width:100%;
+width:170px;
 
 }
 
+.rocket{
 
+width:120px;
+
+}  
 }
