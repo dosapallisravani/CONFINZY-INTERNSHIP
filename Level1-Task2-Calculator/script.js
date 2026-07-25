@@ -1,7 +1,6 @@
 /*====================================
 COSMOVERSE
 SCRIPT.JS
-PART 1
 ====================================*/
 
 /*==========================
@@ -16,8 +15,7 @@ setTimeout(() => {
 
 loader.style.opacity = "0";
 loader.style.visibility = "hidden";
-
-},1800);
+loader.style.transition = "0.8s ease";
 
 });
 
