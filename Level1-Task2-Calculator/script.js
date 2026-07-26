@@ -13,13 +13,12 @@ const loader = document.getElementById("loader");
 
 if(loader){
 
-loader.style.transition = "0.8s ease";
-loader.style.opacity = "0";
-loader.style.visibility = "hidden";
+loader.style.opacity="0";
+loader.style.visibility="hidden";
 
 setTimeout(()=>{
 
-loader.style.display = "none";
+loader.style.display="none";
 
 },800);
 
@@ -32,15 +31,15 @@ loader.style.display = "none";
 CUSTOM CURSOR
 ==========================*/
 
-const dot = document.querySelector(".cursor-dot");
-const outline = document.querySelector(".cursor-outline");
+const dot=document.querySelector(".cursor-dot");
+const outline=document.querySelector(".cursor-outline");
 
 if(dot && outline){
 
 window.addEventListener("mousemove",(e)=>{
 
-dot.style.left = e.clientX + "px";
-dot.style.top = e.clientY + "px";
+dot.style.left=e.clientX+"px";
+dot.style.top=e.clientY+"px";
 
 outline.animate({
 
@@ -48,8 +47,10 @@ left:e.clientX+"px",
 top:e.clientY+"px"
 
 },{
+
 duration:200,
 fill:"forwards"
+
 });
 
 });
@@ -58,24 +59,19 @@ fill:"forwards"
 
 
 /*==========================
-PLANET COLOR CHANGER
+PLANET COLOR
 ==========================*/
 
-const planet = document.getElementById("planet");
-const colorBtn = document.getElementById("colorBtn");
+const planet=document.getElementById("planet");
+const colorBtn=document.getElementById("colorBtn");
 
 const colors=[
 
 "hue-rotate(0deg)",
-
 "hue-rotate(60deg)",
-
 "hue-rotate(120deg)",
-
 "hue-rotate(180deg)",
-
 "hue-rotate(240deg)",
-
 "hue-rotate(300deg)"
 
 ];
@@ -94,9 +90,7 @@ currentColor=0;
 
 }
 
-planet.style.filter=
-
-`${colors[currentColor]} drop-shadow(0 0 25px cyan)`;
+planet.style.filter=`${colors[currentColor]} drop-shadow(0 0 25px cyan)`;
 
 });
 
@@ -104,7 +98,7 @@ planet.style.filter=
 
 
 /*==========================
-ASTRONAUT GREETING
+GREETING
 ==========================*/
 
 const greetBtn=document.getElementById("greetBtn");
@@ -115,70 +109,37 @@ greetBtn.addEventListener("click",()=>{
 
 const hour=new Date().getHours();
 
-let greeting="";
+let msg="";
 
 if(hour<12){
 
-greeting="🌞 Good Morning Commander!";
+msg="🌞 Good Morning Commander!";
+
+}else if(hour<17){
+
+msg="🚀 Good Afternoon Space Explorer!";
+
+}else if(hour<21){
+
+msg="🌇 Good Evening Astronaut!";
+
+}else{
+
+msg="🌙 Good Night Galaxy Traveller!";
 
 }
 
-else if(hour<17){
-
-greeting="🚀 Good Afternoon Space Explorer!";
-
-}
-
-else if(hour<21){
-
-greeting="🌇 Good Evening Astronaut!";
-
-}
-
-else{
-
-greeting="🌙 Good Night Galaxy Traveller!";
-
-}
-
-alert(greeting);
+alert(msg);
 
 });
 
 }
 
-
-/*==========================
-FLOATING EFFECT
-==========================*/
-
-const astronaut=document.querySelector(".astronaut");
-const rocket=document.querySelector(".rocket");
-
-setInterval(()=>{
-
-if(astronaut){
-
-astronaut.classList.toggle("active");
-
-}
-
-},3000);
-
-setInterval(()=>{
-
-if(rocket){
-
-rocket.classList.toggle("active");
-
-}
-
-},2500);
-
-console.log("🚀 CosmoVerse Loaded Successfully");
+console.log("✅ Part 1 Loaded");
 /*=========================================
 COSMOVERSE
 SCRIPT.JS
+PART 2
 =========================================*/
 
 /*==========================
@@ -187,91 +148,94 @@ SPACE CALCULATOR
 
 const addBtn = document.getElementById("addBtn");
 
-if(addBtn){
+if (addBtn) {
 
-addBtn.addEventListener("click",()=>{
+addBtn.addEventListener("click", () => {
 
-const num1=parseFloat(document.getElementById("num1").value);
+const num1 = parseFloat(document.getElementById("num1").value);
 
-const num2=parseFloat(document.getElementById("num2").value);
+const num2 = parseFloat(document.getElementById("num2").value);
 
-const result=document.getElementById("result");
+const result = document.getElementById("result");
 
-if(isNaN(num1)||isNaN(num2)){
+if (isNaN(num1) || isNaN(num2)) {
 
-result.innerHTML="Invalid";
-result.style.color="#ff4d4d";
+result.innerHTML = "Invalid";
+result.style.color = "#ff4d4d";
+
 return;
 
 }
 
-result.innerHTML=num1+num2;
-result.style.color="#00E5FF";
+result.innerHTML = num1 + num2;
+result.style.color = "#00E5FF";
 
 });
 
 }
+
+
+/*==========================
+HEADER SCROLL EFFECT
+==========================*/
+
+const header = document.querySelector(".header");
+
+window.addEventListener("scroll", () => {
+
+if (!header) return;
+
+if (window.scrollY > 80) {
+
+header.style.background = "rgba(2,8,23,.92)";
+header.style.backdropFilter = "blur(20px)";
+header.style.boxShadow = "0 8px 30px rgba(0,0,0,.35)";
+
+}
+
+else {
+
+header.style.background = "rgba(255,255,255,.08)";
+header.style.boxShadow = "none";
+
+}
+
+});
 
 
 /*==========================
 BACK TO TOP
 ==========================*/
 
-const topBtn=document.getElementById("topBtn");
+const topBtn = document.getElementById("topBtn");
 
-if(topBtn){
+if (topBtn) {
 
-window.addEventListener("scroll",()=>{
+window.addEventListener("scroll", () => {
 
-if(window.scrollY>400){
+if (window.scrollY > 500) {
 
-topBtn.style.display="flex";
+topBtn.style.display = "flex";
 
-}else{
+}
 
-topBtn.style.display="none";
+else {
+
+topBtn.style.display = "none";
 
 }
 
 });
 
-topBtn.addEventListener("click",()=>{
+topBtn.addEventListener("click", () => {
 
 window.scrollTo({
 
-top:0,
+top: 0,
 
-behavior:"smooth"
-
-});
+behavior: "smooth"
 
 });
-
-}
-
-
-/*==========================
-HEADER SCROLL
-==========================*/
-
-const header=document.querySelector(".header");
-
-if(header){
-
-window.addEventListener("scroll",()=>{
-
-if(window.scrollY>80){
-
-header.style.background="rgba(2,8,23,.92)";
-header.style.backdropFilter="blur(20px)";
-header.style.boxShadow="0 8px 30px rgba(0,0,0,.35)";
-
-}else{
-
-header.style.background="rgba(255,255,255,.08)";
-header.style.boxShadow="none";
-
-}
 
 });
 
@@ -282,23 +246,46 @@ header.style.boxShadow="none";
 SMOOTH SCROLL
 ==========================*/
 
-document.querySelectorAll('a[href^="#"]').forEach(link=>{
+document.querySelectorAll('a[href^="#"]').forEach(link => {
 
-link.addEventListener("click",(e)=>{
+link.addEventListener("click", function (e) {
 
 e.preventDefault();
 
-const target=document.querySelector(link.getAttribute("href"));
+const target = document.querySelector(this.getAttribute("href"));
 
-if(target){
+if (target) {
 
 target.scrollIntoView({
 
-behavior:"smooth"
+behavior: "smooth"
 
 });
 
 }
+
+});
+
+});
+
+
+/*==========================
+MISSION CARD HOVER
+==========================*/
+
+const cards = document.querySelectorAll(".mission-card");
+
+cards.forEach(card => {
+
+card.addEventListener("mouseenter", () => {
+
+card.style.transform = "translateY(-15px) scale(1.03)";
+
+});
+
+card.addEventListener("mouseleave", () => {
+
+card.style.transform = "translateY(0) scale(1)";
 
 });
 
@@ -309,54 +296,27 @@ behavior:"smooth"
 SCROLL PROGRESS BAR
 ==========================*/
 
-const progress=document.createElement("div");
+const progressBar = document.createElement("div");
 
-progress.style.position="fixed";
+progressBar.style.position = "fixed";
+progressBar.style.top = "0";
+progressBar.style.left = "0";
+progressBar.style.width = "0%";
+progressBar.style.height = "4px";
+progressBar.style.zIndex = "99999";
+progressBar.style.background = "linear-gradient(90deg,#00E5FF,#7C5CFF)";
 
-progress.style.left="0";
+document.body.appendChild(progressBar);
 
-progress.style.top="0";
+window.addEventListener("scroll", () => {
 
-progress.style.height="4px";
+const totalHeight =
+document.documentElement.scrollHeight - window.innerHeight;
 
-progress.style.width="0%";
+const progress =
+(window.scrollY / totalHeight) * 100;
 
-progress.style.zIndex="99999";
-
-progress.style.background="linear-gradient(90deg,#00E5FF,#7C5CFF)";
-
-document.body.appendChild(progress);
-
-window.addEventListener("scroll",()=>{
-
-const totalHeight=document.documentElement.scrollHeight-window.innerHeight;
-
-const progressWidth=(window.scrollY/totalHeight)*100;
-
-progress.style.width=progressWidth+"%";
-
-});
-
-
-/*==========================
-MISSION CARD HOVER
-==========================*/
-
-const cards=document.querySelectorAll(".mission-card");
-
-cards.forEach(card=>{
-
-card.addEventListener("mouseenter",()=>{
-
-card.style.transform="translateY(-15px) scale(1.03)";
-
-});
-
-card.addEventListener("mouseleave",()=>{
-
-card.style.transform="translateY(0) scale(1)";
-
-});
+progressBar.style.width = progress + "%";
 
 });
 
@@ -364,6 +324,7 @@ console.log("✅ Part 2 Loaded Successfully");
 /*=========================================
 COSMOVERSE
 SCRIPT.JS
+PART 3
 =========================================*/
 
 /*==========================
@@ -374,26 +335,7 @@ const revealItems = document.querySelectorAll(
 ".mission-card, .stat-card, .about, .contact, .footer"
 );
 
-function revealElements() {
-
-const windowHeight = window.innerHeight;
-
-revealItems.forEach((item) => {
-
-const elementTop = item.getBoundingClientRect().top;
-
-if (elementTop < windowHeight - 120) {
-
-item.style.opacity = "1";
-item.style.transform = "translateY(0)";
-
-}
-
-});
-
-}
-
-revealItems.forEach((item) => {
+revealItems.forEach(item => {
 
 item.style.opacity = "0";
 item.style.transform = "translateY(60px)";
@@ -401,7 +343,24 @@ item.style.transition = "all .8s ease";
 
 });
 
-window.addEventListener("scroll", revealElements);
+function revealElements(){
+
+const trigger = window.innerHeight - 120;
+
+revealItems.forEach(item=>{
+
+if(item.getBoundingClientRect().top < trigger){
+
+item.style.opacity="1";
+item.style.transform="translateY(0)";
+
+}
+
+});
+
+}
+
+window.addEventListener("scroll",revealElements);
 
 revealElements();
 
@@ -410,11 +369,11 @@ revealElements();
 CONTACT FORM
 ==========================*/
 
-const contactForm = document.querySelector("form");
+const contactForm=document.querySelector("form");
 
-if (contactForm) {
+if(contactForm){
 
-contactForm.addEventListener("submit", function (e) {
+contactForm.addEventListener("submit",(e)=>{
 
 e.preventDefault();
 
@@ -428,26 +387,24 @@ contactForm.reset();
 
 
 /*==========================
-ROCKET ANIMATION
+ROCKET CLICK ANIMATION
 ==========================*/
 
-const rocketImg = document.querySelector(".rocket");
+const rocketImg=document.querySelector(".rocket");
 
-if (rocketImg) {
+if(rocketImg){
 
-rocketImg.addEventListener("click", () => {
+rocketImg.addEventListener("click",()=>{
 
-rocketImg.style.transition = ".8s";
+rocketImg.style.transition=".8s";
 
-rocketImg.style.transform =
-"translateY(-350px) rotate(-20deg)";
+rocketImg.style.transform="translateY(-350px) rotate(-20deg)";
 
-setTimeout(() => {
+setTimeout(()=>{
 
-rocketImg.style.transform =
-"translateY(0) rotate(0deg)";
+rocketImg.style.transform="translateY(0) rotate(0deg)";
 
-}, 1000);
+},1000);
 
 });
 
@@ -455,23 +412,20 @@ rocketImg.style.transform =
 
 
 /*==========================
-PLANET PARALLAX
+EARTH PARALLAX
 ==========================*/
 
-const earth = document.querySelector(".earth-small");
+const earth=document.querySelector(".earth-small");
 
-if (earth) {
+if(earth){
 
-window.addEventListener("mousemove", (e) => {
+window.addEventListener("mousemove",(e)=>{
 
-const x =
-(window.innerWidth / 2 - e.clientX) / 45;
+const x=(window.innerWidth/2-e.clientX)/45;
 
-const y =
-(window.innerHeight / 2 - e.clientY) / 45;
+const y=(window.innerHeight/2-e.clientY)/45;
 
-earth.style.transform =
-`translate(${x}px, ${y}px)`;
+earth.style.transform=`translate(${x}px,${y}px)`;
 
 });
 
@@ -482,62 +436,17 @@ earth.style.transform =
 TWINKLING STARS
 ==========================*/
 
-const stars = document.querySelectorAll(
-".stars,.stars2,.stars3"
-);
+const starLayers=document.querySelectorAll(".stars,.stars2,.stars3");
 
-setInterval(() => {
+setInterval(()=>{
 
-stars.forEach((star) => {
+starLayers.forEach(layer=>{
 
-star.style.opacity =
-Math.random() * 0.5 + 0.2;
+layer.style.opacity=Math.random()*0.4+0.2;
 
 });
 
-}, 1000);
-
-
-/*==========================
-COUNTER ANIMATION
-==========================*/
-
-const counters =
-document.querySelectorAll(".stat-card h2");
-
-counters.forEach((counter) => {
-
-const target =
-parseInt(counter.innerText);
-
-if (isNaN(target)) return;
-
-let count = 0;
-
-function updateCounter() {
-
-const increment =
-Math.ceil(target / 60);
-
-if (count < target) {
-
-count += increment;
-
-counter.innerText = count;
-
-requestAnimationFrame(updateCounter);
-
-} else {
-
-counter.innerText = target;
-
-}
-
-}
-
-updateCounter();
-
-});
+},1000);
 
 
 /*==========================
@@ -546,4 +455,4 @@ WELCOME MESSAGE
 
 console.log("🚀 CosmoVerse Loaded Successfully");
 console.log("🌌 Premium Space Experience Activated");
-console.log("Designed by Sravani Dosapalli");
+console.log("Designed & Developed by Sravani Dosapalli");
