@@ -1,7 +1,6 @@
 /*=========================================
 COSMOVERSE
 SCRIPT.JS
-PART 1
 =========================================*/
 
 /*==========================
@@ -180,7 +179,6 @@ console.log("🚀 CosmoVerse Loaded Successfully");
 /*=========================================
 COSMOVERSE
 SCRIPT.JS
-PART 2
 =========================================*/
 
 /*==========================
@@ -366,7 +364,6 @@ console.log("✅ Part 2 Loaded Successfully");
 /*=========================================
 COSMOVERSE
 SCRIPT.JS
-PART 3
 =========================================*/
 
 /*==========================
@@ -434,20 +431,20 @@ contactForm.reset();
 ROCKET ANIMATION
 ==========================*/
 
-const rocket = document.querySelector(".rocket");
+const rocketImg = document.querySelector(".rocket");
 
-if (rocket) {
+if (rocketImg) {
 
-rocket.addEventListener("click", () => {
+rocketImg.addEventListener("click", () => {
 
-rocket.style.transition = ".8s";
+rocketImg.style.transition = ".8s";
 
-rocket.style.transform =
+rocketImg.style.transform =
 "translateY(-350px) rotate(-20deg)";
 
 setTimeout(() => {
 
-rocket.style.transform =
+rocketImg.style.transform =
 "translateY(0) rotate(0deg)";
 
 }, 1000);
