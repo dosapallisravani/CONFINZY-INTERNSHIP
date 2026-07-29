@@ -36,7 +36,7 @@ Level2-Task1-Bootstrap
 🔗 GitHub Repository
 
 Repository:
-https://github.com/dosapallisravani/CONFINZY-INTERNSHIP/tree/main/Level2-Task1-Bootstrap
+https://github.com/dosapallisravani/CONFINZY-INTERNSHIP/Level2-Task1-Bootstrap/
 
 👩‍💻 Developed By
 
