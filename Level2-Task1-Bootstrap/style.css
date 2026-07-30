@@ -100,7 +100,27 @@ color:var(--primary)!important;
 /*==========================
 HERO SECTION
 ==========================*/
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    padding:80px 0;
+}
 
+.hero-img{
+    max-width:500px;
+    width:100%;
+    animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-12px);
+    }
+}
 .hero{
 
 padding:150px 0 100px;
