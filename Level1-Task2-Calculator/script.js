@@ -1,458 +1,533 @@
-/*=========================================
-COSMOVERSE
-SCRIPT.JS
-=========================================*/
+let expression = "";
+let justEvaluated = false;
 
-/*==========================
-LOADER
-==========================*/
-
-window.addEventListener("load", () => {
-
-const loader = document.getElementById("loader");
-
-if(loader){
-
-loader.style.opacity="0";
-loader.style.visibility="hidden";
-
-setTimeout(()=>{
-
-loader.style.display="none";
-
-},800);
-
-}
-
-});
+const expEl = document.getElementById("expression");
+const resEl = document.getElementById("result");
+const toast = document.getElementById("toast");
+const historyList = document.getElementById("historyList");
 
 
-/*==========================
-CUSTOM CURSOR
-==========================*/
+/* =========================
+   DISPLAY
+========================= */
 
-const dot=document.querySelector(".cursor-dot");
-const outline=document.querySelector(".cursor-outline");
-
-if(dot && outline){
-
-window.addEventListener("mousemove",(e)=>{
-
-dot.style.left=e.clientX+"px";
-dot.style.top=e.clientY+"px";
-
-outline.animate({
-
-left:e.clientX+"px",
-top:e.clientY+"px"
-
-},{
-
-duration:200,
-fill:"forwards"
-
-});
-
-});
-
+function render() {
+    expEl.textContent = expression || "0";
 }
 
 
-/*==========================
-PLANET COLOR
-==========================*/
+/* =========================
+   NOTIFICATION
+========================= */
 
-const planet=document.getElementById("planet");
-const colorBtn=document.getElementById("colorBtn");
+function notify(message) {
+    toast.textContent = message;
+    toast.classList.add("show");
 
-const colors=[
-
-"hue-rotate(0deg)",
-"hue-rotate(60deg)",
-"hue-rotate(120deg)",
-"hue-rotate(180deg)",
-"hue-rotate(240deg)",
-"hue-rotate(300deg)"
-
-];
-
-let currentColor=0;
-
-if(colorBtn && planet){
-
-colorBtn.addEventListener("click",()=>{
-
-currentColor++;
-
-if(currentColor>=colors.length){
-
-currentColor=0;
-
-}
-
-planet.style.filter=`${colors[currentColor]} drop-shadow(0 0 25px cyan)`;
-
-});
-
+    setTimeout(() => {
+        toast.classList.remove("show");
+    }, 1800);
 }
 
 
-/*==========================
-GREETING
-==========================*/
+/* =========================
+   CALCULATOR ENGINE
+========================= */
 
-const greetBtn=document.getElementById("greetBtn");
+function safeEval(value) {
 
-if(greetBtn){
+    value = value
+        .replace(/π/g, "Math.PI")
+        .replace(/√/g, "Math.sqrt")
+        .replace(/%/g, "/100");
 
-greetBtn.addEventListener("click",()=>{
+    if (!/^[0-9+\-*/().\sMathPIsqrt]+$/.test(value)) {
+        throw new Error("Invalid expression");
+    }
 
-const hour=new Date().getHours();
-
-let msg="";
-
-if(hour<12){
-
-msg="🌞 Good Morning Commander!";
-
-}else if(hour<17){
-
-msg="🚀 Good Afternoon Space Explorer!";
-
-}else if(hour<21){
-
-msg="🌇 Good Evening Astronaut!";
-
-}else{
-
-msg="🌙 Good Night Galaxy Traveller!";
-
-}
-
-alert(msg);
-
-});
-
-}
-
-console.log("✅ Part 1 Loaded");
-/*=========================================
-COSMOVERSE
-SCRIPT.JS
-PART 2
-=========================================*/
-
-/*==========================
-SPACE CALCULATOR
-==========================*/
-
-const addBtn = document.getElementById("addBtn");
-
-if (addBtn) {
-
-addBtn.addEventListener("click", () => {
-
-const num1 = parseFloat(document.getElementById("num1").value);
-
-const num2 = parseFloat(document.getElementById("num2").value);
-
-const result = document.getElementById("result");
-
-if (isNaN(num1) || isNaN(num2)) {
-
-result.innerHTML = "Invalid";
-result.style.color = "#ff4d4d";
-
-return;
-
-}
-
-result.innerHTML = num1 + num2;
-result.style.color = "#00E5FF";
-
-});
-
+    return Function(
+        '"use strict"; return (' + value + ')'
+    )();
 }
 
 
-/*==========================
-HEADER SCROLL EFFECT
-==========================*/
+/* =========================
+   HISTORY
+========================= */
 
-const header = document.querySelector(".header");
+function addHistory(expressionText, result) {
 
-window.addEventListener("scroll", () => {
+    const item = document.createElement("div");
 
-if (!header) return;
+    item.className = "history-item";
 
-if (window.scrollY > 80) {
+    item.innerHTML = `
+        ${expressionText}
+        <b>${result}</b>
+    `;
 
-header.style.background = "rgba(2,8,23,.92)";
-header.style.backdropFilter = "blur(20px)";
-header.style.boxShadow = "0 8px 30px rgba(0,0,0,.35)";
+    historyList.prepend(item);
 
-}
-
-else {
-
-header.style.background = "rgba(255,255,255,.08)";
-header.style.boxShadow = "none";
-
-}
-
-});
-
-
-/*==========================
-BACK TO TOP
-==========================*/
-
-const topBtn = document.getElementById("topBtn");
-
-if (topBtn) {
-
-window.addEventListener("scroll", () => {
-
-if (window.scrollY > 500) {
-
-topBtn.style.display = "flex";
-
-}
-
-else {
-
-topBtn.style.display = "none";
-
-}
-
-});
-
-topBtn.addEventListener("click", () => {
-
-window.scrollTo({
-
-top: 0,
-
-behavior: "smooth"
-
-});
-
-});
-
+    while (historyList.children.length > 4) {
+        historyList.lastElementChild.remove();
+    }
 }
 
 
-/*==========================
-SMOOTH SCROLL
-==========================*/
+/* =========================
+   MAIN CALCULATION
+========================= */
 
-document.querySelectorAll('a[href^="#"]').forEach(link => {
+function calculate() {
 
-link.addEventListener("click", function (e) {
+    if (!expression) {
+        return;
+    }
 
-e.preventDefault();
+    try {
 
-const target = document.querySelector(this.getAttribute("href"));
+        const oldExpression = expression;
 
-if (target) {
+        let value = safeEval(expression);
 
-target.scrollIntoView({
+        if (!Number.isFinite(value)) {
+            throw new Error("Invalid result");
+        }
 
-behavior: "smooth"
+        value =
+            Math.round(
+                (value + Number.EPSILON) * 1e10
+            ) / 1e10;
 
-});
+        resEl.textContent = value;
 
+        addHistory(
+            oldExpression,
+            value
+        );
+
+        expression = String(value);
+
+        justEvaluated = true;
+
+        notify("Calculation complete ✓");
+
+    } catch {
+
+        resEl.textContent = "Error";
+
+        notify("Check your expression");
+    }
 }
 
-});
 
-});
+/* =========================
+   SCIENTIFIC FUNCTIONS
+========================= */
 
+function scientific(action) {
 
-/*==========================
-MISSION CARD HOVER
-==========================*/
+    try {
 
-const cards = document.querySelectorAll(".mission-card");
+        let x = Number(
+            expression ||
+            resEl.textContent ||
+            0
+        );
 
-cards.forEach(card => {
-
-card.addEventListener("mouseenter", () => {
-
-card.style.transform = "translateY(-15px) scale(1.03)";
-
-});
-
-card.addEventListener("mouseleave", () => {
-
-card.style.transform = "translateY(0) scale(1)";
-
-});
-
-});
+        let value;
 
 
-/*==========================
-SCROLL PROGRESS BAR
-==========================*/
+        /* PI */
 
-const progressBar = document.createElement("div");
+        if (action === "pi") {
 
-progressBar.style.position = "fixed";
-progressBar.style.top = "0";
-progressBar.style.left = "0";
-progressBar.style.width = "0%";
-progressBar.style.height = "4px";
-progressBar.style.zIndex = "99999";
-progressBar.style.background = "linear-gradient(90deg,#00E5FF,#7C5CFF)";
+            if (justEvaluated) {
+                expression = "";
+                justEvaluated = false;
+            }
 
-document.body.appendChild(progressBar);
+            expression += "π";
 
-window.addEventListener("scroll", () => {
+            render();
 
-const totalHeight =
-document.documentElement.scrollHeight - window.innerHeight;
+            return;
+        }
 
-const progress =
-(window.scrollY / totalHeight) * 100;
 
-progressBar.style.width = progress + "%";
+        /* SQUARE ROOT */
 
-});
+        if (action === "sqrt") {
+            value = Math.sqrt(x);
+        }
 
-console.log("✅ Part 2 Loaded Successfully");
-/*=========================================
-COSMOVERSE
-SCRIPT.JS
-PART 3
-=========================================*/
 
-/*==========================
-SCROLL REVEAL
-==========================*/
+        /* SQUARE */
 
-const revealItems = document.querySelectorAll(
-".mission-card, .stat-card, .about, .contact, .footer"
+        if (action === "square") {
+            value = x * x;
+        }
+
+
+        /* SIN - degrees */
+
+        if (action === "sin") {
+            value =
+                Math.sin(
+                    x * Math.PI / 180
+                );
+        }
+
+
+        /* COS - degrees */
+
+        if (action === "cos") {
+            value =
+                Math.cos(
+                    x * Math.PI / 180
+                );
+        }
+
+
+        /* TAN - degrees */
+
+        if (action === "tan") {
+            value =
+                Math.tan(
+                    x * Math.PI / 180
+                );
+        }
+
+
+        /* LOG */
+
+        if (action === "log") {
+            value = Math.log10(x);
+        }
+
+
+        /* NATURAL LOG */
+
+        if (action === "ln") {
+            value = Math.log(x);
+        }
+
+
+        if (!Number.isFinite(value)) {
+            throw new Error("Invalid operation");
+        }
+
+
+        value =
+            Math.round(
+                (value + Number.EPSILON) * 1e10
+            ) / 1e10;
+
+
+        const oldExpression =
+            expression || String(x);
+
+
+        resEl.textContent = value;
+
+        expression = String(value);
+
+        justEvaluated = true;
+
+
+        addHistory(
+            oldExpression +
+            " → " +
+            action,
+            value
+        );
+
+
+        notify(
+            action.toUpperCase() +
+            " applied"
+        );
+
+    } catch {
+
+        resEl.textContent = "Error";
+
+        notify(
+            "Invalid scientific operation"
+        );
+    }
+}
+
+
+/* =========================
+   CALCULATOR BUTTONS
+========================= */
+
+document
+    .querySelectorAll(".key")
+    .forEach(button => {
+
+        button.addEventListener(
+            "click",
+            () => {
+
+                /* Button color-change requirement */
+
+                button.classList.add("flash");
+
+                setTimeout(() => {
+                    button.classList.remove("flash");
+                }, 120);
+
+
+                const value =
+                    button.dataset.value;
+
+                const action =
+                    button.dataset.action;
+
+
+                /* CLEAR */
+
+                if (action === "clear") {
+
+                    expression = "";
+
+                    resEl.textContent = "0";
+
+                    justEvaluated = false;
+
+                    render();
+
+                    return;
+                }
+
+
+                /* DELETE */
+
+                if (action === "delete") {
+
+                    expression =
+                        expression.slice(0, -1);
+
+                    render();
+
+                    return;
+                }
+
+
+                /* EQUALS */
+
+                if (action === "equals") {
+
+                    calculate();
+
+                    return;
+                }
+
+
+                /* SCIENTIFIC FUNCTION */
+
+                if (action) {
+
+                    scientific(action);
+
+                    return;
+                }
+
+
+                /* NEW CALCULATION AFTER RESULT */
+
+                if (justEvaluated) {
+
+                    expression = "";
+
+                    justEvaluated = false;
+                }
+
+
+                expression += value;
+
+                render();
+            }
+        );
+
+    });
+
+
+/* =========================
+   KEYBOARD SUPPORT
+========================= */
+
+document.addEventListener(
+    "keydown",
+    event => {
+
+        /* Numbers and operators */
+
+        if (
+            /[0-9.+\-*/()%]/.test(event.key)
+        ) {
+
+            if (justEvaluated) {
+
+                expression = "";
+
+                justEvaluated = false;
+            }
+
+            expression += event.key;
+
+            render();
+        }
+
+
+        /* ENTER */
+
+        else if (
+            event.key === "Enter" ||
+            event.key === "="
+        ) {
+
+            calculate();
+        }
+
+
+        /* BACKSPACE */
+
+        else if (
+            event.key === "Backspace"
+        ) {
+
+            expression =
+                expression.slice(0, -1);
+
+            render();
+        }
+
+
+        /* ESCAPE */
+
+        else if (
+            event.key === "Escape"
+        ) {
+
+            expression = "";
+
+            resEl.textContent = "0";
+
+            justEvaluated = false;
+
+            render();
+        }
+
+    }
 );
 
-revealItems.forEach(item => {
 
-item.style.opacity = "0";
-item.style.transform = "translateY(60px)";
-item.style.transition = "all .8s ease";
+/* =========================
+   OPEN CALCULATOR
+========================= */
 
-});
+function scrollToCalc() {
 
-function revealElements(){
-
-const trigger = window.innerHeight - 120;
-
-revealItems.forEach(item=>{
-
-if(item.getBoundingClientRect().top < trigger){
-
-item.style.opacity="1";
-item.style.transform="translateY(0)";
-
-}
-
-});
-
-}
-
-window.addEventListener("scroll",revealElements);
-
-revealElements();
-
-
-/*==========================
-CONTACT FORM
-==========================*/
-
-const contactForm=document.querySelector("form");
-
-if(contactForm){
-
-contactForm.addEventListener("submit",(e)=>{
-
-e.preventDefault();
-
-alert("🚀 Message Sent Successfully!");
-
-contactForm.reset();
-
-});
-
+    document
+        .getElementById("calculator")
+        .scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
 }
 
 
-/*==========================
-ROCKET CLICK ANIMATION
-==========================*/
+/* =========================
+   MOBILE MENU
+========================= */
 
-const rocketImg=document.querySelector(".rocket");
+function toggleMenu() {
 
-if(rocketImg){
+    const links =
+        document.querySelector(".links");
 
-rocketImg.addEventListener("click",()=>{
+    if (links.style.display === "flex") {
 
-rocketImg.style.transition=".8s";
+        links.style.display = "none";
 
-rocketImg.style.transform="translateY(-350px) rotate(-20deg)";
+    } else {
 
-setTimeout(()=>{
+        links.style.display = "flex";
 
-rocketImg.style.transform="translateY(0) rotate(0deg)";
+        links.style.position = "absolute";
+        links.style.top = "66px";
+        links.style.left = "0";
+        links.style.right = "0";
 
-},1000);
+        links.style.padding = "20px";
 
-});
+        links.style.background =
+            "#04111d";
 
+        links.style.flexDirection =
+            "column";
+
+        links.style.alignItems =
+            "center";
+
+        links.style.borderBottom =
+            "1px solid rgba(120,190,230,.15)";
+    }
 }
 
 
-/*==========================
-EARTH PARALLAX
-==========================*/
+/* =========================
+   LEVEL 1 TASK 2
+   CURRENT TIME GREETING
+========================= */
 
-const earth=document.querySelector(".earth-small");
+function timeGreeting() {
 
-if(earth){
+    const hour =
+        new Date().getHours();
 
-window.addEventListener("mousemove",(e)=>{
+    let greeting;
 
-const x=(window.innerWidth/2-e.clientX)/45;
+    if (hour < 12) {
 
-const y=(window.innerHeight/2-e.clientY)/45;
+        greeting = "Good morning";
 
-earth.style.transform=`translate(${x}px,${y}px)`;
+    } else if (hour < 18) {
 
-});
+        greeting = "Good afternoon";
 
+    } else {
+
+        greeting = "Good evening";
+    }
+
+
+    alert(
+        greeting +
+        "! Current time: " +
+        new Date().toLocaleTimeString()
+    );
 }
 
 
-/*==========================
-TWINKLING STARS
-==========================*/
+/*
+   Double-click the MathBlueprint
+   logo to show current time.
+*/
 
-const starLayers=document.querySelectorAll(".stars,.stars2,.stars3");
-
-setInterval(()=>{
-
-starLayers.forEach(layer=>{
-
-layer.style.opacity=Math.random()*0.4+0.2;
-
-});
-
-},1000);
+document
+    .querySelector(".brand")
+    .addEventListener(
+        "dblclick",
+        timeGreeting
+    );
 
 
-/*==========================
-WELCOME MESSAGE
-==========================*/
+/* =========================
+   INITIAL DISPLAY
+========================= */
 
-console.log("🚀 CosmoVerse Loaded Successfully");
-console.log("🌌 Premium Space Experience Activated");
-console.log("Designed & Developed by Sravani Dosapalli");
+render();
