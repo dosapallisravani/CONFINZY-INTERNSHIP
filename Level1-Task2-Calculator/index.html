@@ -1,283 +1,278 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MathBlueprint — Mathematics, Engineered.</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MathBlueprint — Mathematics, Engineered.</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- NAVIGATION -->
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+
+        <div class="brand" title="Double-click for current time">
+            <span class="brand-mark">⚛</span>
+            <span>Math</span>
+            <span class="brand-blue">Blueprint</span>
+        </div>
 
-<nav>
+        <div class="links">
+            <a class="active" href="#home">Home</a>
+            <a href="#calculator">Calculator</a>
+            <a href="#features">Features</a>
+            <a href="#about">About</a>
+        </div>
 
-  <div class="brand">
-    <span class="brand-mark">⚛</span>
-    <span>Math</span>
-    <span>Blueprint</span>
-  </div>
+        <button class="nav-btn" onclick="scrollToCalc()">
+            ▣ &nbsp; Open Calculator
+        </button>
 
-  <div class="links">
-    <a class="active" href="#home">Home</a>
-    <a href="#calculator">Calculator</a>
-    <a href="#features">Features</a>
-    <a href="#about">About</a>
-  </div>
+        <button class="menu" onclick="toggleMenu()" aria-label="Open menu">
+            ☰
+        </button>
 
-  <button class="nav-btn" onclick="scrollToCalc()">
-    ▣ &nbsp; Open Calculator
-  </button>
+    </nav>
 
-  <button class="menu" onclick="toggleMenu()">☰</button>
 
-</nav>
+    <!-- HERO SECTION -->
+    <main id="home" class="hero">
 
+        <section class="hero-content">
 
-<!-- HERO -->
+            <div class="eyebrow">
+                SCIENTIFIC CALCULATOR
+                <span>/</span>
+                MATH TOOLS
+                <span>/</span>
+                PRECISION
+            </div>
 
-<main id="home" class="hero">
+            <h1>
+                Mathematics,<br>
+                <span>Engineered.</span>
+            </h1>
 
-<section>
+            <p class="sub">
+                A precision calculation workspace built for scientific
+                thinking — from everyday arithmetic to advanced functions.
+            </p>
+
+            <button class="hero-btn" onclick="scrollToCalc()">
+                Open Calculator <span>→</span>
+            </button>
+
+            <div class="specs">
+
+                <div class="spec">
+                    <span class="spec-symbol">✦</span>
+                    <b>Advanced</b>
+                    <small>Scientific functions</small>
+                </div>
+
+                <div class="spec">
+                    <span class="spec-symbol">✦</span>
+                    <b>Fast</b>
+                    <small>Instant results</small>
+                </div>
 
-  <div class="eyebrow">
-    SCIENTIFIC CALCULATOR &nbsp; / &nbsp;
-    MATH TOOLS &nbsp; / &nbsp;
-    PRECISION
-  </div>
+                <div class="spec">
+                    <span class="spec-symbol">✦</span>
+                    <b>Reliable</b>
+                    <small>Accurate calculations</small>
+                </div>
 
-  <h1>
-    Mathematics,<br>
-    <span>Engineered.</span>
-  </h1>
+                <div class="spec">
+                    <span class="spec-symbol">✦</span>
+                    <b>Responsive</b>
+                    <small>Works on mobile</small>
+                </div>
 
-  <p class="sub">
-    A precision calculation workspace built for scientific thinking —
-    from everyday arithmetic to advanced functions.
-  </p>
+            </div>
 
-  <button class="hero-btn" onclick="scrollToCalc()">
-    Open Calculator &nbsp; →
-  </button>
+        </section>
 
 
-  <!-- FEATURES -->
+        <!-- CALCULATOR SECTION -->
+        <section class="stage" id="calculator">
 
-  <div class="specs">
+            <div class="equation eq1">
+                a² + b² = c²
+            </div>
 
-    <div class="spec">
-      <b>Advanced</b>
-      <small>Scientific functions</small>
-    </div>
+            <div class="equation eq2">
+                sin²θ + cos²θ = 1
+            </div>
 
-    <div class="spec">
-      <b>Fast</b>
-      <small>Instant results</small>
-    </div>
+            <div class="equation eq3">
+                V = ⁴⁄₃πr³
+            </div>
 
-    <div class="spec">
-      <b>Reliable</b>
-      <small>Accurate calculations</small>
-    </div>
+            <div class="equation eq4">
+                ∫xⁿdx = xⁿ⁺¹/(n+1)
+            </div>
 
-    <div class="spec">
-      <b>Responsive</b>
-      <small>Works on mobile</small>
-    </div>
+            <div class="diagram"></div>
 
-  </div>
 
-</section>
+            <!-- CALCULATOR BOX -->
+            <div class="calc">
 
+                <div class="calc-head">
+                    <strong>MathBlueprint</strong>
+                    <span class="status">● READY</span>
+                </div>
 
-<!-- CALCULATOR -->
+                <div class="display">
+                    <div class="expression" id="expression">0</div>
+                    <div class="result" id="result">0</div>
+                </div>
 
-<section class="stage" id="calculator">
 
-  <div class="equation eq1">
-    a² + b² = c²
-  </div>
+                <div class="keys">
 
-  <div class="equation eq2">
-    sin²θ + cos²θ = 1
-  </div>
+                    <!-- SCIENTIFIC FUNCTIONS -->
+                    <button class="key fn" data-action="sin">sin</button>
+                    <button class="key fn" data-action="cos">cos</button>
+                    <button class="key fn" data-action="tan">tan</button>
+                    <button class="key fn" data-action="log">log</button>
+                    <button class="key fn" data-action="ln">ln</button>
 
-  <div class="equation eq3">
-    V = ⁴⁄₃πr³
-  </div>
+                    <button class="key fn" data-action="pi">π</button>
+                    <button class="key fn" data-action="sqrt">√</button>
+                    <button class="key fn" data-action="square">x²</button>
+                    <button class="key" data-value="(">(</button>
+                    <button class="key" data-value=")">)</button>
+
+                    <!-- CONTROLS -->
+                    <button class="key clear" data-action="clear">AC</button>
+                    <button class="key delete" data-action="delete">⌫</button>
 
-  <div class="equation eq4">
-    ∫xⁿdx = xⁿ⁺¹/(n+1)
-  </div>
+                    <!-- NUMBERS AND OPERATORS -->
+                    <button class="key" data-value="7">7</button>
+                    <button class="key" data-value="8">8</button>
+                    <button class="key" data-value="9">9</button>
+                    <button class="key operator" data-value="/">÷</button>
 
-  <div class="diagram"></div>
+                    <button class="key" data-value="4">4</button>
+                    <button class="key" data-value="5">5</button>
+                    <button class="key" data-value="6">6</button>
+                    <button class="key operator" data-value="*">×</button>
 
+                    <button class="key" data-value="1">1</button>
+                    <button class="key" data-value="2">2</button>
+                    <button class="key" data-value="3">3</button>
+                    <button class="key operator" data-value="-">−</button>
 
-  <!-- CALCULATOR BOX -->
+                    <button class="key equals" data-action="equals">=</button>
 
-  <div class="calc">
+                    <button class="key zero" data-value="0">0</button>
+                    <button class="key" data-value=".">.</button>
+                    <button class="key" data-value="%">%</button>
+                    <button class="key operator" data-value="+">+</button>
 
-    <div class="calc-head">
-      <strong>MathBlueprint</strong>
-      <span class="status">● READY</span>
-    </div>
+                </div>
 
-    <div class="display">
-      <div class="expression" id="expression">
-        0
-      </div>
+            </div>
 
-      <div class="result" id="result">
-        0
-      </div>
-    </div>
 
+            <!-- HISTORY CARD -->
+            <aside class="side history">
 
-    <div class="keys">
+                <div class="side-title">
+                    <h3>◷ &nbsp; Recent Calculations</h3>
+                    <button class="clear-history" onclick="clearHistory()">
+                        Clear
+                    </button>
+                </div>
 
-      <!-- Scientific -->
+                <div id="historyList">
 
-      <button class="key fn" data-action="sin">sin</button>
-      <button class="key fn" data-action="cos">cos</button>
-      <button class="key fn" data-action="tan">tan</button>
-      <button class="key fn" data-action="log">log</button>
-      <button class="key fn" data-action="ln">ln</button>
+                    <div class="history-item">
+                        <span>25 + 15</span>
+                        <b>40</b>
+                    </div>
 
-      <button class="key fn" data-action="pi">π</button>
-      <button class="key fn" data-action="sqrt">√</button>
-      <button class="key fn" data-action="square">x²</button>
-      <button class="key" data-value="(">(</button>
-      <button class="key" data-value=")">)</button>
+                    <div class="history-item">
+                        <span>√144</span>
+                        <b>12</b>
+                    </div>
 
-      <!-- Controls -->
+                    <div class="history-item">
+                        <span>sin(30°)</span>
+                        <b>0.5</b>
+                    </div>
 
-      <button class="key clear" data-action="clear">AC</button>
-      <button class="key delete" data-action="delete">⌫</button>
+                </div>
 
-      <!-- Numbers -->
+            </aside>
 
-      <button class="key" data-value="7">7</button>
-      <button class="key" data-value="8">8</button>
-      <button class="key" data-value="9">9</button>
 
-      <button class="key" data-value="/">÷</button>
+            <!-- FEATURES CARD -->
+            <aside class="side features" id="features">
 
-      <button class="key" data-value="4">4</button>
-      <button class="key" data-value="5">5</button>
-      <button class="key" data-value="6">6</button>
+                <h3>◇ &nbsp; Quick Features</h3>
 
-      <button class="key" data-value="*">×</button>
+                <div class="feature">
+                    <span class="icon">∑</span>
+                    <span>
+                        <b>Scientific Functions</b><br>
+                        sin, cos, tan, log, ln
+                    </span>
+                </div>
 
-      <button class="key" data-value="1">1</button>
-      <button class="key" data-value="2">2</button>
-      <button class="key" data-value="3">3</button>
+                <div class="feature">
+                    <span class="icon">⇄</span>
+                    <span>
+                        <b>Precision</b><br>
+                        Fast & accurate results
+                    </span>
+                </div>
 
-      <button class="key" data-value="-">−</button>
+                <div class="feature">
+                    <span class="icon">⌘</span>
+                    <span>
+                        <b>Calculation History</b><br>
+                        Keep track of your work
+                    </span>
+                </div>
 
-      <button class="key equals" data-action="equals">
-        =
-      </button>
+                <div class="feature">
+                    <span class="icon">⌨</span>
+                    <span>
+                        <b>Keyboard Support</b><br>
+                        Type calculations easily
+                    </span>
+                </div>
 
-      <button class="key zero" data-value="0">
-        0
-      </button>
+            </aside>
 
-      <button class="key" data-value=".">.</button>
-      <button class="key" data-value="%">%</button>
-      <button class="key" data-value="+">+</button>
+        </section>
 
-    </div>
+    </main>
 
-  </div>
 
+    <!-- ABOUT / FOOTER -->
+    <footer id="about">
 
-  <!-- HISTORY -->
+        <span>
+            © 2026 MathBlueprint
+        </span>
 
-  <aside class="side history">
+        <span>
+            Designed & Developed for Level 1 Task 2
+        </span>
 
-    <h3>
-      ◷ &nbsp; Recent Calculations
-    </h3>
+    </footer>
 
-    <div id="historyList">
 
-      <div class="history-item">
-        25 + 15
-        <b>40</b>
-      </div>
+    <!-- TOAST MESSAGE -->
+    <div id="toast" class="toast"></div>
 
-      <div class="history-item">
-        √144
-        <b>12</b>
-      </div>
-
-      <div class="history-item">
-        sin(30°)
-        <b>0.5</b>
-      </div>
-
-    </div>
-
-  </aside>
-
-
-  <!-- FEATURES CARD -->
-
-  <aside class="side features" id="features">
-
-    <h3>
-      ◇ &nbsp; Quick Features
-    </h3>
-
-    <div class="feature">
-      <span class="icon">∑</span>
-
-      <span>
-        <b>Scientific Functions</b><br>
-        sin, cos, tan, log, ln
-      </span>
-    </div>
-
-    <div class="feature">
-      <span class="icon">⇄</span>
-
-      <span>
-        <b>Precision</b><br>
-        Fast & accurate results
-      </span>
-    </div>
-
-    <div class="feature">
-      <span class="icon">⌘</span>
-
-      <span>
-        <b>Calculation History</b><br>
-        Keep track of your work
-      </span>
-    </div>
-
-  </aside>
-
-</section>
-
-</main>
-
-
-<!-- FOOTER -->
-
-<footer id="about">
-
-  <span>
-    © 2026 MathBlueprint
-  </span>
-
-  <span>
-    Designed & Developed for Level 1 Task 2
-  </span>
-
-</footer>
-<script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
 </html>
