@@ -3,661 +3,827 @@
 
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Backpack Explorer | Student Essentials</title>
+    <title>StudyNest | Student Essentials</title>
 
-<!-- Bootstrap CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
 
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
-<!-- Font Awesome -->
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
-<link rel="stylesheet" href="style.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
 
-<!-- ==========================
+
+<!-- =====================================================
 NAVBAR
-========================== -->
+===================================================== -->
 
 <nav class="navbar navbar-expand-lg fixed-top custom-navbar">
 
-<div class="container">
+    <div class="container">
 
-<a class="navbar-brand fw-bold" href="#">
+        <a class="navbar-brand" href="#home">
+            <span class="brand-icon">🎒</span>
+            StudyNest
+        </a>
 
-🎒 StudyNest
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav">
 
-</a>
+            <i class="fa-solid fa-bars"></i>
 
-<button class="navbar-toggler" type="button"
-data-bs-toggle="collapse"
-data-bs-target="#navbarNav">
+        </button>
 
-<span class="navbar-toggler-icon"></span>
+        <div class="collapse navbar-collapse" id="navbarNav">
 
-</button>
+            <ul class="navbar-nav ms-auto align-items-lg-center">
 
-<div class="collapse navbar-collapse"
-id="navbarNav">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#home">
+                        Home
+                    </a>
+                </li>
 
-<ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#explorer">
+                        Explorer
+                    </a>
+                </li>
 
-<li class="nav-item">
-<a class="nav-link" href="#">Home</a>
-</li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#routine">
+                        Routine
+                    </a>
+                </li>
 
-<li class="nav-item">
-<a class="nav-link" href="#explorer">Explorer</a>
-</li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#reviews">
+                        Reviews
+                    </a>
+                </li>
 
-<li class="nav-item">
-<a class="nav-link" href="#routine">Routine</a>
-</li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">
+                        Contact
+                    </a>
+                </li>
 
-<li class="nav-item">
-<a class="nav-link" href="#contact">Contact</a>
-</li>
+                <li class="nav-item">
+                    <a class="nav-cta" href="#explorer">
+                        Explore Now
+                    </a>
+                </li>
 
-</ul>
+            </ul>
 
-</div>
+        </div>
 
-</div>
+    </div>
 
 </nav>
 
-<!-- ==========================
+
+
+<!-- =====================================================
 HERO SECTION
-========================== -->
-  <section class="hero">
-  <div class="row align-items-center">
+===================================================== -->
 
-  <!-- Left Side -->
-  <div class="col-lg-6">
-    <h1>StudyNest</h1>
+<section class="hero" id="home">
 
-  <!-- Right Side -->
-  <div class="col-lg-6 text-center">
-    <img src="images/hero-student.png"
-         class="img-fluid hero-img"
-         alt="Student">
-  </div>
+    <div class="container">
 
-</div>
+        <div class="row align-items-center g-5">
 
-</div>
+            <!-- LEFT -->
 
-  </section>
- <!-- ==========================
+            <div class="col-lg-6 hero-content">
+
+                <span class="hero-badge">
+                    ✦ STUDENT ESSENTIALS
+                </span>
+
+                <h1>
+                    Study smarter.
+                    <span>Live better.</span>
+                </h1>
+
+                <p class="hero-description">
+
+                    Everything you need for a productive
+                    student life, thoughtfully packed into
+                    one smart backpack.
+
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#explorer" class="primary-btn">
+                        Explore My Backpack
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                    <a href="#routine" class="secondary-btn">
+                        View Routine
+                    </a>
+
+                </div>
+
+
+                <!-- STATS -->
+
+                <div class="hero-stats">
+
+                    <div class="stat">
+                        <strong>06</strong>
+                        <span>Essentials</span>
+                    </div>
+
+                    <div class="stat">
+                        <strong>100%</strong>
+                        <span>Student Focused</span>
+                    </div>
+
+                    <div class="stat">
+                        <strong>24/7</strong>
+                        <span>Study Ready</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT -->
+
+            <div class="col-lg-6">
+
+                <div class="hero-visual">
+
+                    <div class="hero-glow"></div>
+
+                    <div class="floating-note note-one">
+                        <i class="fa-solid fa-book"></i>
+                        Study Ready
+                    </div>
+
+                    <div class="floating-note note-two">
+                        <i class="fa-solid fa-star"></i>
+                        Student Pick
+                    </div>
+
+                    <div class="hero-image-wrapper">
+
+                        <img
+                            src="images/hero-student.png"
+                            class="img-fluid hero-img"
+                            alt="Student with backpack">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+WHY STUDYNEST
+===================================================== -->
+
+<section class="why-section">
+
+    <div class="container">
+
+        <div class="section-heading text-center">
+
+            <span class="section-tag">
+                WHY STUDYNEST?
+            </span>
+
+            <h2>
+                Made for your student life
+            </h2>
+
+            <p>
+                Simple essentials that help you study,
+                organise and stay focused.
+            </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+            <!-- FEATURE 1 -->
+
+            <div class="col-md-4">
+
+                <div class="feature-card">
+
+                    <div class="feature-icon lavender">
+                        <i class="fa-solid fa-lightbulb"></i>
+                    </div>
+
+                    <h3>
+                        Smart Essentials
+                    </h3>
+
+                    <p>
+                        Practical tools selected to make
+                        everyday student life easier.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- FEATURE 2 -->
+
+            <div class="col-md-4">
+
+                <div class="feature-card">
+
+                    <div class="feature-icon rose">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+
+                    <h3>
+                        Student Focused
+                    </h3>
+
+                    <p>
+                        Designed around the needs,
+                        routines and lifestyle of students.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- FEATURE 3 -->
+
+            <div class="col-md-4">
+
+                <div class="feature-card">
+
+                    <div class="feature-icon green">
+                        <i class="fa-solid fa-mobile-screen"></i>
+                    </div>
+
+                    <h3>
+                        Responsive Design
+                    </h3>
+
+                    <p>
+                        A smooth experience across mobile,
+                        tablet and desktop screens.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
 BACKPACK EXPLORER
-========================== -->
+===================================================== -->
 
-<section class="explorer py-5" id="explorer">
+<section class="explorer" id="explorer">
 
-<div class="container">
+    <div class="container">
 
-<div class="text-center mb-5">
 
-<span class="section-tag">
-📚 Student Essentials
-</span>
+        <!-- HEADING -->
 
-<h2 class="section-title">
-What's Inside My Backpack?
-</h2>
+        <div class="section-heading text-center">
 
-<p class="section-subtitle">
-Discover the essential tools every student needs for productive learning.
-</p>
+            <span class="section-tag">
+                🎒 STUDENT ESSENTIALS
+            </span>
 
-</div>
+            <h2>
+                What's Inside My Backpack?
+            </h2>
 
-<div class="text-center mb-5">
+            <p>
+                Explore the everyday tools that make
+                student life easier and more productive.
+            </p>
 
-<img src="images/backpack.png"
-id="backpackImage"
-class="backpack-img"
-alt="Backpack">
+        </div>
 
-<br>
 
-<button id="openBagBtn"
-class="btn btn-primary px-5 py-3 mt-3">
+        <!-- BACKPACK -->
 
-<i class="fa-solid fa-backpack"></i>
-Open Backpack
+        <div class="backpack-area">
 
-</button>
+            <div class="backpack-glow"></div>
 
-</div>
+            <img
+                src="images/backpack.png"
+                id="backpackImage"
+                class="backpack-img"
+                alt="StudyNest Backpack">
 
-<!-- Product Cards -->
+            <div class="backpack-label">
+                <i class="fa-solid fa-sparkles"></i>
+                6 Student Essentials
+            </div>
 
-<div class="row g-4" id="itemsContainer">
+        </div>
 
-<!-- Laptop -->
 
-<div class="col-lg-4 col-md-6 item-card">
+        <!-- OPEN BUTTON -->
 
-<div class="card product-card h-100">
+        <div class="text-center">
 
-<img src="images/laptop-stand.png"
-class="card-img-top"
-alt="Laptop Stand ">
+            <button
+                id="openBagBtn"
+                class="open-bag-btn">
 
-<div class="card-body text-center">
+                <i class="fa-solid fa-box-open"></i>
 
-<h5 class="card-title">
-Laptop-stand
-</h5>
+                Open My Backpack
 
-<p class="card-text">
-Perfect for coding, assignments and online learning.
-</p>
+                <i class="fa-solid fa-arrow-right"></i>
 
-<button class="btn btn-outline-primary">
-View Details
-</button>
+            </button>
 
-</div>
+        </div>
 
-</div>
 
-</div>
+        <!-- FILTERS -->
 
-<!-- Notebook -->
+        <div class="filter-area">
 
-<div class="col-lg-4 col-md-6 item-card">
+            <button
+                class="filter-btn active"
+                data-filter="all">
 
-<div class="card product-card h-100">
+                All
 
-<img src="images/notebook.png"
-class="card-img-top"
-alt="Notebook">
+            </button>
 
-<div class="card-body text-center">
+            <button
+                class="filter-btn"
+                data-filter="study">
 
-<h5 class="card-title">
-Notebook
-</h5>
+                Study
 
-<p class="card-text">
-Capture important class notes and daily ideas.
-</p>
+            </button>
 
-<button class="btn btn-outline-primary">
-View Details
-</button>
+            <button
+                class="filter-btn"
+                data-filter="tech">
 
-</div>
+                Tech
 
-</div>
+            </button>
 
-</div>
+            <button
+                class="filter-btn"
+                data-filter="stationery">
 
-<!-- Calculator -->
+                Stationery
 
-<div class="col-lg-4 col-md-6 item-card">
+            </button>
 
-<div class="card product-card h-100">
+            <button
+                class="filter-btn"
+                data-filter="lifestyle">
 
-<img src="images/calculator.png"
-class="card-img-top"
-alt="Calculator">
+                Lifestyle
 
-<div class="card-body text-center">
+            </button>
 
-<h5 class="card-title">
-Calculator
-</h5>
+        </div>
 
-<p class="card-text">
-Essential for solving mathematical problems quickly.
-</p>
 
-<button class="btn btn-outline-primary">
-View Details
-</button>
 
-</div>
+        <!-- =================================================
+        PRODUCT GRID
 
-</div>
+        Bootstrap responsive grid:
+        Desktop = 3
+        Tablet = 2
+        Mobile = 1
+        ================================================= -->
 
-</div>
+        <div
+            class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4"
+            id="itemsContainer">
 
-</div>
 
-</div>
+            <!-- LAPTOP -->
 
-</section>
- <!-- ==========================
-MORE STUDENT ESSENTIALS
-========================== -->
+            <div
+                class="col item-card"
+                data-category="tech">
 
-<div class="row g-4 mt-2">
+                <div class="card product-card h-100">
 
-    <!-- Headphones -->
+                    <div class="product-image">
 
-    <div class="col-lg-4 col-md-6 item-card">
+                        <span class="product-tag">
+                            TECH
+                        </span>
 
-        <div class="card product-card h-100">
+                        <img
+                            src="images/laptop-stand.png"
+                            class="card-img-top"
+                            alt="Laptop Stand">
 
-            <img src="images/headphones.png"
-                 class="card-img-top"
-                 alt="Headphones">
+                    </div>
 
-            <div class="card-body text-center">
+                    <div class="card-body">
 
-                <h5 class="card-title">
-                    Headphones
-                </h5>
+                        <span class="product-category">
+                            Study Setup
+                        </span>
 
-                <p class="card-text">
-                    Stay focused with distraction-free study sessions.
-                </p>
+                        <h5 class="card-title">
+                            Laptop Stand
+                        </h5>
 
-                <button class="btn btn-outline-primary">
-                    View Details
-                </button>
+                        <p class="card-text">
+                            Perfect for coding, assignments
+                            and online learning.
+                        </p>
+
+                        <button
+                            class="product-btn"
+                            onclick="showProduct('Laptop Stand')">
+
+                            View Details
+
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
 
             </div>
+
+
+
+            <!-- NOTEBOOK -->
+
+            <div
+                class="col item-card"
+                data-category="stationery">
+
+                <div class="card product-card h-100">
+
+                    <div class="product-image">
+
+                        <span class="product-tag">
+                            STATIONERY
+                        </span>
+
+                        <img
+                            src="images/notebook.png"
+                            class="card-img-top"
+                            alt="Notebook">
+
+                    </div>
+
+                    <div class="card-body">
+
+                        <span class="product-category">
+                            Writing
+                        </span>
+
+                        <h5 class="card-title">
+                            Notebook
+                        </h5>
+
+                        <p class="card-text">
+                            Capture important class notes
+                            and daily ideas.
+                        </p>
+
+                        <button
+                            class="product-btn"
+                            onclick="showProduct('Notebook')">
+
+                            View Details
+
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- CALCULATOR -->
+
+            <div
+                class="col item-card"
+                data-category="study">
+
+                <div class="card product-card h-100">
+
+                    <div class="product-image">
+
+                        <span class="product-tag">
+                            STUDY
+                        </span>
+
+                        <img
+                            src="images/calculator.png"
+                            class="card-img-top"
+                            alt="Calculator">
+
+                    </div>
+
+                    <div class="card-body">
+
+                        <span class="product-category">
+                            Academic Tool
+                        </span>
+
+                        <h5 class="card-title">
+                            Calculator
+                        </h5>
+
+                        <p class="card-text">
+                            Essential for solving mathematical
+                            problems quickly.
+                        </p>
+
+                        <button
+                            class="product-btn"
+                            onclick="showProduct('Calculator')">
+
+                            View Details
+
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- HEADPHONES -->
+
+            <div
+                class="col item-card"
+                data-category="tech">
+
+                <div class="card product-card h-100">
+
+                    <div class="product-image">
+
+                        <span class="product-tag">
+                            TECH
+                        </span>
+
+                        <img
+                            src="images/headphones.png"
+                            class="card-img-top"
+                            alt="Headphones">
+
+                    </div>
+
+                    <div class="card-body">
+
+                        <span class="product-category">
+                            Focus
+                        </span>
+
+                        <h5 class="card-title">
+                            Headphones
+                        </h5>
+
+                        <p class="card-text">
+                            Stay focused with distraction-free
+                            study sessions.
+                        </p>
+
+                        <button
+                            class="product-btn"
+                            onclick="showProduct('Headphones')">
+
+                            View Details
+
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- WATER BOTTLE -->
+
+            <div
+                class="col item-card"
+                data-category="lifestyle">
+
+                <div class="card product-card h-100">
+
+                    <div class="product-image">
+
+                        <span class="product-tag">
+                            LIFESTYLE
+                        </span>
+
+                        <img
+                            src="images/water-bottle.png"
+                            class="card-img-top"
+                            alt="Water Bottle">
+
+                    </div>
+
+                    <div class="card-body">
+
+                        <span class="product-category">
+                            Daily Essential
+                        </span>
+
+                        <h5 class="card-title">
+                            Water Bottle
+                        </h5>
+
+                        <p class="card-text">
+                            Keep yourself hydrated throughout
+                            your study hours.
+                        </p>
+
+                        <button
+                            class="product-btn"
+                            onclick="showProduct('Water Bottle')">
+
+                            View Details
+
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- BACKPACK -->
+
+            <div
+                class="col item-card"
+                data-category="lifestyle">
+
+                <div class="card product-card h-100">
+
+                    <div class="product-image">
+
+                        <span class="product-tag">
+                            LIFESTYLE
+                        </span>
+
+                        <img
+                            src="images/backpack.png"
+                            class="card-img-top"
+                            alt="Smart Backpack">
+
+                    </div>
+
+                    <div class="card-body">
+
+                        <span class="product-category">
+                            College Life
+                        </span>
+
+                        <h5 class="card-title">
+                            Smart Backpack
+                        </h5>
+
+                        <p class="card-text">
+                            Organize all your study essentials
+                            in one place.
+                        </p>
+
+                        <button
+                            class="product-btn"
+                            onclick="showProduct('Smart Backpack')">
+
+                            View Details
+
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
 
         </div>
 
     </div>
 
-    <!-- Water Bottle -->
-
-    <div class="col-lg-4 col-md-6 item-card">
-
-        <div class="card product-card h-100">
-
-            <img src="images/water-bottle.png"
-                 class="card-img-top"
-                 alt="Water Bottle">
-
-            <div class="card-body text-center">
-
-                <h5 class="card-title">
-                    Water Bottle
-                </h5>
-
-                <p class="card-text">
-                    Keep yourself hydrated throughout your study hours.
-                </p>
-
-                <button class="btn btn-outline-primary">
-                    View Details
-                </button>
-
-            </div>
-
-        </div>
-
-    </div>
-
-    <!-- Backpack -->
-
-    <div class="col-lg-4 col-md-6 item-card">
-
-        <div class="card product-card h-100">
-
-            <img src="images/backpack.png"
-                 class="card-img-top"
-                 alt="Backpack">
-
-            <div class="card-body text-center">
-
-                <h5 class="card-title">
-                    Smart Backpack
-                </h5>
-
-                <p class="card-text">
-                    Organize all your study essentials in one place.
-                </p>
-
-                <button class="btn btn-outline-primary">
-                    View Details
-                </button>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
-
-</div>
-
 </section>
 
-<!-- ==========================
-STUDY ROUTINE
-========================== -->
 
-<section class="study-routine py-5" id="routine">
 
-<div class="container">
+<!-- =====================================================
+STUDENT STARTER KIT
+===================================================== -->
 
-<div class="text-center mb-5">
+<section class="starter-section">
 
-<span class="section-tag">
-📅 Daily Routine
-</span>
+    <div class="container">
 
-<h2 class="section-title">
-Perfect Study Schedule
-</h2>
+        <div class="starter-card">
 
-<p class="section-subtitle">
-Simple daily habits for productive learning.
-</p>
+            <div class="row align-items-center g-5">
 
-</div>
+                <div class="col-lg-7">
 
-<div class="row g-4">
+                    <span class="starter-tag">
+                        ✦ STUDENT STARTER KIT
+                    </span>
 
-<div class="col-lg-3 col-md-6">
+                    <h2>
+                        Build your perfect
+                        study setup.
+                    </h2>
 
-<div class="routine-card">
+                    <p>
+                        From focused study sessions to busy
+                        college days, keep your essentials
+                        organised and ready to go.
+                    </p>
 
-<h3>🌅 Morning</h3>
+                    <a href="#explorer" class="starter-btn">
+                        Explore Essentials
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
 
-<p>Plan your day and revise yesterday's topics.</p>
+                </div>
 
-</div>
 
-</div>
+                <div class="col-lg-5">
 
-<div class="col-lg-3 col-md-6">
+                    <div class="starter-icons">
 
-<div class="routine-card">
+                        <div class="starter-icon icon-laptop">
+                            <i class="fa-solid fa-laptop"></i>
+                        </div>
 
-<h3>📚 Afternoon</h3>
-
-<p>Attend classes and complete assignments.</p>
-
-</div>
-
-</div>
-
-<div class="col-lg-3 col-md-6">
-
-<div class="routine-card">
-
-<h3>☕ Evening</h3>
-
-<p>Practice coding and improve problem-solving skills.</p>
-
-</div>
-
-</div>
-
-<div class="col-lg-3 col-md-6">
-
-<div class="routine-card">
-
-<h3>🌙 Night</h3>
-
-<p>Revise important concepts and prepare for tomorrow.</p>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-  </section>
-  
-<!-- ==========================
-STUDENT REVIEWS
-========================== -->
-
-<section class="reviews py-5">
-
-<div class="container">
-
-<div class="text-center mb-5">
-
-<span class="section-tag">
-⭐ Student Reviews
-</span>
-
-<h2 class="section-title">
-What Students Say
-</h2>
-
-<p class="section-subtitle">
-Trusted by students for organizing their study essentials.
-</p>
-
-</div>
-
-<div class="row g-4">
-
-<div class="col-lg-4">
-
-<div class="review-card">
-
-<h4>⭐ ⭐ ⭐ ⭐ ⭐</h4>
-
-<p>
-
-"StudyNest helped me organize all my essentials in one place. The clean design makes everything easy to find."
-
-</p>
-
-<h5>- Rahul</h5>
-
-</div>
-
-</div>
-
-<div class="col-lg-4">
-
-<div class="review-card">
-
-<h4>⭐ ⭐ ⭐ ⭐ ⭐</h4>
-
-<p>
-
-"The Backpack Explorer idea is really creative. It feels modern and very easy to use."
-
-</p>
-
-<h5>- Priya</h5>
-
-</div>
-
-</div>
-
-<div class="col-lg-4">
-
-<div class="review-card">
-
-<h4>⭐ ⭐ ⭐ ⭐ ⭐</h4>
-
-<p>
-
-"I loved the responsive layout. Everything looks perfect on both mobile and laptop."
-
-</p>
-
-<h5>- Akash</h5>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ==========================
-CONTACT
-========================== -->
-
-<section class="contact py-5" id="contact">
-
-<div class="container">
-
-<div class="text-center mb-5">
-
-<span class="section-tag">
-📩 Contact
-</span>
-
-<h2 class="section-title">
-Let's Connect
-</h2>
-
-<p class="section-subtitle">
-Have a suggestion or collaboration idea? We'd love to hear from you.
-</p>
-
-</div>
-
-<div class="row g-5 align-items-center">
-
-<div class="col-lg-5">
-
-<div class="contact-info">
-
-<h3>Get In Touch</h3>
-
-<p><i class="fa-solid fa-envelope"></i> dosapallisravani87@gmail.com</p>
-
-<p><i class="fa-brands fa-linkedin"></i> Sravani Dosapalli</p>
-
-<p><i class="fa-brands fa-github"></i> DosapalliSravani</p>
-
-</div>
-
-</div>
-
-<div class="col-lg-7">
-
-<form class="contact-form">
-
-<input type="text"
-class="form-control mb-3"
-placeholder="Your Name">
-
-<input type="email"
-class="form-control mb-3"
-placeholder="Your Email">
-
-<textarea
-class="form-control mb-3"
-rows="5"
-placeholder="Your Message"></textarea>
-
-<button class="btn btn-primary px-5">
-
-Send Message
-
-</button>
-
-</form>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ==========================
-FOOTER
-========================== -->
-
-<footer class="footer">
-
-<div class="container">
-
-<div class="row">
-
-<div class="col-lg-4">
-
-<h3>🎒 StudyNest</h3>
-
-<p>
-
-Everything a student needs in one smart backpack.
-
-</p>
-
-</div>
-
-<div class="col-lg-4">
-
-<h5>Quick Links</h5>
-
-<ul class="footer-links">
-
-<li><a href="#">Home</a></li>
-
-<li><a href="#explorer">Explorer</a></li>
-
-<li><a href="#routine">Routine</a></li>
-
-<li><a href="#contact">Contact</a></li>
-
-</ul>
-
-</div>
-
-<div class="col-lg-4">
-
-<h5>Follow Us</h5>
-
-<div class="social-icons">
-
-<a href="#"><i class="fab fa-linkedin"></i></a>
-
-<a href="#"><i class="fab fa-github"></i></a>
-
-<a href="#"><i class="fas fa-envelope"></i></a>
-
-</div>
-
-</div>
-
-</div>
-
-<hr>
-
-<p class="text-center mb-0">
-
-© 2026 StudyNest | Designed & Developed by <strong>Sravani Dosapalli</strong>
-
-</p>
-
-</div>
-
-</footer>
-
-<!-- Bootstrap JS -->
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-<script src="script.js"></script>
-
-</body>
-
-</html>
+                        <div class="starter-icon icon-book">
+                  
