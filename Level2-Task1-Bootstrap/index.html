@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -13,7 +12,7 @@
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
         rel="stylesheet">
 
-    <!-- Google Fonts -->
+    <!-- Google Font -->
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
@@ -25,11 +24,9 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
-
 
 <!-- =====================================================
 NAVBAR
@@ -44,11 +41,15 @@ NAVBAR
             StudyNest
         </a>
 
+        <!-- MOBILE HAMBURGER -->
         <button
             class="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
-            data-bs-target="#navbarNav">
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
 
             <i class="fa-solid fa-bars"></i>
 
@@ -103,9 +104,8 @@ NAVBAR
 </nav>
 
 
-
 <!-- =====================================================
-HERO SECTION
+HERO
 ===================================================== -->
 
 <section class="hero" id="home">
@@ -114,7 +114,7 @@ HERO SECTION
 
         <div class="row align-items-center g-5">
 
-            <!-- LEFT -->
+            <!-- HERO CONTENT -->
 
             <div class="col-lg-6 hero-content">
 
@@ -128,11 +128,9 @@ HERO SECTION
                 </h1>
 
                 <p class="hero-description">
-
                     Everything you need for a productive
                     student life, thoughtfully packed into
                     one smart backpack.
-
                 </p>
 
                 <div class="hero-buttons">
@@ -143,13 +141,13 @@ HERO SECTION
                     </a>
 
                     <a href="#routine" class="secondary-btn">
-                        View Routine
+                        <i class="fa-regular fa-calendar"></i>
+                        Daily Routine
                     </a>
 
                 </div>
 
-
-                <!-- STATS -->
+                <!-- HERO STATS -->
 
                 <div class="hero-stats">
 
@@ -173,7 +171,7 @@ HERO SECTION
             </div>
 
 
-            <!-- RIGHT -->
+            <!-- HERO VISUAL -->
 
             <div class="col-lg-6">
 
@@ -211,9 +209,8 @@ HERO SECTION
 </section>
 
 
-
 <!-- =====================================================
-WHY STUDYNEST
+MADE FOR YOUR STUDENT LIFE
 ===================================================== -->
 
 <section class="why-section">
@@ -231,8 +228,8 @@ WHY STUDYNEST
             </h2>
 
             <p>
-                Simple essentials that help you study,
-                organise and stay focused.
+                Small tools, better habits and a smarter
+                way to manage your everyday college life.
             </p>
 
         </div>
@@ -240,72 +237,130 @@ WHY STUDYNEST
 
         <div class="row g-4">
 
-            <!-- FEATURE 1 -->
+            <!-- CARD 1 -->
 
-            <div class="col-md-4">
+            <div class="col-md-6 col-lg-3">
 
                 <div class="feature-card">
 
                     <div class="feature-icon lavender">
-                        <i class="fa-solid fa-lightbulb"></i>
+                        <i class="fa-solid fa-bullseye"></i>
                     </div>
 
+                    <span class="feature-number">
+                        01
+                    </span>
+
                     <h3>
-                        Smart Essentials
+                        Focus Better
                     </h3>
 
                     <p>
-                        Practical tools selected to make
-                        everyday student life easier.
+                        Create distraction-free study sessions
+                        and give your important tasks your full
+                        attention.
                     </p>
+
+                    <div class="feature-arrow">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
 
                 </div>
 
             </div>
 
 
-            <!-- FEATURE 2 -->
+            <!-- CARD 2 -->
 
-            <div class="col-md-4">
+            <div class="col-md-6 col-lg-3">
 
                 <div class="feature-card">
 
                     <div class="feature-icon rose">
-                        <i class="fa-solid fa-heart"></i>
+                        <i class="fa-solid fa-list-check"></i>
                     </div>
 
+                    <span class="feature-number">
+                        02
+                    </span>
+
                     <h3>
-                        Student Focused
+                        Stay Organized
                     </h3>
 
                     <p>
-                        Designed around the needs,
-                        routines and lifestyle of students.
+                        Keep your notebooks, assignments and
+                        daily essentials ready whenever you need
+                        them.
                     </p>
+
+                    <div class="feature-arrow">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
 
                 </div>
 
             </div>
 
 
-            <!-- FEATURE 3 -->
+            <!-- CARD 3 -->
 
-            <div class="col-md-4">
+            <div class="col-md-6 col-lg-3">
 
                 <div class="feature-card">
 
                     <div class="feature-icon green">
-                        <i class="fa-solid fa-mobile-screen"></i>
+                        <i class="fa-solid fa-laptop-code"></i>
                     </div>
 
+                    <span class="feature-number">
+                        03
+                    </span>
+
                     <h3>
-                        Responsive Design
+                        Study Smarter
                     </h3>
 
                     <p>
-                        A smooth experience across mobile,
-                        tablet and desktop screens.
+                        Use the right tools for coding, classes,
+                        projects, revision and everyday learning.
                     </p>
+
+                    <div class="feature-arrow">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- CARD 4 -->
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="feature-card">
+
+                    <div class="feature-icon peach">
+                        <i class="fa-solid fa-seedling"></i>
+                    </div>
+
+                    <span class="feature-number">
+                        04
+                    </span>
+
+                    <h3>
+                        Build Good Habits
+                    </h3>
+
+                    <p>
+                        Balance study, breaks and personal time
+                        with simple routines that fit student life.
+                    </p>
+
+                    <div class="feature-arrow">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
 
                 </div>
 
@@ -318,7 +373,6 @@ WHY STUDYNEST
 </section>
 
 
-
 <!-- =====================================================
 BACKPACK EXPLORER
 ===================================================== -->
@@ -326,9 +380,6 @@ BACKPACK EXPLORER
 <section class="explorer" id="explorer">
 
     <div class="container">
-
-
-        <!-- HEADING -->
 
         <div class="section-heading text-center">
 
@@ -341,18 +392,30 @@ BACKPACK EXPLORER
             </h2>
 
             <p>
-                Explore the everyday tools that make
-                student life easier and more productive.
+                Discover the little things that make
+                your everyday student life easier.
             </p>
 
         </div>
 
 
-        <!-- BACKPACK -->
+        <!-- BACKPACK VISUAL -->
 
         <div class="backpack-area">
 
             <div class="backpack-glow"></div>
+
+            <div class="backpack-decoration decoration-one">
+                📚
+            </div>
+
+            <div class="backpack-decoration decoration-two">
+                ✏️
+            </div>
+
+            <div class="backpack-decoration decoration-three">
+                💻
+            </div>
 
             <img
                 src="images/backpack.png"
@@ -368,19 +431,20 @@ BACKPACK EXPLORER
         </div>
 
 
-        <!-- OPEN BUTTON -->
+        <!-- OPEN BACKPACK -->
 
-        <div class="text-center">
+        <div class="text-center backpack-action">
 
             <button
                 id="openBagBtn"
-                class="open-bag-btn">
+                class="open-bag-btn"
+                type="button">
 
                 <i class="fa-solid fa-box-open"></i>
 
                 Open My Backpack
 
-                <i class="fa-solid fa-arrow-right"></i>
+                <i class="fa-solid fa-arrow-down"></i>
 
             </button>
 
@@ -393,40 +457,50 @@ BACKPACK EXPLORER
 
             <button
                 class="filter-btn active"
-                data-filter="all">
+                data-filter="all"
+                type="button">
 
+                <i class="fa-solid fa-border-all"></i>
                 All
 
             </button>
 
             <button
                 class="filter-btn"
-                data-filter="study">
+                data-filter="study"
+                type="button">
 
+                <i class="fa-solid fa-book-open"></i>
                 Study
 
             </button>
 
             <button
                 class="filter-btn"
-                data-filter="tech">
+                data-filter="tech"
+                type="button">
 
+                <i class="fa-solid fa-laptop"></i>
                 Tech
 
             </button>
 
             <button
                 class="filter-btn"
-                data-filter="stationery">
+                data-filter="stationery"
+                type="button">
 
+                <i class="fa-solid fa-pen"></i>
                 Stationery
 
             </button>
 
             <button
                 class="filter-btn"
-                data-filter="lifestyle">
+                data-filter="lifestyle"
+                type="button">
 
+                <i class="fa-solid fa-mug-hot"></i>
                 Lifestyle
 
             </button>
@@ -434,22 +508,14 @@ BACKPACK EXPLORER
         </div>
 
 
-
-        <!-- =================================================
-        PRODUCT GRID
-
-        Bootstrap responsive grid:
-        Desktop = 3
-        Tablet = 2
-        Mobile = 1
-        ================================================= -->
+        <!-- PRODUCTS -->
 
         <div
             class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4"
             id="itemsContainer">
 
 
-            <!-- LAPTOP -->
+            <!-- LAPTOP STAND -->
 
             <div
                 class="col item-card"
@@ -485,22 +551,20 @@ BACKPACK EXPLORER
                             and online learning.
                         </p>
 
-                        <button
-                            class="product-btn"
-                            onclick="showProduct('Laptop Stand')">
+                        <a
+                            href="product-details.html?product=laptop"
+                            class="product-btn">
 
                             View Details
+                            <i class="fa-solid fa-arrow-right"></i>
 
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-
-                        </button>
+                        </a>
 
                     </div>
 
                 </div>
 
             </div>
-
 
 
             <!-- NOTEBOOK -->
@@ -539,22 +603,20 @@ BACKPACK EXPLORER
                             and daily ideas.
                         </p>
 
-                        <button
-                            class="product-btn"
-                            onclick="showProduct('Notebook')">
+                        <a
+                            href="product-details.html?product=notebook"
+                            class="product-btn">
 
                             View Details
+                            <i class="fa-solid fa-arrow-right"></i>
 
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-
-                        </button>
+                        </a>
 
                     </div>
 
                 </div>
 
             </div>
-
 
 
             <!-- CALCULATOR -->
@@ -593,22 +655,20 @@ BACKPACK EXPLORER
                             problems quickly.
                         </p>
 
-                        <button
-                            class="product-btn"
-                            onclick="showProduct('Calculator')">
+                        <a
+                            href="product-details.html?product=calculator"
+                            class="product-btn">
 
                             View Details
+                            <i class="fa-solid fa-arrow-right"></i>
 
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-
-                        </button>
+                        </a>
 
                     </div>
 
                 </div>
 
             </div>
-
 
 
             <!-- HEADPHONES -->
@@ -647,22 +707,20 @@ BACKPACK EXPLORER
                             study sessions.
                         </p>
 
-                        <button
-                            class="product-btn"
-                            onclick="showProduct('Headphones')">
+                        <a
+                            href="product-details.html?product=headphones"
+                            class="product-btn">
 
                             View Details
+                            <i class="fa-solid fa-arrow-right"></i>
 
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-
-                        </button>
+                        </a>
 
                     </div>
 
                 </div>
 
             </div>
-
 
 
             <!-- WATER BOTTLE -->
@@ -701,15 +759,14 @@ BACKPACK EXPLORER
                             your study hours.
                         </p>
 
-                        <button
-                            class="product-btn"
-                            onclick="showProduct('Water Bottle')">
+                        <a
+                            href="product-details.html?product=water-bottle"
+                            class="product-btn">
 
                             View Details
+                            <i class="fa-solid fa-arrow-right"></i>
 
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-
-                        </button>
+                        </a>
 
                     </div>
 
@@ -718,8 +775,7 @@ BACKPACK EXPLORER
             </div>
 
 
-
-            <!-- BACKPACK -->
+            <!-- SMART BACKPACK -->
 
             <div
                 class="col item-card"
@@ -755,15 +811,14 @@ BACKPACK EXPLORER
                             in one place.
                         </p>
 
-                        <button
-                            class="product-btn"
-                            onclick="showProduct('Smart Backpack')">
+                        <a
+                            href="product-details.html?product=backpack"
+                            class="product-btn">
 
                             View Details
+                            <i class="fa-solid fa-arrow-right"></i>
 
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-
-                        </button>
+                        </a>
 
                     </div>
 
@@ -771,6 +826,16 @@ BACKPACK EXPLORER
 
             </div>
 
+        </div>
+
+        <!-- PRODUCT NOTE -->
+
+        <div class="explorer-note text-center">
+
+            <i class="fa-solid fa-circle-info"></i>
+
+            Tap a category to discover the essentials
+            inside your StudyNest.
 
         </div>
 
@@ -779,9 +844,8 @@ BACKPACK EXPLORER
 </section>
 
 
-
 <!-- =====================================================
-STUDENT STARTER KIT
+BUILD YOUR PERFECT STUDY KIT
 ===================================================== -->
 
 <section class="starter-section">
@@ -792,7 +856,9 @@ STUDENT STARTER KIT
 
             <div class="row align-items-center g-5">
 
-                <div class="col-lg-7">
+                <!-- LEFT CONTENT -->
+
+                <div class="col-lg-6">
 
                     <span class="starter-tag">
                         ✦ STUDENT STARTER KIT
@@ -800,30 +866,702 @@ STUDENT STARTER KIT
 
                     <h2>
                         Build your perfect
-                        study setup.
+                        <span>study setup.</span>
                     </h2>
 
                     <p>
-                        From focused study sessions to busy
-                        college days, keep your essentials
-                        organised and ready to go.
+                        Your study space should work for you.
+                        Combine the essentials you actually use
+                        and create a setup that keeps you focused,
+                        organised and ready for every class.
                     </p>
 
-                    <a href="#explorer" class="starter-btn">
-                        Explore Essentials
+
+                    <div class="starter-points">
+
+                        <div>
+                            <i class="fa-solid fa-check"></i>
+                            Focus-friendly essentials
+                        </div>
+
+                        <div>
+                            <i class="fa-solid fa-check"></i>
+                            Perfect for college & projects
+                        </div>
+
+                        <div>
+                            <i class="fa-solid fa-check"></i>
+                            Simple and organised
+                        </div>
+
+                    </div>
+
+
+                    <a
+                        href="#explorer"
+                        class="starter-btn">
+
+                        Build My Study Kit
                         <i class="fa-solid fa-arrow-right"></i>
+
                     </a>
 
                 </div>
 
 
-                <div class="col-lg-5">
+                <!-- RIGHT VISUAL -->
 
-                    <div class="starter-icons">
+                <div class="col-lg-6">
+
+                    <div class="starter-visual">
+
+                        <div class="starter-orbit"></div>
 
                         <div class="starter-icon icon-laptop">
                             <i class="fa-solid fa-laptop"></i>
+                            <small>Tech</small>
                         </div>
 
                         <div class="starter-icon icon-book">
-                  
+                            <i class="fa-solid fa-book-open"></i>
+                            <small>Study</small>
+                        </div>
+
+                        <div class="starter-icon icon-headphone">
+                            <i class="fa-solid fa-headphones"></i>
+                            <small>Focus</small>
+                        </div>
+
+                        <div class="starter-icon icon-bag">
+                            🎒
+                            <small>Essentials</small>
+                        </div>
+
+                        <div class="starter-center">
+
+                            <span>MY</span>
+
+                            <strong>
+                                STUDY
+                            </strong>
+
+                            <span>
+                                KIT
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+DAILY ROUTINE
+===================================================== -->
+
+<section
+    class="study-routine"
+    id="routine">
+
+    <div class="container">
+
+        <div class="section-heading text-center">
+
+            <span class="section-tag">
+                📅 DAILY ROUTINE
+            </span>
+
+            <h2>
+                A Productive Study Day
+            </h2>
+
+            <p>
+                A simple rhythm to balance classes,
+                assignments, practice and rest.
+            </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+            <!-- MORNING -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="routine-card">
+
+                    <div class="routine-number">
+                        01
+                    </div>
+
+                    <div class="routine-icon">
+                        🌅
+                    </div>
+
+                    <span>
+                        MORNING
+                    </span>
+
+                    <h3>
+                        Start Fresh
+                    </h3>
+
+                    <p>
+                        Plan your priorities and revise
+                        yesterday's important topics.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- AFTERNOON -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="routine-card">
+
+                    <div class="routine-number">
+                        02
+                    </div>
+
+                    <div class="routine-icon">
+                        📚
+                    </div>
+
+                    <span>
+                        AFTERNOON
+                    </span>
+
+                    <h3>
+                        Learn & Build
+                    </h3>
+
+                    <p>
+                        Attend classes, take notes and
+                        complete important assignments.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- EVENING -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="routine-card">
+
+                    <div class="routine-number">
+                        03
+                    </div>
+
+                    <div class="routine-icon">
+                        ☕
+                    </div>
+
+                    <span>
+                        EVENING
+                    </span>
+
+                    <h3>
+                        Practice
+                    </h3>
+
+                    <p>
+                        Practice coding, projects and
+                        problem-solving skills.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- NIGHT -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="routine-card">
+
+                    <div class="routine-number">
+                        04
+                    </div>
+
+                    <div class="routine-icon">
+                        🌙
+                    </div>
+
+                    <span>
+                        NIGHT
+                    </span>
+
+                    <h3>
+                        Reset
+                    </h3>
+
+                    <p>
+                        Review what you learned and prepare
+                        your priorities for tomorrow.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ROUTINE TIP -->
+
+        <div class="routine-tip">
+
+            <i class="fa-solid fa-lightbulb"></i>
+
+            <div>
+                <strong>Study Tip</strong>
+                <span>
+                    Short focused sessions with regular breaks
+                    can make your study time easier to manage.
+                </span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+REVIEWS
+===================================================== -->
+
+<section class="reviews" id="reviews">
+
+    <div class="container">
+
+        <div class="section-heading text-center">
+
+            <span class="section-tag">
+                ⭐ STUDENT REVIEWS
+            </span>
+
+            <h2>
+                What Students Say
+            </h2>
+
+            <p>
+                A few words from our student community.
+            </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+            <!-- REVIEW 1 -->
+
+            <div class="col-lg-4">
+
+                <div class="review-card">
+
+                    <div class="stars">
+                        ★★★★★
+                    </div>
+
+                    <p>
+                        "StudyNest helped me organise all
+                        my essentials in one place. The clean
+                        design makes everything easy to find."
+                    </p>
+
+                    <div class="review-user">
+
+                        <div class="avatar">
+                            R
+                        </div>
+
+                        <div>
+                            <h5>Rahul</h5>
+                            <span>CSE Student</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- REVIEW 2 -->
+
+            <div class="col-lg-4">
+
+                <div class="review-card">
+
+                    <div class="stars">
+                        ★★★★★
+                    </div>
+
+                    <p>
+                        "The Backpack Explorer idea is really
+                        creative. It feels modern and very
+                        easy to use."
+                    </p>
+
+                    <div class="review-user">
+
+                        <div class="avatar">
+                            P
+                        </div>
+
+                        <div>
+                            <h5>Priya</h5>
+                            <span>Engineering Student</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- REVIEW 3 -->
+
+            <div class="col-lg-4">
+
+                <div class="review-card">
+
+                    <div class="stars">
+                        ★★★★★
+                    </div>
+
+                    <p>
+                        "I loved the responsive layout.
+                        Everything looks great on both mobile
+                        and laptop."
+                    </p>
+
+                    <div class="review-user">
+
+                        <div class="avatar">
+                            A
+                        </div>
+
+                        <div>
+                            <h5>Akash</h5>
+                            <span>Computer Science Student</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+CONTACT
+===================================================== -->
+
+<section class="contact" id="contact">
+
+    <div class="container">
+
+        <div class="contact-wrapper">
+
+            <div class="row align-items-center g-5">
+
+                <!-- CONTACT INFO -->
+
+                <div class="col-lg-5">
+
+                    <span class="section-tag">
+                        📩 GET IN TOUCH
+                    </span>
+
+                    <h2>
+                        Let's connect.
+                    </h2>
+
+                    <p>
+                        Have a suggestion, idea or collaboration
+                        opportunity? We'd love to hear from you.
+                    </p>
+
+
+                    <div class="contact-info">
+
+                        <div class="contact-item">
+
+                            <i class="fa-solid fa-envelope"></i>
+
+                            <div>
+                                <small>Email</small>
+                                <span>
+                                    dosapallisravani87@gmail.com
+                                </span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="contact-item">
+
+                            <i class="fa-brands fa-linkedin"></i>
+
+                            <div>
+                                <small>LinkedIn</small>
+                                <span>
+                                    Sravani Dosapalli
+                                </span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="contact-item">
+
+                            <i class="fa-brands fa-github"></i>
+
+                            <div>
+                                <small>GitHub</small>
+                                <span>
+                                    DosapalliSravani
+                                </span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CONTACT FORM -->
+
+                <div class="col-lg-7">
+
+                    <form
+                        class="contact-form"
+                        id="contactForm">
+
+                        <div class="row g-3">
+
+                            <div class="col-md-6">
+
+                                <input
+                                    type="text"
+                                    id="name"
+                                    class="form-control"
+                                    placeholder="Your Name"
+                                    required>
+
+                            </div>
+
+
+                            <div class="col-md-6">
+
+                                <input
+                                    type="email"
+                                    id="email"
+                                    class="form-control"
+                                    placeholder="Your Email"
+                                    required>
+
+                            </div>
+
+                        </div>
+
+
+                        <textarea
+                            id="message"
+                            class="form-control"
+                            rows="5"
+                            placeholder="Your Message"
+                            required></textarea>
+
+
+                        <button
+                            type="submit"
+                            class="primary-btn">
+
+                            Send Message
+                            <i class="fa-solid fa-paper-plane"></i>
+
+                        </button>
+
+
+                        <div
+                            id="formMessage"
+                            class="form-message">
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+FOOTER
+===================================================== -->
+
+<footer class="footer">
+
+    <div class="container">
+
+        <div class="row g-4">
+
+            <div class="col-lg-5">
+
+                <a href="#home" class="footer-brand">
+                    🎒 StudyNest
+                </a>
+
+                <p>
+                    Everything a student needs
+                    in one smart backpack.
+                </p>
+
+            </div>
+
+
+            <div class="col-lg-3">
+
+                <h5>
+                    Quick Links
+                </h5>
+
+                <ul class="footer-links">
+
+                    <li>
+                        <a href="#home">Home</a>
+                    </li>
+
+                    <li>
+                        <a href="#explorer">Explorer</a>
+                    </li>
+
+                    <li>
+                        <a href="#routine">Routine</a>
+                    </li>
+
+                    <li>
+                        <a href="#reviews">Reviews</a>
+                    </li>
+
+                    <li>
+                        <a href="#contact">Contact</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="col-lg-4">
+
+                <h5>
+                    Follow StudyNest
+                </h5>
+
+                <div class="social-icons">
+
+                    <a
+                        href="https://www.linkedin.com/"
+                        target="_blank"
+                        aria-label="LinkedIn">
+
+                        <i class="fab fa-linkedin-in"></i>
+
+                    </a>
+
+                    <a
+                        href="https://github.com/"
+                        target="_blank"
+                        aria-label="GitHub">
+
+                        <i class="fab fa-github"></i>
+
+                    </a>
+
+                    <a
+                        href="mailto:dosapallisravani87@gmail.com"
+                        aria-label="Email">
+
+                        <i class="fas fa-envelope"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <hr>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 StudyNest
+            </span>
+
+            <span>
+                Designed & Developed by
+                <strong>Sravani Dosapalli</strong>
+            </span>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- =====================================================
+BOOTSTRAP JS
+IMPORTANT FOR HAMBURGER
+===================================================== -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
+
+<!-- CUSTOM JS -->
+
+<script src="script.js"></script>
+
+</body>
+</html>
