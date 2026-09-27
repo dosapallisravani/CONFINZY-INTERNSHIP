@@ -3509,7 +3509,7 @@ p {
         background-size: cover;
 
         /* move image slightly to the left */
-        background-position: 58% center;
+        background-position: 35% center;
 
         transform: scale(0.94);
         transform-origin: center center;
