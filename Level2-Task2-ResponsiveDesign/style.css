@@ -2046,3 +2046,207 @@ button {
 .desktop-nav a.active::after {
     width: 100%;
 }
+/* =========================================================
+   ROOTS — MOBILE FINAL POLISH
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+    /* ---------- MOBILE NAVBAR ---------- */
+
+    .navbar {
+        top: 18px;
+        left: 20px;
+        right: 20px;
+        width: auto;
+        padding: 14px 18px;
+        background: rgba(250, 247, 240, 0.96);
+        border: 1px solid rgba(255,255,255,0.55);
+        box-shadow: 0 12px 35px rgba(0,0,0,0.16);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+    }
+
+    .logo {
+        gap: 10px;
+    }
+
+    .logo-mark {
+        font-size: 25px;
+    }
+
+    .logo strong {
+        font-size: 25px;
+        letter-spacing: 1px;
+    }
+
+    .logo small {
+        font-size: 9px;
+        letter-spacing: 1.1px;
+    }
+
+    .menu-btn {
+        width: 42px;
+        height: 42px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 27px;
+    }
+
+
+    /* ---------- FOOTER ---------- */
+
+    .footer {
+        padding: 70px 40px 25px;
+        background: #0b2119;
+        color: rgba(255,255,255,0.78);
+    }
+
+    .footer-brand {
+        margin-bottom: 55px;
+    }
+
+    .footer-brand .logo {
+        margin-bottom: 22px;
+    }
+
+    .footer-brand .logo strong {
+        color: #f5f0e6;
+    }
+
+    .footer-brand .logo small {
+        color: rgba(255,255,255,0.55);
+    }
+
+    .footer-brand p {
+        max-width: 300px;
+        color: rgba(255,255,255,0.65);
+        line-height: 1.8;
+        font-family: var(--serif);
+        font-style: italic;
+        font-size: 17px;
+    }
+
+    .footer-column {
+        margin-bottom: 42px;
+    }
+
+    .footer-column h4,
+    .footer-newsletter h4 {
+        margin-bottom: 20px;
+        color: #c7aa72;
+        font-size: 14px;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+    }
+
+    .footer-column a {
+        display: block;
+        margin-bottom: 14px;
+        color: rgba(255,255,255,0.65);
+        font-size: 15px;
+        transition: color 0.25s ease;
+    }
+
+    .footer-column a:hover {
+        color: #f5f0e6;
+    }
+
+    .footer-newsletter {
+        margin-top: 8px;
+        padding-bottom: 35px;
+    }
+
+    .footer-newsletter p {
+        color: rgba(255,255,255,0.62);
+        line-height: 1.7;
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    .footer-newsletter form {
+        display: flex;
+        width: 100%;
+        height: 52px;
+        border: 1px solid rgba(255,255,255,0.16);
+        border-radius: 30px;
+        overflow: hidden;
+        background: rgba(255,255,255,0.04);
+    }
+
+    .footer-newsletter input {
+        flex: 1;
+        min-width: 0;
+        padding: 0 18px;
+        border: none;
+        outline: none;
+        background: transparent;
+        color: #fff;
+        font-size: 14px;
+    }
+
+    .footer-newsletter input::placeholder {
+        color: rgba(255,255,255,0.35);
+    }
+
+    .footer-newsletter button {
+        width: 65px;
+        border: none;
+        background: #b08a52;
+        color: #fff;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    /* ---------- BOTTOM FOOTER ---------- */
+
+    .footer-bottom {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        padding-top: 25px;
+        margin-top: 10px;
+        border-top: 1px solid rgba(255,255,255,0.12);
+        color: rgba(255,255,255,0.42);
+        font-size: 12px;
+        line-height: 1.6;
+    }
+}
+
+
+/* ---------- SMALL PHONES ---------- */
+
+@media (max-width: 430px) {
+
+    .navbar {
+        top: 16px;
+        left: 16px;
+        right: 16px;
+        padding: 12px 16px;
+    }
+
+    .logo strong {
+        font-size: 23px;
+    }
+
+    .logo small {
+        font-size: 8px;
+    }
+
+    .footer {
+        padding: 60px 28px 22px;
+    }
+
+    .footer-brand p {
+        font-size: 16px;
+    }
+
+    .footer-newsletter form {
+        height: 50px;
+    }
+
+    .footer-newsletter button {
+        width: 60px;
+    }
+       }
