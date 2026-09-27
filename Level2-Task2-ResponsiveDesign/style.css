@@ -699,7 +699,7 @@ p {
     inset: 0;
 
     background-image:
-        url("https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=2200&q=90");
+        url("images/hero.jpg");
 
     background-size: cover;
 
