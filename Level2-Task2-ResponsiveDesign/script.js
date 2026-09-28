@@ -1,6 +1,7 @@
 /* =========================================================
    ROOTS — Heritage & Artisan Archive
-   JavaScript
+   COMPLETE JAVASCRIPT
+   PART 1 / 2
    ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -27,16 +28,11 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    /* Close mobile menu when a link is clicked */
 
-    /* =====================================================
-       MOBILE MENU LINKS
-       ===================================================== */
-
-    const mobileLinks = document.querySelectorAll(".mobile-menu a");
-
-    mobileLinks.forEach(link => {
+    document.querySelectorAll(".mobile-menu a").forEach(link => {
         link.addEventListener("click", () => {
-            mobileMenu.classList.remove("active");
+            mobileMenu?.classList.remove("active");
             document.body.style.overflow = "";
         });
     });
@@ -46,11 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
        SMOOTH SCROLL
        ===================================================== */
 
-    const navLinks = document.querySelectorAll(
-        'a[href^="#"], .mobile-menu a[href^="#"]'
-    );
-
-    navLinks.forEach(link => {
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
 
         link.addEventListener("click", function (e) {
 
@@ -60,26 +52,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const target = document.querySelector(targetId);
 
-            if (target) {
+            if (!target) return;
 
-                e.preventDefault();
+            e.preventDefault();
 
-                const navbar = document.querySelector(".navbar");
+            const navbar = document.querySelector(".navbar");
+            const navbarHeight = navbar
+                ? navbar.offsetHeight + 20
+                : 20;
 
-                const navbarHeight = navbar
-                    ? navbar.offsetHeight + 20
-                    : 20;
+            const position =
+                target.getBoundingClientRect().top +
+                window.scrollY -
+                navbarHeight;
 
-                const targetPosition =
-                    target.getBoundingClientRect().top +
-                    window.scrollY -
-                    navbarHeight;
-
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: "smooth"
-                });
-            }
+            window.scrollTo({
+                top: position,
+                behavior: "smooth"
+            });
 
         });
 
@@ -98,39 +88,41 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (window.scrollY > 50) {
 
+            navbar.classList.add("scrolled");
+
             navbar.style.background =
-                "rgba(250, 247, 240, 0.95)";
+                "rgba(250,247,240,0.96)";
 
             navbar.style.boxShadow =
                 "0 12px 35px rgba(0,0,0,0.12)";
 
         } else {
 
+            navbar.classList.remove("scrolled");
+
             navbar.style.background =
-                "rgba(250, 247, 240, 0.82)";
+                "rgba(250,247,240,0.82)";
 
             navbar.style.boxShadow =
                 "0 10px 35px rgba(0,0,0,0.08)";
         }
+
     }
 
     window.addEventListener("scroll", updateNavbar);
-
     updateNavbar();
 
 
     /* =====================================================
-       HERO EXPLORE BUTTONS
+       HERO BUTTONS
        ===================================================== */
 
-    const exploreButtons =
-        document.querySelectorAll(".hero .btn");
-
-    exploreButtons.forEach(button => {
+    document.querySelectorAll(".hero .btn").forEach(button => {
 
         button.addEventListener("click", () => {
 
-            const text = button.textContent.toLowerCase();
+            const text =
+                button.textContent.toLowerCase();
 
             if (text.includes("community")) {
 
@@ -138,19 +130,20 @@ document.addEventListener("DOMContentLoaded", () => {
                     document.querySelector("#communities");
 
                 if (section) {
-
                     section.scrollIntoView({
                         behavior: "smooth"
                     });
                 }
 
-            } else if (text.includes("craft")) {
+            }
+
+            else if (text.includes("craft")) {
 
                 const section =
+                    document.querySelector("#crafts") ||
                     document.querySelector("#craft");
 
                 if (section) {
-
                     section.scrollIntoView({
                         behavior: "smooth"
                     });
@@ -167,10 +160,7 @@ document.addEventListener("DOMContentLoaded", () => {
        COMMUNITY CARDS
        ===================================================== */
 
-    const communityCards =
-        document.querySelectorAll(".community-card");
-
-    communityCards.forEach(card => {
+    document.querySelectorAll(".community-card").forEach(card => {
 
         const button = card.querySelector("button");
 
@@ -181,13 +171,13 @@ document.addEventListener("DOMContentLoaded", () => {
             const title =
                 card.querySelector("h3");
 
-            const communityName =
+            const name =
                 title
                     ? title.textContent.trim()
                     : "this community";
 
             showToast(
-                `Exploring ${communityName} heritage`
+                `Exploring ${name} heritage`
             );
 
         });
@@ -196,7 +186,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       CRAFT STORY BUTTON
+       CRAFT STORY
        ===================================================== */
 
     const craftButton =
@@ -207,7 +197,7 @@ document.addEventListener("DOMContentLoaded", () => {
         craftButton.addEventListener("click", () => {
 
             showToast(
-                "Bamboo Craft story opening soon."
+                "Opening Bamboo Craft story..."
             );
 
         });
@@ -216,7 +206,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       ARTISAN PROFILE BUTTON
+       ARTISAN PROFILE
        ===================================================== */
 
     const artisanButton =
@@ -236,7 +226,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       VOICE PLAY BUTTON
+       VOICE PLAYER
        ===================================================== */
 
     const playButton =
@@ -274,69 +264,65 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       REGION / MAP BUTTONS
+       MAP / REGION BUTTONS
        ===================================================== */
 
-    const regionButtons =
-        document.querySelectorAll(".region-list button");
+    document.querySelectorAll(".region-list button")
+        .forEach(button => {
 
-    regionButtons.forEach(button => {
+            button.addEventListener("click", () => {
 
-        button.addEventListener("click", () => {
+                const region =
+                    button.querySelector("b");
 
-            const region =
-                button.querySelector("b");
+                const regionName =
+                    region
+                        ? region.textContent.trim()
+                        : "selected region";
 
-            const regionName =
-                region
-                    ? region.textContent.trim()
-                    : "selected region";
+                showToast(
+                    `Exploring ${regionName} traditions`
+                );
 
-            showToast(
-                `Exploring ${regionName} traditions`
-            );
+            });
 
         });
-
-    });
 
 
     /* =====================================================
        JOURNAL CARDS
        ===================================================== */
 
-    const journalCards =
-        document.querySelectorAll(".journal-card");
+    document.querySelectorAll(".journal-card")
+        .forEach(card => {
 
-    journalCards.forEach(card => {
+            const link = card.querySelector("a");
 
-        const link = card.querySelector("a");
+            if (!link) return;
 
-        if (!link) return;
+            link.addEventListener("click", e => {
 
-        link.addEventListener("click", (e) => {
+                e.preventDefault();
 
-            e.preventDefault();
+                const heading =
+                    card.querySelector("h3");
 
-            const heading =
-                card.querySelector("h3");
+                const title =
+                    heading
+                        ? heading.textContent.trim()
+                        : "this story";
 
-            const title =
-                heading
-                    ? heading.textContent.trim()
-                    : "this story";
+                showToast(
+                    `Opening "${title}"...`
+                );
 
-            showToast(
-                `Opening "${title}"...`
-            );
+            });
 
         });
 
-    });
-
 
     /* =====================================================
-       FOOTER NEWSLETTER
+       NEWSLETTER
        ===================================================== */
 
     const newsletterForm =
@@ -344,7 +330,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (newsletterForm) {
 
-        newsletterForm.addEventListener("submit", (e) => {
+        newsletterForm.addEventListener("submit", e => {
 
             e.preventDefault();
 
@@ -352,7 +338,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 newsletterForm.querySelector("input");
 
             const email =
-                input ? input.value.trim() : "";
+                input
+                    ? input.value.trim()
+                    : "";
 
             if (!email) {
 
@@ -387,7 +375,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       SEARCH BUTTON
+       SEARCH
        ===================================================== */
 
     const searchButton =
@@ -409,18 +397,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
             let found = false;
 
-            const searchableItems = [
-                ...document.querySelectorAll(
-                    ".community-card, .journal-card, .artisan-profile"
-                )
-            ];
+            const items = document.querySelectorAll(
+                ".community-card, .journal-card, .artisan-profile, .archive-item"
+            );
 
-            searchableItems.forEach(item => {
+            items.forEach(item => {
 
                 const content =
                     item.textContent.toLowerCase();
 
-                if (content.includes(term)) {
+                if (
+                    !found &&
+                    content.includes(term)
+                ) {
 
                     found = true;
 
@@ -430,7 +419,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     });
 
                     item.style.outline =
-                        "2px solid #b97858";
+                        "2px solid #b08a52";
 
                     item.style.outlineOffset =
                         "5px";
@@ -459,62 +448,68 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       SCROLL REVEAL ANIMATION
+       SCROLL REVEAL
        ===================================================== */
 
-    const revealElements = document.querySelectorAll(
-        ".community-card, .craft-story, .artisans, .voices, .living-map, .timeline-item, .journal-card, .about"
-    );
-
-    const revealObserver =
-        new IntersectionObserver(
-            entries => {
-
-                entries.forEach(entry => {
-
-                    if (entry.isIntersecting) {
-
-                        entry.target.classList.add(
-                            "reveal-visible"
-                        );
-
-                        revealObserver.unobserve(
-                            entry.target
-                        );
-
-                    }
-
-                });
-
-            },
-            {
-                threshold: 0.12
-            }
+    const revealElements =
+        document.querySelectorAll(
+            ".community-card, .craft-story, .artisans, .voices, .living-map, .timeline-item, .journal-card, .about, .archive-item"
         );
 
-    revealElements.forEach(element => {
+    if ("IntersectionObserver" in window) {
 
-        element.classList.add("reveal-hidden");
+        const revealObserver =
+            new IntersectionObserver(
+                entries => {
 
-        revealObserver.observe(element);
+                    entries.forEach(entry => {
 
-    });
+                        if (entry.isIntersecting) {
+
+                            entry.target.classList.add(
+                                "reveal-visible"
+                            );
+
+                            revealObserver.unobserve(
+                                entry.target
+                            );
+
+                        }
+
+                    });
+
+                },
+                {
+                    threshold: 0.12
+                }
+            );
+
+        revealElements.forEach(element => {
+
+            element.classList.add(
+                "reveal-hidden"
+            );
+
+            revealObserver.observe(element);
+
+        });
+
+    }
 
 
     /* =====================================================
        ACTIVE NAVIGATION
        ===================================================== */
 
-    const sections = document.querySelectorAll(
-        "section[id]"
-    );
+    const sections =
+        document.querySelectorAll("section[id]");
 
     const desktopLinks =
-        document.querySelectorAll(
-            ".desktop-nav a"
-        );
+        document.querySelectorAll(".desktop-nav a");
 
     function updateActiveNav() {
+
+        if (!sections.length) return;
 
         let currentSection = "";
 
@@ -557,6 +552,8 @@ document.addEventListener("DOMContentLoaded", () => {
         updateActiveNav
     );
 
+    updateActiveNav();
+
 
     /* =====================================================
        HERO SCROLL INDICATOR
@@ -567,14 +564,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (heroScroll) {
 
+        heroScroll.style.cursor = "pointer";
+
         heroScroll.addEventListener("click", () => {
 
-            const communities =
+            const target =
+                document.querySelector("#archive") ||
                 document.querySelector("#communities");
 
-            if (communities) {
+            if (target) {
 
-                communities.scrollIntoView({
+                target.scrollIntoView({
                     behavior: "smooth"
                 });
 
@@ -582,13 +582,84 @@ document.addEventListener("DOMContentLoaded", () => {
 
         });
 
-        heroScroll.style.cursor = "pointer";
     }
 
 
     /* =====================================================
-       TOAST FUNCTION
+       ARCHIVE FILTER
        ===================================================== */
+
+    const filterButtons =
+        document.querySelectorAll(".filter-btn");
+
+    const archiveItems =
+        document.querySelectorAll(".archive-item");
+
+    if (filterButtons.length && archiveItems.length) {
+
+        filterButtons.forEach(button => {
+
+            button.addEventListener("click", () => {
+
+                const category =
+                    button.dataset.category;
+
+                filterButtons.forEach(btn => {
+                    btn.classList.remove("active");
+                });
+
+                button.classList.add("active");
+
+                archiveItems.forEach(item => {
+
+                    const itemCategory =
+                        item.dataset.category;
+
+                    if (
+                        category === "all" ||
+                        itemCategory === category
+                    ) {
+
+                        item.style.display = "";
+
+                        requestAnimationFrame(() => {
+                            item.classList.remove("archive-hidden");
+                        });
+
+                    } else {
+
+                        item.classList.add(
+                            "archive-hidden"
+                        );
+
+                        setTimeout(() => {
+
+                            if (
+                                item.classList.contains(
+                                    "archive-hidden"
+                                )
+                            ) {
+                                item.style.display = "none";
+                            }
+
+                        }, 250);
+
+                    }
+
+                });
+
+            });
+
+        });
+
+    }
+
+
+    /* =====================================================
+       TOAST
+       ===================================================== */
+
+    window.showToast = showToast;
 
     function showToast(message) {
 
@@ -603,6 +674,7 @@ document.addEventListener("DOMContentLoaded", () => {
             toast.className = "toast";
 
             document.body.appendChild(toast);
+
         }
 
         toast.textContent = message;
@@ -624,7 +696,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 /* =========================================================
-   ROOTS — DETAILS PAGE DATA
+   ROOTS — ARCHIVE DETAILS DATA
+   PART 2 / 2
    ========================================================= */
 
 const rootsDetails = {
@@ -643,16 +716,12 @@ const rootsDetails = {
         image: "images/bodo.png",
         secondaryImage: "images/storiesfromhome.png",
         heading: "A living heritage of Assam",
-        description:
-            "The Bodo community carries a rich cultural heritage expressed through traditions, everyday life, artistic practices and a strong connection with place.",
+        description: "The Bodo community carries a rich cultural heritage expressed through traditions, everyday life, artistic practices and a strong connection with place.",
         storyTitle: "Traditions that continue forward",
-        story:
-            "Cultural knowledge is carried through families and communities through everyday practices, stories, celebrations and creative work.",
+        story: "Cultural knowledge is carried through families and communities through everyday practices, stories, celebrations and creative work.",
         highlightTitle: "Heritage carried by people",
-        highlightText:
-            "ROOTS brings together stories and visual records that help make living cultural traditions easier to explore and understand."
+        highlightText: "ROOTS brings together stories and visual records that help make living cultural traditions easier to explore and understand."
     },
-
 
     gond: {
         type: "COMMUNITY",
@@ -664,16 +733,12 @@ const rootsDetails = {
         image: "images/gond.png",
         secondaryImage: "images/tribaltextile.png",
         heading: "Stories expressed through culture",
-        description:
-            "The Gond community is known for a rich cultural heritage expressed through visual art, stories, traditions and knowledge passed between generations.",
+        description: "The Gond community is known for a rich cultural heritage expressed through visual art, stories, traditions and knowledge passed between generations.",
         storyTitle: "Knowledge through generations",
-        story:
-            "Traditional knowledge becomes part of everyday life when stories, creative practices and community memories are shared with younger generations.",
+        story: "Traditional knowledge becomes part of everyday life when stories, creative practices and community memories are shared with younger generations.",
         highlightTitle: "Art, memory and identity",
-        highlightText:
-            "The archive highlights the connection between creative expression, community memory and cultural identity."
+        highlightText: "The archive highlights the connection between creative expression, community memory and cultural identity."
     },
-
 
     dongria: {
         type: "COMMUNITY",
@@ -685,16 +750,12 @@ const rootsDetails = {
         image: "images/dongria.png",
         secondaryImage: "images/theforestgivesulife.png",
         heading: "Culture connected to landscape",
-        description:
-            "The Dongria Kondh community has a distinctive cultural heritage closely connected with its landscape, traditional knowledge and community life.",
+        description: "The Dongria Kondh community has a distinctive cultural heritage closely connected with its landscape, traditional knowledge and community life.",
         storyTitle: "A relationship with place",
-        story:
-            "For many communities, the surrounding landscape is more than a location. It can be part of memory, knowledge, work and cultural identity.",
+        story: "For many communities, the surrounding landscape is more than a location. It can be part of memory, knowledge, work and cultural identity.",
         highlightTitle: "People and landscape",
-        highlightText:
-            "ROOTS documents the relationship between communities and the places where their traditions continue to live."
+        highlightText: "ROOTS documents the relationship between communities and the places where their traditions continue to live."
     },
-
 
     santhal: {
         type: "COMMUNITY",
@@ -706,16 +767,12 @@ const rootsDetails = {
         image: "images/santhal.png",
         secondaryImage: "images/storiesfromhome.png",
         heading: "A heritage carried through generations",
-        description:
-            "The Santhal community has a rich cultural heritage expressed through language, traditions, stories, music, art and community life.",
+        description: "The Santhal community has a rich cultural heritage expressed through language, traditions, stories, music, art and community life.",
         storyTitle: "Memory becomes heritage",
-        story:
-            "Community stories and traditions create a connection between generations, allowing cultural knowledge to continue while the world around it changes.",
+        story: "Community stories and traditions create a connection between generations, allowing cultural knowledge to continue while the world around it changes.",
         highlightTitle: "Stories that stay alive",
-        highlightText:
-            "The ROOTS archive creates space for cultural stories, creative practices and memories to be explored respectfully."
+        highlightText: "The ROOTS archive creates space for cultural stories, creative practices and memories to be explored respectfully."
     },
-
 
     konda: {
         type: "COMMUNITY",
@@ -727,14 +784,11 @@ const rootsDetails = {
         image: "images/kondareddy.png",
         secondaryImage: "images/bamboocraft.jpg",
         heading: "Knowledge rooted in place",
-        description:
-            "The Konda Reddi community has a distinctive cultural heritage shaped by traditional knowledge, community practices and connections with the surrounding environment.",
+        description: "The Konda Reddi community has a distinctive cultural heritage shaped by traditional knowledge, community practices and connections with the surrounding environment.",
         storyTitle: "Tradition in everyday life",
-        story:
-            "Traditional knowledge can be found in the materials people work with, the objects they create, the stories they share and the practices they continue.",
+        story: "Traditional knowledge can be found in the materials people work with, the objects they create, the stories they share and the practices they continue.",
         highlightTitle: "Hands, materials and memory",
-        highlightText:
-            "ROOTS connects community stories with the crafts and everyday practices through which heritage continues to be expressed."
+        highlightText: "ROOTS connects community stories with the crafts and everyday practices through which heritage continues to be expressed."
     },
 
 
@@ -752,16 +806,12 @@ const rootsDetails = {
         image: "images/bamboocraft.jpg",
         secondaryImage: "images/handsbehindcraft.png",
         heading: "Craft shaped by hand",
-        description:
-            "Bamboo craft transforms a natural material into useful and decorative objects through careful preparation, shaping and weaving.",
+        description: "Bamboo craft transforms a natural material into useful and decorative objects through careful preparation, shaping and weaving.",
         storyTitle: "From material to object",
-        story:
-            "Traditional craft depends on knowledge of materials, tools, patterns and techniques that are learned through practice and shared across generations.",
+        story: "Traditional craft depends on knowledge of materials, tools, patterns and techniques that are learned through practice and shared across generations.",
         highlightTitle: "The hands behind the craft",
-        highlightText:
-            "Every woven object represents time, skill and attention — connecting the finished piece with the person who made it."
+        highlightText: "Every woven object represents time, skill and attention — connecting the finished piece with the person who made it."
     },
-
 
     weaving: {
         type: "CRAFT",
@@ -773,16 +823,12 @@ const rootsDetails = {
         image: "images/handloomweaving.png",
         secondaryImage: "images/tribaltextile.png",
         heading: "Threads carrying stories",
-        description:
-            "Handloom weaving brings together yarn, colour, pattern and skilled movement to create textiles with distinctive visual character.",
+        description: "Handloom weaving brings together yarn, colour, pattern and skilled movement to create textiles with distinctive visual character.",
         storyTitle: "A rhythm of hands and threads",
-        story:
-            "Weaving knowledge develops through practice. Patterns and techniques can become part of a community's visual language and craft identity.",
+        story: "Weaving knowledge develops through practice. Patterns and techniques can become part of a community's visual language and craft identity.",
         highlightTitle: "Patterns that endure",
-        highlightText:
-            "Textiles can preserve visual traditions through colours, motifs and techniques that continue to be practiced."
+        highlightText: "Textiles can preserve visual traditions through colours, motifs and techniques that continue to be practiced."
     },
-
 
     metal: {
         type: "CRAFT",
@@ -794,16 +840,12 @@ const rootsDetails = {
         image: "images/metalart.png",
         secondaryImage: "images/handsbehindcraft.png",
         heading: "Shaped through skill",
-        description:
-            "Traditional metal craft combines material knowledge, tools and skilled workmanship to create objects with functional and cultural value.",
+        description: "Traditional metal craft combines material knowledge, tools and skilled workmanship to create objects with functional and cultural value.",
         storyTitle: "Skill passed through practice",
-        story:
-            "Craft techniques are often learned by observing, practicing and working alongside experienced artisans.",
+        story: "Craft techniques are often learned by observing, practicing and working alongside experienced artisans.",
         highlightTitle: "Material becomes heritage",
-        highlightText:
-            "The finished object represents not only a material process but also the knowledge and skill behind its creation."
+        highlightText: "The finished object represents not only a material process but also the knowledge and skill behind its creation."
     },
-
 
     pottery: {
         type: "CRAFT",
@@ -815,16 +857,12 @@ const rootsDetails = {
         image: "images/tribalpottery.png",
         secondaryImage: "images/objectsweinherite.png",
         heading: "Earth shaped by hand",
-        description:
-            "Pottery transforms clay into useful and expressive objects through shaping, drying and finishing techniques.",
+        description: "Pottery transforms clay into useful and expressive objects through shaping, drying and finishing techniques.",
         storyTitle: "Objects made for everyday life",
-        story:
-            "Traditional pottery often connects craft with everyday needs, creating objects that carry both practical and cultural meaning.",
+        story: "Traditional pottery often connects craft with everyday needs, creating objects that carry both practical and cultural meaning.",
         highlightTitle: "From earth to object",
-        highlightText:
-            "A simple vessel can preserve knowledge about materials, techniques and the hands that shaped it."
+        highlightText: "A simple vessel can preserve knowledge about materials, techniques and the hands that shaped it."
     },
-
 
     textile: {
         type: "CRAFT",
@@ -836,16 +874,12 @@ const rootsDetails = {
         image: "images/tribaltextile.png",
         secondaryImage: "images/handloomweaving.png",
         heading: "Patterns with meaning",
-        description:
-            "Traditional textiles bring together colour, pattern, material and technique to create distinctive forms of cultural expression.",
+        description: "Traditional textiles bring together colour, pattern, material and technique to create distinctive forms of cultural expression.",
         storyTitle: "Woven memory",
-        story:
-            "Textile traditions can preserve visual ideas and techniques by passing them from one generation of makers to the next.",
+        story: "Textile traditions can preserve visual ideas and techniques by passing them from one generation of makers to the next.",
         highlightTitle: "Colour, pattern and identity",
-        highlightText:
-            "Through textiles, craft knowledge can remain visible in everyday life and continue to evolve."
+        highlightText: "Through textiles, craft knowledge can remain visible in everyday life and continue to evolve."
     },
-
 
     hands: {
         type: "CRAFT",
@@ -857,14 +891,11 @@ const rootsDetails = {
         image: "images/handsbehindcraft.png",
         secondaryImage: "images/bamboocraft.jpg",
         heading: "The maker is part of the story",
-        description:
-            "Traditional craft is not only about the final object. It is also about the people, skills, time and knowledge behind it.",
+        description: "Traditional craft is not only about the final object. It is also about the people, skills, time and knowledge behind it.",
         storyTitle: "Skill lives in practice",
-        story:
-            "Craft knowledge grows through repetition, observation and teaching. Each maker contributes to the continuation of that knowledge.",
+        story: "Craft knowledge grows through repetition, observation and teaching. Each maker contributes to the continuation of that knowledge.",
         highlightTitle: "Celebrating the maker",
-        highlightText:
-            "ROOTS places people and their skills at the centre of the heritage story."
+        highlightText: "ROOTS places people and their skills at the centre of the heritage story."
     },
 
 
@@ -882,16 +913,12 @@ const rootsDetails = {
         image: "images/storiesfromhome.png",
         secondaryImage: "images/kondareddy.png",
         heading: "Where memories become heritage",
-        description:
-            "Home can hold stories about family, traditions, objects, work and the experiences that shape cultural identity.",
+        description: "Home can hold stories about family, traditions, objects, work and the experiences that shape cultural identity.",
         storyTitle: "Stories carried through generations",
-        story:
-            "Oral histories help preserve memories that may not appear in written records. They give communities a way to share experiences and knowledge.",
+        story: "Oral histories help preserve memories that may not appear in written records. They give communities a way to share experiences and knowledge.",
         highlightTitle: "Listen. Remember. Continue.",
-        highlightText:
-            "The ROOTS archive creates a digital space for stories that connect the past with the generations of today."
+        highlightText: "The ROOTS archive creates a digital space for stories that connect the past with the generations of today."
     },
-
 
     forest: {
         type: "STORY",
@@ -903,16 +930,12 @@ const rootsDetails = {
         image: "images/theforestgivesulife.png",
         secondaryImage: "images/dongria.png",
         heading: "A story rooted in nature",
-        description:
-            "For communities connected closely with their landscapes, forests and natural surroundings can be important parts of everyday knowledge and cultural memory.",
+        description: "For communities connected closely with their landscapes, forests and natural surroundings can be important parts of everyday knowledge and cultural memory.",
         storyTitle: "Learning from the landscape",
-        story:
-            "Knowledge about surroundings, materials, seasons and everyday practices can be shared through stories and lived experience.",
+        story: "Knowledge about surroundings, materials, seasons and everyday practices can be shared through stories and lived experience.",
         highlightTitle: "Nature and memory",
-        highlightText:
-            "The archive explores how stories can help us understand the connections between people, place and heritage."
+        highlightText: "The archive explores how stories can help us understand the connections between people, place and heritage."
     },
-
 
     objects: {
         type: "STORY",
@@ -924,22 +947,18 @@ const rootsDetails = {
         image: "images/objectsweinherite.png",
         secondaryImage: "images/tribalpottery.png",
         heading: "Objects carry stories",
-        description:
-            "A handmade object can hold memories of the person who created it, the family that used it and the tradition from which it came.",
+        description: "A handmade object can hold memories of the person who created it, the family that used it and the tradition from which it came.",
         storyTitle: "More than an object",
-        story:
-            "Traditional objects can connect everyday life with cultural memory. Their materials, forms and uses can reveal stories about the people who made and used them.",
+        story: "Traditional objects can connect everyday life with cultural memory. Their materials, forms and uses can reveal stories about the people who made and used them.",
         highlightTitle: "What we leave behind",
-        highlightText:
-            "Preserving objects also means preserving the stories, skills and memories connected to them."
+        highlightText: "Preserving objects also means preserving the stories, skills and memories connected to them."
     }
 
 };
 
 
-
 /* =========================================================
-   LOAD DETAILS PAGE
+   DETAILS PAGE LOADER
    ========================================================= */
 
 function loadRootsDetails() {
@@ -948,121 +967,239 @@ function loadRootsDetails() {
         document.getElementById("detailImage");
 
     /*
-       If this is not details.html,
-       stop here so the main website JS
-       continues normally.
+       If detailImage does not exist,
+       this is not details.html.
     */
 
-    if (!detailImage) {
-        return;
-    }
+    if (!detailImage) return;
 
 
     const params =
-        new URLSearchParams(window.location.search);
-
+        new URLSearchParams(
+            window.location.search
+        );
 
     const id =
         params.get("id");
+
+    console.log(
+        "ROOTS DETAILS:",
+        id
+    );
 
 
     const data =
         rootsDetails[id];
 
 
-    /*
-       If ID is invalid
-    */
+    /* =========================
+       INVALID ID
+       ========================= */
 
     if (!data) {
 
-        document.getElementById("detailCategory").textContent =
-            "ROOTS / ARCHIVE";
+        const category =
+            document.getElementById(
+                "detailCategory"
+            );
 
-        document.getElementById("detailTitle").textContent =
-            "Story not found";
+        const title =
+            document.getElementById(
+                "detailTitle"
+            );
 
-        document.getElementById("detailSubtitle").textContent =
-            "The requested archive entry could not be found.";
+        const subtitle =
+            document.getElementById(
+                "detailSubtitle"
+            );
+
+        if (category) {
+            category.textContent =
+                "ROOTS / ARCHIVE";
+        }
+
+        if (title) {
+            title.textContent =
+                "Story not found";
+        }
+
+        if (subtitle) {
+            subtitle.textContent =
+                "The requested archive entry could not be found.";
+        }
 
         return;
     }
 
 
-
     /* =========================
-       HERO
+       TEXT CONTENT
        ========================= */
 
-    document.getElementById("detailCategory").textContent =
-        data.type;
+    const elements = {
+
+        category:
+            document.getElementById(
+                "detailCategory"
+            ),
+
+        title:
+            document.getElementById(
+                "detailTitle"
+            ),
+
+        subtitle:
+            document.getElementById(
+                "detailSubtitle"
+            ),
+
+        region:
+            document.getElementById(
+                "detailRegion"
+            ),
+
+        community:
+            document.getElementById(
+                "detailCommunity"
+            ),
+
+        heading:
+            document.getElementById(
+                "detailHeading"
+            ),
+
+        description:
+            document.getElementById(
+                "detailDescription"
+            ),
+
+        infoRegion:
+            document.getElementById(
+                "infoRegion"
+            ),
+
+        infoCommunity:
+            document.getElementById(
+                "infoCommunity"
+            ),
+
+        infoHeritage:
+            document.getElementById(
+                "infoHeritage"
+            ),
+
+        storyTitle:
+            document.getElementById(
+                "detailStoryTitle"
+            ),
+
+        story:
+            document.getElementById(
+                "detailStory"
+            ),
+
+        highlightTitle:
+            document.getElementById(
+                "detailHighlightTitle"
+            ),
+
+        highlightText:
+            document.getElementById(
+                "detailHighlightText"
+            )
+
+    };
 
 
-    document.getElementById("detailTitle").textContent =
-        data.title;
+    if (elements.category)
+        elements.category.textContent =
+            data.type;
+
+    if (elements.title)
+        elements.title.textContent =
+            data.title;
+
+    if (elements.subtitle)
+        elements.subtitle.textContent =
+            data.subtitle;
+
+    if (elements.region)
+        elements.region.textContent =
+            data.region;
+
+    if (elements.community)
+        elements.community.textContent =
+            data.community;
+
+    if (elements.heading)
+        elements.heading.textContent =
+            data.heading;
+
+    if (elements.description)
+        elements.description.textContent =
+            data.description;
+
+    if (elements.infoRegion)
+        elements.infoRegion.textContent =
+            data.region;
+
+    if (elements.infoCommunity)
+        elements.infoCommunity.textContent =
+            data.community;
+
+    if (elements.infoHeritage)
+        elements.infoHeritage.textContent =
+            data.heritage;
+
+    if (elements.storyTitle)
+        elements.storyTitle.textContent =
+            data.storyTitle;
+
+    if (elements.story)
+        elements.story.textContent =
+            data.story;
+
+    if (elements.highlightTitle)
+        elements.highlightTitle.textContent =
+            data.highlightTitle;
+
+    if (elements.highlightText)
+        elements.highlightText.textContent =
+            data.highlightText;
 
 
-    document.getElementById("detailSubtitle").textContent =
-        data.subtitle;
-
-
-    document.getElementById("detailRegion").textContent =
-        data.region;
-
-
-    document.getElementById("detailCommunity").textContent =
-        data.community;
-
+    /* =========================
+       MAIN IMAGE
+       ========================= */
 
     detailImage.src =
         data.image;
-
 
     detailImage.alt =
         data.title;
 
 
+    detailImage.onerror = () => {
 
-    /* =========================
-       STORY CONTENT
-       ========================= */
+        console.error(
+            "Main image not found:",
+            data.image
+        );
 
-    document.getElementById("detailHeading").textContent =
-        data.heading;
+        detailImage.src =
+            "images/hero.jpg";
 
-
-    document.getElementById("detailDescription").textContent =
-        data.description;
-
-
-    document.getElementById("infoRegion").textContent =
-        data.region;
-
-
-    document.getElementById("infoCommunity").textContent =
-        data.community;
-
-
-    document.getElementById("infoHeritage").textContent =
-        data.heritage;
-
-
-    document.getElementById("detailStoryTitle").textContent =
-        data.storyTitle;
-
-
-    document.getElementById("detailStory").textContent =
-        data.story;
-
+    };
 
 
     /* =========================
-       SECONDARY SECTION
+       SECONDARY IMAGE
        ========================= */
 
     const secondaryImage =
-        document.getElementById("detailSecondaryImage");
-
+        document.getElementById(
+            "detailSecondaryImage"
+        );
 
     if (secondaryImage) {
 
@@ -1072,16 +1209,16 @@ function loadRootsDetails() {
         secondaryImage.alt =
             data.title;
 
+        secondaryImage.onerror = () => {
+
+            console.error(
+                "Secondary image not found:",
+                data.secondaryImage
+            );
+
+        };
+
     }
-
-
-    document.getElementById("detailHighlightTitle").textContent =
-        data.highlightTitle;
-
-
-    document.getElementById("detailHighlightText").textContent =
-        data.highlightText;
-
 
 
     /* =========================
@@ -1089,17 +1226,211 @@ function loadRootsDetails() {
        ========================= */
 
     document.title =
-        data.title + " | ROOTS";
+        `${data.title} | ROOTS`;
 
 }
 
 
-
 /* =========================================================
-   RUN DETAILS PAGE
+   START DETAILS PAGE
    ========================================================= */
 
-document.addEventListener(
-    "DOMContentLoaded",
-    loadRootsDetails
-);
+if (
+    document.readyState ===
+    "loading"
+) {
+
+    document.addEventListener(
+        "DOMContentLoaded",
+        loadRootsDetails
+    );
+
+} else {
+
+    loadRootsDetails();
+
+       }
+/* =========================================================
+   ROOTS — DETAILS IMAGE SAFETY + ARCHIVE CARD LINKS
+   PART 3 / 3
+   ========================================================= */
+
+
+/* =========================================================
+   ARCHIVE VIEW DETAILS BUTTONS
+   ========================================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const detailButtons =
+        document.querySelectorAll(
+            ".archive-item a, .archive-card a"
+        );
+
+    detailButtons.forEach(button => {
+
+        const href =
+            button.getAttribute("href");
+
+        if (!href) return;
+
+        /*
+           Only handle buttons that already
+           point to details.html
+        */
+
+        if (
+            href.includes("details.html") &&
+            href.includes("id=")
+        ) {
+
+            button.addEventListener("click", () => {
+
+                console.log(
+                    "Opening ROOTS detail:",
+                    href
+                );
+
+            });
+
+        }
+
+    });
+
+
+    /* =====================================================
+       DETAILS PAGE IMAGE CHECK
+       ===================================================== */
+
+    const mainDetailImage =
+        document.getElementById("detailImage");
+
+    if (mainDetailImage) {
+
+        mainDetailImage.style.opacity = "0";
+
+        mainDetailImage.style.transition =
+            "opacity 0.45s ease";
+
+        mainDetailImage.addEventListener(
+            "load",
+            () => {
+
+                mainDetailImage.style.opacity = "1";
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       DETAILS PAGE BACK BUTTON
+       ===================================================== */
+
+    const backButtons =
+        document.querySelectorAll(
+            ".details-back, .archive-back, .details-main-btn"
+        );
+
+    backButtons.forEach(button => {
+
+        const href =
+            button.getAttribute("href");
+
+        if (
+            href &&
+            (
+                href === "archive.html" ||
+                href === "index.html"
+            )
+        ) {
+
+            button.addEventListener(
+                "click",
+                () => {
+
+                    console.log(
+                        "Returning to ROOTS archive"
+                    );
+
+                }
+            );
+
+        }
+
+    });
+
+
+    /* =====================================================
+       IMAGE ERROR HANDLING
+       ===================================================== */
+
+    document
+        .querySelectorAll("img")
+        .forEach(img => {
+
+            img.addEventListener(
+                "error",
+                function () {
+
+                    console.warn(
+                        "ROOTS image could not load:",
+                        this.getAttribute("src")
+                    );
+
+                }
+            );
+
+        });
+
+});
+
+
+/* =========================================================
+   URL DEBUG HELPER
+   ========================================================= */
+
+function rootsCheckDetailURL() {
+
+    if (
+        !window.location.pathname.includes(
+            "details.html"
+        )
+    ) {
+        return;
+    }
+
+    const params =
+        new URLSearchParams(
+            window.location.search
+        );
+
+    const id =
+        params.get("id");
+
+    console.log(
+        "================================="
+    );
+
+    console.log(
+        "ROOTS DETAIL PAGE"
+    );
+
+    console.log(
+        "Detail ID:",
+        id
+    );
+
+    console.log(
+        "Detail URL:",
+        window.location.href
+    );
+
+    console.log(
+        "================================="
+    );
+
+}
+
+rootsCheckDetailURL();
