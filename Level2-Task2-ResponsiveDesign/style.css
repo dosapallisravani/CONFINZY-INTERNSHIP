@@ -5124,3 +5124,23 @@ p {
         font-size: 13px;
     }
        }
+/* DETAILS PAGE COLOUR THEMES */
+
+.details-page {
+    background: #f5f0e6;
+}
+
+/* Community */
+.details-page:not(.detail-craft):not(.detail-story-page) {
+    background: #f5f0e6;
+}
+
+/* Crafts */
+.details-page.detail-craft {
+    background: #eee5d5;
+}
+
+/* Stories */
+.details-page.detail-story-page {
+    background: #e7dfcf;
+}
