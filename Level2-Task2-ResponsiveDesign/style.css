@@ -1168,18 +1168,37 @@ p {
 }
 
 
-.archive-community .archive-image {
+/* =========================================================
+   ARCHIVE — SHOW COMPLETE IMAGES
+   ========================================================= */
 
-    background-image:
-        linear-gradient(
-            0deg,
-            rgba(8,25,18,0.82),
-            rgba(8,25,18,0.08)
-        ),
-        url("https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1000&q=85");
-
+.archive-item-image {
+    width: 100%;
+    height: auto !important;
+    overflow: hidden;
+    background: #f5f0e6;
 }
 
+.archive-item-image img {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100%;
+    object-fit: contain !important;
+    object-position: center;
+    opacity: 1 !important;
+    visibility: visible !important;
+    position: relative !important;
+}
+
+/* Smooth hover */
+.archive-item-image img {
+    transition: transform 0.5s ease;
+}
+
+.archive-item:hover .archive-item-image img {
+    transform: scale(1.02);
+}
 
 .archive-number {
 
