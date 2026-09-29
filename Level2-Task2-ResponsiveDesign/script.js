@@ -1533,8 +1533,1717 @@ const detailElements = {
 
     storyTitle:
         document.getElementById("detailStoryTitle"),
-
-    story:
+story:
         document.getElementById("detailStory"),
 
-    seco
+    secondaryImage:
+        document.getElementById("detailSecondaryImage"),
+
+    highlightTitle:
+        document.getElementById("detailHighlightTitle"),
+
+    highlightText:
+        document.getElementById("detailHighlightText")
+
+};
+
+
+
+/* =========================================================
+   POPULATE DETAILS PAGE
+========================================================= */
+
+function populateDetailsPage() {
+
+    if (!detailsPage) {
+        return;
+    }
+
+
+    if (!currentDetail) {
+
+        showDetailsNotFound();
+
+        return;
+
+    }
+
+
+    document.title =
+        `${currentDetail.title} | ROOTS Heritage Archive`;
+
+
+    if (detailElements.category) {
+        detailElements.category.textContent =
+            currentDetail.category;
+    }
+
+
+    if (detailElements.title) {
+        detailElements.title.textContent =
+            currentDetail.title;
+    }
+
+
+    if (detailElements.subtitle) {
+        detailElements.subtitle.textContent =
+            currentDetail.subtitle;
+    }
+
+
+    if (detailElements.region) {
+        detailElements.region.textContent =
+            currentDetail.region;
+    }
+
+
+    if (detailElements.community) {
+        detailElements.community.textContent =
+            currentDetail.community;
+    }
+
+
+    if (detailElements.image) {
+
+        detailElements.image.src =
+            currentDetail.image;
+
+        detailElements.image.alt =
+            currentDetail.imageAlt ||
+            currentDetail.title;
+
+    }
+
+
+    if (detailElements.imageNumber) {
+        detailElements.imageNumber.textContent =
+            currentDetail.number;
+    }
+
+
+    if (detailElements.heading) {
+        detailElements.heading.textContent =
+            currentDetail.heading;
+    }
+
+
+    if (detailElements.description) {
+        detailElements.description.textContent =
+            currentDetail.description;
+    }
+
+
+    if (detailElements.infoRegion) {
+        detailElements.infoRegion.textContent =
+            currentDetail.region;
+    }
+
+
+    if (detailElements.infoCommunity) {
+        detailElements.infoCommunity.textContent =
+            currentDetail.community;
+    }
+
+
+    if (detailElements.infoHeritage) {
+        detailElements.infoHeritage.textContent =
+            currentDetail.heritage;
+    }
+
+
+    if (detailElements.storyTitle) {
+        detailElements.storyTitle.textContent =
+            currentDetail.storyTitle;
+    }
+
+
+    if (detailElements.story) {
+        detailElements.story.textContent =
+            currentDetail.story;
+    }
+
+
+    if (detailElements.secondaryImage) {
+
+        detailElements.secondaryImage.src =
+            currentDetail.secondaryImage ||
+            currentDetail.image;
+
+        detailElements.secondaryImage.alt =
+            currentDetail.imageAlt ||
+            currentDetail.title;
+
+    }
+
+
+    if (detailElements.highlightTitle) {
+        detailElements.highlightTitle.textContent =
+            currentDetail.highlightTitle;
+    }
+
+
+    if (detailElements.highlightText) {
+        detailElements.highlightText.textContent =
+            currentDetail.highlightText;
+    }
+
+}
+
+
+
+/* =========================================================
+   INVALID DETAILS ID
+========================================================= */
+
+function showDetailsNotFound() {
+
+    if (!detailsPage) {
+        return;
+    }
+
+
+    document.title =
+        "Archive Story Not Found | ROOTS";
+
+
+    if (detailElements.category) {
+
+        detailElements.category.textContent =
+            "ROOTS / ARCHIVE";
+
+    }
+
+
+    if (detailElements.title) {
+
+        detailElements.title.textContent =
+            "Story not found";
+
+    }
+
+
+    if (detailElements.subtitle) {
+
+        detailElements.subtitle.textContent =
+            "The archive entry you are looking for could not be found.";
+
+    }
+
+
+    if (detailElements.description) {
+
+        detailElements.description.textContent =
+            "Please return to the archive and choose another collection.";
+
+    }
+
+}
+
+
+
+/* =========================================================
+   RUN DETAILS PAGE
+========================================================= */
+
+populateDetailsPage();
+   /* =========================================================
+   ROOTS — PART 4/5
+   Details Interactions + Voices + Living Map
+   ========================================================= */
+
+
+/* =========================================================
+   DETAILS PAGE — IMAGE LOADING
+========================================================= */
+
+const detailsMainImage =
+    document.getElementById("detailImage");
+
+const detailsSecondaryImage =
+    document.getElementById("detailSecondaryImage");
+
+
+function prepareDetailImage(image) {
+
+    if (!image) {
+        return;
+    }
+
+
+    image.addEventListener("load", () => {
+
+        image.classList.add("image-loaded");
+
+    });
+
+
+    image.addEventListener("error", () => {
+
+        image.classList.add("image-error");
+
+    });
+
+}
+
+
+prepareDetailImage(detailsMainImage);
+prepareDetailImage(detailsSecondaryImage);
+
+
+
+/* =========================================================
+   DETAILS PAGE — BACK BUTTON
+========================================================= */
+
+const detailsBackLinks =
+    document.querySelectorAll(
+        ".details-back, .back-to-archive"
+    );
+
+
+detailsBackLinks.forEach((link) => {
+
+    link.addEventListener("click", (event) => {
+
+        const href =
+            link.getAttribute("href");
+
+
+        /*
+         * Allow normal archive navigation.
+         */
+
+        if (
+            href &&
+            href !== "#" &&
+            !href.startsWith("#")
+        ) {
+
+            return;
+
+        }
+
+
+        event.preventDefault();
+
+
+        if (document.referrer) {
+
+            window.history.back();
+
+        } else {
+
+            window.location.href =
+                "archive.html";
+
+        }
+
+    });
+
+});
+
+
+
+/* =========================================================
+   DETAILS PAGE — IMAGE HOVER
+========================================================= */
+
+const detailImageWrappers =
+    document.querySelectorAll(
+        ".details-hero-image, .details-secondary-image"
+    );
+
+
+detailImageWrappers.forEach((wrapper) => {
+
+    wrapper.addEventListener("mouseenter", () => {
+
+        wrapper.classList.add("is-hovered");
+
+    });
+
+
+    wrapper.addEventListener("mouseleave", () => {
+
+        wrapper.classList.remove("is-hovered");
+
+    });
+
+});
+
+
+
+/* =========================================================
+   DETAILS PAGE — REVEAL CONTENT
+========================================================= */
+
+const detailsRevealElements =
+    document.querySelectorAll(
+        ".details-page .reveal"
+    );
+
+
+if (
+    detailsRevealElements.length &&
+    "IntersectionObserver" in window
+) {
+
+    const detailsObserver =
+        new IntersectionObserver(
+            (entries, observer) => {
+
+                entries.forEach((entry) => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add(
+                            "revealed"
+                        );
+
+                        observer.unobserve(
+                            entry.target
+                        );
+
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.1,
+                rootMargin: "0px 0px -30px 0px"
+            }
+        );
+
+
+    detailsRevealElements.forEach((element) => {
+
+        detailsObserver.observe(element);
+
+    });
+
+}
+
+
+
+/* =========================================================
+   RELATED ARCHIVE CARDS
+========================================================= */
+
+const relatedCards =
+    document.querySelectorAll(
+        ".related-archive-card, .related-card"
+    );
+
+
+relatedCards.forEach((card) => {
+
+    card.addEventListener("mouseenter", () => {
+
+        card.classList.add("related-hover");
+
+    });
+
+
+    card.addEventListener("mouseleave", () => {
+
+        card.classList.remove("related-hover");
+
+    });
+
+});
+
+
+
+/* =========================================================
+   VOICE / AUDIO INTERACTION
+========================================================= */
+
+const voiceButtons =
+    document.querySelectorAll(
+        ".voice-play, .voice-card-play, [data-voice-play]"
+    );
+
+
+voiceButtons.forEach((button) => {
+
+    button.addEventListener("click", () => {
+
+        const isPlaying =
+            button.classList.contains("playing");
+
+
+        /*
+         * Stop all other voice buttons.
+         */
+
+        voiceButtons.forEach((otherButton) => {
+
+            otherButton.classList.remove(
+                "playing"
+            );
+
+            otherButton.setAttribute(
+                "aria-label",
+                "Play story"
+            );
+
+        });
+
+
+        if (!isPlaying) {
+
+            button.classList.add("playing");
+
+            button.setAttribute(
+                "aria-label",
+                "Pause story"
+            );
+
+
+            showRootsToast(
+                "Story playback started"
+            );
+
+        } else {
+
+            button.classList.remove(
+                "playing"
+            );
+
+            button.setAttribute(
+                "aria-label",
+                "Play story"
+            );
+
+        }
+
+    });
+
+});
+
+
+
+/* =========================================================
+   VOICE WAVE ANIMATION
+========================================================= */
+
+const voicePlayers =
+    document.querySelectorAll(
+        ".voice-player, .voice-card"
+    );
+
+
+voicePlayers.forEach((player) => {
+
+    const playButton =
+        player.querySelector(
+            ".voice-play, .voice-card-play, [data-voice-play]"
+        );
+
+
+    if (!playButton) {
+        return;
+    }
+
+
+    playButton.addEventListener("click", () => {
+
+        player.classList.toggle(
+            "is-playing"
+        );
+
+    });
+
+});
+
+
+
+/* =========================================================
+   LIVING MAP
+========================================================= */
+
+const mapRegionButtons =
+    document.querySelectorAll(
+        ".map-region, [data-region]"
+    );
+
+
+const mapRegionItems =
+    document.querySelectorAll(
+        ".region-list-item, .map-list-item"
+    );
+
+
+mapRegionButtons.forEach((button) => {
+
+    button.addEventListener("click", () => {
+
+        const region =
+            button.dataset.region ||
+            button.getAttribute("data-region");
+
+
+        /*
+         * Remove active state.
+         */
+
+        mapRegionButtons.forEach((item) => {
+
+            item.classList.remove("active");
+
+        });
+
+
+        button.classList.add("active");
+
+
+        /*
+         * Highlight corresponding region.
+         */
+
+        mapRegionItems.forEach((item) => {
+
+            const itemRegion =
+                item.dataset.region ||
+                item.getAttribute("data-region");
+
+
+            if (
+                region &&
+                itemRegion &&
+                itemRegion === region
+            ) {
+
+                item.classList.add(
+                    "active"
+                );
+
+            } else {
+
+                item.classList.remove(
+                    "active"
+                );
+
+            }
+
+        });
+
+    });
+
+});
+
+
+
+/* =========================================================
+   REGION LIST CLICK
+========================================================= */
+
+mapRegionItems.forEach((item) => {
+
+    item.addEventListener("click", () => {
+
+        const region =
+            item.dataset.region ||
+            item.getAttribute("data-region");
+
+
+        mapRegionItems.forEach((otherItem) => {
+
+            otherItem.classList.remove(
+                "active"
+            );
+
+        });
+
+
+        item.classList.add("active");
+
+
+        mapRegionButtons.forEach((button) => {
+
+            const buttonRegion =
+                button.dataset.region ||
+                button.getAttribute("data-region");
+
+
+            if (
+                region &&
+                buttonRegion === region
+            ) {
+
+                button.classList.add(
+                    "active"
+                );
+
+            } else {
+
+                button.classList.remove(
+                    "active"
+                );
+
+            }
+
+        });
+
+    });
+
+});
+
+
+
+/* =========================================================
+   TIMELINE INTERACTION
+========================================================= */
+
+const timelineItems =
+    document.querySelectorAll(
+        ".timeline-item"
+    );
+
+
+timelineItems.forEach((item) => {
+
+    item.addEventListener("click", () => {
+
+        timelineItems.forEach((otherItem) => {
+
+            otherItem.classList.remove(
+                "active"
+            );
+
+        });
+
+
+        item.classList.add("active");
+
+    });
+
+});
+
+
+
+/* =========================================================
+   CATEGORY CARD → ARCHIVE FILTER
+========================================================= */
+
+const categoryLinks =
+    document.querySelectorAll(
+        "[data-archive-filter]"
+    );
+
+
+categoryLinks.forEach((link) => {
+
+    link.addEventListener("click", () => {
+
+        const filter =
+            link.dataset.archiveFilter;
+
+
+        if (!filter) {
+            return;
+        }
+
+
+        localStorage.setItem(
+            "rootsArchiveFilter",
+            filter
+        );
+
+    });
+
+});
+
+
+
+/* =========================================================
+   RESTORE ARCHIVE FILTER
+========================================================= */
+
+const savedArchiveFilter =
+    localStorage.getItem(
+        "rootsArchiveFilter"
+    );
+
+
+if (
+    savedArchiveFilter &&
+    archiveFilterButtons.length
+) {
+
+    const matchingButton =
+        document.querySelector(
+            `.archive-filter[data-filter="${savedArchiveFilter}"]`
+        );
+
+
+    if (matchingButton) {
+
+        archiveFilterButtons.forEach((button) => {
+
+            button.classList.remove("active");
+
+        });
+
+
+        matchingButton.classList.add(
+            "active"
+        );
+
+
+        activeArchiveFilter =
+            savedArchiveFilter;
+
+
+        filterArchiveItems();
+
+    }
+
+}
+
+
+
+/* =========================================================
+   HORIZONTAL SCROLL — RELATED / ARCHIVE ROWS
+========================================================= */
+
+const horizontalRows =
+    document.querySelectorAll(
+        ".archive-horizontal-row, .related-archive-row"
+    );
+
+
+horizontalRows.forEach((row) => {
+
+    let isDown = false;
+    let startX = 0;
+    let scrollLeft = 0;
+
+
+    row.addEventListener(
+        "mousedown",
+        (event) => {
+
+            isDown = true;
+
+            row.classList.add(
+                "dragging"
+            );
+
+            startX =
+                event.pageX -
+                row.offsetLeft;
+
+            scrollLeft =
+                row.scrollLeft;
+
+        }
+    );
+
+
+    row.addEventListener(
+        "mouseleave",
+        () => {
+
+            isDown = false;
+
+            row.classList.remove(
+                "dragging"
+            );
+
+        }
+    );
+
+
+    row.addEventListener(
+        "mouseup",
+        () => {
+
+            isDown = false;
+
+            row.classList.remove(
+                "dragging"
+            );
+
+        }
+    );
+
+
+    row.addEventListener(
+        "mousemove",
+        (event) => {
+
+            if (!isDown) {
+                return;
+            }
+
+
+            event.preventDefault();
+
+
+            const x =
+                event.pageX -
+                row.offsetLeft;
+
+
+            const walk =
+                (x - startX) * 1.2;
+
+
+            row.scrollLeft =
+                scrollLeft - walk;
+
+        }
+    );
+
+});
+
+
+
+/* =========================================================
+   TOUCH SWIPE SUPPORT
+========================================================= */
+
+document.querySelectorAll(
+    ".archive-horizontal-row, .related-archive-row"
+).forEach((row) => {
+
+    let touchStartX = 0;
+    let touchStartScroll = 0;
+
+
+    row.addEventListener(
+        "touchstart",
+        (event) => {
+
+            touchStartX =
+                event.touches[0].clientX;
+
+            touchStartScroll =
+                row.scrollLeft;
+
+        },
+        { passive: true }
+    );
+
+
+    row.addEventListener(
+        "touchmove",
+        (event) => {
+
+            if (!touchStartX) {
+                return;
+            }
+
+
+            const currentX =
+                event.touches[0].clientX;
+
+
+            const difference =
+                touchStartX - currentX;
+
+
+            row.scrollLeft =
+                touchStartScroll + difference;
+
+        },
+        { passive: true }
+    );
+
+
+    row.addEventListener(
+        "touchend",
+        () => {
+
+            touchStartX = 0;
+
+        },
+        { passive: true }
+    );
+
+});
+
+
+
+/* =========================================================
+   GENERIC TOAST HELPER
+========================================================= */
+
+function showRootsToast(message) {
+
+    const toast =
+        document.getElementById(
+            "rootsToast"
+        );
+
+
+    const toastMessage =
+        document.getElementById(
+            "toastMessage"
+        );
+
+
+    if (!toast) {
+        return;
+    }
+
+
+    if (toastMessage) {
+
+        toastMessage.textContent =
+            message;
+
+    }
+
+
+    toast.classList.add("show");
+
+
+    clearTimeout(
+        window.rootsToastTimer
+    );
+
+
+    window.rootsToastTimer =
+        setTimeout(() => {
+
+            toast.classList.remove(
+                "show"
+            );
+
+        }, 3000);
+
+}
+
+
+
+/* =========================================================
+   DETAIL PAGE SHARE BUTTONS
+========================================================= */
+
+const shareButtons =
+    document.querySelectorAll(
+        "[data-share]"
+    );
+
+
+shareButtons.forEach((button) => {
+
+    button.addEventListener("click", async () => {
+
+        const shareTitle =
+            currentDetail
+                ? currentDetail.title
+                : "ROOTS Heritage Archive";
+
+
+        const shareUrl =
+            window.location.href;
+
+
+        if (
+            navigator.share
+        ) {
+
+            try {
+
+                await navigator.share({
+
+                    title:
+                        shareTitle,
+
+                    text:
+                        `Explore ${shareTitle} on ROOTS Heritage Archive.`,
+
+                    url:
+                        shareUrl
+
+                });
+
+            } catch (error) {
+
+                /*
+                 * User cancelled share.
+                 */
+
+            }
+
+        } else {
+
+            try {
+
+                await navigator.clipboard.writeText(
+                    shareUrl
+                );
+
+
+                showRootsToast(
+                    "Archive link copied"
+                );
+
+            } catch (error) {
+
+                showRootsToast(
+                    "Unable to copy the link"
+                );
+
+            }
+
+        }
+
+    });
+
+});
+
+
+
+/* =========================================================
+   IMAGE LIGHT SAFETY
+========================================================= */
+
+document.querySelectorAll(
+    ".archive-item-image img, .details-hero-image img, .details-secondary-image img"
+).forEach((image) => {
+
+    image.addEventListener(
+        "load",
+        () => {
+
+            image.style.opacity = "1";
+
+        },
+        { once: true }
+    );
+
+});
+
+/* =========================================================
+   ROOTS — PART 5/5
+   Forms + Modal + Final Initialization
+   ========================================================= */
+
+
+/* =========================================================
+   MESSAGE MODAL
+========================================================= */
+
+const messageModal =
+    document.getElementById("messageModal");
+
+const openMessageModal =
+    document.getElementById("openMessageModal");
+
+const closeMessageModal =
+    document.getElementById("closeMessageModal");
+
+const messageModalOverlay =
+    document.getElementById("messageModalOverlay");
+
+
+/* ---------------------------------------------------------
+   OPEN MODAL
+--------------------------------------------------------- */
+
+function openRootsMessageModal() {
+
+    if (!messageModal) {
+        return;
+    }
+
+
+    messageModal.classList.add("active");
+
+    messageModal.setAttribute(
+        "aria-hidden",
+        "false"
+    );
+
+
+    document.body.classList.add(
+        "modal-open"
+    );
+
+
+    /*
+     * Focus first input for accessibility.
+     */
+
+    const firstInput =
+        messageModal.querySelector(
+            "input, textarea"
+        );
+
+
+    if (firstInput) {
+
+        setTimeout(() => {
+
+            firstInput.focus();
+
+        }, 250);
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   CLOSE MODAL
+--------------------------------------------------------- */
+
+function closeRootsMessageModal() {
+
+    if (!messageModal) {
+        return;
+    }
+
+
+    messageModal.classList.remove(
+        "active"
+    );
+
+
+    messageModal.setAttribute(
+        "aria-hidden",
+        "true"
+    );
+
+
+    document.body.classList.remove(
+        "modal-open"
+    );
+
+}
+
+
+/* ---------------------------------------------------------
+   OPEN BUTTON
+--------------------------------------------------------- */
+
+if (openMessageModal) {
+
+    openMessageModal.addEventListener(
+        "click",
+        openRootsMessageModal
+    );
+
+}
+
+
+/* ---------------------------------------------------------
+   CLOSE BUTTON
+--------------------------------------------------------- */
+
+if (closeMessageModal) {
+
+    closeMessageModal.addEventListener(
+        "click",
+        closeRootsMessageModal
+    );
+
+}
+
+
+/* ---------------------------------------------------------
+   OVERLAY CLOSE
+--------------------------------------------------------- */
+
+if (messageModalOverlay) {
+
+    messageModalOverlay.addEventListener(
+        "click",
+        closeRootsMessageModal
+    );
+
+}
+
+
+/* ---------------------------------------------------------
+   ESC CLOSE
+--------------------------------------------------------- */
+
+document.addEventListener(
+    "keydown",
+    (event) => {
+
+        if (
+            event.key === "Escape" &&
+            messageModal &&
+            messageModal.classList.contains("active")
+        ) {
+
+            closeRootsMessageModal();
+
+        }
+
+    }
+);
+
+
+
+/* =========================================================
+   MESSAGE FORM
+========================================================= */
+
+const messageForm =
+    document.getElementById("messageForm");
+
+
+if (messageForm) {
+
+    messageForm.addEventListener(
+        "submit",
+        (event) => {
+
+            event.preventDefault();
+
+
+            const name =
+                document.getElementById(
+                    "messageName"
+                );
+
+
+            const email =
+                document.getElementById(
+                    "messageEmail"
+                );
+
+
+            const subject =
+                document.getElementById(
+                    "messageSubject"
+                );
+
+
+            const message =
+                document.getElementById(
+                    "messageText"
+                );
+
+
+            /*
+             * Basic validation.
+             */
+
+            if (
+                !name ||
+                !email ||
+                !subject ||
+                !message
+            ) {
+
+                return;
+
+            }
+
+
+            if (
+                !name.value.trim() ||
+                !email.value.trim() ||
+                !subject.value.trim() ||
+                !message.value.trim()
+            ) {
+
+                showRootsToast(
+                    "Please complete all fields."
+                );
+
+                return;
+
+            }
+
+
+            /*
+             * Browser email validation.
+             */
+
+            if (
+                !email.checkValidity()
+            ) {
+
+                email.reportValidity();
+
+                return;
+
+            }
+
+
+            /*
+             * Demo submission.
+             * No backend is connected.
+             */
+
+            messageForm.classList.add(
+                "submitted"
+            );
+
+
+            messageForm.reset();
+
+
+            closeRootsMessageModal();
+
+
+            showRootsToast(
+                "Thank you. Your story has been received."
+            );
+
+
+            setTimeout(() => {
+
+                messageForm.classList.remove(
+                    "submitted"
+                );
+
+            }, 500);
+
+        }
+    );
+
+}
+
+
+
+/* =========================================================
+   NEWSLETTER FORM
+========================================================= */
+
+const newsletterForm =
+    document.getElementById(
+        "newsletterForm"
+    );
+
+
+const newsletterEmail =
+    document.getElementById(
+        "newsletterEmail"
+    );
+
+
+if (newsletterForm) {
+
+    newsletterForm.addEventListener(
+        "submit",
+        (event) => {
+
+            event.preventDefault();
+
+
+            if (!newsletterEmail) {
+                return;
+            }
+
+
+            const email =
+                newsletterEmail.value.trim();
+
+
+            if (!email) {
+
+                showRootsToast(
+                    "Please enter your email."
+                );
+
+                newsletterEmail.focus();
+
+                return;
+
+            }
+
+
+            if (
+                !newsletterEmail.checkValidity()
+            ) {
+
+                newsletterEmail.reportValidity();
+
+                return;
+
+            }
+
+
+            /*
+             * Store subscription locally.
+             */
+
+            localStorage.setItem(
+                "rootsNewsletterEmail",
+                email
+            );
+
+
+            newsletterForm.reset();
+
+
+            showRootsToast(
+                "You're now connected with ROOTS."
+            );
+
+        }
+    );
+
+}
+
+
+
+/* =========================================================
+   RESTORE NEWSLETTER EMAIL
+========================================================= */
+
+if (newsletterEmail) {
+
+    const savedEmail =
+        localStorage.getItem(
+            "rootsNewsletterEmail"
+        );
+
+
+    /*
+     * Don't automatically place the email
+     * inside the form. We only keep the
+     * subscription state locally.
+     */
+
+    if (savedEmail) {
+
+        newsletterForm.classList.add(
+            "already-subscribed"
+        );
+
+    }
+
+}
+
+
+
+/* =========================================================
+   CONTACT EMAIL LINKS
+========================================================= */
+
+document.querySelectorAll(
+    'a[href^="mailto:"]'
+).forEach((link) => {
+
+    link.addEventListener(
+        "click",
+        () => {
+
+            showRootsToast(
+                "Opening your email app..."
+            );
+
+        }
+    );
+
+});
+
+
+
+/* =========================================================
+   EXTERNAL / PLACEHOLDER SOCIAL LINKS
+========================================================= */
+
+document.querySelectorAll(
+    '.footer-social a[href="#"]'
+).forEach((link) => {
+
+    link.addEventListener(
+        "click",
+        (event) => {
+
+            event.preventDefault();
+
+
+            showRootsToast(
+                "Social link coming soon."
+            );
+
+        }
+    );
+
+});
+
+
+
+/* =========================================================
+   HERO SCROLL INDICATOR
+========================================================= */
+
+const heroScroll =
+    document.querySelector(
+        ".hero-scroll"
+    );
+
+
+if (heroScroll) {
+
+    heroScroll.addEventListener(
+        "click",
+        () => {
+
+            const nextSection =
+                document.querySelector(
+                    "#archive, .archive-section"
+                );
+
+
+            if (nextSection) {
+
+                nextSection.scrollIntoView({
+                    behavior: "smooth"
+                });
+
+            }
+
+        }
+    );
+
+}
+
+
+
+/* =========================================================
+   YEAR AUTO UPDATE
+========================================================= */
+
+document.querySelectorAll(
+    "[data-current-year]"
+).forEach((element) => {
+
+    element.textContent =
+        new Date().getFullYear();
+
+});
+
+
+
+/* =========================================================
+   PAGE VISIBILITY
+========================================================= */
+
+document.addEventListener(
+    "visibilitychange",
+    () => {
+
+        if (
+            document.visibilityState ===
+            "visible"
+        ) {
+
+            document.body.classList.add(
+                "page-visible"
+            );
+
+        }
+
+    }
+);
+
+
+
+/* =========================================================
+   REDUCED MOTION SUPPORT
+========================================================= */
+
+const reducedMotion =
+    window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    );
+
+
+if (reducedMotion.matches) {
+
+    document.documentElement.classList.add(
+        "reduced-motion"
+    );
+
+}
+
+
+
+/* =========================================================
+   FINAL PAGE READY STATE
+========================================================= */
+
+window.addEventListener(
+    "load",
+    () => {
+
+        document.body.classList.add(
+            "page-loaded"
+        );
+
+
+        /*
+         * Recalculate archive state after
+         * all images and elements are ready.
+         */
+
+        if (
+            typeof filterArchiveItems ===
+            "function"
+        ) {
+
+            filterArchiveItems();
+
+        }
+
+
+        /*
+         * Final scroll progress update.
+         */
+
+        if (
+            typeof updateScrollProgress ===
+            "function"
+        ) {
+
+            updateScrollProgress();
+
+        }
+
+    }
+);
+
+
+
+/* =========================================================
+   GLOBAL ERROR SAFETY
+========================================================= */
+
+window.addEventListener(
+    "error",
+    (event) => {
+
+        /*
+         * Prevent one non-critical image or
+         * UI error from breaking the entire page.
+         */
+
+        if (
+            event.target &&
+            event.target.tagName === "IMG"
+        ) {
+
+            event.target.classList.add(
+                "image-error"
+            );
+
+        }
+
+    },
+    true
+);
+
+
+
+/* =========================================================
+   ROOTS SCRIPT COMPLETE
+========================================================= */
+
+console.log(
+    "ROOTS Heritage Archive — script.js loaded successfully."
+);
