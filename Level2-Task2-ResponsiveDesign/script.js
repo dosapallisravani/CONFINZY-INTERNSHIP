@@ -542,15 +542,7 @@ const rootsDetails = {
 
         image: "images/bodo.jpg",
 
-        secondaryImage:
-            "images/storiesfromhome.png",
-
-        heading:
-            "A living heritage of Assam",
-
-        description:
-            "The Bodo community carries a rich cultural heritage expressed through traditions, everyday life, artistic practices and a strong connection with place.",
-
+        
         storyTitle:
             "Traditions that continue forward",
 
@@ -583,15 +575,7 @@ const rootsDetails = {
         image:
             "images/gond.png",
 
-        secondaryImage:
-            "images/tribaltextile.png",
-
-        heading:
-            "Stories expressed through culture",
-
-        description:
-            "The Gond community is known for a rich cultural heritage expressed through visual art, stories, traditions and knowledge passed between generations.",
-
+        
         storyTitle:
             "Knowledge through generations",
 
@@ -624,15 +608,7 @@ const rootsDetails = {
         image:
             "images/dongria.png",
 
-        secondaryImage:
-            "images/theforestgivesulife.png",
-
-        heading:
-            "Culture connected to landscape",
-
-        description:
-            "The Dongria Kondh community has a distinctive cultural heritage closely connected with its landscape, traditional knowledge and community life.",
-
+        
         storyTitle:
             "A relationship with place",
 
@@ -665,15 +641,7 @@ const rootsDetails = {
         image:
             "images/santhal.png",
 
-        secondaryImage:
-            "images/storiesfromhome.png",
-
-        heading:
-            "A heritage carried through generations",
-
-        description:
-            "The Santhal community has a rich cultural heritage expressed through language, traditions, stories, music, art and community life.",
-
+        
         storyTitle:
             "Memory becomes heritage",
 
@@ -706,15 +674,7 @@ const rootsDetails = {
         image:
             "images/kondareddy.png",
 
-        secondaryImage:
-            "images/bamboocraft.jpg",
-
-        heading:
-            "Knowledge rooted in place",
-
-        description:
-            "The Konda Reddi community has a distinctive cultural heritage shaped by traditional knowledge, community practices and connections with the surrounding environment.",
-
+        
         storyTitle:
             "Tradition in everyday life",
 
@@ -749,15 +709,7 @@ const rootsDetails = {
         image:
             "images/bamboocraft.jpg",
 
-        secondaryImage:
-            "images/handsbehindcraft.png",
-
-        heading:
-            "Craft shaped by hand",
-
-        description:
-            "Bamboo craft transforms a natural material into useful and decorative objects through careful preparation, shaping and weaving.",
-
+        
         storyTitle:
             "From material to object",
 
@@ -790,15 +742,7 @@ const rootsDetails = {
         image:
             "images/handloomweaving.png",
 
-        secondaryImage:
-            "images/tribaltextile.png",
-
-        heading:
-            "Threads carrying stories",
-
-        description:
-            "Handloom weaving brings together yarn, colour, pattern and skilled movement to create textiles with distinctive visual character.",
-
+        
         storyTitle:
             "A rhythm of hands and threads",
 
@@ -831,15 +775,7 @@ const rootsDetails = {
         image:
             "images/metalart.png",
 
-        secondaryImage:
-            "images/handsbehindcraft.png",
-
-        heading:
-            "Shaped through skill",
-
-        description:
-            "Traditional metal craft combines material knowledge, tools and skilled workmanship.",
-
+        
         storyTitle:
             "Skill passed through practice",
 
@@ -872,15 +808,7 @@ const rootsDetails = {
         image:
             "images/tribalpottery.png",
 
-        secondaryImage:
-            "images/objectsweinherite.png",
-
-        heading:
-            "Earth shaped by hand",
-
-        description:
-            "Pottery transforms clay into useful and expressive objects through shaping, drying and finishing techniques.",
-
+        
         storyTitle:
             "Objects made for everyday life",
 
@@ -913,15 +841,7 @@ const rootsDetails = {
         image:
             "images/tribaltextile.png",
 
-        secondaryImage:
-            "images/handloomweaving.png",
-
-        heading:
-            "Patterns with meaning",
-
-        description:
-            "Traditional textiles bring together colour, pattern, material and technique.",
-
+        
         storyTitle:
             "Woven memory",
 
@@ -954,15 +874,7 @@ const rootsDetails = {
         image:
             "images/handsbehindcraft.png",
 
-        secondaryImage:
-            "images/bamboocraft.jpg",
-
-        heading:
-            "The maker is part of the story",
-
-        description:
-            "Traditional craft is not only about the final object. It is also about the people, skills, time and knowledge behind it.",
-
+        
         storyTitle:
             "Skill lives in practice",
 
@@ -997,15 +909,7 @@ const rootsDetails = {
         image:
             "images/storiesfromhome.png",
 
-        secondaryImage:
-            "images/kondareddy.png",
-
-        heading:
-            "Where memories become heritage",
-
-        description:
-            "Home can hold stories about family, traditions, objects, work and experiences.",
-
+        
         storyTitle:
             "Stories carried through generations",
 
@@ -1038,15 +942,7 @@ const rootsDetails = {
         image:
             "images/theforestgivesulife.png",
 
-        secondaryImage:
-            "images/dongria.png",
-
-        heading:
-            "A story rooted in nature",
-
-        description:
-            "Forests and natural surroundings can be important parts of everyday knowledge and cultural memory.",
-
+        
         storyTitle:
             "Learning from the landscape",
 
@@ -1079,15 +975,7 @@ const rootsDetails = {
         image:
             "images/objectsweinherite.png",
 
-        secondaryImage:
-            "images/tribalpottery.png",
-
-        heading:
-            "Objects carry stories",
-
-        description:
-            "A handmade object can hold memories of the person who created it, the family that used it and the tradition from which it came.",
-
+        
         storyTitle:
             "More than an object",
 
