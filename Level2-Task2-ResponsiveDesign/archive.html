@@ -1,1 +1,2066 @@
 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Archive | ROOTS — Heritage & Artisan Archive</title>
+
+    <meta name="description"
+        content="Explore communities, crafts and stories preserved through the ROOTS heritage archive.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css?v=final1">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         PAGE LOADER
+    ====================================================== -->
+
+    <div class="page-loader" id="pageLoader">
+        <div class="loader-inner">
+            <span class="loader-mark">R</span>
+            <span class="loader-line"></span>
+            <span class="loader-text">ROOTS</span>
+        </div>
+    </div>
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="site-header" id="siteHeader">
+
+        <div class="nav-shell">
+
+            <!-- Logo -->
+            <a href="index.html" class="roots-logo" aria-label="ROOTS Home">
+
+                <span class="logo-symbol">
+                    R
+                </span>
+
+                <span class="logo-word">
+                    ROOTS
+                </span>
+
+            </a>
+
+
+            <!-- Desktop Navigation -->
+            <nav class="desktop-nav" aria-label="Main navigation">
+
+                <a href="archive.html" class="active">
+                    Archive
+                </a>
+
+                <a href="index.html#voices">
+                    Voices
+                </a>
+
+                <a href="index.html#crafts">
+                    Crafts
+                </a>
+
+                <a href="index.html#map">
+                    Map
+                </a>
+
+                <a href="index.html#about">
+                    About
+                </a>
+
+            </nav>
+
+
+            <!-- Navigation Actions -->
+            <div class="nav-actions">
+
+                <button
+                    class="nav-search-btn"
+                    id="openSearch"
+                    type="button"
+                    aria-label="Open search">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                </button>
+
+
+                <a href="index.html#archive" class="nav-explore-btn">
+                    Explore
+                </a>
+
+
+                <!-- Mobile Menu Button -->
+                <button
+                    class="menu-toggle"
+                    id="menuToggle"
+                    type="button"
+                    aria-label="Open navigation"
+                    aria-expanded="false">
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             MOBILE NAVIGATION
+        ================================================== -->
+
+        <div class="mobile-nav" id="mobileNav">
+
+            <div class="mobile-nav-inner">
+
+                <a href="archive.html">
+                    Archive
+                </a>
+
+                <a href="index.html#voices">
+                    Voices
+                </a>
+
+                <a href="index.html#crafts">
+                    Crafts
+                </a>
+
+                <a href="index.html#map">
+                    Map
+                </a>
+
+                <a href="index.html#about">
+                    About
+                </a>
+
+                <a href="index.html#archive" class="mobile-explore">
+                    Explore the Archive →
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         SEARCH OVERLAY
+    ====================================================== -->
+
+    <div class="search-overlay" id="searchOverlay">
+
+        <div class="search-overlay-inner">
+
+            <button
+                class="search-close"
+                id="closeSearch"
+                type="button"
+                aria-label="Close search">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+
+            <span class="section-kicker">
+                ROOTS / SEARCH
+            </span>
+
+            <h2>
+                Search the archive.
+            </h2>
+
+            <div class="archive-search-large">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="search"
+                    id="globalSearch"
+                    placeholder="Search communities, crafts or stories..."
+                    autocomplete="off">
+
+            </div>
+
+            <p class="search-hint">
+                Try “bamboo”, “Bodo”, “textile” or “stories”.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         ARCHIVE HERO
+    ====================================================== -->
+
+    <main>
+
+        <section class="archive-page-hero">
+
+            <div class="archive-page-hero-bg"></div>
+
+            <div class="section-shell">
+
+                <div class="archive-hero-content reveal">
+
+                    <span class="section-kicker">
+                        INDIA / HERITAGE ARCHIVE
+                    </span>
+
+                    <h1>
+                        Explore the
+                        <em>archive.</em>
+                    </h1>
+
+                    <p>
+                        Communities, crafts and stories that keep
+                        living heritage moving from one generation
+                        to the next.
+                    </p>
+
+                </div>
+
+
+                <div class="archive-hero-meta reveal">
+
+                    <span>
+                        14 ARCHIVE ENTRIES
+                    </span>
+
+                    <span class="hero-meta-line"></span>
+
+                    <span>
+                        LIVING TRADITIONS
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             ARCHIVE INTRO
+        ================================================== -->
+
+        <section class="archive-intro-section">
+
+            <div class="section-shell">
+
+                <div class="archive-intro-grid">
+
+                    <div class="archive-intro-label reveal">
+
+                        <span class="section-kicker">
+                            THE COLLECTION
+                        </span>
+
+                        <span class="archive-intro-number">
+                            01 — 14
+                        </span>
+
+                    </div>
+
+
+                    <div class="archive-intro-copy reveal">
+
+                        <h2>
+                            A collection of
+                            <em>living knowledge.</em>
+                        </h2>
+
+                        <p>
+                            Explore the people, techniques, objects
+                            and stories that form the ROOTS archive.
+                            Each entry opens a window into a tradition
+                            that continues to live through communities
+                            and everyday practice.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             ARCHIVE CONTROLS
+        ================================================== -->
+
+        <section class="archive-controls-section">
+
+            <div class="section-shell">
+
+                <div class="archive-controls">
+
+                    <!-- Filters -->
+                    <div class="archive-filters" id="archiveFilters">
+
+                        <button
+                            type="button"
+                            class="archive-filter active"
+                            data-filter="all">
+
+                            All
+
+                        </button>
+
+                        <button
+                            type="button"
+                            class="archive-filter"
+                            data-filter="communities">
+
+                            Communities
+
+                        </button>
+
+                        <button
+                            type="button"
+                            class="archive-filter"
+                            data-filter="crafts">
+
+                            Crafts
+
+                        </button>
+
+                        <button
+                            type="button"
+                            class="archive-filter"
+                            data-filter="stories">
+
+                            Stories
+
+                        </button>
+
+                    </div>
+
+
+                    <!-- Archive Search -->
+                    <div class="archive-search-box">
+
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                        <input
+                            type="search"
+                            id="archiveSearch"
+                            placeholder="Search archive..."
+                            autocomplete="off">
+
+                    </div>
+
+                </div>
+
+
+                <div class="archive-result-count">
+
+                    <span id="archiveResultCount">
+                        Showing 14 entries
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             ARCHIVE GRID
+        ================================================== -->
+
+        <section class="archive-grid-section">
+
+            <div class="section-shell">
+
+                <div
+                    class="archive-item-grid"
+                    id="archiveGrid">
+
+                    <!-- =====================================
+                         CARD 01 — BAMBOO
+                    ====================================== -->
+
+                    <article
+                        class="archive-item-card reveal"
+                        data-category="crafts"
+                        data-search="bamboo bamboo craft konda reddi andhra pradesh handwoven craft">
+
+                        <a
+                            href="details.html?id=bamboo"
+                            class="archive-item-image">
+
+                            <img
+                                src="images/bamboocraft.jpg"
+                                alt="Bamboo craft">
+
+                        </a>
+
+                        <div class="archive-item-content">
+
+                            <span class="archive-item-category">
+                                CRAFTS / 01
+                            </span>
+
+                            <h3>
+                                Bamboo Craft
+                            </h3>
+
+                            <p>
+                                Handwoven bamboo traditions shaped
+                                through skill, patience and local
+                                knowledge.
+                            </p>
+
+                            <a
+                                href="details.html?id=bamboo"
+                                class="view-details">
+
+                                View Details
+
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- =====================================
+                         CARD 02 — HANDLOOM
+                    ====================================== -->
+
+                    <article
+                        class="archive-item-card reveal"
+                        data-category="crafts"
+                        data-search="handloom weaving textile weaving craft traditional loom">
+
+                        <a
+                            href="details.html?id=weaving"
+                            class="archive-item-image">
+
+                            <img
+                                src="images/handloomweaving.png"
+                                alt="Handloom weaving">
+
+                        </a>
+
+                        <div class="archive-item-content">
+
+                            <span class="archive-item-category">
+                                CRAFTS / 02
+                            </span>
+
+                            <h3>
+                                Handloom Weaving
+                            </h3>
+
+                            <p>
+                                Threads, patterns and patient hands
+                                carrying textile knowledge forward.
+                            </p>
+
+                            <a
+                                href="details.html?id=weaving"
+                                class="view-details">
+
+                                View Details
+
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- =====================================
+                         CARD 03 — HANDS
+                    ====================================== -->
+
+                    <article
+                        class="archive-item-card reveal"
+                        data-category="crafts"
+                        data-search="hands behind craft artisan maker handmade skill tradition">
+
+                        <a
+                            href="details.html?id=hands"
+                            class="archive-item-image">
+
+                            <img
+                                src="images/handsbehindcraft.png"
+                                alt="Hands behind traditional craft">
+
+                        </a>
+
+                        <div class="archive-item-content">
+
+                            <span class="archive-item-category">
+                                CRAFTS / 03
+                            </span>
+
+                            <h3>
+                                The Hands Behind the Craft
+                            </h3>
+
+                            <p>
+                                A closer look at the makers whose
+                                hands keep traditional skills alive.
+                            </p>
+
+                            <a
+                                href="details.html?id=hands"
+                                class="view-details">
+
+                                View Details
+
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- =====================================
+                         CARD 04 — METAL
+                    ====================================== -->
+
+                    <article
+                        class="archive-item-card reveal"
+                        data-category="crafts"
+                        data-search="metal art traditional metal craft artisan metalwork">
+
+                        <a
+                            href="details.html?id=metal"
+                            class="archive-item-image">
+
+                            <img
+                                src="images/metalart.png"
+                                alt="Traditional metal craft">
+
+                        </a>
+
+                        <div class="archive-item-content">
+
+                            <span class="archive-item-category">
+                                CRAFTS / 04
+                            </span>
+
+                            <h3>
+                                Traditional Metal Craft
+                            </h3>
+
+                            <p>
+                                Material, fire and skilled hands
+                                transformed into enduring objects.
+                            </p>
+
+                            <a
+                                href="details.html?id=metal"
+                                class="view-details">
+
+                                View Details
+
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- =====================================
+                         CARD 05 — POTTERY
+                    ====================================== -->
+
+                    <article
+                        class="archive-item-card reveal"
+                        data-category="crafts"
+                        data-search="tribal pottery pottery clay ceramics traditional craft">
+
+                        <a
+                            href="details.html?id=pottery"
+                            class="archive-item-image">
+
+                            <img
+                                src="images/tribalpottery.png"
+                                alt="Traditional pottery">
+
+                        </a>
+
+                        <div class="archive-item-content">
+
+                            <span class="archive-item-category">
+                                CRAFTS / 05
+                            </span>
+
+                            <h3>
+                                Traditional Pottery
+                            </h3>
+
+                            <p>
+                                Clay shaped by hand into objects
+                                connected to everyday cultural life.
+                            </p>
+
+                            <a
+                                href="details.html?id=pottery"
+                                class="view-details">
+
+                                View Details
+
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- =====================================
+                         CARD 06 — TEXTILE
+                    ====================================== -->
+
+                    <article
+                        class="archive-item-card reveal"
+                        data-category="crafts"
+                        data-search="tribal textile traditional textile fabric patterns weaving">
+
+                        <a
+                            href="details.html?id=textile"
+                            class="archive-item-image">
+
+                            <img
+                                src="images/tribaltextile.png"
+                                alt="Tribal textile">
+
+                        </a>
+
+                        <div class="archive-item-content">
+
+                            <span class="archive-item-category">
+                                CRAFTS / 06
+                            </span>
+
+                            <h3>
+                                Tribal Textile
+                            </h3>
+
+                            <p>
+                                Textile traditions where patterns,
+                                colour and memory meet.
+                            </p>
+
+                            <a
+                                href="details.html?id=textile"
+                                class="view-details">
+
+                                View Details
+
+                            </a>
+
+                        </div>
+
+  </article>
+                      <!-- =====================================
+                         CARD 07 — BODO
+                    ====================================== -->
+
+                    <article
+                        class="archive-item-card reveal"
+                        data-category="communities"
+                        data-search="bodo bodo community assam northeast india community heritage">
+
+                        <a
+                            href="details.html?id=bodo"
+                            class="archive-item-image">
+
+                            <img
+                                src="images/bodo.jpg"
+                                alt="Bodo Community">
+
+                        </a>
+
+                        <div class="archive-item-content">
+
+                            <span class="archive-item-category">
+                                COMMUNITIES / 01
+                            </span>
+
+                            <h3>
+                                Bodo Community
+                            </h3>
+
+                            <p>
+                                A glimpse into the cultural traditions,
+                                everyday life and heritage of the Bodo
+                                community of Assam.
+                            </p>
+
+                            <a
+                                href="details.html?id=bodo"
+                                class="view-details">
+                                View Details
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- =====================================
+                         CARD 08 — GOND
+                    ====================================== -->
+
+                    <article
+                        class="archive-item-card reveal"
+                        data-category="communities"
+                        data-search="gond gond community tribal india central india community heritage">
+
+                        <a
+                            href="details.html?id=gond"
+                            class="archive-item-image">
+
+                            <img
+                                src="images/gond.png"
+                                alt="Gond Community">
+
+                        </a>
+
+                        <div class="archive-item-content">
+
+                            <span class="archive-item-category">
+                                COMMUNITIES / 02
+                            </span>
+
+                            <h3>
+                                Gond Community
+                            </h3>
+
+                            <p>
+                                Community memory, visual traditions and
+                                cultural practices passed through
+                                generations.
+                            </p>
+
+                            <a
+                                href="details.html?id=gond"
+                                class="view-details">
+                                View Details
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- =====================================
+                         CARD 09 — DONGRIA KONDH
+                    ====================================== -->
+
+                    <article
+                        class="archive-item-card reveal"
+                        data-category="communities"
+                        data-search="dongria kondh dongria community odisha tribal heritage forest">
+
+                        <a
+                            href="details.html?id=dongria"
+                            class="archive-item-image">
+
+                            <img
+                                src="images/dongria.png"
+                                alt="Dongria Kondh Community">
+
+                        </a>
+
+                        <div class="archive-item-content">
+
+                            <span class="archive-item-category">
+                                COMMUNITIES / 03
+                            </span>
+
+                            <h3>
+                                Dongria Kondh
+                            </h3>
+
+                            <p>
+                                A visual entry exploring community,
+                                landscape and the relationship between
+                                people and place.
+                            </p>
+
+                            <a
+                                href="details.html?id=dongria"
+                                class="view-details">
+                                View Details
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- =====================================
+                         CARD 10 — SANTHAL
+                    ====================================== -->
+
+                    <article
+                        class="archive-item-card reveal"
+                        data-category="communities"
+                        data-search="santhal santhal community tribal india eastern india heritage culture">
+
+                        <a
+                            href="details.html?id=santhal"
+                            class="archive-item-image">
+
+                            <img
+                                src="images/santhal.png"
+                                alt="Santhal Community">
+
+                        </a>
+
+                        <div class="archive-item-content">
+
+                            <span class="archive-item-category">
+                                COMMUNITIES / 04
+                            </span>
+
+                            <h3>
+                                Santhal Community
+                            </h3>
+
+                            <p>
+                                Community traditions, cultural expression
+                                and everyday knowledge carried through
+                                generations.
+                            </p>
+
+                            <a
+                                href="details.html?id=santhal"
+                                class="view-details">
+                                View Details
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- =====================================
+                         CARD 11 — KONDA REDDI
+                    ====================================== -->
+
+                    <article
+                        class="archive-item-card reveal"
+                        data-category="communities"
+                        data-search="konda reddi konda redi community andhra pradesh tribal heritage bamboo">
+
+                        <a
+                            href="details.html?id=konda"
+                            class="archive-item-image">
+
+                            <img
+                                src="images/kondareddy.png"
+                                alt="Konda Reddi Community">
+
+                        </a>
+
+                        <div class="archive-item-content">
+
+                            <span class="archive-item-category">
+                                COMMUNITIES / 05
+                            </span>
+
+                            <h3>
+                                Konda Reddi Community
+                            </h3>
+
+                            <p>
+                                A heritage entry connecting community,
+                                forest knowledge and traditional
+                                material practices.
+                            </p>
+
+                            <a
+                                href="details.html?id=konda"
+                                class="view-details">
+                                View Details
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- =====================================
+                         CARD 12 — STORIES FROM HOME
+                    ====================================== -->
+
+                    <article
+                        class="archive-item-card reveal"
+                        data-category="stories"
+                        data-search="stories from home family memory heritage oral stories culture">
+
+                        <a
+                            href="details.html?id=home"
+                            class="archive-item-image">
+
+                            <img
+                                src="images/storiesfromhome.png"
+                                alt="Stories from Home">
+
+                        </a>
+
+                        <div class="archive-item-content">
+
+                            <span class="archive-item-category">
+                                STORIES / 01
+                            </span>
+
+                            <h3>
+                                Stories from Home
+                            </h3>
+
+                            <p>
+                                Personal memories and everyday stories
+                                that reveal how heritage lives within
+                                the home.
+                            </p>
+
+                            <a
+                                href="details.html?id=home"
+                                class="view-details">
+                                View Details
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- =====================================
+                         CARD 13 — THE FOREST GIVES LIFE
+                    ====================================== -->
+
+                    <article
+                        class="archive-item-card reveal"
+                        data-category="stories"
+                        data-search="forest gives life nature forest community heritage environment stories">
+
+                        <a
+                            href="details.html?id=forest"
+                            class="archive-item-image">
+
+                            <img
+                                src="images/theforestgiveuslife.png"
+                                alt="The Forest Gives Life">
+
+                        </a>
+
+                        <div class="archive-item-content">
+
+                            <span class="archive-item-category">
+                                STORIES / 02
+                            </span>
+
+                            <h3>
+                                The Forest Gives Life
+                            </h3>
+
+                            <p>
+                                A story about the deep relationship
+                                between people, forests and the
+                                knowledge of the natural world.
+                            </p>
+
+                            <a
+                                href="details.html?id=forest"
+                                class="view-details">
+                                View Details
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- =====================================
+                         CARD 14 — OBJECTS WE INHERIT
+                    ====================================== -->
+
+                    <article
+                        class="archive-item-card reveal"
+                        data-category="stories"
+                        data-search="objects we inherit inherited objects memory tradition heritage stories">
+
+                        <a
+                            href="details.html?id=objects"
+                            class="archive-item-image">
+
+                            <img
+                                src="images/objecsweinherit.png"
+                                alt="Objects We Inherit">
+
+                        </a>
+
+                        <div class="archive-item-content">
+
+                            <span class="archive-item-category">
+                                STORIES / 03
+                            </span>
+
+                            <h3>
+                                Objects We Inherit
+                            </h3>
+
+                            <p>
+                                Everyday objects can hold memory,
+                                identity and stories that travel
+                                across generations.
+                            </p>
+
+                            <a
+                                href="details.html?id=objects"
+                                class="view-details">
+                                View Details
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+
+                <!-- =================================================
+                     NO RESULTS MESSAGE
+                ================================================== -->
+
+                <div
+                    class="archive-no-results"
+                    id="archiveNoResults"
+                    hidden>
+
+                    <div class="no-results-mark">
+                        0
+                    </div>
+
+                    <h3>
+                        Nothing found.
+                    </h3>
+
+                    <p>
+                        Try another search term or choose a different
+                        archive category.
+                    </p>
+
+                    <button
+                        type="button"
+                        class="outline-btn"
+                        id="clearArchiveSearch">
+
+                        Clear Search
+
+                        <span>
+                            ↗
+                        </span>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             ARCHIVE STATEMENT
+        ================================================== -->
+
+        <section class="statement-strip archive-statement">
+
+            <div class="section-shell">
+
+                <div class="statement-inner reveal">
+
+                    <span class="statement-index">
+                        ROOTS / 02
+                    </span>
+
+                    <p>
+                        “A tradition survives when it continues
+                        to be lived, shared and remembered.”
+                    </p>
+
+                    <span class="statement-mark">
+                        ✦
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             FEATURED STORY
+        ================================================== -->
+
+        <section class="archive-feature-section">
+
+            <div class="section-shell">
+
+                <div class="archive-feature-grid">
+
+                    <!-- Featured Image -->
+
+                    <div class="archive-feature-image reveal">
+
+                        <img
+                            src="images/theforestgiveuslife.png"
+                            alt="The Forest Gives Life">
+
+                    </div>
+
+
+                    <!-- Featured Content -->
+
+                    <div class="archive-feature-content reveal">
+
+                        <span class="section-kicker">
+                            FEATURED STORY
+                        </span>
+
+                        <span class="feature-number">
+                            03 / 14
+                        </span>
+
+                        <h2>
+                            The forest
+                            <em>gives life.</em>
+                        </h2>
+
+                        <p>
+                            Across many communities, the forest is
+                            more than a landscape. It is connected
+                            to food, materials, knowledge, memory
+                            and everyday life.
+                        </p>
+
+                        <p>
+                            Explore the story behind the relationship
+                            between people and the natural world.
+                        </p>
+
+                        <a
+                            href="details.html?id=forest"
+                            class="outline-btn">
+
+                            Read the Story
+
+                            <span>
+                                →
+                            </span>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+  </section>
+          <!-- =================================================
+             VOICES / LIVING STORIES
+        ================================================== -->
+
+        <section class="archive-voices-section">
+
+            <div class="section-shell">
+
+                <div class="archive-voices-heading reveal">
+
+                    <div>
+
+                        <span class="section-kicker">
+                            VOICES / 04
+                        </span>
+
+                        <h2>
+                            Listen to living
+                            <em>stories.</em>
+                        </h2>
+
+                    </div>
+
+                    <p>
+                        Heritage is also carried through memory,
+                        conversation and the voices of people who
+                        live these traditions every day.
+                    </p>
+
+                </div>
+
+
+                <div class="archive-voices-grid">
+
+                    <!-- Voice Card 01 -->
+
+                    <article class="archive-voice-card reveal">
+
+                        <div class="archive-voice-image">
+
+                            <img
+                                src="images/storiesfromhome.png"
+                                alt="Stories from Home">
+
+                            <span class="voice-index">
+                                01
+                            </span>
+
+                        </div>
+
+                        <div class="archive-voice-content">
+
+                            <span class="archive-item-category">
+                                STORIES / MEMORY
+                            </span>
+
+                            <h3>
+                                Stories from Home
+                            </h3>
+
+                            <p>
+                                Memories, family stories and small
+                                everyday moments that become part
+                                of cultural memory.
+                            </p>
+
+                            <a
+                                href="details.html?id=home"
+                                class="text-link">
+
+                                Explore Story
+                                <span>→</span>
+
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Voice Card 02 -->
+
+                    <article class="archive-voice-card reveal">
+
+                        <div class="archive-voice-image">
+
+                            <img
+                                src="images/theforestgiveuslife.png"
+                                alt="The Forest Gives Life">
+
+                            <span class="voice-index">
+                                02
+                            </span>
+
+                        </div>
+
+                        <div class="archive-voice-content">
+
+                            <span class="archive-item-category">
+                                STORIES / LAND
+                            </span>
+
+                            <h3>
+                                The Forest Gives Life
+                            </h3>
+
+                            <p>
+                                A story of forests, natural knowledge
+                                and the relationship between people
+                                and the land around them.
+                            </p>
+
+                            <a
+                                href="details.html?id=forest"
+                                class="text-link">
+
+                                Explore Story
+                                <span>→</span>
+
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             ARCHIVE PATHS
+        ================================================== -->
+
+        <section class="archive-paths-section">
+
+            <div class="section-shell">
+
+                <div class="archive-paths-heading reveal">
+
+                    <span class="section-kicker">
+                        THREE WAYS IN
+                    </span>
+
+                    <h2>
+                        Find your path
+                        <em>through ROOTS.</em>
+                    </h2>
+
+                </div>
+
+
+                <div class="archive-paths-grid">
+
+                    <!-- Communities -->
+
+                    <a
+                        href="archive.html?category=communities"
+                        class="archive-path-card reveal">
+
+                        <span class="archive-path-number">
+                            01
+                        </span>
+
+                        <div class="archive-path-icon">
+                            <i class="fa-solid fa-people-group"></i>
+                        </div>
+
+                        <div>
+
+                            <span class="archive-item-category">
+                                COMMUNITIES
+                            </span>
+
+                            <h3>
+                                The People
+                            </h3>
+
+                            <p>
+                                Discover communities and the cultural
+                                knowledge carried through generations.
+                            </p>
+
+                        </div>
+
+                        <span class="archive-path-arrow">
+                            →
+                        </span>
+
+                    </a>
+
+
+                    <!-- Crafts -->
+
+                    <a
+                        href="archive.html?category=crafts"
+                        class="archive-path-card reveal">
+
+                        <span class="archive-path-number">
+                            02
+                        </span>
+
+                        <div class="archive-path-icon">
+                            <i class="fa-solid fa-hands"></i>
+                        </div>
+
+                        <div>
+
+                            <span class="archive-item-category">
+                                CRAFTS
+                            </span>
+
+                            <h3>
+                                The Hands
+                            </h3>
+
+                            <p>
+                                Explore materials, techniques and
+                                traditional skills shaped by hand.
+                            </p>
+
+                        </div>
+
+                        <span class="archive-path-arrow">
+                            →
+                        </span>
+
+                    </a>
+
+
+                    <!-- Stories -->
+
+                    <a
+                        href="archive.html?category=stories"
+                        class="archive-path-card reveal">
+
+                        <span class="archive-path-number">
+                            03
+                        </span>
+
+                        <div class="archive-path-icon">
+                            <i class="fa-solid fa-book-open"></i>
+                        </div>
+
+                        <div>
+
+                            <span class="archive-item-category">
+                                STORIES
+                            </span>
+
+                            <h3>
+                                The Memory
+                            </h3>
+
+                            <p>
+                                Read stories about objects, places,
+                                people and memories that endure.
+                            </p>
+
+                        </div>
+
+                        <span class="archive-path-arrow">
+                            →
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             ABOUT ROOTS
+        ================================================== -->
+
+        <section class="about-section archive-about">
+
+            <div class="section-shell">
+
+                <div class="about-heading reveal">
+
+                    <span class="section-kicker">
+                        ABOUT ROOTS
+                    </span>
+
+                    <h2>
+                        A living archive of
+                        <em>heritage.</em>
+                    </h2>
+
+                    <p class="about-intro">
+                        ROOTS is a digital heritage archive created
+                        to document the people, crafts, stories and
+                        traditions that continue to shape India's
+                        cultural landscape.
+                    </p>
+
+                </div>
+
+
+                <div class="about-grid">
+
+                    <div class="about-copy reveal">
+
+                        <p>
+                            Heritage is not only something preserved
+                            in museums. It lives in the hands of
+                            artisans, in community stories, in everyday
+                            objects and in knowledge passed from one
+                            generation to another.
+                        </p>
+
+                        <p>
+                            ROOTS brings these living traditions together
+                            through an accessible digital archive where
+                            visitors can explore communities, crafts
+                            and personal stories.
+                        </p>
+
+                        <a
+                            href="index.html#archive"
+                            class="outline-btn">
+
+                            Back to Explore
+                            <span>→</span>
+
+                        </a>
+
+                    </div>
+
+
+                    <div class="about-stats reveal">
+
+                        <div class="about-stat">
+
+                            <strong>
+                                14+
+                            </strong>
+
+                            <span>
+                                Archive Stories
+                            </span>
+
+                            <p>
+                                Communities, crafts and stories
+                                documented through the archive.
+                            </p>
+
+                        </div>
+
+
+                        <div class="about-stat">
+
+                            <strong>
+                                03
+                            </strong>
+
+                            <span>
+                                Archive Paths
+                            </span>
+
+                            <p>
+                                Explore ROOTS through crafts,
+                                voices and communities.
+                            </p>
+
+                        </div>
+
+
+                        <div class="about-stat">
+
+                            <strong>
+                                01
+                            </strong>
+
+                            <span>
+                                Living Archive
+                            </span>
+
+                            <p>
+                                One growing digital space for
+                                heritage and cultural memory.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             HERITAGE STATEMENT
+        ================================================== -->
+
+        <section class="heritage-statement-section">
+
+            <div class="section-shell">
+
+                <div class="heritage-statement-inner reveal">
+
+                    <span class="section-kicker">
+                        ROOTS / HERITAGE
+                    </span>
+
+                    <h2>
+                        What we inherit
+                        becomes what we
+                        <em>carry forward.</em>
+                    </h2>
+
+                    <div class="heritage-statement-line"></div>
+
+                    <p>
+                        Every object, skill, story and community
+                        carries a piece of knowledge. ROOTS creates
+                        a space where those pieces can be discovered,
+                        understood and remembered.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             CONTACT CTA
+        ================================================== -->
+
+        <section class="contact-section archive-contact">
+
+            <div class="section-shell">
+
+                <div class="contact-grid">
+
+                    <div class="contact-heading reveal">
+
+                        <span class="section-kicker">
+                            CONTRIBUTE / CONNECT
+                        </span>
+
+                        <h2>
+                            Have a story
+                            <em>to share?</em>
+                        </h2>
+
+                    </div>
+
+
+                    <div class="contact-copy reveal">
+
+                        <p>
+                            Know a craft, community, object or story
+                            that deserves a place in the archive?
+                            Connect with ROOTS and help document
+                            living heritage.
+                        </p>
+
+                        <button
+                            type="button"
+                            class="outline-btn"
+                            id="openMessageModal">
+
+                            Send a Message
+                            <span>→</span>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+  </section>
+          <!-- =================================================
+             NEWSLETTER / STAY CONNECTED
+        ================================================== -->
+
+        <section class="newsletter-section">
+
+            <div class="section-shell">
+
+                <div class="newsletter-inner reveal">
+
+                    <div class="newsletter-copy">
+
+                        <span class="section-kicker">
+                            STAY CONNECTED
+                        </span>
+
+                        <h2>
+                            Keep heritage
+                            <em>close.</em>
+                        </h2>
+
+                        <p>
+                            Receive occasional stories, craft features
+                            and new additions from the ROOTS archive.
+                        </p>
+
+                    </div>
+
+
+                    <form
+                        class="newsletter-form"
+                        id="newsletterForm">
+
+                        <div class="newsletter-input-wrap">
+
+                            <input
+                                type="email"
+                                id="newsletterEmail"
+                                name="email"
+                                placeholder="Your email address"
+                                autocomplete="email"
+                                required>
+
+                            <button
+                                type="submit"
+                                aria-label="Subscribe">
+
+                                <span>
+                                    Subscribe
+                                </span>
+
+                                <i class="fa-solid fa-arrow-right"></i>
+
+                            </button>
+
+                        </div>
+
+                        <small>
+                            No spam. Only thoughtful heritage stories.
+                        </small>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             MESSAGE MODAL
+        ================================================== -->
+
+        <div
+            class="message-modal"
+            id="messageModal"
+            aria-hidden="true">
+
+            <div
+                class="message-modal-overlay"
+                id="messageModalOverlay">
+            </div>
+
+
+            <div
+                class="message-modal-box"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="messageModalTitle">
+
+                <button
+                    type="button"
+                    class="message-modal-close"
+                    id="closeMessageModal"
+                    aria-label="Close message form">
+
+                    <i class="fa-solid fa-xmark"></i>
+
+                </button>
+
+
+                <div class="message-modal-heading">
+
+                    <span class="section-kicker">
+                        CONNECT WITH ROOTS
+                    </span>
+
+                    <h2 id="messageModalTitle">
+                        Share a
+                        <em>story.</em>
+                    </h2>
+
+                    <p>
+                        Tell us about a craft, community, object or
+                        tradition that deserves to be remembered.
+                    </p>
+
+                </div>
+
+
+                <form
+                    class="message-form"
+                    id="messageForm">
+
+                    <div class="message-form-row">
+
+                        <div class="message-field">
+
+                            <label for="messageName">
+                                Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="messageName"
+                                name="name"
+                                placeholder="Your name"
+                                required>
+
+                        </div>
+
+
+                        <div class="message-field">
+
+                            <label for="messageEmail">
+                                Email
+                            </label>
+
+                            <input
+                                type="email"
+                                id="messageEmail"
+                                name="email"
+                                placeholder="you@example.com"
+                                required>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="message-field">
+
+                        <label for="messageSubject">
+                            Subject
+                        </label>
+
+                        <input
+                            type="text"
+                            id="messageSubject"
+                            name="subject"
+                            placeholder="What would you like to share?"
+                            required>
+
+                    </div>
+
+
+                    <div class="message-field">
+
+                        <label for="messageText">
+                            Message
+                        </label>
+
+                        <textarea
+                            id="messageText"
+                            name="message"
+                            rows="5"
+                            placeholder="Tell us about the story..."
+                            required></textarea>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="primary-btn message-submit">
+
+                        Send Message
+                        <span>→</span>
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             TOAST NOTIFICATION
+        ================================================== -->
+
+        <div
+            class="roots-toast"
+            id="rootsToast"
+            role="status"
+            aria-live="polite">
+
+            <span class="toast-icon">
+                ✓
+            </span>
+
+            <span id="toastMessage">
+                Message sent successfully.
+            </span>
+
+        </div>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="site-footer">
+
+        <div class="section-shell">
+
+            <div class="footer-top">
+
+                <!-- Footer Brand -->
+
+                <div class="footer-brand">
+
+                    <a
+                        href="index.html"
+                        class="roots-logo footer-logo">
+
+                        <span class="logo-symbol">
+                            R
+                        </span>
+
+                        <span class="logo-word">
+                            ROOTS
+                        </span>
+
+                    </a>
+
+                    <p>
+                        A digital archive for living heritage,
+                        traditional knowledge and the people
+                        who carry it forward.
+                    </p>
+
+                </div>
+
+
+                <!-- Footer Navigation -->
+
+                <div class="footer-column">
+
+                    <span class="footer-heading">
+                        EXPLORE
+                    </span>
+
+                    <a href="archive.html">
+                        Archive
+                    </a>
+
+                    <a href="index.html#voices">
+                        Voices
+                    </a>
+
+                    <a href="index.html#crafts">
+                        Crafts
+                    </a>
+
+                    <a href="index.html#map">
+                        Living Map
+                    </a>
+
+                </div>
+
+
+                <!-- Footer Information -->
+
+                <div class="footer-column">
+
+                    <span class="footer-heading">
+                        ROOTS
+                    </span>
+
+                    <a href="index.html#about">
+                        About
+                    </a>
+
+                    <a href="index.html#contact">
+                        Contact
+                    </a>
+
+                    <a href="archive.html">
+                        Collections
+                    </a>
+
+                </div>
+
+
+                <!-- Footer Social -->
+
+                <div class="footer-column footer-social">
+
+                    <span class="footer-heading">
+                        FOLLOW
+                    </span>
+
+                    <a href="#" aria-label="Instagram">
+                        Instagram
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+
+                    <a href="#" aria-label="Pinterest">
+                        Pinterest
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+
+                    <a href="#" aria-label="Email">
+                        Email
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Footer Bottom -->
+
+            <div class="footer-bottom">
+
+                <span>
+                    © 2026 ROOTS Heritage Archive
+                </span>
+
+                <span>
+                    Made with respect for living traditions.
+                </span>
+
+                <a href="#siteHeader">
+                    Back to top ↑
+                </a>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="script.js?v=final1"></script>
+
+</body>
+
+  </html>
