@@ -2,20 +2,21 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
 
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-          content="ROOTS — Heritage & Artisan Archive. Explore living traditions, crafts and voices from tribal communities across India.">
+          content="ROOTS — Heritage & Artisan Archive celebrating living traditions, communities, crafts and stories from India.">
+
+    <meta name="theme-color"
+          content="#18382d">
 
     <title>ROOTS | Heritage & Artisan Archive</title>
 
     <!-- Google Fonts -->
-    <link rel="preconnect"
-          href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 
     <link rel="preconnect"
           href="https://fonts.gstatic.com"
@@ -28,1098 +29,60 @@
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-    <!-- CSS -->
+    <!-- ROOTS CSS -->
     <link rel="stylesheet"
-          href="style.css">
-
+          href="style.css?v=final1">
 </head>
 
 
 <body>
 
+    <!-- =====================================================
+         PAGE LOADER
+    ====================================================== -->
 
-<!-- =========================
-     NAVIGATION
-========================= -->
+    <div class="page-loader" id="pageLoader">
 
-<header class="navbar" id="navbar">
+        <div class="loader-inner">
 
-    <div class="nav-inner">
+            <span class="loader-mark">R</span>
 
-        <a href="#home" class="logo">
+            <span class="loader-line"></span>
 
-            <span class="logo-mark">✦</span>
-
-            <span class="logo-text">
-
-                <strong>ROOTS</strong>
-
-                <small>
-                    Heritage & Artisan Archive
-                </small>
-
-            </span>
-
-        </a>
-
-
-        <nav class="desktop-nav">
-
-            <a href="#archive">
-                Archive
-            </a>
-
-            <a href="#voices">
-                Voices
-            </a>
-
-            <a href="#crafts">
-                Crafts
-            </a>
-
-            <a href="#map">
-                Map
-            </a>
-
-            <a href="#about">
-                About
-            </a>
-
-        </nav>
-
-
-        <div class="nav-actions">
-
-            <button
-                class="search-btn"
-                aria-label="Search">
-
-                <i class="fa-solid fa-magnifying-glass"></i>
-
-            </button>
-
-
-            <a
-                href="#archive"
-                class="nav-explore">
-
-                Explore
-
-            </a>
-
-
-            <button
-                class="menu-btn"
-                aria-label="Open menu">
-
-                <i class="fa-solid fa-bars"></i>
-
-            </button>
+            <span>ROOTS</span>
 
         </div>
 
     </div>
 
-</header>
 
 
+    <!-- =====================================================
+         HEADER / NAVIGATION
+    ====================================================== -->
 
-<!-- =========================
-     MOBILE MENU
-========================= -->
+    <header class="site-header" id="siteHeader">
 
-<div class="mobile-menu" id="mobileMenu">
+        <nav class="navbar">
 
-    <button
-        class="close-menu"
-        aria-label="Close menu">
+            <!-- ROOTS LOGO -->
 
-        <i class="fa-solid fa-xmark"></i>
+            <a href="#home"
+               class="brand"
+               aria-label="ROOTS Home">
 
-    </button>
-
-
-    <a href="#archive">
-        Archive
-    </a>
-
-    <a href="#voices">
-        Voices
-    </a>
-
-    <a href="#crafts">
-        Crafts
-    </a>
-
-    <a href="#map">
-        Map
-    </a>
-
-    <a href="#about">
-        About
-    </a>
-
-
-    <a
-        href="#archive"
-        class="mobile-explore">
-
-        Explore the Archive →
-
-    </a>
-
-</div>
-
-
-
-<main>
-
-
-<!-- =========================
-     HERO
-========================= -->
-
-<section class="hero" id="home">
-
-    <div class="hero-image"></div>
-
-    <div class="hero-overlay"></div>
-
-
-    <div class="hero-content">
-
-        <p class="hero-eyebrow">
-
-            INDIA
-
-            <span>/</span>
-
-            HERITAGE ARCHIVE
-
-        </p>
-
-
-        <h1>
-
-            Where heritage<br>
-            stays alive.
-
-        </h1>
-
-
-        <p class="hero-description">
-
-            Stories, skills and traditions preserved
-            through the voices and hands that carry
-            them forward.
-
-        </p>
-
-
-        <a
-            href="#archive"
-            class="btn btn-light">
-
-            Explore the Archive
-
-            <span>→</span>
-
-        </a>
-
-    </div>
-
-
-
-    <div class="hero-community">
-
-        <span class="community-line"></span>
-
-        <div>
-
-            <small>
-                Bodo Community
-            </small>
-
-            <strong>
-                Assam
-            </strong>
-
-        </div>
-
-    </div>
-
-
-
-    <div class="hero-counter">
-
-        <span class="counter-active">
-            01
-        </span>
-
-        <span class="counter-line"></span>
-
-        <span>
-            04
-        </span>
-
-    </div>
-
-
-
-    <div class="hero-scroll">
-
-        <span></span>
-
-        <small>
-            Scroll to explore
-        </small>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     ARCHIVE
-========================= -->
-
-<section
-    class="archive-section section"
-    id="archive">
-
-    <div class="section-heading">
-
-        <div>
-
-            <p class="eyebrow">
-                EXPLORE THE ARCHIVE
-            </p>
-
-            <h2>
-                Dive into living<br>
-                traditions.
-            </h2>
-
-        </div>
-
-
-        <p class="section-intro">
-
-            From handcrafted art to oral histories,
-            explore the rich tapestry of India's
-            tribal communities.
-
-        </p>
-
-
-        <a
-            href="archive.html"
-            class="archive-view-all">
-
-            View all →
-
-        </a>
-
-    </div>
-
-
-
-    <div class="archive-grid">
-
-
-        <!-- =====================
-             CARD 01 — CRAFTS
-        ====================== -->
-
-        <article class="archive-card archive-craft">
-
-            <div class="archive-image">
-
-                <span class="archive-card-number">
-                    01
+                <span class="brand-symbol">
+                    R
                 </span>
 
-            </div>
-
-
-            <div class="archive-info">
-
-                <div>
-
-                    <span class="archive-category">
-                        CRAFTS
-                    </span>
-
-                    <h3>
-                        Hands that remember.
-                    </h3>
-
-                    <p>
-                        Traditional skills,
-                        materials and techniques
-                        passed from one generation
-                        to another.
-                    </p>
-
-                </div>
-
-
-                <a
-                    href="archive.html?category=crafts"
-                    class="archive-arrow"
-                    aria-label="Explore crafts">
-
-                    →
-
-                </a>
-
-            </div>
-
-        </article>
-
-
-
-        <!-- =====================
-             CARD 02 — VOICES
-        ====================== -->
-
-        <article class="archive-card archive-voice">
-
-            <div class="archive-image">
-
-                <span class="archive-card-number">
-                    02
-                </span>
-
-            </div>
-
-
-            <div class="archive-info">
-
-                <div>
-
-                    <span class="archive-category">
-                        VOICES
-                    </span>
-
-                    <h3>
-                        Stories without pages.
-                    </h3>
-
-                    <p>
-                        Listen to memories,
-                        knowledge and stories
-                        shared by community elders.
-                    </p>
-
-                </div>
-
-
-                <a
-                    href="archive.html?category=voices"
-                    class="archive-arrow"
-                    aria-label="Explore voices">
-
-                    →
-
-                </a>
-
-            </div>
-
-        </article>
-
-
-
-        <!-- =====================
-             CARD 03 — COMMUNITIES
-        ====================== -->
-
-        <article class="archive-card archive-community">
-
-            <div class="archive-image">
-
-                <span class="archive-card-number">
-                    03
-                </span>
-
-            </div>
-
-
-            <div class="archive-info">
-
-                <div>
-
-                    <span class="archive-category">
-                        COMMUNITIES
-                    </span>
-
-                    <h3>
-                        A place. A people.
-                    </h3>
-
-                    <p>
-                        Explore communities,
-                        landscapes and traditions
-                        rooted in different regions.
-                    </p>
-
-                </div>
-
-
-                <a
-                    href="archive.html?category=communities"
-                    class="archive-arrow"
-                    aria-label="Explore communities">
-
-                    →
-
-                </a>
-
-            </div>
-
-        </article>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================
-     CRAFT STORY
-========================= -->  
-
-
-
-
-<!-- =========================
-     CRAFT STORY
-========================= -->
-
-<section
-    class="craft-section"
-    id="crafts">
-
-
-    <div class="craft-image">
-
-        <span class="image-label">
-            HANDCRAFTED
-        </span>
-
-    </div>
-
-
-    <div class="craft-content">
-
-        <p class="eyebrow">
-            FEATURED CRAFT
-        </p>
-
-
-        <h2>
-
-            Bamboo<br>
-            Craft
-
-        </h2>
-
-
-        <p class="craft-description">
-
-            From a simple natural material comes
-            something shaped by patience, skill
-            and generations of knowledge.
-
-        </p>
-
-
-        <div class="craft-details">
-
-
-            <div>
-
-                <span>
-                    ORIGIN
-                </span>
-
-                <strong>
-                    Andhra Pradesh
-                </strong>
-
-            </div>
-
-
-            <div>
-
-                <span>
-                    COMMUNITY
-                </span>
-
-                <strong>
-                    Konda Reddi
-                </strong>
-
-            </div>
-
-
-            <div>
-
-                <span>
-                    TECHNIQUE
-                </span>
-
-                <strong>
-                    Handwoven
-                </strong>
-
-            </div>
-
-        </div>
-
-
-        <a
-            href="#voices"
-            class="text-link">
-
-            Read the story
-
-            <span>→</span>
-
-        </a>
-
-
-        <div class="craft-decoration">
-
-            <div class="bamboo-shape bamboo-one"></div>
-
-            <div class="bamboo-shape bamboo-two"></div>
-
-            <div class="bamboo-leaf leaf-one"></div>
-
-            <div class="bamboo-leaf leaf-two"></div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================
-     VOICES
-========================= -->
-
-<section
-    class="voices-section section"
-    id="voices">
-
-
-    <div class="voices-intro">
-
-        <p class="eyebrow">
-            VOICES
-        </p>
-
-
-        <h2>
-
-            Listen to<br>
-            living stories.
-
-        </h2>
-
-
-        <p>
-
-            Heritage is not only something we see.
-            It is something we hear, remember and
-            pass on.
-
-        </p>
-
-
-        <a
-            href="#voices"
-            class="text-link">
-
-            Explore all voices
-
-            <span>→</span>
-
-        </a>
-
-    </div>
-
-
-    <div class="voice-story-card">
-
-
-        <div class="voice-photo">
-
-            <div class="voice-photo-overlay"></div>
-
-
-            <button
-                class="play-btn"
-                aria-label="Play story">
-
-                <i class="fa-solid fa-play"></i>
-
-            </button>
-
-
-            <span class="voice-location">
-                ARUNACHAL PRADESH
-            </span>
-
-        </div>
-
-
-        <div class="voice-story-content">
-
-            <p class="quote">
-
-                “When we teach the young,
-                the tradition continues.”
-
-            </p>
-
-
-            <div class="audio-progress">
-
-                <span class="audio-dot"></span>
-
-                <span class="audio-line"></span>
-
-                <span class="audio-line short"></span>
-
-            </div>
-
-
-            <div class="voice-meta">
-
-                <div>
-
-                    <strong>
-                        Living Memory
-                    </strong>
-
-                    <span>
-                        Community Elder
-                    </span>
-
-                </div>
-
-
-                <span>
-                    03:42
-                </span>
-
-            </div>
-
-        </div>
-
-    </div>
-
-            </section>
-         <!-- =========================
-     LIVING MAP
-========================= -->
-
-<section
-    class="map-section section"
-    id="map">
-
-
-    <div class="map-copy">
-
-        <p class="eyebrow">
-            LIVING MAP
-        </p>
-
-
-        <h2>
-
-            Explore India's<br>
-            tribal regions.
-
-        </h2>
-
-
-        <p>
-
-            Every region carries its own languages,
-            crafts, stories and ways of life.
-
-        </p>
-
-    </div>
-
-
-
-    <div class="india-map-area">
-
-        <div class="india-map">
-
-            <span class="map-label label-north">
-                NORTH
-            </span>
-
-            <span class="map-label label-east">
-                EAST
-            </span>
-
-            <span class="map-label label-south">
-                SOUTH
-            </span>
-
-            <span class="map-label label-west">
-                WEST
-            </span>
-
-
-            <div
-                class="map-dot dot-ap">
-            </div>
-
-            <div
-                class="map-dot dot-ts">
-            </div>
-
-            <div
-                class="map-dot dot-od">
-            </div>
-
-            <div
-                class="map-dot dot-jh">
-            </div>
-
-            <div
-                class="map-dot dot-cg">
-            </div>
-
-        </div>
-
-    </div>
-
-
-
-    <div class="region-list">
-
-
-        <button data-region="Andhra Pradesh">
-
-            <span>01</span>
-
-            Andhra Pradesh
-
-            <i class="fa-solid fa-arrow-right"></i>
-
-        </button>
-
-
-        <button data-region="Telangana">
-
-            <span>02</span>
-
-            Telangana
-
-            <i class="fa-solid fa-arrow-right"></i>
-
-        </button>
-
-
-        <button data-region="Odisha">
-
-            <span>03</span>
-
-            Odisha
-
-            <i class="fa-solid fa-arrow-right"></i>
-
-        </button>
-
-
-        <button data-region="Jharkhand">
-
-            <span>04</span>
-
-            Jharkhand
-
-            <i class="fa-solid fa-arrow-right"></i>
-
-        </button>
-
-
-        <button data-region="Chhattisgarh">
-
-            <span>05</span>
-
-            Chhattisgarh
-
-            <i class="fa-solid fa-arrow-right"></i>
-
-        </button>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================
-     TIMELINE
-========================= -->
-
-<section
-    class="timeline-section section">
-
-
-    <div class="timeline-heading">
-
-        <p class="eyebrow">
-            LIVING HERITAGE
-        </p>
-
-
-        <h2>
-
-            From generation<br>
-            to generation.
-
-        </h2>
-
-    </div>
-
-
-
-    <div class="timeline">
-
-        <div class="timeline-line"></div>
-
-
-
-        <article class="timeline-item">
-
-            <span class="timeline-year">
-                1950
-            </span>
-
-
-            <div class="timeline-dot"></div>
-
-
-            <div class="timeline-content">
-
-                <h3>
-                    Knowledge passed down
-                </h3>
-
-                <p>
-
-                    Traditional skills are learned
-                    within families and communities.
-
-                </p>
-
-            </div>
-
-        </article>
-
-
-
-        <article class="timeline-item">
-
-            <span class="timeline-year">
-                2020
-            </span>
-
-
-            <div class="timeline-dot"></div>
-
-
-            <div class="timeline-content">
-
-                <h3>
-                    Stories are recorded
-                </h3>
-
-                <p>
-
-                    Communities begin documenting
-                    their memories and practices.
-
-                </p>
-
-            </div>
-
-        </article>
-
-
-
-        <article class="timeline-item">
-
-            <span class="timeline-year">
-                NOW
-            </span>
-
-
-            <div class="timeline-dot"></div>
-
-
-            <div class="timeline-content">
-
-                <h3>
-                    Young hands continue
-                </h3>
-
-                <p>
-
-                    New generations learn, adapt and
-                    carry heritage forward.
-
-                </p>
-
-            </div>
-
-        </article>
-
-
-
-        <article
-            class="timeline-item timeline-today">
-
-            <span class="timeline-year">
-                TODAY
-            </span>
-
-
-            <div class="timeline-dot"></div>
-
-
-            <div class="timeline-content">
-
-                <h3>
-                    Heritage stays alive
-                </h3>
-
-                <p>
-
-                    Tradition continues through
-                    people, place and practice.
-
-                </p>
-
-            </div>
-
-        </article>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================
-     ABOUT
-========================= -->
-
-<section
-    class="about-section section"
-    id="about">
-
-
-    <div class="about-image"></div>
-
-
-    <div class="about-content">
-
-        <p class="eyebrow">
-            ABOUT ROOTS
-        </p>
-
-
-        <h2>
-
-            A living archive<br>
-            of Indian heritage.
-
-        </h2>
-
-
-        <p>
-
-            ROOTS is a digital space created to
-            document and celebrate the living
-            traditions of India's tribal communities.
-
-        </p>
-
-
-        <p>
-
-            Through crafts, voices, places and
-            stories, the archive connects heritage
-            with the generations carrying it forward.
-
-        </p>
-
-
-        <a
-            href="#archive"
-            class="text-link">
-
-            Explore the archive
-
-            <span>→</span>
-
-        </a>
-
-    </div>
-
-</section>
-
-
-</main>
-
-
-
-<!-- =========================
-     FOOTER
-========================= -->
-
-<footer class="footer">
-
-
-    <div class="footer-main">
-
-
-        <!-- BRAND -->
-
-        <div class="footer-brand">
-
-
-            <a
-                href="#home"
-                class="logo footer-logo">
-
-
-                <span class="logo-mark">
-                    ✦
-                </span>
-
-
-                <span class="logo-text">
+                <span class="brand-text">
 
                     <strong>
                         ROOTS
                     </strong>
 
                     <small>
-                        Heritage & Artisan Archive
+                        HERITAGE ARCHIVE
                     </small>
 
                 </span>
@@ -1127,37 +90,156 @@
             </a>
 
 
-            <p>
-                Stories · Skills · Heritage
-            </p>
+
+            <!-- DESKTOP NAVIGATION -->
+
+            <div class="desktop-nav"
+                 id="desktopNav">
+
+                <a href="#archive">
+                    Archive
+                </a>
+
+                <a href="#voices">
+                    Voices
+                </a>
+
+                <a href="#crafts">
+                    Crafts
+                </a>
+
+                <a href="#map">
+                    Map
+                </a>
+
+                <a href="#about">
+                    About
+                </a>
+
+            </div>
 
 
-            <div class="social-links">
+
+            <!-- NAVIGATION ACTIONS -->
+
+            <div class="nav-actions">
+
+                <button
+                    class="nav-search-btn"
+                    id="navSearchBtn"
+                    type="button"
+                    aria-label="Open search">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                </button>
 
 
-                <a
-                    href="#"
-                    aria-label="Instagram">
+                <a href="archive.html"
+                   class="nav-explore-btn">
 
-                    <i class="fa-brands fa-instagram"></i>
+                    Explore
+
+                    <span>
+                        ↗
+                    </span>
 
                 </a>
 
 
-                <a
-                    href="#"
-                    aria-label="Facebook">
+                <!-- MOBILE MENU -->
 
-                    <i class="fa-brands fa-facebook-f"></i>
+                <button
+                    class="menu-toggle"
+                    id="menuToggle"
+                    type="button"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false">
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </button>
+
+            </div>
+
+        </nav>
+
+
+
+        <!-- =================================================
+             MOBILE NAVIGATION
+        ================================================== -->
+
+        <div class="mobile-nav"
+             id="mobileNav">
+
+            <div class="mobile-nav-inner">
+
+                <a href="#archive">
+
+                    <span>
+                        01
+                    </span>
+
+                    Archive
 
                 </a>
 
 
-                <a
-                    href="#"
-                    aria-label="Youtube">
+                <a href="#voices">
 
-                    <i class="fa-brands fa-youtube"></i>
+                    <span>
+                        02
+                    </span>
+
+                    Voices
+
+                </a>
+
+
+                <a href="#crafts">
+
+                    <span>
+                        03
+                    </span>
+
+                    Crafts
+
+                </a>
+
+
+                <a href="#map">
+
+                    <span>
+                        04
+                    </span>
+
+                    Living Map
+
+                </a>
+
+
+                <a href="#about">
+
+                    <span>
+                        05
+                    </span>
+
+                    About
+
+                </a>
+
+
+                <a href="archive.html"
+                   class="mobile-explore-link">
+
+                    Explore the Archive
+
+                    <span>
+                        →
+                    </span>
 
                 </a>
 
@@ -1165,154 +247,1351 @@
 
         </div>
 
-
-
-        <!-- EXPLORE -->
-
-        <div class="footer-column">
-
-            <h4>
-                Explore
-            </h4>
-
-
-            <a href="#archive">
-                Archive
-            </a>
-
-
-            <a href="#voices">
-                Voices
-            </a>
-
-
-            <a href="#crafts">
-                Crafts
-            </a>
-
-
-            <a href="#map">
-                Map
-            </a>
-
-        </div>
+    </header>
 
 
 
-        <!-- ROOTS -->
+    <!-- =====================================================
+         SEARCH OVERLAY
+    ====================================================== -->
 
-        <div class="footer-column">
+    <div class="search-overlay"
+         id="searchOverlay"
+         aria-hidden="true">
 
-            <h4>
-                ROOTS
-            </h4>
+        <div class="search-overlay-inner">
 
+            <button
+                class="search-close"
+                id="searchClose"
+                type="button"
+                aria-label="Close search">
 
-            <a href="#about">
-                About
-            </a>
+                <i class="fa-solid fa-xmark"></i>
 
-
-            <a href="#">
-                Stories
-            </a>
-
-
-            <a href="#">
-                Journal
-            </a>
+            </button>
 
 
-            <a href="#">
-                Contact
-            </a>
-
-        </div>
-
-
-
-        <!-- FOOTER MESSAGE -->
-
-        <div class="footer-note">
-
-            <span>
-                PRESERVING
+            <span class="section-eyebrow">
+                ROOTS / SEARCH
             </span>
 
 
-            <strong>
-                what matters.
-            </strong>
+            <h2>
+                Search the archive.
+            </h2>
 
 
             <p>
-
-                Different people. Different lands.
-                One heritage.
-
+                Find communities, crafts and stories preserved
+                through generations.
             </p>
 
+
+            <form class="home-search-form"
+                  id="homeSearchForm">
+
+                <div class="search-input-wrap">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input
+                        type="search"
+                        id="homeSearchInput"
+                        placeholder="Search heritage, crafts, communities..."
+                        autocomplete="off"
+                    >
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="primary-btn">
+
+                    Search
+
+                    <span>
+                        →
+                    </span>
+
+                </button>
+
+            </form>
+
         </div>
 
     </div>
 
 
 
-    <!-- FOOTER BOTTOM -->
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
 
-    <div class="footer-bottom">
-
-
-        <span>
-            © 2026 ROOTS. All rights reserved.
-        </span>
+    <main>
 
 
-        <div>
+        <!-- =================================================
+             HERO
+        ================================================== -->
 
-            <a href="#">
-                Privacy
+        <section class="hero"
+                 id="home">
+
+            <!-- HERO IMAGE -->
+
+            <div class="hero-image-wrap">
+
+                <img
+                    src="images/hero.jpg"
+                    alt="Indian tribal heritage landscape"
+                    class="hero-image"
+                >
+
+                <div class="hero-overlay"></div>
+
+                <div class="hero-grain"></div>
+
+            </div>
+
+
+
+            <!-- HERO CONTENT -->
+
+            <div class="hero-content">
+
+                <div class="hero-copy reveal">
+
+                    <span class="hero-eyebrow">
+
+                        INDIA
+
+                        <span>
+                            /
+                        </span>
+
+                        HERITAGE ARCHIVE
+
+                    </span>
+
+
+                    <h1>
+
+                        Where heritage
+                        <em>stays alive.</em>
+
+                    </h1>
+
+
+                    <p class="hero-description">
+
+                        Stories, skills and traditions preserved
+                        through the voices and hands that carry
+                        them forward.
+
+                    </p>
+
+
+                    <a href="#archive"
+                       class="hero-btn">
+
+                        <span>
+                            Explore the Archive
+                        </span>
+
+                        <span class="hero-btn-arrow">
+                            →
+                        </span>
+
+                    </a>
+
+                </div>
+
+
+
+                <!-- HERO COMMUNITY -->
+
+                <div class="hero-community reveal">
+
+                    <span class="hero-community-line"></span>
+
+                    <div>
+
+                        <small>
+                            FEATURED COMMUNITY
+                        </small>
+
+                        <strong>
+                            Bodo Community
+                        </strong>
+
+                        <span>
+                            Assam
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- HERO COUNTER -->
+
+                <div class="hero-counter">
+
+                    <span class="counter-current">
+                        01
+                    </span>
+
+                    <span class="counter-line"></span>
+
+                    <span class="counter-total">
+                        04
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- SCROLL INDICATOR -->
+
+            <a href="#archive"
+               class="hero-scroll">
+
+                <span class="hero-scroll-text">
+                    SCROLL TO EXPLORE
+                </span>
+
+                <span class="hero-scroll-line"></span>
+
             </a>
 
-
-            <a href="#">
-                Terms
-            </a>
-
-
-            <a href="#">
-                Contact
-            </a>
-
-        </div>
-
-    </div>
-
-</footer>
+        </section>
 
 
 
-<!-- =========================
-     TOAST
-========================= -->
+        <!-- =================================================
+             EXPLORE THE ARCHIVE
+        ================================================== -->
 
-<div
-    class="toast"
-    id="toast">
+        <section class="archive-section section-cream"
+                 id="archive">
 
-    Welcome to ROOTS 🌿
-
-</div>
+            <div class="container">
 
 
+                <!-- SECTION HEADING -->
 
-<!-- =========================
-     JAVASCRIPT
-========================= -->
+                <div class="section-heading split-heading reveal">
 
-<script src="script.js"></script>
+                    <div>
+
+                        <span class="section-eyebrow">
+                            EXPLORE THE ARCHIVE
+                        </span>
 
 
-</body>
+                        <h2>
 
-                            </html>   
+                            Dive into
+                            <em>living traditions.</em>
+
+                        </h2>
+
+                    </div>
+
+
+                    <div class="heading-side">
+
+                        <p>
+
+                            Discover the communities, crafts and
+                            stories that continue to shape India's
+                            living cultural landscape.
+
+                        </p>
+
+
+                        <a href="archive.html"
+                           class="text-link">
+
+                            View all archive
+
+                            <span>
+                                →
+                            </span>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     ARCHIVE FEATURE CARDS
+                ================================================== -->
+
+                <div class="archive-feature-grid">
+
+
+                    <!-- CRAFTS -->
+
+                    <a href="archive.html?category=crafts"
+                       class="archive-feature-card archive-craft reveal">
+
+                        <div class="archive-feature-image">
+
+                            <img
+                                src="images/bamboocraft.jpg"
+                                alt="Traditional bamboo craft"
+                                loading="lazy"
+                            >
+
+                        </div>
+
+
+                        <div class="archive-feature-content">
+
+                            <div class="archive-feature-top">
+
+                                <span class="archive-number">
+                                    01
+                                </span>
+
+                                <span class="archive-type">
+                                    CRAFTS
+                                </span>
+
+                            </div>
+
+
+                            <h3>
+                                Hands that remember.
+                            </h3>
+
+
+                            <p>
+
+                                Explore the skills, materials and
+                                techniques passed from one generation
+                                to the next.
+
+                            </p>
+
+
+                            <span class="card-link">
+
+                                Explore crafts
+
+                                <span>
+                                    ↗
+                                </span>
+
+                            </span>
+
+                        </div>
+
+                    </a>
+
+
+
+                    <!-- VOICES -->
+
+                    <a href="#voices"
+                       class="archive-feature-card archive-voice reveal">
+
+                        <div class="archive-feature-image">
+
+                            <img
+                                src="images/storiesfromhome.png"
+                                alt="Heritage stories from home"
+                                loading="lazy"
+                            >
+
+                        </div>
+
+
+                        <div class="archive-feature-content">
+
+                            <div class="archive-feature-top">
+
+                                <span class="archive-number">
+                                    02
+                                </span>
+
+                                <span class="archive-type">
+                                    VOICES
+                                </span>
+
+                            </div>
+
+
+                            <h3>
+                                Stories carried by voice.
+                            </h3>
+
+
+                            <p>
+
+                                Listen to memories, knowledge and
+                                stories shared by the people who
+                                keep traditions alive.
+
+                            </p>
+
+
+                            <span class="card-link">
+
+                                Listen to stories
+
+                                <span>
+                                    ↗
+                                </span>
+
+                            </span>
+
+                        </div>
+
+                    </a>
+
+
+
+                    <!-- COMMUNITIES -->
+
+                    <a href="archive.html?category=communities"
+                       class="archive-feature-card archive-community reveal">
+
+                        <div class="archive-feature-image">
+
+                            <img
+                                src="images/bodo.jpg"
+                                alt="Bodo community heritage"
+                                loading="lazy"
+                            >
+
+                        </div>
+
+
+                        <div class="archive-feature-content">
+
+                            <div class="archive-feature-top">
+
+                                <span class="archive-number">
+                                    03
+                                </span>
+
+                                <span class="archive-type">
+                                    COMMUNITIES
+                                </span>
+
+                            </div>
+
+
+                            <h3>
+                                People at the heart.
+                            </h3>
+
+
+                            <p>
+
+                                Meet the communities whose identity,
+                                knowledge and everyday life shape
+                                India's heritage.
+
+                            </p>
+
+
+                            <span class="card-link">
+
+                                Meet the communities
+
+                                <span>
+                                    ↗
+                                </span>
+
+                            </span>
+
+                        </div>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             DECORATIVE HERITAGE STRIP
+        ================================================== -->
+
+        <section class="statement-strip">
+
+            <div class="statement-track">
+
+                <span>
+                    LIVING HERITAGE
+                </span>
+
+                <i>
+                    ✦
+                </i>
+
+                <span>
+                    SHARED KNOWLEDGE
+                </span>
+
+                <i>
+                    ✦
+                </i>
+
+                <span>
+                    HANDS &amp; MEMORY
+                </span>
+
+                <i>
+                    ✦
+                </i>
+
+                <span>
+                    LIVING HERITAGE
+                </span>
+
+                <i>
+                    ✦
+                </i>
+
+                <span>
+                    SHARED KNOWLEDGE
+                </span>
+
+                <i>
+                    ✦
+                </i>
+
+                <span>
+                    HANDS &amp; MEMORY
+                </span>
+
+            </div>
+
+        </section>
+                <!-- =================================================
+             FEATURED CRAFT
+        ================================================== -->
+
+        <section class="craft-feature section-light"
+                 id="crafts">
+
+            <div class="container">
+
+                <div class="craft-feature-grid">
+
+
+                    <!-- CRAFT IMAGE -->
+
+                    <div class="craft-feature-visual reveal">
+
+                        <div class="craft-image-frame">
+
+                            <img
+                                src="images/bamboocraft.jpg"
+                                alt="Handwoven bamboo craft"
+                                loading="lazy"
+                            >
+
+
+                            <div class="image-caption">
+
+                                <span>
+                                    MATERIAL / BAMBOO
+                                </span>
+
+                                <span>
+                                    HANDWOVEN
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- CRAFT CONTENT -->
+
+                    <div class="craft-feature-content reveal">
+
+                        <span class="section-eyebrow">
+                            FEATURED CRAFT
+                        </span>
+
+
+                        <h2>
+
+                            Bamboo
+                            <em>Craft</em>
+
+                        </h2>
+
+
+                        <p class="craft-intro">
+
+                            From a simple forest material to objects
+                            woven with purpose, bamboo carries a
+                            quiet record of skill, patience and place.
+
+                        </p>
+
+
+
+                        <!-- CRAFT DETAILS -->
+
+                        <div class="craft-meta-grid">
+
+
+                            <div class="craft-meta">
+
+                                <span>
+                                    ORIGIN
+                                </span>
+
+                                <strong>
+                                    Andhra Pradesh
+                                </strong>
+
+                            </div>
+
+
+                            <div class="craft-meta">
+
+                                <span>
+                                    COMMUNITY
+                                </span>
+
+                                <strong>
+                                    Konda Reddi
+                                </strong>
+
+                            </div>
+
+
+                            <div class="craft-meta">
+
+                                <span>
+                                    TECHNIQUE
+                                </span>
+
+                                <strong>
+                                    Handwoven
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <a href="details.html?id=bamboo"
+                           class="outline-btn">
+
+                            Read the story
+
+                            <span>
+                                →
+                            </span>
+
+                        </a>
+
+
+
+                        <!-- DECORATIVE BAMBOO MARK -->
+
+                        <div class="craft-decoration"
+                             aria-hidden="true">
+
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             VOICES SECTION
+        ================================================== -->
+
+        <section class="voices-section section-cream"
+                 id="voices">
+
+            <div class="container">
+
+
+                <!-- VOICES HEADING -->
+
+                <div class="voices-heading reveal">
+
+                    <div>
+
+                        <span class="section-eyebrow">
+                            VOICES
+                        </span>
+
+
+                        <h2>
+
+                            Listen to
+                            <em>living stories.</em>
+
+                        </h2>
+
+                    </div>
+
+
+                    <a href="archive.html?category=stories"
+                       class="text-link">
+
+                        Explore all voices
+
+                        <span>
+                            →
+                        </span>
+
+                    </a>
+
+                </div>
+
+
+
+                <!-- VOICES GRID -->
+
+                <div class="voices-grid">
+
+
+                    <!-- VOICE INTRO -->
+
+                    <div class="voice-intro reveal">
+
+                        <div class="voice-quote-mark">
+                            “
+                        </div>
+
+
+                        <blockquote>
+
+                            Heritage is not only something
+                            we inherit. It is something we
+                            continue to carry.
+
+                        </blockquote>
+
+
+                        <p>
+
+                            Across generations, knowledge lives
+                            through conversations, memories,
+                            songs and everyday stories.
+
+                        </p>
+
+                    </div>
+
+
+
+                    <!-- VOICE CARD -->
+
+                    <article class="voice-card reveal">
+
+
+                        <div class="voice-card-image">
+
+                            <img
+                                src="images/theforestgiveuslife.png"
+                                alt="A heritage story connected to the forest"
+                                loading="lazy"
+                            >
+
+
+                            <div class="voice-image-overlay"></div>
+
+
+                            <button
+                                class="voice-play"
+                                id="voicePlay"
+                                type="button"
+                                aria-label="Play story">
+
+                                <i class="fa-solid fa-play"></i>
+
+                            </button>
+
+                        </div>
+
+
+
+                        <div class="voice-card-body">
+
+
+                            <div class="voice-card-label">
+                                STORY / 01
+                            </div>
+
+
+                            <h3>
+                                The Forest Gives Life
+                            </h3>
+
+
+                            <p>
+
+                                A reflection on the relationship
+                                between people, forests and
+                                inherited knowledge.
+
+                            </p>
+
+
+
+                            <!-- AUDIO STYLE PLAYER -->
+
+                            <div class="voice-player">
+
+
+                                <div class="voice-player-top">
+
+                                    <span id="voiceStatus">
+                                        00:00
+                                    </span>
+
+                                    <span>
+                                        02:48
+                                    </span>
+
+                                </div>
+
+
+                                <div class="voice-progress">
+
+                                    <span id="voiceProgress"></span>
+
+                                </div>
+
+
+                                <div class="voice-player-bottom">
+
+                                    <span>
+                                        ROOTS AUDIO ARCHIVE
+                                    </span>
+
+                                    <span>
+                                        LISTEN
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             LIVING MAP
+        ================================================== -->
+
+        <section class="map-section section-light"
+                 id="map">
+
+            <div class="container">
+
+
+                <!-- MAP HEADING -->
+
+                <div class="map-heading reveal">
+
+                    <span class="section-eyebrow">
+                        LIVING MAP
+                    </span>
+
+
+                    <h2>
+
+                        Many places.
+                        <em>Many roots.</em>
+
+                    </h2>
+
+
+                    <p>
+
+                        Explore the regions represented in the
+                        archive and discover the traditions that
+                        connect people with place.
+
+                    </p>
+
+                </div>
+
+
+
+                <!-- MAP LAYOUT -->
+
+                <div class="map-layout">
+
+
+                    <!-- MAP -->
+
+                    <div class="india-map-wrap reveal">
+
+                        <div class="map-paper">
+
+                            <div class="india-map-shape"
+                                 aria-label="Illustrated map of India">
+
+                                <span
+                                    class="map-pin pin-north"
+                                    data-region="north">
+                                </span>
+
+
+                                <span
+                                    class="map-pin pin-east"
+                                    data-region="east">
+                                </span>
+
+
+                                <span
+                                    class="map-pin pin-central"
+                                    data-region="central">
+                                </span>
+
+
+                                <span
+                                    class="map-pin pin-south"
+                                    data-region="south">
+                                </span>
+
+
+                                <span
+                                    class="map-pin pin-west"
+                                    data-region="west">
+                                </span>
+
+                            </div>
+
+
+                            <div class="map-label map-label-north">
+                                NORTH
+                            </div>
+
+
+                            <div class="map-label map-label-east">
+                                EAST
+                            </div>
+
+
+                            <div class="map-label map-label-south">
+                                SOUTH
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- REGION LIST -->
+
+                    <div class="region-list reveal">
+
+
+                        <div class="region-list-header">
+
+                            <span>
+                                ARCHIVE REGIONS
+                            </span>
+
+                            <span>
+                                05
+                            </span>
+
+                        </div>
+
+
+
+                        <button
+                            class="region-item active"
+                            type="button"
+                            data-region="east">
+
+                            <span class="region-number">
+                                01
+                            </span>
+
+                            <span class="region-name">
+                                Assam &amp; East
+                            </span>
+
+                            <span class="region-arrow">
+                                ↗
+                            </span>
+
+                        </button>
+
+
+
+                        <button
+                            class="region-item"
+                            type="button"
+                            data-region="central">
+
+                            <span class="region-number">
+                                02
+                            </span>
+
+                            <span class="region-name">
+                                Central India
+                            </span>
+
+                            <span class="region-arrow">
+                                ↗
+                            </span>
+
+                        </button>
+
+
+
+                        <button
+                            class="region-item"
+                            type="button"
+                            data-region="south">
+
+                            <span class="region-number">
+                                03
+                            </span>
+
+                            <span class="region-name">
+                                Andhra Pradesh
+                            </span>
+
+                            <span class="region-arrow">
+                                ↗
+                            </span>
+
+                        </button>
+
+
+
+                        <button
+                            class="region-item"
+                            type="button"
+                            data-region="north">
+
+                            <span class="region-number">
+                                04
+                            </span>
+
+                            <span class="region-name">
+                                Northern Traditions
+                            </span>
+
+                            <span class="region-arrow">
+                                ↗
+                            </span>
+
+                        </button>
+
+
+
+                        <button
+                            class="region-item"
+                            type="button"
+                            data-region="west">
+
+                            <span class="region-number">
+                                05
+                            </span>
+
+                            <span class="region-name">
+                                Western India
+                            </span>
+
+                            <span class="region-arrow">
+                                ↗
+                            </span>
+
+                        </button>
+
+
+
+                        <div class="region-note">
+
+                            <span class="note-mark">
+                                ✦
+                            </span>
+
+
+                            <p>
+
+                                Each region carries distinct
+                                materials, languages, techniques
+                                and memories.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             HERITAGE TIMELINE
+        ================================================== -->
+
+        <section class="timeline-section section-forest">
+
+            <div class="container">
+
+
+                <!-- TIMELINE HEADING -->
+
+                <div class="timeline-heading reveal">
+
+                    <span class="section-eyebrow light">
+                        A LIVING TIMELINE
+                    </span>
+
+
+                    <h2>
+
+                        Tradition changes.
+                        <em>Memory remains.</em>
+
+                    </h2>
+
+                </div>
+
+
+
+                <!-- TIMELINE -->
+
+                <div class="timeline">
+
+                    <div class="timeline-line"></div>
+
+
+
+                    <!-- 1950 -->
+
+                    <article class="timeline-item reveal">
+
+                        <span class="timeline-year">
+                            1950
+                        </span>
+
+
+                        <div class="timeline-dot"></div>
+
+
+                        <div class="timeline-content">
+
+                            <span>
+                                ROOTS / BEGINNINGS
+                            </span>
+
+
+                            <h3>
+                                Knowledge carried by hand.
+                            </h3>
+
+
+                            <p>
+
+                                Skills and traditions continue
+                                through families, communities
+                                and everyday practice.
+
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- 2020 -->
+
+                    <article class="timeline-item timeline-offset reveal">
+
+                        <span class="timeline-year">
+                            2020
+                        </span>
+
+
+                        <div class="timeline-dot"></div>
+
+
+                        <div class="timeline-content">
+
+                            <span>
+                                DOCUMENTATION
+                            </span>
+
+
+                            <h3>
+                                Stories begin moving online.
+                            </h3>
+
+
+                            <p>
+
+                                Digital archives create new ways
+                                for communities and younger
+                                generations to document memory.
+
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- WORKSHOP -->
+
+                    <article class="timeline-item reveal">
+
+                        <span class="timeline-year">
+                            WORKSHOP
+                        </span>
+
+
+                        <div class="timeline-dot"></div>
+
+
+                        <div class="timeline-content">
+
+                            <span>
+                                COMMUNITY
+                            </span>
+
+
+                            <h3>
+                                Learning through doing.
+                            </h3>
+
+
+                            <p>
+
+                                Workshops connect traditional
+                                makers with learners, designers
+                                and new audiences.
+
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- TODAY -->
+
+                    <article class="timeline-item timeline-offset reveal">
+
+                        <span class="timeline-year">
+                            TODAY
+                        </span>
+
+
+                        <div class="timeline-dot timeline-dot-gold"></div>
+
+
+                        <div class="timeline-content">
+
+                            <span>
+                                THE ARCHIVE
+                            </span>
+
+
+                            <h3>
+                                Heritage continues to live.
+                            </h3>
+
+
+                            <p>
+
+                                ROOTS brings these stories together
+                                as a growing digital archive.
+
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             ABOUT ROOTS
+        ================================================== -->
+
+        <section class="about-section section-cream"
+                 id="about">
+
+            <div class="container">
+
+                <div class="about-grid">
+
+
+                    <!-- ABOUT LABEL -->
+
+                    <div class="about-label reveal">
+
+                        <span class="section-eyebrow">
+                            ABOUT ROOTS
+                        </span>
+
+
+                        <span class="about-index">
+                            01
+                      
