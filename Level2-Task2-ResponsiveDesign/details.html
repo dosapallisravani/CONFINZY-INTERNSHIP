@@ -1,1 +1,1497 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Explore the Archive | ROOTS
+    </title>
+
+    <meta
+        name="description"
+        content="Explore living heritage, communities, crafts and stories through the ROOTS archive.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Main stylesheet -->
+    <link
+        rel="stylesheet"
+        href="style.css?v=final1">
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         PAGE LOADER
+    ====================================================== -->
+
+    <div
+        class="page-loader"
+        id="pageLoader">
+
+        <div class="loader-inner">
+
+            <span class="loader-mark">
+                R
+            </span>
+
+            <span class="loader-line"></span>
+
+            <span class="loader-text">
+                ROOTS
+            </span>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header
+        class="site-header details-header"
+        id="siteHeader">
+
+        <div class="nav-shell">
+
+
+            <!-- LOGO -->
+
+            <a
+                href="index.html"
+                class="roots-logo"
+                aria-label="ROOTS Home">
+
+                <span class="logo-symbol">
+                    R
+                </span>
+
+                <span class="logo-word">
+                    ROOTS
+                </span>
+
+            </a>
+
+
+
+            <!-- DESKTOP NAVIGATION -->
+
+            <nav
+                class="desktop-nav"
+                aria-label="Main navigation">
+
+                <a
+                    href="archive.html"
+                    class="active">
+
+                    Archive
+
+                </a>
+
+                <a href="index.html#voices">
+                    Voices
+                </a>
+
+                <a href="index.html#crafts">
+                    Crafts
+                </a>
+
+                <a href="index.html#map">
+                    Map
+                </a>
+
+                <a href="index.html#about">
+                    About
+                </a>
+
+            </nav>
+
+
+
+            <!-- NAV ACTIONS -->
+
+            <div class="nav-actions">
+
+
+                <button
+                    type="button"
+                    class="nav-search-btn"
+                    id="openSearch"
+                    aria-label="Open search">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                </button>
+
+
+                <a
+                    href="archive.html"
+                    class="nav-explore-btn">
+
+                    Explore
+
+                </a>
+
+
+                <!-- MOBILE MENU -->
+
+                <button
+                    type="button"
+                    class="menu-toggle"
+                    id="menuToggle"
+                    aria-label="Open navigation"
+                    aria-expanded="false">
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             MOBILE NAV
+        ================================================== -->
+
+        <div
+            class="mobile-nav"
+            id="mobileNav">
+
+            <div class="mobile-nav-inner">
+
+                <a href="archive.html">
+                    Archive
+                </a>
+
+                <a href="index.html#voices">
+                    Voices
+                </a>
+
+                <a href="index.html#crafts">
+                    Crafts
+                </a>
+
+                <a href="index.html#map">
+                    Map
+                </a>
+
+                <a href="index.html#about">
+                    About
+                </a>
+
+                <a
+                    href="archive.html"
+                    class="mobile-explore">
+
+                    Explore the Archive →
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         SEARCH OVERLAY
+    ====================================================== -->
+
+    <div
+        class="search-overlay"
+        id="searchOverlay">
+
+        <div class="search-overlay-inner">
+
+
+            <button
+                type="button"
+                class="search-close"
+                id="closeSearch"
+                aria-label="Close search">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+
+            <span class="section-kicker">
+                ROOTS / SEARCH
+            </span>
+
+
+            <h2>
+                Search the archive.
+            </h2>
+
+
+            <div class="archive-search-large">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="search"
+                    id="globalSearch"
+                    placeholder="Search communities, crafts or stories..."
+                    autocomplete="off">
+
+            </div>
+
+
+            <p class="search-hint">
+                Search the archive by community,
+                craft or story.
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         DETAILS PAGE
+    ====================================================== -->
+
+    <main class="details-page">
+
+
+        <!-- =================================================
+             DETAILS HERO
+        ================================================== -->
+
+        <section class="details-hero">
+
+            <div class="details-hero-background"></div>
+
+
+            <div class="section-shell">
+
+
+                <!-- BACK BUTTON -->
+
+                <a
+                    href="archive.html"
+                    class="details-back">
+
+                    <span class="details-back-icon">
+                        ←
+                    </span>
+
+                    <span>
+                        Back to Archive
+                    </span>
+
+                </a>
+
+
+
+                <!-- HERO CONTENT -->
+
+                <div class="details-hero-grid">
+
+
+                    <!-- LEFT CONTENT -->
+
+                    <div class="details-hero-content reveal">
+
+
+                        <span
+                            class="details-category"
+                            id="detailCategory">
+
+                            ROOTS / ARCHIVE
+
+                        </span>
+
+
+                        <h1 id="detailTitle">
+
+                            Explore the Archive
+
+                        </h1>
+
+
+                        <p
+                            id="detailSubtitle"
+                            class="details-subtitle">
+
+                            Select an archive entry to discover
+                            its story, craft or community.
+
+                        </p>
+
+
+                        <div class="details-meta">
+
+
+                            <span id="detailRegion">
+                                India
+                            </span>
+
+
+                            <span class="detail-dot">
+                                •
+                            </span>
+
+
+                            <span id="detailCommunity">
+                                Heritage Archive
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- RIGHT IMAGE -->
+
+                    <div
+                        class="details-hero-image reveal">
+
+                        <img
+                            src="images/bamboocraft.jpg"
+                            id="detailImage"
+                            alt="ROOTS archive">
+
+                        <div class="details-image-caption">
+
+                            <span>
+                                ROOTS ARCHIVE
+                            </span>
+
+                            <span id="detailImageNumber">
+                                01 / 14
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             DETAILS INTRO
+        ================================================== -->
+
+        <section class="details-intro-section">
+
+            <div class="section-shell">
+
+
+                <div class="details-intro-grid">
+
+
+                    <div class="details-intro-label reveal">
+
+                        <span class="section-kicker">
+                            ARCHIVE ENTRY
+                        </span>
+
+                        <span class="details-intro-mark">
+                            ✦
+                        </span>
+
+                    </div>
+
+
+
+                    <div class="details-intro-content reveal">
+
+                        <h2 id="detailHeading">
+
+                            Explore the story behind
+                            the archive.
+
+                        </h2>
+
+
+                        <p id="detailDescription">
+
+                            ROOTS documents living traditions
+                            through the people, objects, skills
+                            and stories that continue to shape
+                            cultural life.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             INFORMATION CARDS
+        ================================================== -->
+
+        <section class="details-information-section">
+
+            <div class="section-shell">
+
+
+                <div class="details-info-grid">
+
+
+                    <!-- REGION -->
+
+                    <div class="details-info-card reveal">
+
+                        <span class="details-info-number">
+                            01
+                        </span>
+
+                        <span class="details-info-label">
+                            REGION
+                        </span>
+
+                        <strong id="infoRegion">
+                            India
+                        </strong>
+
+                    </div>
+
+
+
+                    <!-- COMMUNITY -->
+
+                    <div class="details-info-card reveal">
+
+                        <span class="details-info-number">
+                            02
+                        </span>
+
+                        <span class="details-info-label">
+                            COMMUNITY
+                        </span>
+
+                        <strong id="infoCommunity">
+                            Heritage Community
+                        </strong>
+
+                    </div>
+
+
+
+                    <!-- HERITAGE -->
+
+                    <div class="details-info-card reveal">
+
+                        <span class="details-info-number">
+                            03
+                        </span>
+
+                        <span class="details-info-label">
+                            HERITAGE
+                        </span>
+
+                        <strong id="infoHeritage">
+                            Living Tradition
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+              </section>
+            <!-- =================================================
+             MAIN STORY
+        ================================================== -->
+
+        <section class="details-story-section">
+
+            <div class="section-shell">
+
+                <div class="details-story-grid">
+
+
+                    <!-- STORY CONTENT -->
+
+                    <div class="details-story-content reveal">
+
+                        <span class="section-kicker">
+                            THE STORY
+                        </span>
+
+                        <h2 id="detailStoryTitle">
+                            Knowledge carried
+                            through generations.
+                        </h2>
+
+                        <div
+                            class="details-story-text"
+                            id="detailStory">
+
+                            <p>
+                                Heritage lives through people.
+                                It can be found in the skills they
+                                practise, the materials they use,
+                                the stories they remember and the
+                                places they call home.
+                            </p>
+
+                            <p>
+                                Every archive entry in ROOTS offers
+                                a small window into these living
+                                traditions. The purpose is not simply
+                                to preserve an object or image, but
+                                to understand the knowledge and
+                                meaning connected to it.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- STORY SIDE NOTE -->
+
+                    <aside class="details-story-note reveal">
+
+                        <span class="details-note-symbol">
+                            ✦
+                        </span>
+
+                        <span class="details-note-label">
+                            ROOTS / NOTE
+                        </span>
+
+                        <p>
+                            A tradition becomes meaningful when
+                            it remains connected to the people,
+                            places and practices that give it life.
+                        </p>
+
+                    </aside>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             SECONDARY IMAGE / VISUAL STORY
+        ================================================== -->
+
+        <section class="details-visual-section">
+
+            <div class="section-shell">
+
+                <div class="details-visual-grid">
+
+
+                    <!-- IMAGE -->
+
+                    <div
+                        class="details-secondary-image reveal">
+
+                        <img
+                            src="images/bamboocraft.jpg"
+                            id="detailSecondaryImage"
+                            alt="Archive story">
+
+                    </div>
+
+
+                    <!-- VISUAL TEXT -->
+
+                    <div class="details-visual-content reveal">
+
+                        <span class="section-kicker">
+                            LIVING HERITAGE
+                        </span>
+
+                        <h2>
+                            More than an
+                            <em>object.</em>
+                        </h2>
+
+                        <p>
+                            Behind every craft, material and
+                            inherited object is a network of
+                            knowledge. Techniques are learned,
+                            adapted and shared through practice.
+                        </p>
+
+                        <p>
+                            ROOTS looks beyond the finished object
+                            to the hands, memories and communities
+                            that make it meaningful.
+                        </p>
+
+
+                        <div class="details-visual-line"></div>
+
+
+                        <span class="details-visual-caption">
+                            PRESERVED THROUGH PRACTICE
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             HIGHLIGHT SECTION
+        ================================================== -->
+
+        <section class="details-highlight-section">
+
+            <div class="section-shell">
+
+                <div class="details-highlight reveal">
+
+
+                    <div class="details-highlight-number">
+                        04
+                    </div>
+
+
+                    <div class="details-highlight-content">
+
+                        <span class="section-kicker">
+                            WHY IT MATTERS
+                        </span>
+
+                        <h2 id="detailHighlightTitle">
+                            Heritage stays alive
+                            when knowledge is shared.
+                        </h2>
+
+                        <p id="detailHighlightText">
+                            The value of a tradition is not limited
+                            to its history. Its knowledge continues
+                            to matter when people practise it,
+                            teach it and carry it into everyday life.
+                        </p>
+
+                    </div>
+
+
+                    <div class="details-highlight-mark">
+                        ROOTS
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             RELATED ARCHIVE
+        ================================================== -->
+
+        <section class="details-related-section">
+
+            <div class="section-shell">
+
+
+                <div class="details-related-heading reveal">
+
+                    <div>
+
+                        <span class="section-kicker">
+                            CONTINUE EXPLORING
+                        </span>
+
+                        <h2>
+                            More from the
+                            <em>archive.</em>
+                        </h2>
+
+                    </div>
+
+
+                    <a
+                        href="archive.html"
+                        class="outline-btn">
+
+                        View All
+                        <span>→</span>
+
+                    </a>
+
+                </div>
+
+
+
+                <div class="details-related-grid">
+
+
+                    <!-- RELATED CARD 01 -->
+
+                    <a
+                        href="details.html?id=bamboo"
+                        class="details-related-card reveal">
+
+                        <div class="details-related-image">
+
+                            <img
+                                src="images/bamboocraft.jpg"
+                                alt="Bamboo Craft">
+
+                        </div>
+
+                        <div class="details-related-content">
+
+                            <span>
+                                CRAFTS / 01
+                            </span>
+
+                            <h3>
+                                Bamboo Craft
+                            </h3>
+
+                            <strong>
+                                Explore →
+                            </strong>
+
+                        </div>
+
+                    </a>
+
+
+
+                    <!-- RELATED CARD 02 -->
+
+                    <a
+                        href="details.html?id=bodo"
+                        class="details-related-card reveal">
+
+                        <div class="details-related-image">
+
+                            <img
+                                src="images/bodo.jpg"
+                                alt="Bodo Community">
+
+                        </div>
+
+                        <div class="details-related-content">
+
+                            <span>
+                                COMMUNITIES / 01
+                            </span>
+
+                            <h3>
+                                Bodo Community
+                            </h3>
+
+                            <strong>
+                                Explore →
+                            </strong>
+
+                        </div>
+
+                    </a>
+
+
+
+                    <!-- RELATED CARD 03 -->
+
+                    <a
+                        href="details.html?id=forest"
+                        class="details-related-card reveal">
+
+                        <div class="details-related-image">
+
+                            <img
+                                src="images/theforestgiveuslife.png"
+                                alt="The Forest Gives Life">
+
+                        </div>
+
+                        <div class="details-related-content">
+
+                            <span>
+                                STORIES / 02
+                            </span>
+
+                            <h3>
+                                The Forest Gives Life
+                            </h3>
+
+                            <strong>
+                                Explore →
+                            </strong>
+
+                        </div>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+  </section>
+              <!-- =================================================
+             HERITAGE STATEMENT
+        ================================================== -->
+
+        <section class="heritage-statement-section details-statement">
+
+            <div class="section-shell">
+
+                <div class="heritage-statement-inner reveal">
+
+                    <span class="section-kicker">
+                        ROOTS / REFLECTION
+                    </span>
+
+                    <h2>
+                        Every tradition carries
+                        a story worth
+                        <em>remembering.</em>
+                    </h2>
+
+                    <div class="heritage-statement-line"></div>
+
+                    <p>
+                        From the materials used by artisans to the
+                        stories shared within communities, heritage
+                        connects the past with the present.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             CONTRIBUTION CTA
+        ================================================== -->
+
+        <section class="contact-section details-contact">
+
+            <div class="section-shell">
+
+                <div class="contact-grid">
+
+                    <div class="contact-heading reveal">
+
+                        <span class="section-kicker">
+                            CONTRIBUTE / CONNECT
+                        </span>
+
+                        <h2>
+                            Know a story
+                            <em>worth sharing?</em>
+                        </h2>
+
+                    </div>
+
+
+                    <div class="contact-copy reveal">
+
+                        <p>
+                            Heritage grows when knowledge is shared.
+                            If you know a community, craft, object or
+                            story that should be part of ROOTS, tell us
+                            about it.
+                        </p>
+
+                        <button
+                            type="button"
+                            class="outline-btn"
+                            id="openMessageModal">
+
+                            Share a Story
+
+                            <span>
+                                →
+                            </span>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             NEWSLETTER
+        ================================================== -->
+
+        <section class="newsletter-section details-newsletter">
+
+            <div class="section-shell">
+
+                <div class="newsletter-inner reveal">
+
+
+                    <div class="newsletter-copy">
+
+                        <span class="section-kicker">
+                            STAY CONNECTED
+                        </span>
+
+                        <h2>
+                            Keep heritage
+                            <em>close.</em>
+                        </h2>
+
+                        <p>
+                            Receive occasional stories, craft features
+                            and new additions from the ROOTS archive.
+                        </p>
+
+                    </div>
+
+
+
+                    <form
+                        class="newsletter-form"
+                        id="newsletterForm">
+
+                        <div class="newsletter-input-wrap">
+
+                            <input
+                                type="email"
+                                id="newsletterEmail"
+                                name="email"
+                                placeholder="Your email address"
+                                autocomplete="email"
+                                required>
+
+
+                            <button
+                                type="submit"
+                                aria-label="Subscribe">
+
+                                <span>
+                                    Subscribe
+                                </span>
+
+                                <i class="fa-solid fa-arrow-right"></i>
+
+                            </button>
+
+                        </div>
+
+
+                        <small>
+                            No spam. Only thoughtful heritage stories.
+                        </small>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             MESSAGE MODAL
+        ================================================== -->
+
+        <div
+            class="message-modal"
+            id="messageModal"
+            aria-hidden="true">
+
+
+            <!-- Overlay -->
+
+            <div
+                class="message-modal-overlay"
+                id="messageModalOverlay">
+            </div>
+
+
+
+            <!-- Modal Box -->
+
+            <div
+                class="message-modal-box"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="messageModalTitle">
+
+
+                <!-- Close -->
+
+                <button
+                    type="button"
+                    class="message-modal-close"
+                    id="closeMessageModal"
+                    aria-label="Close message form">
+
+                    <i class="fa-solid fa-xmark"></i>
+
+                </button>
+
+
+
+                <!-- Modal Heading -->
+
+                <div class="message-modal-heading">
+
+                    <span class="section-kicker">
+                        CONNECT WITH ROOTS
+                    </span>
+
+                    <h2 id="messageModalTitle">
+                        Share a
+                        <em>story.</em>
+                    </h2>
+
+                    <p>
+                        Tell us about a craft, community, object or
+                        tradition that deserves to be remembered.
+                    </p>
+
+                </div>
+
+
+
+                <!-- Message Form -->
+
+                <form
+                    class="message-form"
+                    id="messageForm">
+
+
+                    <div class="message-form-row">
+
+
+                        <!-- Name -->
+
+                        <div class="message-field">
+
+                            <label for="messageName">
+                                Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="messageName"
+                                name="name"
+                                placeholder="Your name"
+                                autocomplete="name"
+                                required>
+
+                        </div>
+
+
+
+                        <!-- Email -->
+
+                        <div class="message-field">
+
+                            <label for="messageEmail">
+                                Email
+                            </label>
+
+                            <input
+                                type="email"
+                                id="messageEmail"
+                                name="email"
+                                placeholder="you@example.com"
+                                autocomplete="email"
+                                required>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Subject -->
+
+                    <div class="message-field">
+
+                        <label for="messageSubject">
+                            Subject
+                        </label>
+
+                        <input
+                            type="text"
+                            id="messageSubject"
+                            name="subject"
+                            placeholder="What would you like to share?"
+                            required>
+
+                    </div>
+
+
+
+                    <!-- Message -->
+
+                    <div class="message-field">
+
+                        <label for="messageText">
+                            Message
+                        </label>
+
+                        <textarea
+                            id="messageText"
+                            name="message"
+                            rows="5"
+                            placeholder="Tell us about the story..."
+                            required></textarea>
+
+                    </div>
+
+
+
+                    <!-- Submit -->
+
+                    <button
+                        type="submit"
+                        class="primary-btn message-submit">
+
+                        Send Message
+
+                        <span>
+                            →
+                        </span>
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             TOAST
+        ================================================== -->
+
+        <div
+            class="roots-toast"
+            id="rootsToast"
+            role="status"
+            aria-live="polite">
+
+            <span class="toast-icon">
+                ✓
+            </span>
+
+            <span id="toastMessage">
+                Message sent successfully.
+            </span>
+
+        </div>
+
+                              </main>
+          <!-- =================================================
+             FINAL ARCHIVE CTA
+        ================================================== -->
+
+        <section class="details-final-cta">
+
+            <div class="section-shell">
+
+                <div class="details-final-cta-inner reveal">
+
+                    <span class="section-kicker">
+                        ROOTS / ARCHIVE
+                    </span>
+
+                    <h2>
+                        Keep exploring
+                        <em>living heritage.</em>
+                    </h2>
+
+                    <p>
+                        Discover more communities, crafts and stories
+                        from across the ROOTS collection.
+                    </p>
+
+                    <div class="details-final-actions">
+
+                        <a
+                            href="archive.html"
+                            class="primary-btn">
+
+                            Explore the Archive
+                            <span>→</span>
+
+                        </a>
+
+                        <a
+                            href="index.html"
+                            class="outline-btn">
+
+                            Back to Home
+                            <span>↗</span>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="site-footer">
+
+        <div class="section-shell">
+
+            <div class="footer-top">
+
+
+                <!-- FOOTER BRAND -->
+
+                <div class="footer-brand">
+
+                    <a
+                        href="index.html"
+                        class="roots-logo footer-logo">
+
+                        <span class="logo-symbol">
+                            R
+                        </span>
+
+                        <span class="logo-word">
+                            ROOTS
+                        </span>
+
+                    </a>
+
+                    <p>
+                        A digital archive for living heritage,
+                        traditional knowledge and the people
+                        who carry it forward.
+                    </p>
+
+                </div>
+
+
+
+                <!-- FOOTER EXPLORE -->
+
+                <div class="footer-column">
+
+                    <span class="footer-heading">
+                        EXPLORE
+                    </span>
+
+                    <a href="archive.html">
+                        Archive
+                    </a>
+
+                    <a href="index.html#voices">
+                        Voices
+                    </a>
+
+                    <a href="index.html#crafts">
+                        Crafts
+                    </a>
+
+                    <a href="index.html#map">
+                        Living Map
+                    </a>
+
+                </div>
+
+
+
+                <!-- FOOTER ROOTS -->
+
+                <div class="footer-column">
+
+                    <span class="footer-heading">
+                        ROOTS
+                    </span>
+
+                    <a href="index.html#about">
+                        About
+                    </a>
+
+                    <a href="index.html#contact">
+                        Contact
+                    </a>
+
+                    <a href="archive.html">
+                        Collections
+                    </a>
+
+                </div>
+
+
+
+                <!-- FOOTER SOCIAL -->
+
+                <div class="footer-column footer-social">
+
+                    <span class="footer-heading">
+                        FOLLOW
+                    </span>
+
+                    <a
+                        href="#"
+                        aria-label="Instagram">
+
+                        Instagram
+
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                    </a>
+
+                    <a
+                        href="#"
+                        aria-label="Pinterest">
+
+                        Pinterest
+
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                    </a>
+
+                    <a
+                        href="#"
+                        aria-label="Email">
+
+                        Email
+
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- FOOTER BOTTOM -->
+
+            <div class="footer-bottom">
+
+                <span>
+                    © 2026 ROOTS Heritage Archive
+                </span>
+
+                <span>
+                    Made with respect for living traditions.
+                </span>
+
+                <a href="#siteHeader">
+                    Back to top ↑
+                </a>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         TOAST
+    ====================================================== -->
+
+    <div
+        class="roots-toast"
+        id="rootsToast"
+        role="status"
+        aria-live="polite">
+
+        <span class="toast-icon">
+            ✓
+        </span>
+
+        <span id="toastMessage">
+            Done successfully.
+        </span>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="script.js?v=final1"></script>
+
+
+</body>
+
+                  </html>
