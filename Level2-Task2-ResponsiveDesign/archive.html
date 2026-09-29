@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
 
     <meta name="viewport"
@@ -10,8 +9,7 @@
 
     <title>Archive | ROOTS</title>
 
-    <link rel="preconnect"
-          href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 
     <link rel="preconnect"
           href="https://fonts.gstatic.com"
@@ -20,56 +18,41 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap"
           rel="stylesheet">
 
-    <link rel="stylesheet"
-          href="style.css">
-
+    <link rel="stylesheet" href="style.css">
 </head>
-
 
 <body>
 
-<!-- =====================================================
-     NAVBAR
-     ===================================================== -->
+<!-- ================= NAVBAR ================= -->
 
 <header class="navbar archive-navbar">
 
     <a href="index.html" class="logo">
-
         <span class="logo-mark">✦</span>
 
         <span>
             <strong>ROOTS</strong>
             <small>HERITAGE & ARTISAN ARCHIVE</small>
         </span>
-
     </a>
 
-
     <nav class="desktop-nav">
-
         <a href="index.html">Home</a>
         <a href="archive.html?category=crafts">Crafts</a>
         <a href="archive.html?category=voices">Voices</a>
         <a href="archive.html?category=communities">Communities</a>
         <a href="index.html#map">Map</a>
         <a href="index.html#about">About</a>
-
     </nav>
 
-
-    <a href="index.html"
-       class="archive-back">
+    <a href="index.html" class="archive-back">
         ← Back
     </a>
 
 </header>
 
 
-
-<!-- =====================================================
-     ARCHIVE HERO
-     ===================================================== -->
+<!-- ================= MAIN ================= -->
 
 <main>
 
@@ -92,53 +75,45 @@
 </section>
 
 
-
-<!-- =====================================================
-     CATEGORY FILTER
-     ===================================================== -->
+<!-- ================= FILTER ================= -->
 
 <section class="archive-content">
 
     <div class="archive-filter">
 
-        <button class="filter-btn active"
-                data-category="all">
+        <button class="filter-btn active" data-category="all">
             All
         </button>
 
-        <button class="filter-btn"
-                data-category="crafts">
+        <button class="filter-btn" data-category="crafts">
             Crafts
         </button>
 
-        <button class="filter-btn"
-                data-category="voices">
+        <button class="filter-btn" data-category="voices">
             Voices
         </button>
 
-        <button class="filter-btn"
-                data-category="communities">
+        <button class="filter-btn" data-category="communities">
             Communities
         </button>
 
     </div>
 
 
-
-    <!-- =================================================
-         ALL ARCHIVE ITEMS
-         ================================================= -->
-
     <div class="archive-items">
 
 
-        <!-- ================= CRAFT 01 ================= -->
+        <!-- =================================================
+             CRAFTS
+             ================================================= -->
 
-        <article class="archive-item"
-                 data-category="crafts">
 
-            <div class="archive-item-image archive-bamboo">
+        <article class="archive-item" data-category="crafts">
 
+            <div class="archive-item-image">
+                <img src="images/bamboocraft.jpg"
+                     alt="Bamboo Craft"
+                     loading="lazy">
             </div>
 
             <div class="archive-item-content">
@@ -147,9 +122,7 @@
                     01 / CRAFT
                 </span>
 
-                <h2>
-                    Bamboo Craft
-                </h2>
+                <h2>Bamboo Craft</h2>
 
                 <p>
                     Handwoven bamboo craft created using
@@ -172,14 +145,12 @@
         </article>
 
 
+        <article class="archive-item" data-category="crafts">
 
-        <!-- ================= CRAFT 02 ================= -->
-
-        <article class="archive-item"
-                 data-category="crafts">
-
-            <div class="archive-item-image archive-pottery">
-
+            <div class="archive-item-image">
+                <img src="images/tribalpottery.png"
+                     alt="Traditional Pottery"
+                     loading="lazy">
             </div>
 
             <div class="archive-item-content">
@@ -188,19 +159,17 @@
                     02 / CRAFT
                 </span>
 
-                <h2>
-                    Tribal Pottery
-                </h2>
+                <h2>Traditional Pottery</h2>
 
                 <p>
                     Traditional pottery shaped by hand,
-                    reflecting the everyday life and
-                    artistic knowledge of tribal communities.
+                    reflecting everyday life and artistic
+                    knowledge.
                 </p>
 
                 <div class="archive-meta">
-                    <span>Odisha</span>
-                    <span>Tribal Artisans</span>
+                    <span>India</span>
+                    <span>Traditional Artisans</span>
                 </div>
 
                 <a href="details.html?type=craft&id=pottery"
@@ -213,14 +182,12 @@
         </article>
 
 
+        <article class="archive-item" data-category="crafts">
 
-        <!-- ================= CRAFT 03 ================= -->
-
-        <article class="archive-item"
-                 data-category="crafts">
-
-            <div class="archive-item-image archive-weaving">
-
+            <div class="archive-item-image">
+                <img src="images/handloomweaving.png"
+                     alt="Handloom Weaving"
+                     loading="lazy">
             </div>
 
             <div class="archive-item-content">
@@ -229,9 +196,7 @@
                     03 / CRAFT
                 </span>
 
-                <h2>
-                    Handloom Weaving
-                </h2>
+                <h2>Handloom Weaving</h2>
 
                 <p>
                     Woven textiles carrying patterns,
@@ -240,8 +205,8 @@
                 </p>
 
                 <div class="archive-meta">
-                    <span>Telangana</span>
-                    <span>Handloom Community</span>
+                    <span>India</span>
+                    <span>Traditional Weavers</span>
                 </div>
 
                 <a href="details.html?type=craft&id=weaving"
@@ -254,14 +219,126 @@
         </article>
 
 
+        <article class="archive-item" data-category="crafts">
 
-        <!-- ================= VOICE 01 ================= -->
+            <div class="archive-item-image">
+                <img src="images/metalart.png"
+                     alt="Traditional Metal Craft"
+                     loading="lazy">
+            </div>
 
-        <article class="archive-item"
-                 data-category="voices">
+            <div class="archive-item-content">
 
-            <div class="archive-item-image archive-voice-one">
+                <span class="archive-item-number">
+                    04 / CRAFT
+                </span>
 
+                <h2>Traditional Metal Craft</h2>
+
+                <p>
+                    Skilled metalwork shaped through
+                    traditional techniques and artisan
+                    knowledge.
+                </p>
+
+                <div class="archive-meta">
+                    <span>India</span>
+                    <span>Metal Artisans</span>
+                </div>
+
+                <a href="details.html?type=craft&id=metal"
+                   class="details-btn">
+                    View Details →
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <article class="archive-item" data-category="crafts">
+
+            <div class="archive-item-image">
+                <img src="images/tribaltextile.png"
+                     alt="Tribal Textile"
+                     loading="lazy">
+            </div>
+
+            <div class="archive-item-content">
+
+                <span class="archive-item-number">
+                    05 / CRAFT
+                </span>
+
+                <h2>Tribal Textile</h2>
+
+                <p>
+                    Distinctive textiles carrying patterns,
+                    colours and traditional craft knowledge.
+                </p>
+
+                <div class="archive-meta">
+                    <span>India</span>
+                    <span>Traditional Weavers</span>
+                </div>
+
+                <a href="details.html?type=craft&id=textile"
+                   class="details-btn">
+                    View Details →
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <article class="archive-item" data-category="crafts">
+
+            <div class="archive-item-image">
+                <img src="images/handsbehindcraft.png"
+                     alt="Hands Behind the Craft"
+                     loading="lazy">
+            </div>
+
+            <div class="archive-item-content">
+
+                <span class="archive-item-number">
+                    06 / CRAFT
+                </span>
+
+                <h2>The Hands Behind the Craft</h2>
+
+                <p>
+                    A closer look at the people, patience
+                    and skill behind traditional craftsmanship.
+                </p>
+
+                <div class="archive-meta">
+                    <span>India</span>
+                    <span>Artisan Communities</span>
+                </div>
+
+                <a href="details.html?type=craft&id=hands"
+                   class="details-btn">
+                    View Details →
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- =================================================
+             VOICES / STORIES
+             ================================================= -->
+
+
+        <article class="archive-item" data-category="voices">
+
+            <div class="archive-item-image">
+                <img src="images/theforestgivesulife.png"
+                     alt="The Forest Gives Us Life"
+                     loading="lazy">
             </div>
 
             <div class="archive-item-content">
@@ -270,19 +347,17 @@
                     01 / VOICE
                 </span>
 
-                <h2>
-                    The Forest Gives Us Life
-                </h2>
+                <h2>The Forest Gives Us Life</h2>
 
                 <p>
-                    A community elder shares memories,
+                    A story about memory, traditional
                     knowledge and the relationship between
-                    people and the forest.
+                    people and nature.
                 </p>
 
                 <div class="archive-meta">
-                    <span>Gadaba</span>
                     <span>Odisha</span>
+                    <span>Community Story</span>
                 </div>
 
                 <a href="details.html?type=voice&id=forest"
@@ -295,14 +370,12 @@
         </article>
 
 
+        <article class="archive-item" data-category="voices">
 
-        <!-- ================= VOICE 02 ================= -->
-
-        <article class="archive-item"
-                 data-category="voices">
-
-            <div class="archive-item-image archive-voice-two">
-
+            <div class="archive-item-image">
+                <img src="images/storiesfromhome.png"
+                     alt="Stories From Home"
+                     loading="lazy">
             </div>
 
             <div class="archive-item-content">
@@ -311,9 +384,7 @@
                     02 / VOICE
                 </span>
 
-                <h2>
-                    Stories From Home
-                </h2>
+                <h2>Stories From Home</h2>
 
                 <p>
                     Memories and everyday stories that
@@ -322,8 +393,8 @@
                 </p>
 
                 <div class="archive-meta">
-                    <span>Konda Reddi</span>
                     <span>Andhra Pradesh</span>
+                    <span>Community Stories</span>
                 </div>
 
                 <a href="details.html?type=voice&id=home"
@@ -336,14 +407,53 @@
         </article>
 
 
+        <article class="archive-item" data-category="voices">
 
-        <!-- ================= COMMUNITY 01 ================= -->
+            <div class="archive-item-image">
+                <img src="images/objectsweinherite.png"
+                     alt="Objects We Inherit"
+                     loading="lazy">
+            </div>
 
-        <article class="archive-item"
-                 data-category="communities">
+            <div class="archive-item-content">
 
-            <div class="archive-item-image archive-bodo">
+                <span class="archive-item-number">
+                    03 / VOICE
+                </span>
 
+                <h2>Objects We Inherit</h2>
+
+                <p>
+                    Everyday objects carrying memories,
+                    identity and traditions across generations.
+                </p>
+
+                <div class="archive-meta">
+                    <span>India</span>
+                    <span>Material Heritage</span>
+                </div>
+
+                <a href="details.html?type=story&id=objects"
+                   class="details-btn">
+                    View Details →
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- =================================================
+             COMMUNITIES
+             ================================================= -->
+
+
+        <article class="archive-item" data-category="communities">
+
+            <div class="archive-item-image">
+                <img src="images/bodo.jpg"
+                     alt="Bodo Community"
+                     loading="lazy">
             </div>
 
             <div class="archive-item-content">
@@ -352,9 +462,7 @@
                     01 / COMMUNITY
                 </span>
 
-                <h2>
-                    Bodo Community
-                </h2>
+                <h2>Bodo Community</h2>
 
                 <p>
                     Discover the traditions, landscape,
@@ -377,14 +485,12 @@
         </article>
 
 
+        <article class="archive-item" data-category="communities">
 
-        <!-- ================= COMMUNITY 02 ================= -->
-
-        <article class="archive-item"
-                 data-category="communities">
-
-            <div class="archive-item-image archive-konda">
-
+            <div class="archive-item-image">
+                <img src="images/gond.png"
+                     alt="Gond Community"
+                     loading="lazy">
             </div>
 
             <div class="archive-item-content">
@@ -393,14 +499,119 @@
                     02 / COMMUNITY
                 </span>
 
-                <h2>
-                    Konda Reddi
-                </h2>
+                <h2>Gond Community</h2>
 
                 <p>
-                    Explore the traditional knowledge,
-                    crafts and forest-connected life of
-                    the Konda Reddi community.
+                    A cultural heritage shaped by stories,
+                    art and community knowledge.
+                </p>
+
+                <div class="archive-meta">
+                    <span>Central India</span>
+                    <span>Gond</span>
+                </div>
+
+                <a href="details.html?type=community&id=gond"
+                   class="details-btn">
+                    View Details →
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <article class="archive-item" data-category="communities">
+
+            <div class="archive-item-image">
+                <img src="images/dongria.png"
+                     alt="Dongria Kondh"
+                     loading="lazy">
+            </div>
+
+            <div class="archive-item-content">
+
+                <span class="archive-item-number">
+                    03 / COMMUNITY
+                </span>
+
+                <h2>Dongria Kondh</h2>
+
+                <p>
+                    Traditions shaped by community,
+                    landscape and generations of knowledge.
+                </p>
+
+                <div class="archive-meta">
+                    <span>Odisha</span>
+                    <span>Dongria Kondh</span>
+                </div>
+
+                <a href="details.html?type=community&id=dongria"
+                   class="details-btn">
+                    View Details →
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <article class="archive-item" data-category="communities">
+
+            <div class="archive-item-image">
+                <img src="images/santhal.png"
+                     alt="Santhal Community"
+                     loading="lazy">
+            </div>
+
+            <div class="archive-item-content">
+
+                <span class="archive-item-number">
+                    04 / COMMUNITY
+                </span>
+
+                <h2>Santhal Community</h2>
+
+                <p>
+                    Stories, traditions and cultural practices
+                    carried across generations.
+                </p>
+
+                <div class="archive-meta">
+                    <span>Eastern India</span>
+                    <span>Santhal</span>
+                </div>
+
+                <a href="details.html?type=community&id=santhal"
+                   class="details-btn">
+                    View Details →
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <article class="archive-item" data-category="communities">
+
+            <div class="archive-item-image">
+                <img src="images/kondareddy.png"
+                     alt="Konda Reddi Community"
+                     loading="lazy">
+            </div>
+
+            <div class="archive-item-content">
+
+                <span class="archive-item-number">
+                    05 / COMMUNITY
+                </span>
+
+                <h2>Konda Reddi</h2>
+
+                <p>
+                    Traditional knowledge and cultural
+                    practices connected with forest life.
                 </p>
 
                 <div class="archive-meta">
@@ -425,17 +636,13 @@
 </main>
 
 
-
-<!-- =====================================================
-     FOOTER
-     ===================================================== -->
+<!-- ================= FOOTER ================= -->
 
 <footer class="footer">
 
     <div class="footer-brand">
 
-        <a href="index.html"
-           class="logo footer-logo">
+        <a href="index.html" class="logo footer-logo">
 
             <span class="logo-mark">✦</span>
 
@@ -452,22 +659,16 @@
 
     </div>
 
-
     <div class="footer-bottom">
-
-
         <span>
             Privacy · Terms · Contact
         </span>
-
     </div>
 
 </footer>
 
 
-
 <script src="script.js"></script>
 
 </body>
-
-  </html>
+                    </html>
