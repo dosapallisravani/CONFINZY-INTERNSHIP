@@ -5245,3 +5245,40 @@ p {
     display: block;
     object-fit: cover;
 }
+/* =========================================
+   ARCHIVE IMAGE — REMOVE EXTRA SPACE
+   ========================================= */
+
+.archive-item-image {
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    line-height: 0 !important;
+    overflow: hidden;
+    background: transparent !important;
+}
+
+.archive-item-image img {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    object-fit: contain !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Remove gap before card text */
+.archive-item-content {
+    margin-top: 0 !important;
+    padding-top: 14px !important;
+}
+
+/* Remove any pseudo-element spacing */
+.archive-item-image::before,
+.archive-item-image::after {
+    display: none !important;
+    content: none !important;
+}
