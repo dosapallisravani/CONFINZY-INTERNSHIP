@@ -1189,6 +1189,7 @@ p {
     opacity: 1 !important;
     visibility: visible !important;
     position: relative !important;
+   margin: 0;
 }
 
 /* Smooth hover */
