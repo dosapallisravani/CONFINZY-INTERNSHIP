@@ -625,7 +625,7 @@ const rootsDetails = {
             "images/dongria.png",
 
         secondaryImage:
-            "images/theforestgivesulife.png",
+            "images/theforestgivesuslife.png",
 
         heading:
             "Culture connected to landscape",
@@ -873,7 +873,7 @@ const rootsDetails = {
             "images/tribalpottery.png",
 
         secondaryImage:
-            "images/objectsweinherite.png",
+            "images/objecsweinherite.png",
 
         heading:
             "Earth shaped by hand",
@@ -1036,7 +1036,7 @@ const rootsDetails = {
         heritage: "Oral History",
 
         image:
-            "images/theforestgivesulife.png",
+            "images/theforestgivesuslife.png",
 
         secondaryImage:
             "images/dongria.png",
@@ -1077,7 +1077,7 @@ const rootsDetails = {
         heritage: "Material Heritage",
 
         image:
-            "images/objectsweinherite.png",
+            "images/objecsweinherite.png",
 
         secondaryImage:
             "images/tribalpottery.png",
