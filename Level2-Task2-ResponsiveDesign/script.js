@@ -1555,7 +1555,7 @@
                             ) {
 
                                 entry.target.classList.add(
-                                    "visible"
+                                    "reveal-visible"
                                 );
 
 
