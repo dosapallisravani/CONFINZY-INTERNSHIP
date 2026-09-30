@@ -325,97 +325,65 @@
     /* =========================================================
        MOBILE MENU
        ========================================================= */
+function initMobileMenu() {
 
-    function initMobileMenu() {
+    const menuButton =
+        document.querySelector("#menuToggle") ||
+        document.querySelector(".menu-toggle") ||
+        document.querySelector(".menuToggle");
 
-        const menuButton =
-            $(".menuToggle") ||
-            $(".menu-btn") ||
-            $(".hamburger");
+    const mobileMenu =
+        document.querySelector("#mobileNav") ||
+        document.querySelector(".mobile-nav") ||
+        document.querySelector(".mobileNav") ||
+        document.querySelector(".mobile-menu");
 
-        const mobileMenu =
-            $(".mobileNav") ||
-            $(".mobile-menu");
+    if (!menuButton || !mobileMenu) return;
 
-        const closeButton =
-            $(".mobileNavClose") ||
-            $(".close-menu");
+    function openMenu() {
+        mobileMenu.classList.add("active");
+        mobileMenu.classList.add("open");
 
-        const overlay =
-            $(".mobileNavOverlay");
+        menuButton.classList.add("active");
+        menuButton.setAttribute("aria-expanded", "true");
 
-        if (!mobileMenu) return;
-
-
-        function openMenu() {
-
-            mobileMenu.classList.add("active");
-            mobileMenu.classList.add("open");
-
-            document.body.classList.add("menu-open");
-
-            document.body.style.overflow = "hidden";
-        }
-
-
-        function closeMenu() {
-
-            mobileMenu.classList.remove("active");
-            mobileMenu.classList.remove("open");
-
-            document.body.classList.remove("menu-open");
-
-            document.body.style.overflow = "";
-        }
-
-
-        if (menuButton) {
-            menuButton.addEventListener(
-                "click",
-                openMenu
-            );
-        }
-
-
-        if (closeButton) {
-            closeButton.addEventListener(
-                "click",
-                closeMenu
-            );
-        }
-
-
-        if (overlay) {
-            overlay.addEventListener(
-                "click",
-                closeMenu
-            );
-        }
-
-
-        $$(".mobileNav a, .mobile-menu a")
-            .forEach(function (link) {
-
-                link.addEventListener(
-                    "click",
-                    closeMenu
-                );
-
-            });
-
-
-        document.addEventListener(
-            "keydown",
-            function (event) {
-
-                if (event.key === "Escape") {
-                    closeMenu();
-                }
-
-            }
-        );
+        document.body.classList.add("menu-open");
+        document.body.style.overflow = "hidden";
     }
 
+    function closeMenu() {
+        mobileMenu.classList.remove("active");
+        mobileMenu.classList.remove("open");
+
+        menuButton.classList.remove("active");
+        menuButton.setAttribute("aria-expanded", "false");
+
+        document.body.classList.remove("menu-open");
+        document.body.style.overflow = "";
+    }
+
+    menuButton.addEventListener("click", function () {
+
+        if (
+            mobileMenu.classList.contains("active") ||
+            mobileMenu.classList.contains("open")
+        ) {
+            closeMenu();
+        } else {
+            openMenu();
+        }
+
+    });
+
+    mobileMenu.querySelectorAll("a").forEach(function (link) {
+        link.addEventListener("click", closeMenu);
+    });
+
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+            closeMenu();
+        }
+   
 
     /* =========================================================
        SEARCH
