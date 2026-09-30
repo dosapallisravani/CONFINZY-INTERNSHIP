@@ -5821,3 +5821,152 @@ img {
     }
 
 }
+/* =========================================================
+   ROOTS — FEATURED CRAFT FIX
+   IMAGE LEFT + CONTENT RIGHT
+   ========================================================= */
+
+.craft-feature.section-light {
+    display: block !important;
+    padding: 90px 0 !important;
+    background: var(--ivory) !important;
+}
+
+.craft-feature.section-light > .container {
+    width: min(1200px, calc(100% - 80px)) !important;
+    margin: 0 auto !important;
+}
+
+.craft-feature-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    width: 100% !important;
+    min-height: 520px;
+    overflow: hidden;
+    background: var(--forest);
+}
+
+/* IMAGE LEFT */
+.craft-feature-visual {
+    display: block !important;
+    width: 100% !important;
+    height: 520px !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+}
+
+.craft-image-frame {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.craft-image-frame img {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+    object-position: center;
+    opacity: 1 !important;
+}
+
+/* MATTER RIGHT */
+.craft-feature-content {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    height: 100% !important;
+    box-sizing: border-box !important;
+
+    padding: 55px !important;
+
+    background: var(--forest) !important;
+    color: var(--cream-light) !important;
+
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+}
+
+.craft-feature-content .section-eyebrow {
+    display: block;
+    margin-bottom: 20px;
+    color: var(--gold);
+}
+
+.craft-feature-content h2 {
+    margin: 0 0 20px;
+    color: var(--cream-light);
+    font-family: var(--serif);
+    font-size: clamp(42px, 5vw, 68px);
+    line-height: 1;
+}
+
+.craft-feature-content h2 em {
+    color: var(--gold);
+    font-style: italic;
+}
+
+.craft-feature-content .craft-intro {
+    max-width: 450px;
+    margin: 0 0 28px;
+    color: rgba(250,247,240,0.75);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.craft-meta-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    width: 100%;
+    margin-bottom: 28px;
+}
+
+.craft-meta span {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--gold);
+    font-size: 9px;
+    letter-spacing: 0.12em;
+}
+
+.craft-meta strong {
+    color: var(--cream-light);
+    font-size: 13px;
+}
+
+/* MOBILE */
+@media (max-width: 760px) {
+
+    .craft-feature.section-light {
+        padding: 65px 0 !important;
+    }
+
+    .craft-feature.section-light > .container {
+        width: calc(100% - 38px) !important;
+    }
+
+    .craft-feature-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .craft-feature-visual {
+        height: 330px !important;
+    }
+
+    .craft-feature-content {
+        height: auto !important;
+        min-height: 380px;
+        padding: 40px 25px !important;
+    }
+
+    .craft-meta-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
