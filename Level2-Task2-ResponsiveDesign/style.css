@@ -5438,3 +5438,197 @@ img {
     }
 
      }
+/* =========================================================
+   ROOTS — LIVING TIMELINE REDESIGN
+   ========================================================= */
+
+.timeline-section {
+    position: relative;
+    overflow: hidden;
+    padding: 120px 0 90px;
+    background: var(--forest);
+    color: var(--cream);
+}
+
+.timeline-heading {
+    max-width: 720px;
+    margin-bottom: 70px;
+}
+
+.timeline-heading h2 {
+    margin: 12px 0 20px;
+    font-family: var(--serif);
+    font-size: clamp(42px, 6vw, 76px);
+    font-weight: 400;
+    line-height: 0.98;
+}
+
+.timeline-heading h2 em {
+    color: var(--gold);
+    font-style: italic;
+}
+
+.timeline-intro {
+    max-width: 500px;
+    color: rgba(250, 247, 240, 0.65);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+
+/* TIMELINE */
+
+.timeline {
+    position: relative;
+    max-width: 950px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+
+/* CARD */
+
+.timeline-card {
+    position: relative;
+    min-height: 245px;
+    padding: 30px;
+    display: flex;
+    gap: 25px;
+    border: 1px solid rgba(250, 247, 240, 0.14);
+    background: rgba(250, 247, 240, 0.045);
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.timeline-card:hover {
+    transform: translateY(-6px);
+    background: rgba(250, 247, 240, 0.075);
+    border-color: rgba(190, 151, 75, 0.45);
+}
+
+
+/* NUMBER */
+
+.timeline-year {
+    flex: 0 0 auto;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(190, 151, 75, 0.55);
+    border-radius: 50%;
+    color: var(--gold);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+}
+
+
+/* CONTENT */
+
+.timeline-card-content {
+    padding-top: 2px;
+}
+
+.timeline-label {
+    display: block;
+    margin-bottom: 14px;
+    color: var(--gold);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+}
+
+.timeline-card h3 {
+    margin-bottom: 12px;
+    color: var(--cream);
+    font-family: var(--serif);
+    font-size: 27px;
+    font-weight: 400;
+    line-height: 1.1;
+}
+
+.timeline-card p {
+    max-width: 330px;
+    color: rgba(250, 247, 240, 0.58);
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+
+/* FINAL CARD */
+
+.timeline-card-final {
+    border-color: rgba(190, 151, 75, 0.38);
+    background:
+        linear-gradient(
+            135deg,
+            rgba(190, 151, 75, 0.12),
+            rgba(250, 247, 240, 0.04)
+        );
+}
+
+.timeline-card-final .timeline-year {
+    background: var(--gold);
+    color: var(--forest);
+    border-color: var(--gold);
+}
+
+
+/* FOOTER */
+
+.timeline-footer {
+    max-width: 950px;
+    margin: 45px auto 0;
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid rgba(250, 247, 240, 0.14);
+    color: rgba(250, 247, 240, 0.45);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .timeline-section {
+        padding: 85px 0 65px;
+    }
+
+    .timeline-heading {
+        margin-bottom: 45px;
+    }
+
+    .timeline-heading h2 {
+        font-size: 44px;
+    }
+
+    .timeline {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .timeline-card {
+        min-height: auto;
+        padding: 24px;
+    }
+
+    .timeline-card h3 {
+        font-size: 23px;
+    }
+
+    .timeline-footer {
+        gap: 15px;
+        flex-direction: column;
+    }
+
+     }
