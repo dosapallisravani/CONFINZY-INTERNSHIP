@@ -5633,93 +5633,130 @@ img {
 
      }
 /* =========================================================
-   ROOTS — HORIZONTAL CRAFT FEATURE
+   BAMBOO CRAFT — HORIZONTAL FEATURE FIX
    ========================================================= */
 
-.archive-horizontal {
-    grid-column: 1 / -1;
+.craft-feature .craft-feature-grid {
+    width: 100%;
+}
 
-    display: grid;
-    grid-template-columns: 1.15fr 0.85fr;
-
+.craft-feature .archive-horizontal {
+    width: 100%;
     min-height: 430px;
 
-    overflow: hidden;
+    display: grid !important;
+    grid-template-columns: 55% 45% !important;
 
+    overflow: hidden;
     background: var(--forest);
+
+    text-decoration: none;
 }
 
 
-.archive-horizontal .archive-feature-image {
-    height: 100%;
+/* IMAGE */
+
+.craft-feature .archive-horizontal
+.archive-feature-image {
+    width: 100%;
+    height: 430px;
     min-height: 430px;
+
     overflow: hidden;
 }
 
 
-.archive-horizontal .archive-feature-image img {
+.craft-feature .archive-horizontal
+.archive-feature-image img {
+    display: block;
+
     width: 100%;
     height: 100%;
 
     object-fit: cover;
-
-    transition:
-        transform 0.7s ease;
 }
 
 
-.archive-horizontal:hover
-.archive-feature-image img {
-    transform: scale(1.04);
+/* MATTER */
+
+.craft-feature .archive-horizontal
+.archive-feature-content {
+    width: 100%;
+    height: 100%;
+
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+
+    padding: 55px !important;
+
+    box-sizing: border-box;
 }
 
 
-.archive-horizontal .archive-feature-content {
+/* TOP */
+
+.craft-feature .archive-horizontal
+.archive-feature-top {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    align-items: center;
+    gap: 18px;
 
-    padding: 55px;
+    margin-bottom: 25px;
 }
 
 
-.archive-horizontal .archive-feature-top {
-    margin-bottom: 30px;
+/* NUMBER */
+
+.craft-feature .archive-horizontal
+.archive-number {
+    color: var(--gold);
 }
 
 
-.archive-horizontal h3 {
-    max-width: 400px;
+/* CRAFT LABEL */
 
-    margin-bottom: 18px;
+.craft-feature .archive-horizontal
+.archive-type {
+    color: var(--gold);
+}
+
+
+/* HEADING */
+
+.craft-feature .archive-horizontal h3 {
+    margin: 0 0 18px;
 
     color: var(--cream);
 
     font-family: var(--serif);
-    font-size: clamp(34px, 4vw, 54px);
+    font-size: clamp(34px, 4vw, 55px);
     font-weight: 400;
-    line-height: 1;
+    line-height: 1.05;
 }
 
 
-.archive-horizontal p {
+/* DESCRIPTION */
+
+.craft-feature .archive-horizontal p {
     max-width: 390px;
 
-    color: rgba(250, 247, 240, 0.65);
+    margin: 0 0 28px;
+
+    color: rgba(250, 247, 240, 0.68);
 
     font-size: 13px;
     line-height: 1.8;
 }
 
 
-.archive-horizontal .archive-number,
-.archive-horizontal .archive-type {
-    color: var(--gold);
-}
+/* LINK */
 
-
-.archive-horizontal .card-link {
-    margin-top: 35px;
+.craft-feature .archive-horizontal
+.card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
 
     color: var(--cream);
 
@@ -5730,8 +5767,22 @@ img {
 }
 
 
-.archive-horizontal .card-link span {
+.craft-feature .archive-horizontal
+.card-link span {
     color: var(--gold);
+}
+
+
+/* HOVER */
+
+.craft-feature .archive-horizontal
+.archive-feature-image img {
+    transition: transform 0.6s ease;
+}
+
+.craft-feature .archive-horizontal:hover
+.archive-feature-image img {
+    transform: scale(1.04);
 }
 
 
@@ -5739,25 +5790,25 @@ img {
 
 @media (max-width: 700px) {
 
-    .archive-horizontal {
-        grid-template-columns: 1fr;
-        min-height: auto;
+    .craft-feature .archive-horizontal {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
     }
 
-
-    .archive-horizontal .archive-feature-image {
-        min-height: 280px;
+    .craft-feature .archive-horizontal
+    .archive-feature-image {
         height: 280px;
+        min-height: 280px;
     }
 
-
-    .archive-horizontal .archive-feature-content {
-        padding: 32px 25px 38px;
+    .craft-feature .archive-horizontal
+    .archive-feature-content {
+        height: auto;
+        padding: 35px 25px 40px !important;
     }
 
-
-    .archive-horizontal h3 {
-        font-size: 36px;
+    .craft-feature .archive-horizontal h3 {
+        font-size: 38px;
     }
 
 }
