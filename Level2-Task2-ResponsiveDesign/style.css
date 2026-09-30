@@ -4054,7 +4054,586 @@ body.modal-open {
     overflow: hidden;
 }
 
-
 /* =========================================================
-   ROOTS STYLE.CSS — COMPLETE
+   ROOTS — SAFE VISUAL PATCH
+   DO NOT DELETE EXISTING CSS
    ========================================================= */
+
+
+/* ---------------------------------------------------------
+   GLOBAL SAFETY
+   --------------------------------------------------------- */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+}
+
+
+/* ---------------------------------------------------------
+   HOME HERO — IMAGE FIX
+   --------------------------------------------------------- */
+
+.hero {
+    position: relative;
+    min-height: 100svh;
+    overflow: hidden;
+    background: #18382d;
+}
+
+.hero-image-wrap {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.hero-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(14, 35, 27, 0.78) 0%,
+            rgba(14, 35, 27, 0.48) 42%,
+            rgba(14, 35, 27, 0.18) 75%,
+            rgba(14, 35, 27, 0.32) 100%
+        );
+}
+
+.hero-grain {
+    pointer-events: none;
+    z-index: 2;
+}
+
+
+/* ---------------------------------------------------------
+   HERO CONTENT — LESS CROWDING
+   --------------------------------------------------------- */
+
+.hero-content {
+    position: relative;
+    z-index: 4;
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-copy {
+    max-width: 700px;
+}
+
+.hero-copy h1 {
+    max-width: 700px;
+    line-height: 0.98;
+    margin-bottom: 22px;
+}
+
+.hero-description {
+    max-width: 560px;
+    line-height: 1.7;
+}
+
+
+/* ---------------------------------------------------------
+   HERO BUTTON
+   --------------------------------------------------------- */
+
+.hero-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 26px;
+    min-height: 52px;
+    padding: 0 24px;
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+    text-decoration: none;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.hero-btn:hover {
+    background: #b08a52;
+    border-color: #b08a52;
+    transform: translateY(-2px);
+}
+
+
+/* ---------------------------------------------------------
+   ARCHIVE CARDS
+   --------------------------------------------------------- */
+
+.archive-items-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px;
+}
+
+.archive-item-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid rgba(24, 56, 45, 0.14);
+    border-radius: 18px;
+    background: #f4eee2;
+    box-shadow: 0 12px 30px rgba(24, 56, 45, 0.08);
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.archive-item-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 18px 38px rgba(24, 56, 45, 0.13);
+}
+
+.archive-item-image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: #ded5c5;
+}
+
+.archive-item-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.archive-item-card:hover .archive-item-image img {
+    transform: scale(1.04);
+}
+
+.archive-item-content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 22px;
+}
+
+.archive-item-content h3 {
+    margin: 8px 0 10px;
+    line-height: 1.2;
+}
+
+.archive-item-content p {
+    margin: 0 0 18px;
+    line-height: 1.6;
+    color: #5f625b;
+}
+
+
+/* ---------------------------------------------------------
+   VIEW DETAILS — ALWAYS CLEARLY VISIBLE
+   --------------------------------------------------------- */
+
+.archive-item-content .view-details,
+.archive-card .view-details,
+.view-details {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    visibility: visible !important;
+    opacity: 1 !important;
+
+    margin-top: auto;
+    min-height: 42px;
+    padding: 0 18px;
+
+    border: 1px solid #18382d;
+    border-radius: 999px;
+
+    background: #18382d;
+    color: #fff;
+
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+.archive-item-content .view-details:hover,
+.archive-card .view-details:hover,
+.view-details:hover {
+    background: #b08a52;
+    border-color: #b08a52;
+    color: #18382d;
+    transform: translateY(-2px);
+}
+
+
+/* ---------------------------------------------------------
+   DETAILS PAGE — CLEANER LAYOUT
+   --------------------------------------------------------- */
+
+.details-page {
+    background: #f4eee2;
+    color: #252b26;
+}
+
+.details-hero {
+    min-height: auto;
+    padding: 125px 0 70px;
+    background: #18382d;
+}
+
+.details-hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(320px, 0.85fr);
+    align-items: center;
+    gap: 55px;
+}
+
+.details-hero-content h1 {
+    max-width: 650px;
+    line-height: 1;
+}
+
+.details-subtitle {
+    max-width: 580px;
+    line-height: 1.7;
+}
+
+.details-hero-image {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 18px;
+}
+
+.details-hero-image img {
+    display: block;
+    width: 100%;
+    height: 430px;
+    object-fit: cover;
+}
+
+
+/* ---------------------------------------------------------
+   DETAILS INTRO
+   --------------------------------------------------------- */
+
+.details-intro-section {
+    padding: 70px 0;
+    background: #f4eee2;
+}
+
+.details-intro-grid {
+    display: grid;
+    grid-template-columns: 0.3fr 1fr;
+    gap: 50px;
+    align-items: start;
+}
+
+.details-intro-content h2 {
+    max-width: 700px;
+    margin-bottom: 18px;
+}
+
+.details-intro-content p {
+    max-width: 700px;
+    line-height: 1.75;
+}
+
+
+/* ---------------------------------------------------------
+   DETAILS INFORMATION CARDS
+   --------------------------------------------------------- */
+
+.details-information-section {
+    padding: 0 0 70px;
+    background: #f4eee2;
+}
+
+.details-info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.details-info-card {
+    min-height: 145px;
+    padding: 24px;
+    border: 1px solid rgba(24, 56, 45, 0.16);
+    border-radius: 16px;
+    background: #ebe2d1;
+}
+
+.details-info-card strong {
+    display: block;
+    margin-top: 12px;
+    color: #18382d;
+}
+
+
+/* ---------------------------------------------------------
+   DETAILS STORY — LESS WIDTH / MORE READABILITY
+   --------------------------------------------------------- */
+
+.details-story-section {
+    padding: 75px 0;
+    background: #e9e0cf;
+}
+
+.details-story-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 280px;
+    gap: 70px;
+    align-items: start;
+}
+
+.details-story-content {
+    max-width: 760px;
+}
+
+.details-story-content h2 {
+    margin: 12px 0 25px;
+}
+
+.details-story-text {
+    max-width: 720px;
+}
+
+.details-story-text p {
+    margin-bottom: 18px;
+    line-height: 1.8;
+}
+
+.details-story-note {
+    padding: 25px;
+    border-left: 2px solid #b08a52;
+}
+
+
+/* ---------------------------------------------------------
+   DETAILS SECONDARY IMAGE — COMPACT
+   --------------------------------------------------------- */
+
+.details-secondary-image,
+.details-story-image {
+    max-height: 420px;
+    overflow: hidden;
+    border-radius: 18px;
+}
+
+.details-secondary-image img,
+.details-story-image img {
+    width: 100%;
+    height: 100%;
+    max-height: 420px;
+    object-fit: cover;
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+   --------------------------------------------------------- */
+
+@media (max-width: 900px) {
+
+    .archive-items-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .details-hero-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .details-hero-image img {
+        height: 360px;
+    }
+
+    .details-intro-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .details-info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .details-story-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+}
+
+
+@media (max-width: 640px) {
+
+    /* HERO */
+
+    .hero {
+        min-height: 100svh;
+    }
+
+    .hero-image {
+        object-position: 55% center;
+    }
+
+    .hero-overlay {
+        background:
+            linear-gradient(
+                180deg,
+                rgba(14, 35, 27, 0.48) 0%,
+                rgba(14, 35, 27, 0.65) 48%,
+                rgba(14, 35, 27, 0.88) 100%
+            );
+    }
+
+    .hero-content {
+        min-height: 100svh;
+        align-items: flex-end;
+        padding-bottom: 95px;
+    }
+
+    .hero-copy {
+        max-width: 100%;
+    }
+
+    .hero-copy h1 {
+        font-size: clamp(42px, 12vw, 62px);
+        line-height: 0.98;
+        margin-bottom: 18px;
+    }
+
+    .hero-description {
+        max-width: 330px;
+        font-size: 14px;
+        line-height: 1.65;
+    }
+
+    .hero-btn {
+        min-height: 48px;
+        padding: 0 19px;
+        margin-top: 20px;
+    }
+
+
+    /* ARCHIVE */
+
+    .archive-items-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .archive-item-content {
+        padding: 19px;
+    }
+
+    .archive-item-image {
+        aspect-ratio: 16 / 10;
+    }
+
+    .archive-item-content .view-details,
+    .archive-card .view-details,
+    .view-details {
+        width: auto;
+        min-width: 125px;
+        min-height: 44px;
+    }
+
+
+    /* DETAILS */
+
+    .details-hero {
+        padding: 105px 0 45px;
+    }
+
+    .details-hero-grid {
+        gap: 28px;
+    }
+
+    .details-hero-content h1 {
+        font-size: clamp(38px, 11vw, 54px);
+    }
+
+    .details-hero-image img {
+        height: 270px;
+    }
+
+    .details-intro-section {
+        padding: 50px 0;
+    }
+
+    .details-information-section {
+        padding-bottom: 50px;
+    }
+
+    .details-story-section {
+        padding: 55px 0;
+    }
+
+    .details-story-text p {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    .details-secondary-image,
+    .details-story-image {
+        max-height: 280px;
+    }
+
+    .details-secondary-image img,
+    .details-story-image img {
+        max-height: 280px;
+    }
+}
+
+
+/* ---------------------------------------------------------
+   SMALL PHONES
+   --------------------------------------------------------- */
+
+@media (max-width: 390px) {
+
+    .hero-copy h1 {
+        font-size: 40px;
+    }
+
+    .hero-description {
+        font-size: 13px;
+    }
+
+    .archive-item-content h3 {
+        font-size: 22px;
+    }
+
+    .details-hero-image img {
+        height: 235px;
+    }
+ }
