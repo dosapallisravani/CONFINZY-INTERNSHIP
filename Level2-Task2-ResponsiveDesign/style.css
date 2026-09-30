@@ -4904,3 +4904,62 @@ img {
 .page-loader {
     display: none !important;
 }
+/* =========================================================
+   ROOTS — HOME SECTION BACKGROUND SEPARATION
+   ========================================================= */
+
+/* 1. HERO — warm cream */
+.hero-section,
+#home {
+    background: #F5EEC2 !important;
+}
+
+/* 2. ARCHIVE / COLLECTION — dark green */
+.archive-section {
+    background: #416A59 !important;
+}
+
+/* 3. TIMELINE / MAP — cream */
+.map-section,
+#map {
+    background: #F5EEC2 !important;
+}
+
+/* 4. CRAFTS — dark purple */
+.crafts-section,
+#crafts {
+    background: #39395F !important;
+}
+
+/* 5. VOICES — cream */
+.voices-section,
+#voices {
+    background: #F5EEC2 !important;
+}
+
+/* 6. ABOUT — green */
+.about-section,
+#about {
+    background: #73A24E !important;
+}
+
+/* 7. HERITAGE STATEMENT — light green */
+.heritage-statement {
+    background: #A9C25D !important;
+}
+
+/* 8. CONTACT — dark green */
+.contact-section,
+#contact {
+    background: #416A59 !important;
+}
+
+/* 9. NEWSLETTER — cream */
+.newsletter-section {
+    background: #F5EEC2 !important;
+}
+
+/* 10. FOOTER — dark purple */
+.site-footer {
+    background: #39395F !important;
+}
