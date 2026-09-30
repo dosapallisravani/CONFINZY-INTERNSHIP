@@ -1388,47 +1388,230 @@ function initMobileMenu() {
     /* =========================================================
        MAP
        ========================================================= */
+function initMap() {
 
-    function initMap() {
+    const mapItems =
+        $$(".map-pin, .region-item");
 
-        $$(
-            ".map-region, [data-region], .region-list button"
-        )
-        .forEach(
-            function (button) {
+    const pins =
+        $$(".map-pin");
 
-                button.addEventListener(
-                    "click",
-                    function () {
+    const items =
+        $$(".region-item");
 
-                        const bold =
-                            $("b", button);
+    const infoTitle =
+        $("#mapInfoTitle");
 
+    const infoText =
+        $("#mapInfoText");
 
-                        const name =
-                            button.dataset.region ||
-                            (
-                                bold
-                                    ? bold.textContent.trim()
-                                    : ""
-                            ) ||
-                            button.textContent.trim() ||
-                            "selected region";
+    const infoLink =
+        $("#mapInfoLink");
 
 
-                        showRootsToast(
-                            "Exploring " +
-                            name +
-                            " traditions."
-                        );
+    const communityData = {
 
-                    }
+        bodo: {
+            title: "Bodo",
+            text:
+                "Explore the Bodo community and its place in the ROOTS archive.",
+            link:
+                "details.html?id=bodo"
+        },
+
+        gond: {
+            title: "Gond",
+            text:
+                "Explore Gond traditions and their place in the ROOTS archive.",
+            link:
+                "details.html?id=gond"
+        },
+
+        dongria: {
+            title: "Dongria Kondh",
+            text:
+                "Explore Dongria Kondh traditions and their place in the ROOTS archive.",
+            link:
+                "details.html?id=dongria"
+        },
+
+        santhal: {
+            title: "Santhal",
+            text:
+                "Explore Santhal traditions and their place in the ROOTS archive.",
+            link:
+                "details.html?id=santhal"
+        },
+
+        konda: {
+            title: "Konda Dora",
+            text:
+                "Explore Konda Dora traditions and their place in the ROOTS archive.",
+            link:
+                "details.html?id=konda"
+        }
+
+    };
+
+
+    function selectCommunity(region) {
+
+        const data =
+            communityData[region];
+
+        if (!data) {
+            return;
+        }
+
+
+        /* Remove previous active state */
+
+        pins.forEach(
+            function (pin) {
+
+                pin.classList.remove(
+                    "active"
                 );
 
             }
         );
+
+
+        items.forEach(
+            function (item) {
+
+                item.classList.remove(
+                    "active"
+                );
+
+            }
+        );
+
+
+        /* Activate selected pin */
+
+        pins
+            .filter(
+                function (pin) {
+
+                    return (
+                        pin.dataset.region ===
+                        region
+                    );
+
+                }
+            )
+            .forEach(
+                function (pin) {
+
+                    pin.classList.add(
+                        "active"
+                    );
+
+                }
+            );
+
+
+        /* Activate selected list item */
+
+        items
+            .filter(
+                function (item) {
+
+                    return (
+                        item.dataset.region ===
+                        region
+                    );
+
+                }
+            )
+            .forEach(
+                function (item) {
+
+                    item.classList.add(
+                        "active"
+                    );
+
+                }
+            );
+
+
+        /* Update information card */
+
+        if (infoTitle) {
+
+            infoTitle.textContent =
+                data.title;
+
+        }
+
+
+        if (infoText) {
+
+            infoText.textContent =
+                data.text;
+
+        }
+
+
+        if (infoLink) {
+
+            infoLink.href =
+                data.link;
+
+        }
+
     }
 
+
+    /* MAP PINS */
+
+    pins.forEach(
+        function (pin) {
+
+            pin.addEventListener(
+                "click",
+                function () {
+
+                    selectCommunity(
+                        pin.dataset.region
+                    );
+
+                }
+            );
+
+        }
+    );
+
+
+    /* COMMUNITY LIST */
+
+    items.forEach(
+        function (item) {
+
+            item.addEventListener(
+                "click",
+                function () {
+
+                    selectCommunity(
+                        item.dataset.region
+                    );
+
+                }
+            );
+
+        }
+    );
+
+
+    /* DEFAULT COMMUNITY */
+
+    selectCommunity(
+        "bodo"
+    );
+
+}
+    
 
     /* =========================================================
        TIMELINE
