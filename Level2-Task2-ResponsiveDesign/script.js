@@ -383,7 +383,9 @@ function initMobileMenu() {
         if (event.key === "Escape") {
             closeMenu();
         }
-   
+   });
+
+    }
 
     /* =========================================================
        SEARCH
