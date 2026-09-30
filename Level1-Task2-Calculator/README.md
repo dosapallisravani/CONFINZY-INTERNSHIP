@@ -2,6 +2,9 @@
 
 A responsive and interactive JavaScript web application developed as **Level 1 - Task 2** for the **Cognifyz Technologies Web Development Internship**.
 
+GitHub Repository:
+https://github.com/dosapallisravani/CONFINZY-INTERNSHIP/
+
 ## 🔗 Live Demo
 
 https://dosapallisravani.github.io/CONFINZY-INTERNSHIP/Level1-Task2-Calculator/
