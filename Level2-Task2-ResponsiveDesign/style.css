@@ -4882,3 +4882,25 @@ body {
         padding: 55px 0 !important;
     }
 }
+/* =========================================================
+   ROOTS — FIX BLANK PAGE
+   ========================================================= */
+
+.reveal,
+.reveal.visible,
+.reveal.reveal-visible {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+}
+
+/* Images should always remain visible */
+img {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Loader completely disabled */
+.page-loader {
+    display: none !important;
+}
