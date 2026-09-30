@@ -1608,43 +1608,7 @@ function initMobileMenu() {
     }
 
 
-    /* =========================================================
-       PAGE LOADER
-       ========================================================= */
-
-    function initLoader() {
-
-        const loader =
-            $("#pageLoader");
-
-
-        if (!loader) {
-            return;
-        }
-
-
-        window.addEventListener(
-            "load",
-            function () {
-
-                setTimeout(
-                    function () {
-
-                        loader.classList.add(
-                            "hidden"
-                        );
-
-                        loader.classList.add(
-                            "loaded"
-                        );
-
-                    },
-                    350
-                );
-
-            }
-        );
-    }
+    
 
 
     /* =========================================================
