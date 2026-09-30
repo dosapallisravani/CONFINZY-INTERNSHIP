@@ -680,7 +680,11 @@ section {
 
     object-fit: cover;
 
-    object-position: center;
+   
+ object-position: center center;
+
+    transform: none !important;
+    scale: 1 !important;
 }
 
 .hero::after {
