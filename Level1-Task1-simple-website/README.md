@@ -5,6 +5,8 @@ AUREX – Premium Men's Grooming Landing Page
 AUREX is a modern, responsive premium men's grooming landing page designed to showcase luxury skincare and grooming products with an elegant user interface. The project focuses on creating a visually appealing, mobile-friendly, and interactive website using front-end web technologies.
 
 ---
+GitHub Repository:
+https://github.com/dosapallisravani/CONFINZY-INTERNSHIP/
 
 🚀 Live Demo
 
