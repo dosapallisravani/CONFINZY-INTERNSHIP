@@ -1040,260 +1040,287 @@
 
 
 
-        <!-- =================================================
-             LIVING MAP
-        ================================================== -->
+        
+<!-- =================================================
+     LIVING MAP
+================================================== -->
 
-        <section class="map-section section-light"
-                 id="map">
+<section class="map-section section-light"
+         id="map">
 
-            <div class="container">
+    <div class="container">
 
+        <!-- MAP HEADING -->
 
-                <!-- MAP HEADING -->
+        <div class="map-heading reveal">
 
-                <div class="map-heading reveal">
+            <span class="section-eyebrow">
+                LIVING MAP
+            </span>
 
-                    <span class="section-eyebrow">
-                        LIVING MAP
-                    </span>
+            <h2>
+                Communities across
+                <em>India.</em>
+            </h2>
 
+            <p>
+                Explore the communities represented in the
+                ROOTS archive and the regions connected to
+                their living traditions.
+            </p>
 
-                    <h2>
-
-                        Many places.
-                        <em>Many roots.</em>
-
-                    </h2>
-
-
-                    <p>
-
-                        Explore the regions represented in the
-                        archive and discover the traditions that
-                        connect people with place.
-
-                    </p>
-
-                </div>
+        </div>
 
 
+        <!-- MAP LAYOUT -->
 
-                <!-- MAP LAYOUT -->
-
-                <div class="map-layout">
-
-
-                    <!-- MAP -->
-
-                    <div class="india-map-wrap reveal">
-
-                        <div class="map-paper">
-
-                            <div class="india-map-shape"
-                                 aria-label="Illustrated map of India">
-
-                                <span
-                                    class="map-pin pin-north"
-                                    data-region="north">
-                                </span>
+        <div class="map-layout">
 
 
-                                <span
-                                    class="map-pin pin-east"
-                                    data-region="east">
-                                </span>
+            <!-- INDIA MAP -->
+
+            <div class="india-map-wrap reveal">
+
+                <div class="map-paper">
+
+                    <div class="india-map-shape"
+                         aria-label="India community map">
+
+                        <!-- ASSAM / BODO -->
+
+                        <button
+                            class="map-pin pin-bodo"
+                            type="button"
+                            data-region="bodo"
+                            aria-label="Bodo community in Assam">
+                        </button>
 
 
-                                <span
-                                    class="map-pin pin-central"
-                                    data-region="central">
-                                </span>
+                        <!-- ODISHA / DONGRIA -->
+
+                        <button
+                            class="map-pin pin-dongria"
+                            type="button"
+                            data-region="dongria"
+                            aria-label="Dongria Kondh community in Odisha">
+                        </button>
 
 
-                                <span
-                                    class="map-pin pin-south"
-                                    data-region="south">
-                                </span>
+                        <!-- CENTRAL INDIA / GOND -->
+
+                        <button
+                            class="map-pin pin-gond"
+                            type="button"
+                            data-region="gond"
+                            aria-label="Gond community in Central India">
+                        </button>
 
 
-                                <span
-                                    class="map-pin pin-west"
-                                    data-region="west">
-                                </span>
+                        <!-- JHARKHAND / SANTHAL -->
 
-                            </div>
-
-
-                            <div class="map-label map-label-north">
-                                NORTH
-                            </div>
+                        <button
+                            class="map-pin pin-santhal"
+                            type="button"
+                            data-region="santhal"
+                            aria-label="Santhal community">
+                        </button>
 
 
-                            <div class="map-label map-label-east">
-                                EAST
-                            </div>
+                        <!-- ANDHRA PRADESH / KONDA DORA -->
 
-
-                            <div class="map-label map-label-south">
-                                SOUTH
-                            </div>
-
-                        </div>
+                        <button
+                            class="map-pin pin-konda"
+                            type="button"
+                            data-region="konda"
+                            aria-label="Konda Dora community in Andhra Pradesh">
+                        </button>
 
                     </div>
 
 
+                    <!-- MAP TITLE -->
 
-                    <!-- REGION LIST -->
-
-                    <div class="region-list reveal">
-
-
-                        <div class="region-list-header">
-
-                            <span>
-                                ARCHIVE REGIONS
-                            </span>
-
-                            <span>
-                                05
-                            </span>
-
-                        </div>
-
-
-
-                        <button
-                            class="region-item active"
-                            type="button"
-                            data-region="east">
-
-                            <span class="region-number">
-                                01
-                            </span>
-
-                            <span class="region-name">
-                                Assam &amp; East
-                            </span>
-
-                            <span class="region-arrow">
-                                ↗
-                            </span>
-
-                        </button>
-
-
-
-                        <button
-                            class="region-item"
-                            type="button"
-                            data-region="central">
-
-                            <span class="region-number">
-                                02
-                            </span>
-
-                            <span class="region-name">
-                                Central India
-                            </span>
-
-                            <span class="region-arrow">
-                                ↗
-                            </span>
-
-                        </button>
-
-
-
-                        <button
-                            class="region-item"
-                            type="button"
-                            data-region="south">
-
-                            <span class="region-number">
-                                03
-                            </span>
-
-                            <span class="region-name">
-                                Andhra Pradesh
-                            </span>
-
-                            <span class="region-arrow">
-                                ↗
-                            </span>
-
-                        </button>
-
-
-
-                        <button
-                            class="region-item"
-                            type="button"
-                            data-region="north">
-
-                            <span class="region-number">
-                                04
-                            </span>
-
-                            <span class="region-name">
-                                Northern Traditions
-                            </span>
-
-                            <span class="region-arrow">
-                                ↗
-                            </span>
-
-                        </button>
-
-
-
-                        <button
-                            class="region-item"
-                            type="button"
-                            data-region="west">
-
-                            <span class="region-number">
-                                05
-                            </span>
-
-                            <span class="region-name">
-                                Western India
-                            </span>
-
-                            <span class="region-arrow">
-                                ↗
-                            </span>
-
-                        </button>
-
-
-
-                        <div class="region-note">
-
-                            <span class="note-mark">
-                                ✦
-                            </span>
-
-
-                            <p>
-
-                                Each region carries distinct
-                                materials, languages, techniques
-                                and memories.
-
-                            </p>
-
-                        </div>
-
+                    <div class="map-center-label">
+                        <span>ROOTS</span>
+                        <strong>INDIA</strong>
+                        <small>Living communities</small>
                     </div>
 
                 </div>
 
             </div>
 
-        </section>
 
+            <!-- COMMUNITY LIST -->
+
+            <div class="region-list reveal">
+
+                <div class="region-list-header">
+
+                    <span>
+                        COMMUNITIES IN THIS ARCHIVE
+                    </span>
+
+                    <span>
+                        05
+                    </span>
+
+                </div>
+
+
+                <!-- BODO -->
+
+                <button
+                    class="region-item active"
+                    type="button"
+                    data-region="bodo">
+
+                    <span class="region-number">
+                        01
+                    </span>
+
+                    <span class="region-name">
+                        Bodo
+                        <small>Assam</small>
+                    </span>
+
+                    <span class="region-arrow">
+                        ↗
+                    </span>
+
+                </button>
+
+
+                <!-- GOND -->
+
+                <button
+                    class="region-item"
+                    type="button"
+                    data-region="gond">
+
+                    <span class="region-number">
+                        02
+                    </span>
+
+                    <span class="region-name">
+                        Gond
+                        <small>Central India</small>
+                    </span>
+
+                    <span class="region-arrow">
+                        ↗
+                    </span>
+
+                </button>
+
+
+                <!-- DONGRIA -->
+
+                <button
+                    class="region-item"
+                    type="button"
+                    data-region="dongria">
+
+                    <span class="region-number">
+                        03
+                    </span>
+
+                    <span class="region-name">
+                        Dongria Kondh
+                        <small>Odisha</small>
+                    </span>
+
+                    <span class="region-arrow">
+                        ↗
+                    </span>
+
+                </button>
+
+
+                <!-- SANTHAL -->
+
+                <button
+                    class="region-item"
+                    type="button"
+                    data-region="santhal">
+
+                    <span class="region-number">
+                        04
+                    </span>
+
+                    <span class="region-name">
+                        Santhal
+                        <small>Eastern India</small>
+                    </span>
+
+                    <span class="region-arrow">
+                        ↗
+                    </span>
+
+                </button>
+
+
+                <!-- KONDA DORA -->
+
+                <button
+                    class="region-item"
+                    type="button"
+                    data-region="konda">
+
+                    <span class="region-number">
+                        05
+                    </span>
+
+                    <span class="region-name">
+                        Konda Dora
+                        <small>Andhra Pradesh</small>
+                    </span>
+
+                    <span class="region-arrow">
+                        ↗
+                    </span>
+
+                </button>
+
+
+                <!-- MAP INFO -->
+
+                <div class="map-info-card">
+
+                    <span class="map-info-label">
+                        SELECT A COMMUNITY
+                    </span>
+
+                    <h3 id="mapInfoTitle">
+                        Bodo
+                    </h3>
+
+                    <p id="mapInfoText">
+                        Explore the Bodo community and
+                        its place in the ROOTS archive.
+                    </p>
+
+                    <a
+                        href="details.html?id=bodo"
+                        id="mapInfoLink"
+                        class="map-info-link">
+
+                        View Archive
+                        <span>→</span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+                        </section>
+
+                        
 
 
         <!-- =================================================
