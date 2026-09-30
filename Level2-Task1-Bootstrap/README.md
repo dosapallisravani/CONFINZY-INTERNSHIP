@@ -33,7 +33,10 @@ Level2-Task1-Bootstrap
 │── script.js
 │── images/
 
-🔗 GitHub Repository
+GitHub Repository:
+https://github.com/dosapallisravani/CONFINZY-INTERNSHIP/
+
+🔗 GitHub Repository live demo 
 
 Repository:
 https://dosapallisravani.github.io/CONFINZY-INTERNSHIP/Level2-Task1-Bootstrap/
