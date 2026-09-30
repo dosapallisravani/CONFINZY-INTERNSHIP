@@ -4637,3 +4637,248 @@ img {
         height: 235px;
     }
  }
+/* =========================================================
+   ROOTS FINAL THEME — EXACT USER PALETTE
+   ========================================================= */
+
+:root {
+    --ivory: #F5EEC2 !important;
+    --cream: #F5EEC2 !important;
+    --cream-light: #F5EEC2 !important;
+
+    --forest: #416A59 !important;
+    --forest-dark: #39395F !important;
+
+    --sage: #A9C25D !important;
+    --terracotta: #73A24E !important;
+    --gold: #A9C25D !important;
+
+    --charcoal: #39395F !important;
+    --muted: #416A59 !important;
+
+    --white: #F5EEC2 !important;
+
+    --border: rgba(65, 106, 89, 0.22) !important;
+}
+
+
+/* PAGE */
+body {
+    background: #F5EEC2 !important;
+    color: #39395F !important;
+}
+
+
+/* =========================================================
+   HERO IMAGE FIX
+   ========================================================= */
+
+.hero,
+.archive-page-hero,
+.details-hero {
+    overflow: hidden !important;
+}
+
+.hero-image-wrap,
+.hero-image,
+.archive-page-hero-bg,
+.details-hero-image {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.hero-image,
+.details-hero-image {
+    object-fit: cover !important;
+    object-position: center center !important;
+}
+
+
+/* =========================================================
+   ARCHIVE CARDS
+   ========================================================= */
+
+.archive-item-card {
+    background: #F5EEC2 !important;
+    border: 1px solid rgba(65, 106, 89, 0.25) !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+}
+
+.archive-item-content h3 {
+    color: #416A59 !important;
+}
+
+.archive-item-content p {
+    color: #39395F !important;
+}
+
+
+/* CLEAR VIEW DETAILS BUTTON */
+
+.archive-item-content .view-details,
+.archive-card .view-details,
+.view-details {
+    display: inline-flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+
+    width: auto !important;
+    min-width: 155px !important;
+    min-height: 48px !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    padding: 13px 22px !important;
+    margin-top: 20px !important;
+
+    background: #73A24E !important;
+    color: #39395F !important;
+
+    border: 2px solid #73A24E !important;
+    border-radius: 7px !important;
+
+    font-size: 12px !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.08em !important;
+}
+
+.archive-item-content .view-details:hover,
+.archive-card .view-details:hover,
+.view-details:hover {
+    background: #416A59 !important;
+    border-color: #416A59 !important;
+    color: #F5EEC2 !important;
+}
+
+
+/* =========================================================
+   ARCHIVE FILTER BUTTONS
+   ========================================================= */
+
+.archive-filter {
+    background: transparent !important;
+    color: #416A59 !important;
+    border-color: #416A59 !important;
+}
+
+.archive-filter.active,
+.archive-filter:hover {
+    background: #416A59 !important;
+    color: #F5EEC2 !important;
+}
+
+
+/* =========================================================
+   DETAILS PAGE — REMOVE CLUTTER
+   ========================================================= */
+
+/* Hide unnecessary sections */
+.details-visual-section,
+.details-highlight-section,
+.details-related-section,
+.details-cta-section {
+    display: none !important;
+}
+
+
+/* Details main sections */
+.details-intro-section,
+.details-information-section,
+.details-story-section {
+    background: #F5EEC2 !important;
+}
+
+
+/* At a glance cards */
+.details-info-card {
+    background: #A9C25D !important;
+    border: 1px solid #416A59 !important;
+    border-radius: 10px !important;
+}
+
+.details-info-card strong,
+.details-info-label,
+.details-info-number {
+    color: #39395F !important;
+}
+
+
+/* Story */
+.details-story-section {
+    padding: 80px 0 !important;
+}
+
+.details-story-content h2 {
+    color: #416A59 !important;
+}
+
+.details-story-text,
+.details-story-text p {
+    color: #39395F !important;
+    font-size: 15px !important;
+    line-height: 1.75 !important;
+}
+
+
+/* Story side note — remove */
+.details-story-note {
+    display: none !important;
+}
+
+
+/* =========================================================
+   DETAILS HERO
+   ========================================================= */
+
+.details-hero {
+    background: #416A59 !important;
+}
+
+.details-hero::after {
+    background:
+        linear-gradient(
+            to top,
+            rgba(57, 57, 95, 0.72),
+            rgba(65, 106, 89, 0.12)
+        ) !important;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.site-footer {
+    background: #39395F !important;
+    color: #F5EEC2 !important;
+}
+
+.site-footer a:hover {
+    color: #A9C25D !important;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+    .archive-item-content .view-details,
+    .archive-card .view-details,
+    .view-details {
+        width: 100% !important;
+        min-height: 48px !important;
+    }
+
+    .details-info-grid {
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
+    }
+
+    .details-story-section {
+        padding: 55px 0 !important;
+    }
+}
