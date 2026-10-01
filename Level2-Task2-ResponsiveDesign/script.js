@@ -694,7 +694,16 @@ function initMobileMenu() {
 
 
         let activeFilter = "all";
+const params = new URLSearchParams(window.location.search);
+const urlCategory = (params.get("category") || "all").toLowerCase();
 
+if (
+    urlCategory === "communities" ||
+    urlCategory === "crafts" ||
+    urlCategory === "stories"
+) {
+    activeFilter = urlCategory;
+}
 
         function matchesCategory(
             item,
