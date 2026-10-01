@@ -5970,3 +5970,319 @@ img {
         grid-template-columns: 1fr !important;
     }
 }
+/* =========================================================
+   ROOTS — ARCHIVE FEATURE LAYOUT FIX
+   IMAGE + CONTENT SIDE BY SIDE
+   ========================================================= */
+
+/* ---------- CRAFT / ARCHIVE CARDS ---------- */
+
+.archive-section .archive-feature-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 28px !important;
+}
+
+.archive-section .archive-feature-card {
+    display: grid !important;
+    grid-template-columns: 48% 52% !important;
+
+    min-height: 420px !important;
+
+    position: relative !important;
+    overflow: hidden !important;
+
+    background: var(--forest) !important;
+}
+
+/* IMAGE SIDE */
+
+.archive-section .archive-feature-card .archive-feature-image {
+    position: relative !important;
+
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 420px !important;
+
+    overflow: hidden !important;
+}
+
+.archive-section .archive-feature-card .archive-feature-image img {
+    position: absolute !important;
+    inset: 0 !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    object-fit: cover !important;
+    object-position: center !important;
+
+    z-index: 1 !important;
+}
+
+/* REMOVE OLD OVERLAY */
+
+.archive-section .archive-feature-card::after {
+    display: none !important;
+}
+
+/* CONTENT SIDE */
+
+.archive-section .archive-feature-card .archive-feature-content {
+    position: relative !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+
+    padding: 45px !important;
+
+    background: var(--forest) !important;
+
+    color: var(--cream-light) !important;
+
+    z-index: 3 !important;
+}
+
+/* NUMBER + CATEGORY */
+
+.archive-section .archive-feature-top {
+    display: flex !important;
+    align-items: center !important;
+    gap: 14px !important;
+
+    margin-bottom: 22px !important;
+}
+
+.archive-section .archive-number {
+    color: var(--gold) !important;
+}
+
+.archive-section .archive-type {
+    color: var(--gold) !important;
+}
+
+/* HEADING */
+
+.archive-section .archive-feature-card h3 {
+    margin-bottom: 18px !important;
+
+    color: var(--cream-light) !important;
+
+    font-size: clamp(30px, 3vw, 46px) !important;
+    line-height: 1.05 !important;
+}
+
+/* TEXT */
+
+.archive-section .archive-feature-card p {
+    max-width: 440px !important;
+
+    margin-bottom: 28px !important;
+
+    color: rgba(250,247,240,0.78) !important;
+
+    font-size: 14px !important;
+    line-height: 1.8 !important;
+}
+
+/* BIG COLORFUL BUTTON */
+
+.archive-section .archive-feature-card .card-link {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 12px !important;
+
+    width: auto !important;
+
+    padding: 13px 22px !important;
+
+    background: var(--gold) !important;
+    border: 1px solid var(--gold) !important;
+
+    color: var(--forest-dark) !important;
+
+    font-size: 11px !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.08em !important;
+    text-transform: uppercase !important;
+
+    border-radius: 2px !important;
+
+    box-shadow: 0 8px 20px rgba(176,138,82,0.25) !important;
+
+    transition: all 0.25s ease !important;
+}
+
+.archive-section .archive-feature-card .card-link:hover {
+    background: var(--cream-light) !important;
+    border-color: var(--cream-light) !important;
+
+    transform: translateY(-3px) !important;
+}
+
+.archive-section .archive-feature-card .card-link span {
+    transition: transform 0.25s ease !important;
+}
+
+.archive-section .archive-feature-card .card-link:hover span {
+    transform: translateX(4px) !important;
+}
+
+
+/* =========================================================
+   FEATURED STORY
+   HEADING → IMAGE → MATTER
+   ========================================================= */
+
+.archive-feature-section .archive-feature-grid {
+    display: grid !important;
+
+    grid-template-columns: 1fr 1fr !important;
+
+    gap: 0 !important;
+
+    align-items: stretch !important;
+
+    background: var(--forest) !important;
+}
+
+/* STORY IMAGE */
+
+.archive-feature-section .archive-feature-image {
+    width: 100% !important;
+    height: 520px !important;
+
+    overflow: hidden !important;
+}
+
+.archive-feature-section .archive-feature-image img {
+    display: block !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    object-fit: cover !important;
+    object-position: center !important;
+}
+
+/* STORY MATTER */
+
+.archive-feature-section .archive-feature-content {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+
+    padding: 55px !important;
+
+    background: var(--forest) !important;
+    color: var(--cream-light) !important;
+}
+
+.archive-feature-section .archive-feature-content h2 {
+    margin: 12px 0 20px !important;
+
+    color: var(--cream-light) !important;
+
+    font-size: clamp(40px, 5vw, 65px) !important;
+    line-height: 1 !important;
+}
+
+.archive-feature-section .archive-feature-content h2 em {
+    color: var(--gold) !important;
+}
+
+.archive-feature-section .archive-feature-content p {
+    max-width: 470px !important;
+
+    margin-bottom: 18px !important;
+
+    color: rgba(250,247,240,0.78) !important;
+
+    font-size: 14px !important;
+    line-height: 1.8 !important;
+}
+
+
+/* =========================================================
+   MOBILE
+   IMAGE FULL WIDTH → MATTER BELOW
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+    /* CRAFT */
+
+    .archive-section .archive-feature-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 20px !important;
+    }
+
+    .archive-section .archive-feature-card {
+        display: flex !important;
+        flex-direction: column !important;
+
+        min-height: 0 !important;
+    }
+
+    .archive-section .archive-feature-card .archive-feature-image {
+        width: 100% !important;
+        height: 300px !important;
+        min-height: 300px !important;
+    }
+
+    .archive-section .archive-feature-card .archive-feature-content {
+        width: 100% !important;
+
+        padding: 30px 24px 34px !important;
+    }
+
+    .archive-section .archive-feature-card h3 {
+        font-size: 30px !important;
+    }
+
+    .archive-section .archive-feature-card p {
+        font-size: 13px !important;
+    }
+
+    .archive-section .archive-feature-card .card-link {
+        padding: 14px 22px !important;
+        font-size: 10px !important;
+    }
+
+
+    /* FEATURED STORY */
+
+    .archive-feature-section .archive-feature-grid {
+        display: flex !important;
+        flex-direction: column !important;
+
+        gap: 0 !important;
+    }
+
+    .archive-feature-section .archive-feature-image {
+        width: 100% !important;
+        height: 330px !important;
+    }
+
+    .archive-feature-section .archive-feature-content {
+        width: 100% !important;
+
+        padding: 35px 24px 40px !important;
+    }
+
+    .archive-feature-section .archive-feature-content h2 {
+        font-size: 43px !important;
+    }
+
+    .archive-feature-section .archive-feature-content p {
+        font-size: 13px !important;
+    }
+     }
